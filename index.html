@@ -18,7 +18,7 @@
         /* FONT REQUIREMENTS */
         @font-face {
             font-family: "BrandFont";
-            src: url("/fonts/brand-font.woff2") format("woff2");
+            src: url("/fonts/brand-font(3).woff2") format("woff2");
             font-weight: 400;
             font-style: normal;
             font-display: swap;
@@ -869,6 +869,170 @@
                 font-size: 2.5rem;
             }
         }
+
+        /* PRESS COVERAGE */
+        .press-card {
+            background: white;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+            transition: var(--transition);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .press-card:hover {
+            box-shadow: 0 20px 50px rgba(41, 151, 255, 0.08);
+            border-color: var(--accent-color);
+        }
+
+        .press-header {
+            border-bottom: 2px solid #e1e1e6;
+            padding-bottom: 24px;
+            margin-bottom: 30px;
+        }
+
+        .press-logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .press-editorial {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #d12229; /* Red tone accent of Ideal en Clase */
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .press-date {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .press-headline {
+            font-size: 1.75rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        .press-body {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .press-body {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .press-card {
+                padding: 24px;
+            }
+            .press-headline {
+                font-size: 1.4rem;
+            }
+        }
+
+        .press-media {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .press-image-container {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            background: #f5f5f7;
+            border: 1px solid #e1e1e6;
+            margin-bottom: 8px;
+            aspect-ratio: 4/3;
+            width: 100%;
+            position: relative;
+        }
+
+        .press-image-fallback {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f5f7 0%, #e1e2e6 100%);
+            color: var(--text-main);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .press-image-fallback-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .press-image-fallback-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        .press-image-fallback-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            max-width: 240px;
+        }
+
+        .press-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .press-image-container:hover .press-image {
+            transform: scale(1.03);
+        }
+
+        .press-caption {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.4;
+            border-left: 2px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .press-content {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .press-text {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .press-text-secondary {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .press-cta-row {
+            margin-top: 15px;
+        }
     </style>
 <link rel="stylesheet" href="/index.css">
 </head>
@@ -932,6 +1096,42 @@
         </div>
     </section>
 
+    <!-- Press Highlight Section -->
+    <section id="press" class="container">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="press_title">Aparición en Prensa / Periódico</h2>
+            <p class="section-subtitle" data-i18n="press_subtitle">Destacado en medios como caso de éxito universitario y empresarial en la aplicación práctica de Inteligencia Artificial.</p>
+        </div>
+        <div class="press-card">
+            <div class="press-header">
+                <div class="press-logo-container">
+                    <span class="press-editorial">IDEAL En Clase</span>
+                    <span class="press-date">18 de Mayo, 2026</span>
+                </div>
+                <h3 class="press-headline" data-i18n="press_headline">Universitarios demuestran que pueden trabajar sobre retos reales junto a empresas tecnológicas de Granada con ayuda de la IA</h3>
+            </div>
+            <div class="press-body">
+                <div class="press-media">
+                    <div class="press-image-container">
+                        <img src="https://en-clase.ideal.es/wp-content/uploads/2026/05/Pablo-Contreras-IeC.jpg" alt="Pablo Contreras presentando su proyecto" referrerpolicy="no-referrer" class="press-image">
+                    </div>
+                    <p class="press-caption" data-i18n="press_caption">Pablo Contreras durante la exposición de su proyecto final en el Hackaton Gen AI ARENA, seleccionado entre más de 130 aspirantes.</p>
+                </div>
+                <div class="press-content">
+                    <p class="press-text" data-i18n="press_snippet">
+                        <strong>Pablo Contreras Pérez</strong> es un estudiante universitario de <strong>Ingeniería Informática con ADE</strong> de la UGR, afincado en Granada. Recientemente participó en <em>Gen AI ARENA</em>, el primer hackathon de inteligencia artificial generativa en Granada orientado a transformar desafíos reales de negocio en soluciones operativas, organizado por <strong>SIDN</strong>.
+                    </p>
+                    <p class="press-text-secondary" data-i18n="press_snippet_2">
+                        El evento convocó a más de 130 aspirantes de los cuales seleccionaron únicamente a 23 participantes estrella. El equipo de Pablo abordó los sobrecostes en marketing de paid ads, implementando modelos de detección que permiten ahorrar hasta ~12.000€ mensuales a las empresas participantes.
+                    </p>
+                    <div class="press-cta-row">
+                        <a href="https://en-clase.ideal.es/universitarios-demuestran-que-pueden-trabajar-sobre-retos-reales-junto-a-empresas-tecnologicas-de-granada-con-ayuda-de-la-ia/" target="_blank" class="btn btn-primary" data-i18n="press_link">Leer artículo completo en IDEAL</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section (Featured Projects & Achievements) -->
     <section id="projects" class="container">
         <div class="section-header">
@@ -961,7 +1161,8 @@
                     <span class="project-tag">Business Pitch</span>
                     <span class="project-tag">Backend Integration</span>
                 </div>
-                <div class="project-links" style="margin-top: 15px;">
+                <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+                    <a href="https://credsverse.com/credentials/e8047661-3405-496e-9096-0d2059028b38" target="_blank" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_cert">Certificado</a>
                     <a href="https://www.linkedin.com/posts/pablo-contreras-652a442a2_la-experencia-de-3-d%C3%ADas-intensos-en-el-hackaton-ugcPost-7455537651941584896-gmsg?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEkf-p4Bko1GVMGdbhYYsVfsy1kA2nWOQaI" target="_blank" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;">Ver en LinkedIn</a>
                 </div>
             </div>
@@ -1279,7 +1480,7 @@
             <p class="section-subtitle" data-i18n="contact_subtitle">IA aplicada, automatización y sistemas digitales. Project focused.</p>
             
             <div class="cta-buttons">
-                <a href="mailto:contact.pablo.contreras@gmail.com" class="btn btn-primary">contact.pablo.contreras@gmail.com</a>
+                <a href="mailto:contact.pablo.contreras@gmail.com" class="btn btn-primary">pablo.contreras.perez@gmail.com</a>
                 <a href="https://github.com/aipetrusai" target="_blank" class="btn btn-secondary">GitHub</a>
             </div>
         </div>
@@ -1314,6 +1515,14 @@
             about_title: "Sobre mí / Perfil",
             about_p1: "Estudiante de Ingeniería Informática + ADE en la Universidad de Granada, builder enfocado en IA aplicada, automatización y marketing tech.",
             about_p2: "Sólida capacidad para construir infraestructuras de IA escalables, habiendo superado las 100k operaciones automatizadas entre 2025 y 2026.",
+
+            press_title: "Aparición en Prensa",
+            press_subtitle: "Destacado en medios como caso de éxito universitario y empresarial en la aplicación práctica de Inteligencia Artificial.",
+            press_headline: "Universitarios demuestran que pueden trabajar sobre retos reales junto a empresas tecnológicas de Granada con ayuda de la IA",
+            press_caption: "Pablo Contreras durante la exposición de su proyecto final en el Hackaton Gen AI ARENA, seleccionado entre más de 130 aspirantes.",
+            press_snippet: "Pablo Contreras Pérez es un estudiante universitario de Ingeniería Informática con ADE de la UGR, afincado en Granada. Recientemente participó en Gen AI ARENA, el primer hackathon de inteligencia artificial generativa en Granada orientada a transformar desafíos reales de negocio en soluciones operativas, organizado por SIDN.",
+            press_snippet_2: "El evento convocó a más de 130 aspirantes de los cuales seleccionaron únicamente a 23 participantes estrella. El equipo de Pablo abordó los sobrecostes en marketing de paid ads, implementando modelos de detección que permiten ahorrar hasta ~12.000€ mensuales a las empresas participantes.",
+            press_link: "Leer artículo completo en IDEAL",
 
             projects_title: "Proyectos destacados",
             projects_subtitle: "Enfoque absoluto en la ejecución y la creación de sistemas que generan valor real.",
@@ -1425,6 +1634,14 @@
             about_title: "About Me / Profile",
             about_p1: "Computer Science + Business Administration student at UGR, builder focused on Applied AI, automation and marketing tech.",
             about_p2: "Strong ability to build scalable AI infrastructure, exceeding 100k automated operations between 2025 and 2026.",
+
+            press_title: "Featured in Press",
+            press_subtitle: "Highlighted in the press as a successful case study of student and business application of practical AI systems.",
+            press_headline: "University students prove they can solve real challenges together with tech companies in Granada using AI",
+            press_caption: "Pablo Contreras delivering his final pitch at the Gen AI ARENA Hackathon, selected among more than 130 elite applicants.",
+            press_snippet: "Pablo Contreras Pérez is a Computer Science + Business Administration double degree student at UGR, based in Granada. He recently participated in Gen AI ARENA, the first generative artificial intelligence hackathon in Granada targeting real business challenges to build operational solutions, organized by SIDN.",
+            press_snippet_2: "The event convocated over 130 applicants with only 23 final participants selected. Pablo's team targeted the marketing overcosts of paid ads, implementing intelligent models that save up to ~€12,000 monthly for the associated companies.",
+            press_link: "Read full article on IDEAL",
 
             projects_title: "Featured Projects",
             projects_subtitle: "Absolute focus on execution and building systems that generate real value.",
