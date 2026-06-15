@@ -6,25 +6,28 @@ on:
       - main
     paths:
       - 'index.html'
-      - 'scripts/generate_pdf.js'
+      - 'scripts/generate_pdf.cjs'
+
+permissions:
+  contents: write
 
 jobs:
   generate-pdf:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install puppeteer
 
       - name: Generate PDF
-        run: node scripts/generate_pdf.js
+        run: node scripts/generate_pdf.cjs
 
       - name: Commit PDF
         run: |
