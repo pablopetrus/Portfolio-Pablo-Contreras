@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Pablo Contreras Pérez - AI Entrepreneur & Systems Engineer">
-    <title>Pablo Contreras · AI & Systems</title>
-    
+    <meta name="description" content="Portfolio of Pablo (Petrus) Contreras - AI Entrepreneur & Systems Engineer">
+    <title>Pablo (Petrus) Contreras · AI & Systems</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><circle cx=%2216%22 cy=%2216%22 r=%2214%22 fill=%22%232997ff%22 /><path d=%22M12 10h4a4 4 0 0 1 0 8h-4v4%22 stroke=%22white%22 stroke-width=%222.5%22 fill=%22none%22 stroke-linecap=%22round%22 /></svg>">
     
@@ -26,7 +26,7 @@
 
         :root {
             font-family: "BrandFont", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            
+
             /* Colors */
             --bg-color: #ffffff;
             --bg-secondary: #f5f5f7;
@@ -1033,6 +1033,35 @@
         .press-cta-row {
             margin-top: 15px;
         }
+
+        /* ============================================ */
+        /* IG VARIANT — Pyramid hero canvas tuning      */
+        /* ============================================ */
+        .hero {
+            background: linear-gradient(180deg, #f8fbff 0%, #ffffff 60%);
+        }
+
+        #hero-canvas {
+            opacity: 1;
+        }
+
+        /* Scroll transition: hero fades smoothly when reaching about */
+        .hero-content {
+            will-change: transform, opacity;
+        }
+
+        /* Subtle entry for the very first section after hero */
+        .hero-to-about-reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1),
+                        transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .hero-to-about-reveal.in-view {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
     </style>
 <link rel="stylesheet" href="/index.css">
 </head>
@@ -1041,7 +1070,7 @@
 <!-- Header -->
 <header>
     <div class="nav-container">
-        <a href="#" class="logo">Pablo Contreras · AI & Systems</a>
+        <a href="#" class="logo">Pablo (Petrus) Contreras · AI & Systems</a>
         <nav>
             <ul class="nav-links">
                 <li><a href="#about" data-i18n="nav_about">Sobre mí</a></li>
@@ -1064,7 +1093,7 @@
     <section class="hero">
         <canvas id="hero-canvas"></canvas>
         <div class="hero-content">
-            <h1 data-i18n="hero_name">Pablo Contreras</h1>
+            <h1 data-i18n="hero_name">Pablo (Petrus) Contreras</h1>
             <h2 data-i18n="hero_subtitle">IA, automatización y sistemas desde Granada hacia el mundo.</h2>
             <p data-i18n="hero_desc">Estudiante de Ingeniería Informática + ADE (UGR) y emprendedor de IA, creando soluciones reales para negocios.</p>
             <div class="btn-group">
@@ -1561,7 +1590,7 @@
 
 <footer>
     <div class="container">
-        <p>Built by Pablo Contreras</p>
+        <p>Built by Pablo (Petrus) Contreras</p>
     </div>
 </footer>
 
@@ -1576,7 +1605,7 @@
             nav_events: "Logros",
             nav_contact: "Contacto",
             
-            hero_name: "Pablo Contreras",
+            hero_name: "Pablo (Petrus) Contreras",
             hero_subtitle: "IA, automatización y sistemas digitales aplicados a negocio.",
             hero_desc: "Estudiante de GIIADE (UGR). AI Builder con +100k operaciones automatizadas y partner técnico en proyectos de alto impacto.",
             hero_btn_projects: "Ver proyectos",
@@ -1695,7 +1724,7 @@
             nav_events: "Achievements",
             nav_contact: "Contact",
             
-            hero_name: "Pablo Contreras",
+            hero_name: "Pablo (Petrus) Contreras",
             hero_subtitle: "AI, automation & digital systems applied to business.",
             hero_desc: "Double Degree CS + Business student (UGR). AI Builder with +100k automated operations and technical partner for high-impact projects.",
             hero_btn_projects: "View Projects",
@@ -1833,111 +1862,185 @@
         });
     }
 
-    /* --- HERO CANVAS ANIMATION --- */
+    /* --- HERO CANVAS ANIMATION — IG INFINITE PYRAMIDS --- */
     const canvas = document.getElementById('hero-canvas');
     const ctx = canvas.getContext('2d');
     let width, height;
-    let particles = [];
+    let pyramids = [];
 
-    // Mouse state
-    let mouse = { x: -1000, y: -1000 };
+    let mouse = { x: -1000, y: -1000, active: false };
+    let autoCursor = { x: 0, y: 0, t: 0 };
+    let time = 0;
+    let heroEl = null;
+
+    const PYRAMID_W = 78;
+    const PYRAMID_H = 54;
+    const ROW_H = 30;
 
     window.addEventListener('mousemove', e => {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        mouse.active = true;
     });
+    window.addEventListener('mouseleave', () => { mouse.active = false; });
+    // Touch on mobile: brief cursor at touch point
+    window.addEventListener('touchstart', e => {
+        if (e.touches[0]) {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+            mouse.active = true;
+            clearTimeout(window.__touchFade);
+            window.__touchFade = setTimeout(() => { mouse.active = false; }, 1500);
+        }
+    }, { passive: true });
 
     function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-        initParticles();
+        const ratio = window.devicePixelRatio || 1;
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width * ratio;
+        canvas.height = height * ratio;
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+        buildGrid();
     }
 
-    class Particle {
-        constructor() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 0.5;
-            this.vy = (Math.random() - 0.5) * 0.5;
-            this.size = Math.random() * 2 + 1;
-            this.baseX = this.x;
-            this.baseY = this.y;
-            this.density = (Math.random() * 30) + 1;
-        }
-
-        update() {
-            // Mouse Interaction
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-            let maxDistance = 250;
-
-            if (distance < maxDistance && distance > 0) {
-                let forceDirectionX = dx / distance;
-                let forceDirectionY = dy / distance;
-                let force = (maxDistance - distance) / maxDistance;
-                let directionX = forceDirectionX * force * this.density * 1.5;
-                let directionY = forceDirectionY * force * this.density * 1.5;
-                this.x -= directionX;
-                this.y -= directionY;
-            } else {
-                // Return to base slightly
-                if (this.x !== this.baseX) {
-                    let dx = this.x - this.baseX;
-                    this.x -= dx / 50;
-                }
-                if (this.y !== this.baseY) {
-                    let dy = this.y - this.baseY;
-                    this.y -= dy / 50;
-                }
+    function buildGrid() {
+        pyramids = [];
+        const cols = Math.ceil(width / PYRAMID_W) + 3;
+        const rows = Math.ceil(height / ROW_H) + 3;
+        for (let r = 0; r < rows; r++) {
+            const yBase = r * ROW_H - 40;
+            const offsetX = (r % 2 === 0) ? 0 : PYRAMID_W / 2;
+            for (let c = 0; c < cols; c++) {
+                const x = c * PYRAMID_W + offsetX - PYRAMID_W;
+                pyramids.push({
+                    x, y: yBase,
+                    phase: x * 0.011 + r * 0.22,
+                    // Subtle depth: rows further down feel a touch more saturated
+                    depth: Math.min(1, (r / rows) * 1.1 + 0.15)
+                });
             }
-            
-            // Natural slight movement
-            this.x += this.vx;
-            this.y += this.vy;
-
-            // Boundaries
-            if (this.x < 0 || this.x > width) this.vx = -this.vx;
-            if (this.y < 0 || this.y > height) this.vy = -this.vy;
-            
-            // Update base to drift slowly
-            this.baseX += this.vx;
-            this.baseY += this.vy;
-            if (this.baseX < 0) this.baseX = width;
-            if (this.baseX > width) this.baseX = 0;
-            if (this.baseY < 0) this.baseY = height;
-            if (this.baseY > height) this.baseY = 0;
-        }
-
-        draw() {
-            ctx.fillStyle = 'rgba(41, 151, 255, 0.4)';
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
         }
     }
 
-    function initParticles() {
-        particles = [];
-        let numberOfParticles = (width * height) / 3000;
-        for (let i = 0; i < numberOfParticles; i++) {
-            particles.push(new Particle());
+    function drawPyramid(cx, cy, h, alpha, glow, depth) {
+        const halfW = PYRAMID_W / 2 - 2;
+        const topY = cy - h;
+
+        // Left face — slightly darker (shadow side)
+        ctx.fillStyle = `rgba(41, 121, 200, ${alpha * 0.55 * depth})`;
+        ctx.beginPath();
+        ctx.moveTo(cx, topY);
+        ctx.lineTo(cx - halfW, cy);
+        ctx.lineTo(cx, cy);
+        ctx.closePath();
+        ctx.fill();
+
+        // Right face — light side
+        ctx.fillStyle = `rgba(80, 170, 255, ${alpha * 0.95 * depth})`;
+        ctx.beginPath();
+        ctx.moveTo(cx, topY);
+        ctx.lineTo(cx + halfW, cy);
+        ctx.lineTo(cx, cy);
+        ctx.closePath();
+        ctx.fill();
+
+        // Crisp outline so it reads as architectural, not blob
+        ctx.strokeStyle = `rgba(0, 90, 200, ${alpha * 0.55 * depth})`;
+        ctx.lineWidth = 0.6;
+        ctx.beginPath();
+        ctx.moveTo(cx - halfW, cy);
+        ctx.lineTo(cx, topY);
+        ctx.lineTo(cx + halfW, cy);
+        ctx.stroke();
+
+        // Glow tip when cursor is near
+        if (glow > 0.05) {
+            ctx.shadowColor = 'rgba(41, 151, 255, 0.95)';
+            ctx.shadowBlur = 16 * glow;
+            ctx.fillStyle = `rgba(255, 255, 255, ${0.55 * glow})`;
+            ctx.beginPath();
+            ctx.arc(cx, topY, 1.6 + glow * 2.6, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0;
         }
+    }
+
+    function getCursor() {
+        if (mouse.active) {
+            // Translate from page coords to canvas-relative (canvas is fixed inside hero, top-left of viewport)
+            return { x: mouse.x, y: mouse.y, alive: 1 };
+        }
+        // Auto-drift cursor (smooth lissajous-ish path) — for mobile / no cursor
+        autoCursor.t += 0.006;
+        autoCursor.x = width * 0.5 + Math.sin(autoCursor.t * 1.1) * width * 0.32;
+        autoCursor.y = height * 0.5 + Math.cos(autoCursor.t * 0.7) * height * 0.28;
+        return { x: autoCursor.x, y: autoCursor.y, alive: 0.7 };
     }
 
     function animate() {
+        time += 0.016;
         ctx.clearRect(0, 0, width, height);
-        for (let i = 0; i < particles.length; i++) {
-            particles[i].update();
-            particles[i].draw();
+
+        const cur = getCursor();
+        const reach = 230;
+        const reachSq = reach * reach;
+
+        for (let i = 0; i < pyramids.length; i++) {
+            const p = pyramids[i];
+
+            // Idle wave — soft breathing across the grid
+            const wave = (Math.sin(time + p.phase) + 1) * 0.5;
+            let h = PYRAMID_H * (0.45 + wave * 0.45);
+            let alpha = 0.10 + wave * 0.16;
+
+            // Cursor influence — square-falloff for crisp ripple
+            const dx = p.x - cur.x;
+            const dy = p.y - cur.y;
+            const distSq = dx * dx + dy * dy;
+            let glow = 0;
+            if (distSq < reachSq) {
+                const force = 1 - Math.sqrt(distSq) / reach;
+                const ease = force * force * cur.alive;
+                h += PYRAMID_H * 0.95 * ease;
+                alpha += 0.55 * ease;
+                glow = ease;
+            }
+
+            drawPyramid(p.x, p.y, h, Math.min(alpha, 0.95), glow, p.depth);
         }
+
         requestAnimationFrame(animate);
     }
 
     window.addEventListener('resize', resize);
     resize();
     animate();
+
+    /* --- HERO → ABOUT SCROLL TRANSITION --- */
+    heroEl = document.querySelector('.hero');
+    const heroContent = document.querySelector('.hero-content');
+    const floatingToolbar = document.querySelector('.floating-toolbar');
+
+    function onScroll() {
+        const sy = window.scrollY;
+        const fadeRange = window.innerHeight * 0.7;
+        const t = Math.min(1, sy / fadeRange);
+        if (heroContent) {
+            heroContent.style.opacity = String(1 - t * 1.05);
+            heroContent.style.transform = `translateY(${-sy * 0.15}px) scale(${1 - t * 0.04})`;
+        }
+        if (canvas) {
+            canvas.style.opacity = String(1 - t * 0.85);
+            canvas.style.transform = `translateY(${sy * 0.25}px)`;
+        }
+        if (floatingToolbar) {
+            floatingToolbar.style.opacity = String(1 - t * 1.4);
+        }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
 
     /* --- SCROLL ANIMATIONS (FADE IN) --- */
     const observer = new IntersectionObserver((entries) => {
