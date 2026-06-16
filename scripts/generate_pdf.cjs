@@ -14,10 +14,11 @@ async function generatePDF() {
     
     await page.goto(fileUrl, { waitUntil: 'networkidle0' });
     
-    // Create cv directory if it doesn't exist
-    const cvDir = path.resolve(__dirname, '../cv');
+    // Create public/cv directory if it doesn't exist
+    // (PDF lives under public/ so Vite serves and copies it to dist/)
+    const cvDir = path.resolve(__dirname, '../public/cv');
     if (!fs.existsSync(cvDir)) {
-        fs.mkdirSync(cvDir);
+        fs.mkdirSync(cvDir, { recursive: true });
     }
     
     // Generate PDF
@@ -34,7 +35,7 @@ async function generatePDF() {
     });
 
     await browser.close();
-    console.log('PDF generated successfully at cv/Pablo_Contreras_CV.pdf');
+    console.log('PDF generated successfully at public/cv/Pablo_Contreras_CV.pdf');
 }
 
 generatePDF().catch(err => {
