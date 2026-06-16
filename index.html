@@ -18,7 +18,10 @@
         /* FONT REQUIREMENTS */
         @font-face {
             font-family: "BrandFont";
-            src: url("/fonts/brand-font(3).woff2") format("woff2");
+            /* Relative path so it loads both under HTTP (Vite, Netlify) and file:// (Puppeteer PDF gen).
+               The two fallback URLs cover the two on-disk locations. */
+            src: url("fonts/brand-font(3).woff2") format("woff2"),
+                 url("public/fonts/brand-font.woff2") format("woff2");
             font-weight: 400;
             font-style: normal;
             font-display: swap;
@@ -416,15 +419,13 @@
                 margin-top: 10pt !important;
                 border-radius: 8px !important;
             }
+            /* Power Record is a regular block in the printed CV (no more position:fixed,
+               which made it duplicate on every PDF page). */
             .power-record-corner {
-                position: fixed !important;
-                bottom: 20px !important;
-                right: 20px !important;
-                font-size: 8pt !important;
-                color: #999 !important;
-                border: 1px solid #ddd !important;
-                padding: 5px 10px !important;
-                background: white !important;
+                position: static !important;
+                font-size: inherit !important;
+                color: inherit !important;
+                padding: 12pt !important;
             }
         }
 

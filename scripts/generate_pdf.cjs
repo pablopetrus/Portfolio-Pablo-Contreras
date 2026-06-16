@@ -13,6 +13,17 @@ async function generatePDF() {
     const fileUrl = `file://${filePath}`;
     
     await page.goto(fileUrl, { waitUntil: 'networkidle0' });
+
+    // Force print emulation so the @media print styles kick in for the PDF
+    await page.emulateMediaType('print');
+
+    // Wait for web fonts to actually be ready — without this Puppeteer can render
+    // with a fallback font and the text comes out with messed-up spacing/kerning.
+    await page.evaluate(async () => {
+        if (document.fonts && document.fonts.ready) {
+            await document.fonts.ready;
+        }
+    });
     
     // Create public/cv directory if it doesn't exist
     // (PDF lives under public/ so Vite serves and copies it to dist/)

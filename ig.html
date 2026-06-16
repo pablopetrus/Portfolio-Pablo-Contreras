@@ -18,7 +18,9 @@
         /* FONT REQUIREMENTS */
         @font-face {
             font-family: "BrandFont";
-            src: url("/fonts/brand-font(3).woff2") format("woff2");
+            /* Relative path so it loads both under HTTP (Vite, Netlify) and file:// (Puppeteer PDF gen). */
+            src: url("fonts/brand-font(3).woff2") format("woff2"),
+                 url("public/fonts/brand-font.woff2") format("woff2");
             font-weight: 400;
             font-style: normal;
             font-display: swap;
