@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pablo Contreras Pérez — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+    @font-face {
+        font-family: "BrandFont";
+        src: url("fonts/brand-font(3).woff2") format("woff2"),
+             url("public/fonts/brand-font.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    :root {
+        --accent: #2997ff;
+        --accent-dark: #0071e3;
+        --text: #1d1d1f;
+        --text-soft: #4a4a4f;
+        --text-muted: #7a7a80;
+        --rule: #d8d8dd;
+        --bg-subtle: #f5f5f7;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+        font-family: "BrandFont", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--text);
+        background: #fff;
+        font-size: 8.0pt;
+        line-height: 1.22;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+        width: 210mm;
+        padding: 7mm 10mm 5mm 10mm;
+        margin: 0 auto;
+        background: #fff;
+    }
+
+    /* ============ HEADER ============ */
+    .header {
+        padding-bottom: 5pt;
+        border-bottom: 1pt solid var(--text);
+        margin-bottom: 6pt;
+    }
+
+    .name-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 20pt;
+        margin-bottom: 3pt;
+    }
+
+    .name {
+        font-size: 20pt;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        color: var(--text);
+    }
+
+    .name .last {
+        color: var(--accent);
+    }
+
+    .title {
+        font-size: 8.8pt;
+        font-weight: 500;
+        color: var(--text-soft);
+        text-align: right;
+        line-height: 1.25;
+    }
+
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2pt 10pt;
+        font-size: 7.9pt;
+        color: var(--text-soft);
+    }
+
+    .contact a {
+        color: var(--text-soft);
+        text-decoration: none;
+    }
+
+    .contact .sep {
+        color: var(--text-muted);
+    }
+
+    /* ============ PROFILE ============ */
+    .profile {
+        font-size: 8.4pt;
+        line-height: 1.32;
+        color: var(--text-soft);
+        margin-bottom: 6pt;
+        padding-left: 6pt;
+        border-left: 2pt solid var(--accent);
+    }
+
+    /* ============ SECTIONS ============ */
+    .section {
+        margin-bottom: 5pt;
+    }
+
+    .section-title {
+        font-size: 7.6pt;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 3pt;
+        padding-bottom: 1pt;
+        border-bottom: 0.5pt solid var(--rule);
+    }
+
+    /* ============ ENTRY ============ */
+    .entry {
+        margin-bottom: 3.5pt;
+    }
+
+    .entry-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10pt;
+        margin-bottom: 0.5pt;
+    }
+
+    .entry-title {
+        font-size: 8.8pt;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.2;
+    }
+
+    .entry-title .role {
+        color: var(--accent-dark);
+    }
+
+    .entry-meta {
+        font-size: 7.6pt;
+        color: var(--text-muted);
+        font-weight: 500;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .entry-sub {
+        font-size: 7.9pt;
+        font-weight: 500;
+        color: var(--text-soft);
+        margin-bottom: 1pt;
+    }
+
+    .entry-list {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .entry-list li {
+        position: relative;
+        padding-left: 9pt;
+        margin-bottom: 0.5pt;
+        color: var(--text-soft);
+        font-size: 8pt;
+        line-height: 1.25;
+    }
+
+    .entry-list li::before {
+        content: "–";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: 600;
+    }
+
+    /* ============ AWARDS COMPACT ============ */
+    .awards-list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 12pt;
+        row-gap: 1.5pt;
+    }
+
+    .awards-list li {
+        position: relative;
+        padding-left: 9pt;
+        font-size: 7.9pt;
+        line-height: 1.24;
+        color: var(--text-soft);
+    }
+
+    .awards-list li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 6.5pt;
+        top: 1.5pt;
+    }
+
+    .awards-list strong {
+        color: var(--text);
+        font-weight: 600;
+    }
+
+    /* ============ FOOTER GRID ============ */
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1.2fr;
+        gap: 12pt;
+        margin-top: 3pt;
+        padding-top: 5pt;
+        border-top: 0.6pt solid var(--rule);
+    }
+
+    .col-title {
+        font-size: 7.4pt;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 2pt;
+    }
+
+    .col-body {
+        font-size: 7.7pt;
+        line-height: 1.3;
+        color: var(--text-soft);
+    }
+
+    .col-body strong {
+        color: var(--text);
+        font-weight: 600;
+    }
+
+    .lang-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 6pt;
+        margin-bottom: 0.8pt;
+    }
+
+    .lang-row .lang-name {
+        color: var(--text);
+        font-weight: 500;
+    }
+
+    .lang-row .lang-lvl {
+        color: var(--text-muted);
+        font-size: 7.5pt;
+    }
+
+    .skills-tags {
+        font-size: 7.7pt;
+        color: var(--text-soft);
+        line-height: 1.32;
+    }
+
+    .skills-tags .tag-group {
+        margin-bottom: 1.5pt;
+    }
+
+    .skills-tags .tag-group strong {
+        color: var(--text);
+        font-weight: 600;
+    }
+
+    .communities li {
+        margin-bottom: 1.5pt;
+    }
+
+    .communities li strong {
+        color: var(--text);
+    }
+
+    /* Tighter within experience columns */
+    .two-col-experience {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    a {
+        color: var(--accent-dark);
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="name-row">
+            <div class="name">PABLO <span class="last">CONTRERAS PÉREZ</span></div>
+            <div class="title">AI Builder<br>Cofundador Técnico · Andaluz.ia</div>
+        </div>
+        <div class="contact">
+            <span>Granada, España</span>
+            <span class="sep">·</span>
+            <a href="mailto:contact.pablo.contreras@gmail.com">contact.pablo.contreras@gmail.com</a>
+            <span class="sep">·</span>
+            <a href="https://linkedin.com/in/pablocontrerasperez">linkedin.com/in/pablocontrerasperez</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/pablopetrus">github.com/pablopetrus</a>
+            <span class="sep">·</span>
+            <a href="https://pablo-contreras-portfolio.netlify.app">pablo-contreras-portfolio.netlify.app</a>
+        </div>
+    </header>
+
+    <!-- PROFILE -->
+    <div class="profile">
+        Estudiante de Doble Grado en Ingeniería Informática + ADE (UGR) construyendo IA aplicada con tracción verificable: <strong style="color:var(--text)">ganador del Hackaton GenAI Arena '26 (SIDN)</strong>, Project Lead becado en el <strong style="color:var(--text)">BIP Portugal — Alianza Arqus</strong>, y asistente presencial a la <strong style="color:var(--text)">Tech Week 2026 de Imperial College London</strong>.
+    </div>
+
+    <!-- EDUCATION -->
+    <section class="section">
+        <div class="section-title">Educación</div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div class="entry-title">Universidad de Granada (UGR)</div>
+                <div class="entry-meta">Sep 2025 – Jul 2030</div>
+            </div>
+            <div class="entry-sub">Doble Grado en Ingeniería Informática + Administración y Dirección de Empresas (GIIADE)</div>
+            <ul class="entry-list">
+                <li>Matrículas de Honor: Álgebra Lineal y Estructuras Matemáticas (9,8/10), Economía Política (9,3/10).</li>
+                <li>Mejor nota de promoción en Cálculo y Fundamentos de Programación.</li>
+                <li>Top 5% en la PAU nacional.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div class="entry-title">IES Padre Suárez — Bachillerato Tecnológico y Científico</div>
+                <div class="entry-meta">Sep 2023 – Jun 2025</div>
+            </div>
+            <div class="entry-sub">Nota media: 9,1/10</div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section">
+        <div class="section-title">Experiencia</div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div class="entry-title"><span class="role">Cofundador Técnico</span> — Andaluz.ia (GranadaTur 2035)</div>
+                <div class="entry-meta">Jul 2025 – Presente</div>
+            </div>
+            <ul class="entry-list">
+                <li>Lidero la infraestructura de IA del proyecto — stack: Python · Antigravity · LLM orchestration.</li>
+                <li>Presentado en el XIII Concurso Universitario de Emprendimiento UGR (€26.000), Santander X Explorer, incubadora El Carmen y Breaker Impulsa.</li>
+                <li>Representación UGR en el BIP Erasmus+ de la Alianza Arqus en Guimarães (Portugal).</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div class="entry-title"><span class="role">Project Lead</span> — BIP "Transforming Ideas into Businesses"</div>
+                <div class="entry-meta">Abr 2026 – May 2026</div>
+            </div>
+            <div class="entry-sub">Universidade do Minho · Alianza Arqus (Erasmus+) · Guimarães, Portugal · Becado</div>
+            <ul class="entry-list">
+                <li>Project Lead de Andaluz.ia junto a equipos de 6 países europeos. Foco en escalabilidad de negocio tech y pitching internacional.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div class="entry-title"><span class="role">Developer</span> — Canal Online (Autónomo) · <span style="font-weight:500;color:var(--text-soft);">Freelance AI Ops previo (Madrid · Valencia · Granada, 2023–24)</span></div>
+                <div class="entry-meta">Dic 2024 – May 2025</div>
+            </div>
+            <ul class="entry-list">
+                <li>Automatizaciones de contenido e infraestructura (GHL, Google Apps Script). Algoritmo evolutivo en Make.com para posteo multicanal. Integraciones CRM (HubSpot, Salesforce, Meta Ads) para agencias nacionales.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- KEY PROJECTS -->
+    <section class="section">
+        <div class="section-title">Proyectos destacados</div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div class="entry-title">Transcripción industrial offline (Open Source) · Python + Whisper + LLM</div>
+                <div class="entry-meta">2026</div>
+            </div>
+            <ul class="entry-list">
+                <li>Desktop app que procesa lotes de URLs YouTube/Reels/TikTok sin SaaS. Base de conocimiento para análisis de referentes a escala industrial.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div class="entry-title">Stack interno de apalancamiento — Obsidian · React · Remotion</div>
+                <div class="entry-meta">2025 – 2026</div>
+            </div>
+            <ul class="entry-list">
+                <li>Pipeline propio: Obsidian → vídeo programático (React + Remotion) → KPIs y métricas por vertical de negocio.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div class="entry-title">ViviAI — IA para el sector inmobiliario · Ideas Factory UGR (72h)</div>
+                <div class="entry-meta">2025</div>
+            </div>
+            <ul class="entry-list">
+                <li>Cerré 5 cartas de intención con agencias reales de Granada durante un hackathon presencial.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- AWARDS & INTERNATIONAL -->
+    <section class="section">
+        <div class="section-title">Reconocimientos & Experiencia Internacional</div>
+        <ul class="awards-list">
+            <li><strong>Ganador — Hackaton GenAI Arena by SIDN (2026)</strong> · Ahorro ~12.000 €/mes · Prensa: IDEAL En Clase.</li>
+            <li><strong>Imperial College London — Tech Week 2026</strong> · Presencial.</li>
+            <li><strong>Arqus Thinkathon — Universität Leipzig</strong> · Becado por excelencia.</li>
+            <li><strong>Nestlé International Skillathon 2025</strong> · Equipo internacional.</li>
+            <li><strong>Talent Land España, Málaga</strong> · Becado 2025 · Asistente 2024.</li>
+            <li><strong>3er Premio — Ideatón Recapacicla</strong> · Andalucía Oriental.</li>
+            <li><strong>Talento Emprendedor UGR</strong> · 150h / 6 ECTS junto a mentores.</li>
+            <li><strong>IA en la Empresa (Google Gemini)</strong> · The Power × Google Campus Madrid.</li>
+        </ul>
+    </section>
+
+    <!-- FOOTER 3 COLUMNS -->
+    <div class="footer-grid">
+
+        <div>
+            <div class="col-title">Stack Técnico</div>
+            <div class="skills-tags">
+                <div class="tag-group"><strong>IA/ML:</strong> Python · Whisper · LLM Orchestration · Claude Code · OpenAI APIs · Antigravity · scikit-learn · NumPy · Pandas · ARIMA</div>
+                <div class="tag-group"><strong>Desarrollo:</strong> C++ · JavaScript · React · Remotion · HTML/CSS · Git · Unix Shell</div>
+                <div class="tag-group"><strong>Automation:</strong> Make.com · n8n · Google Apps Script · GHL</div>
+                <div class="tag-group"><strong>Growth:</strong> CRM (HubSpot · Salesforce · Meta Ads) · SEO Tech</div>
+            </div>
+        </div>
+
+        <div>
+            <div class="col-title">Idiomas</div>
+            <div class="col-body">
+                <div class="lang-row"><span class="lang-name">Español</span><span class="lang-lvl">Nativo</span></div>
+                <div class="lang-row"><span class="lang-name">Inglés</span><span class="lang-lvl">C1 · TOEFL 110/120</span></div>
+                <div class="lang-row"><span class="lang-name">Francés</span><span class="lang-lvl">Básico</span></div>
+                <div style="margin-top:5pt; font-size:8.4pt; color:var(--text-muted); line-height:1.35;">
+                    Intercambio formativo en París (2022).
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="col-title">Comunidades</div>
+            <ul class="col-body communities" style="list-style:none; padding:0;">
+                <li><strong>Embajador</strong> — Arqus European University Alliance <span style="color:var(--text-muted); font-size:8.2pt;">(15 unis europeas)</span></li>
+                <li><strong>Google Developers Group</strong> Granada</li>
+                <li><strong>Granada Tech Organizers</strong></li>
+                <li><strong>UGR Emprendedora</strong></li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
