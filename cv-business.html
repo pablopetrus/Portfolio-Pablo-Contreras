@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pablo Contreras Pérez — CV (Business)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+    @font-face {
+        font-family: "BrandFont";
+        src: url("fonts/brand-font(3).woff2") format("woff2"),
+             url("public/fonts/brand-font.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @page { size: A4; margin: 0; }
+
+    :root {
+        --accent: #2997ff;
+        --accent-dark: #0071e3;
+        --text: #1d1d1f;
+        --text-soft: #4a4a4f;
+        --text-muted: #7a7a80;
+        --rule: #d8d8dd;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+        font-family: "BrandFont", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--text);
+        background: #fff;
+        font-size: 8.2pt;
+        line-height: 1.24;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+        width: 210mm;
+        padding: 8mm 11mm 6mm 11mm;
+        margin: 0 auto;
+        background: #fff;
+    }
+
+    .header {
+        padding-bottom: 5pt;
+        border-bottom: 1pt solid var(--text);
+        margin-bottom: 6pt;
+    }
+
+    .name-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 20pt;
+        margin-bottom: 3pt;
+    }
+
+    .name {
+        font-size: 21pt;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        color: var(--text);
+    }
+    .name .last { color: var(--accent); }
+
+    .title {
+        font-size: 9pt;
+        font-weight: 500;
+        color: var(--text-soft);
+        text-align: right;
+        line-height: 1.25;
+    }
+
+    .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2pt 10pt;
+        font-size: 8pt;
+        color: var(--text-soft);
+    }
+    .contact a { color: var(--text-soft); text-decoration: none; }
+    .contact .sep { color: var(--text-muted); }
+
+    .profile {
+        font-size: 8.6pt;
+        line-height: 1.34;
+        color: var(--text-soft);
+        margin-bottom: 7pt;
+        padding-left: 7pt;
+        border-left: 2pt solid var(--accent);
+    }
+    .profile strong { color: var(--text); font-weight: 600; }
+
+    .section { margin-bottom: 5pt; }
+
+    .section-title {
+        font-size: 7.6pt;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 3pt;
+        padding-bottom: 1pt;
+        border-bottom: 0.5pt solid var(--rule);
+    }
+
+    .entry { margin-bottom: 4pt; }
+
+    .entry-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10pt;
+        margin-bottom: 0.5pt;
+    }
+
+    .entry-title {
+        font-size: 9pt;
+        font-weight: 600;
+        color: var(--text);
+        line-height: 1.2;
+    }
+    .entry-title .role { color: var(--accent-dark); }
+
+    .entry-meta {
+        font-size: 7.6pt;
+        color: var(--text-muted);
+        font-weight: 500;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .entry-sub {
+        font-size: 8pt;
+        font-weight: 500;
+        color: var(--text-soft);
+        margin-bottom: 1pt;
+    }
+
+    .entry-list { list-style: none; padding-left: 0; }
+    .entry-list li {
+        position: relative;
+        padding-left: 9pt;
+        margin-bottom: 0.8pt;
+        color: var(--text-soft);
+        font-size: 8.2pt;
+        line-height: 1.28;
+    }
+    .entry-list li::before {
+        content: "–";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: 600;
+    }
+
+    .awards-list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 12pt;
+        row-gap: 1.8pt;
+    }
+    .awards-list li {
+        position: relative;
+        padding-left: 9pt;
+        font-size: 8pt;
+        line-height: 1.26;
+        color: var(--text-soft);
+    }
+    .awards-list li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 6.5pt;
+        top: 1.5pt;
+    }
+    .awards-list strong { color: var(--text); font-weight: 600; }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1.2fr;
+        gap: 12pt;
+        margin-top: 3pt;
+        padding-top: 5pt;
+        border-top: 0.6pt solid var(--rule);
+    }
+
+    .col-title {
+        font-size: 7.4pt;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 2pt;
+    }
+
+    .col-body {
+        font-size: 7.7pt;
+        line-height: 1.32;
+        color: var(--text-soft);
+    }
+    .col-body strong { color: var(--text); font-weight: 600; }
+
+    .lang-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 6pt;
+        margin-bottom: 1pt;
+    }
+    .lang-row .lang-name { color: var(--text); font-weight: 500; }
+    .lang-row .lang-lvl { color: var(--text-muted); font-size: 7.4pt; }
+
+    .skills-tags { font-size: 7.7pt; color: var(--text-soft); line-height: 1.32; }
+    .skills-tags .tag-group { margin-bottom: 1.8pt; }
+    .skills-tags .tag-group strong { color: var(--text); font-weight: 600; }
+
+    .communities li { margin-bottom: 1.2pt; list-style: none; }
+    .communities li strong { color: var(--text); }
+
+    a { color: var(--accent-dark); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+    <header class="header">
+        <div class="name-row">
+            <div class="name">PABLO <span class="last">CONTRERAS PÉREZ</span></div>
+            <div class="title">Business & Technology · Strategy-oriented Builder<br>Universidad de Granada</div>
+        </div>
+        <div class="contact">
+            <span>Granada, Spain</span>
+            <span class="sep">·</span>
+            <a href="mailto:contact.pablo.contreras@gmail.com">contact.pablo.contreras@gmail.com</a>
+            <span class="sep">·</span>
+            <a href="https://linkedin.com/in/pablocontrerasperez">linkedin.com/in/pablocontrerasperez</a>
+            <span class="sep">·</span>
+            <a href="https://pablo-contreras-portfolio.netlify.app">pablo-contreras-portfolio.netlify.app</a>
+        </div>
+    </header>
+
+    <div class="profile">
+        Double-Degree student in <strong>Computer Science Engineering + Business Administration (GIIADE)</strong> at Universidad de Granada, with distinctions in Algebra and Political Economy. Selected as <strong>Project Lead</strong> for an Erasmus+ Arqus Alliance consulting engagement on data-cloud KPIs for Spanish tourism agencies. Winner of the SIDN GenAI Arena Hackathon '26 (national press coverage). In-person attendee of Imperial College London Tech Week 2026.
+    </div>
+
+    <section class="section">
+        <div class="section-title">Education</div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div class="entry-title">Universidad de Granada (UGR)</div>
+                <div class="entry-meta">Sep 2025 – Jul 2030</div>
+            </div>
+            <div class="entry-sub">Double Degree — Computer Science Engineering + Business Administration (GIIADE)</div>
+            <ul class="entry-list">
+                <li><strong style="color:var(--text)">Matrícula de Honor</strong> (highest distinction) in Linear Algebra (9.8/10) and Political Economy (9.3/10).</li>
+                <li>Top mark of the promotion in Calculus and Programming Fundamentals.</li>
+                <li>Top 5% nationally in the Spanish University Entrance Exam (PAU).</li>
+                <li>Applied C++ coursework focused on banking security systems and fraud detection.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div class="entry-title">IES Padre Suárez, Granada</div>
+                <div class="entry-meta">Sep 2023 – Jun 2025</div>
+            </div>
+            <div class="entry-sub">Bachillerato — Technology & Science track  ·  GPA <strong style="color:var(--text)">9.1 / 10</strong></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-title">Experience</div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div class="entry-title"><span class="role">Project Lead</span> — BIP "Transforming Ideas into Businesses" (Consulting Engagement)</div>
+                <div class="entry-meta">Apr 2026 – May 2026</div>
+            </div>
+            <div class="entry-sub">Universidade do Minho · Arqus Alliance / Erasmus+ · Guimarães, Portugal · Fully funded</div>
+            <ul class="entry-list">
+                <li>Led an international team through a strategy consulting engagement building a <strong style="color:var(--text)">data-cloud KPI framework</strong> for Spanish tourism agencies — alongside peers from six European countries.</li>
+                <li>Owned the client-facing narrative, competitive analysis, and go-to-market strategy across the intensive presential phase in Portugal.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div class="entry-title"><span class="role">Co-founder & Technical Partner</span> — Andaluz.ia (GranadaTur 2035)</div>
+                <div class="entry-meta">Jul 2025 – Present</div>
+            </div>
+            <ul class="entry-list">
+                <li>Presented at the XIII UGR University Entrepreneurship Contest (€26,000 prize pool), Santander X Explorer, El Carmen incubator, and Breaker Impulsa.</li>
+                <li>Selected as the UGR representative for the BIP program of the Arqus Alliance in Portugal.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-head">
+                <div class="entry-title"><span class="role">Automation Consultant</span> — Canal Online (Autónomo / Freelance clients in Madrid, Valencia, Granada)</div>
+                <div class="entry-meta">2023 – May 2025</div>
+            </div>
+            <ul class="entry-list">
+                <li>Built multichannel content-automation infrastructure (GHL, Google Apps Script) and CRM integrations (HubSpot, Salesforce, Meta Ads) for national agencies.</li>
+                <li>Managed client relationships, project scoping, and delivery across three regions.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-title">Awards & International Exposure</div>
+        <ul class="awards-list">
+            <li><strong>Winner — SIDN GenAI Arena Hackathon '26</strong>. Estimated €12,000/month savings for participating firms. Featured in <em>IDEAL En Clase</em>.</li>
+            <li><strong>Imperial College London — Tech Week 2026</strong> (in-person).</li>
+            <li><strong>Arqus Thinkathon — Universität Leipzig 2026</strong>. Excellence scholarship.</li>
+            <li><strong>Nestlé International Skillathon 2025</strong>. Cross-country business challenge.</li>
+            <li><strong>Talent Land España, Málaga</strong>. Scholarship recipient 2025 · Attendee 2024.</li>
+            <li><strong>3rd Prize — Regional Ideathon (Recapacicla)</strong>. Andalusia Oriental phase.</li>
+            <li><strong>Talento Emprendedor UGR</strong>. 150-hour intensive program with industry mentors, 6 ECTS.</li>
+            <li><strong>Formative exchange in Paris (2022)</strong> at a prestigious selective school.</li>
+        </ul>
+    </section>
+
+    <div class="footer-grid">
+
+        <div>
+            <div class="col-title">Core Toolkit</div>
+            <div class="skills-tags">
+                <div class="tag-group"><strong>Business:</strong> Strategy · Lean Startup · Client Pitching · Marketing Analytics · CRM (HubSpot, Salesforce, Meta Ads) · Competitive Analysis</div>
+                <div class="tag-group"><strong>Data & Tech:</strong> Python · SQL · JavaScript · React · Data Analysis (NumPy · Pandas · scikit-learn) · Automation (Make.com · Google Apps Script)</div>
+                <div class="tag-group"><strong>Leadership:</strong> Team Leadership · International Collaboration · Public Speaking</div>
+            </div>
+        </div>
+
+        <div>
+            <div class="col-title">Languages</div>
+            <div class="col-body">
+                <div class="lang-row"><span class="lang-name">Spanish</span><span class="lang-lvl">Native</span></div>
+                <div class="lang-row"><span class="lang-name">English</span><span class="lang-lvl">C1 · TOEFL iBT 110/120</span></div>
+                <div class="lang-row"><span class="lang-name">French</span><span class="lang-lvl">Basic · Paris exchange</span></div>
+            </div>
+        </div>
+
+        <div>
+            <div class="col-title">Communities</div>
+            <ul class="col-body communities" style="padding:0;">
+                <li><strong>Ambassador</strong> — Arqus European University Alliance <span style="color:var(--text-muted); font-size:7.2pt;">(15 European universities)</span></li>
+                <li><strong>Google Developers Group</strong> Granada</li>
+                <li><strong>Granada Tech Organizers</strong></li>
+                <li><strong>UGR Emprendedora</strong> — entrepreneurship network</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
