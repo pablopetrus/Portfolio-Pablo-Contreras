@@ -24,6 +24,7 @@ export default defineConfig(({ mode }) => {
           input: {
             main: path.resolve(__dirname, 'index.html'),
             ig: path.resolve(__dirname, 'ig.html'),
+            lab: path.resolve(__dirname, 'lab.html'),
           }
         }
       }

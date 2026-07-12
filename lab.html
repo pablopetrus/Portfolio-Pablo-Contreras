@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FBFCFE">
+<meta name="description" content="A fictional B2B business, visualized as it's thought.">
+<title>Northline · Second brain</title>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><circle cx=%2216%22 cy=%2216%22 r=%2213%22 fill=%22none%22 stroke=%22%230A1F44%22 stroke-width=%221.4%22/><circle cx=%2216%22 cy=%2216%22 r=%224%22 fill=%22%232F6FED%22/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --paper: #FBFCFE;
+        --surface: #F3F6FB;
+        --navy: #0A1F44;
+        --accent: #2F6FED;
+        --sky: #A9CBFF;
+        --gray: #8A93A3;
+        --hairline: #DCE3EE;
+        --coral: #E9B0A2;
+        --white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+        height: 100%;
+        overflow: hidden;
+        background: var(--paper);
+        color: var(--navy);
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.4;
+        -webkit-font-smoothing: antialiased;
+        overscroll-behavior: none;
+    }
+
+    body {
+        position: relative;
+    }
+
+    /* ======= AMBIENT ORB (background) ======= */
+    .orb {
+        position: fixed;
+        top: -20%;
+        right: -10%;
+        width: 60vmin;
+        height: 60vmin;
+        background: radial-gradient(circle at 30% 30%, rgba(47, 111, 237, 0.10), rgba(47, 111, 237, 0) 62%);
+        filter: blur(30px);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    /* ======= HEADER ======= */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        padding: 14px 20px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        pointer-events: none;
+    }
+
+    .brand {
+        font-family: "Fraunces", serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 15px;
+        color: var(--navy);
+        letter-spacing: -0.005em;
+        pointer-events: auto;
+    }
+
+    .brand::after {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--accent);
+        margin-left: 6px;
+        transform: translateY(-2px);
+    }
+
+    .subline {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 9.5px;
+        color: var(--gray);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        text-align: right;
+        line-height: 1.4;
+        max-width: 210px;
+        pointer-events: auto;
+    }
+
+    /* ======= LEGEND ======= */
+    .legend {
+        position: fixed;
+        top: 54px;
+        left: 20px;
+        z-index: 15;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 6px;
+        max-width: calc(100vw - 40px);
+    }
+
+    .chip {
+        background: var(--surface);
+        border: 0.5px solid var(--hairline);
+        color: var(--navy);
+        font-size: 10px;
+        font-weight: 500;
+        padding: 4px 9px 4px 7px;
+        border-radius: 999px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: opacity 0.18s ease, background 0.18s ease;
+        user-select: none;
+        letter-spacing: 0.01em;
+    }
+
+    .chip .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .chip.kpi .dot        { background: var(--accent); }
+    .chip.person .dot     { background: var(--navy); }
+    .chip.asset .dot      { background: var(--sky); }
+    .chip.doc .dot        { background: var(--white); border: 0.5px solid var(--gray); }
+    .chip.project .dot    { background: var(--coral); }
+    .chip.decision .dot   { background: var(--gray); transform: rotate(45deg); border-radius: 1px; }
+
+    .chip.off {
+        opacity: 0.35;
+        background: transparent;
+    }
+
+    /* ======= GRAPH ======= */
+    #graph {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 5;
+        touch-action: none;
+    }
+
+    #graph text {
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .node-group { cursor: pointer; }
+    .node-group.dim { opacity: 0.15; }
+    .node-group.dim text { opacity: 0.4; }
+    .node-group.active .node-shape {
+        stroke-width: 1.4px !important;
+    }
+
+    .edge {
+        stroke: var(--hairline);
+        stroke-width: 0.7;
+        fill: none;
+        opacity: 0.75;
+        transition: opacity 0.22s ease, stroke 0.22s ease, stroke-width 0.22s ease;
+    }
+    .edge.dim { opacity: 0.08; }
+    .edge.hi  { stroke: var(--accent); stroke-width: 1.1; opacity: 1; }
+
+    .edge-dashed { stroke-dasharray: 3 3; }
+
+    /* Node text */
+    .node-label {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 9.5px;
+        fill: var(--navy);
+        text-anchor: middle;
+    }
+    .node-label.small { font-size: 8.5px; }
+    .node-label.value {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 500;
+        fill: var(--white);
+        font-size: 10.5px;
+    }
+    .node-label.person-init {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        fill: var(--white);
+        font-size: 9.5px;
+        letter-spacing: 0.02em;
+    }
+    .node-label.caption {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 8.5px;
+        fill: var(--gray);
+        text-anchor: middle;
+    }
+
+    /* ======= PANEL ======= */
+    .panel-scrim {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 31, 68, 0);
+        pointer-events: none;
+        transition: background 0.28s ease;
+        z-index: 45;
+    }
+    .panel-scrim.open {
+        background: rgba(10, 31, 68, 0.06);
+        pointer-events: auto;
+    }
+
+    .panel {
+        position: fixed;
+        z-index: 50;
+        background: var(--paper);
+        border-left: 0.5px solid var(--hairline);
+        transition: transform 0.36s cubic-bezier(0.22, 0.68, 0.28, 1);
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Mobile: bottom sheet */
+    @media (max-width: 768px) {
+        .panel {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: auto;
+            max-height: 78vh;
+            border-top: 0.5px solid var(--hairline);
+            border-left: none;
+            border-radius: 20px 20px 0 0;
+            transform: translateY(100%);
+            box-shadow: 0 -10px 40px rgba(10, 31, 68, 0.05);
+        }
+        .panel.open { transform: translateY(0); }
+        .panel::before {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 36px;
+            height: 4px;
+            border-radius: 999px;
+            background: var(--hairline);
+        }
+    }
+
+    /* Desktop: right panel */
+    @media (min-width: 769px) {
+        .panel {
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 420px;
+            transform: translateX(100%);
+        }
+        .panel.open { transform: translateX(0); }
+    }
+
+    .panel-inner {
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: 28px 26px 32px;
+        flex: 1;
+    }
+
+    @media (max-width: 768px) {
+        .panel-inner { padding: 26px 22px 30px; }
+    }
+
+    .panel-cat {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 9.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gray);
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .panel-cat .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+    }
+
+    .panel-name {
+        font-family: "Fraunces", serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 1.02;
+        color: var(--navy);
+        letter-spacing: -0.02em;
+        margin-bottom: 20px;
+    }
+
+    .panel-close {
+        position: absolute;
+        top: 16px;
+        right: 18px;
+        width: 30px;
+        height: 30px;
+        border: none;
+        background: transparent;
+        color: var(--gray);
+        cursor: pointer;
+        font-size: 20px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+    }
+    .panel-close:hover { background: var(--surface); color: var(--navy); }
+
+    .kv {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 8px 0;
+        border-bottom: 0.5px solid var(--hairline);
+        font-size: 12.5px;
+    }
+    .kv:last-child { border-bottom: none; }
+    .kv .k { color: var(--gray); font-weight: 500; }
+    .kv .v { color: var(--navy); font-weight: 500; font-family: "JetBrains Mono", monospace; }
+
+    .big-value {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 500;
+        font-size: 34px;
+        letter-spacing: -0.02em;
+        color: var(--navy);
+        margin: 4px 0 2px;
+    }
+
+    .trend {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--gray);
+        margin-bottom: 20px;
+    }
+    .trend.up { color: #1a8859; }
+    .trend.down { color: #c1471a; }
+    .trend::before {
+        display: inline-block;
+        font-family: "JetBrains Mono", monospace;
+    }
+    .trend.up::before   { content: "▲"; font-size: 8px; }
+    .trend.down::before { content: "▼"; font-size: 8px; }
+    .trend.flat::before { content: "◆"; font-size: 8px; color: var(--gray); }
+
+    .caption {
+        font-size: 12.5px;
+        color: var(--gray);
+        line-height: 1.55;
+        margin-bottom: 20px;
+    }
+
+    .sparkline {
+        width: 100%;
+        height: 44px;
+        margin: 6px 0 18px;
+    }
+
+    .section-title {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 9.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gray);
+        margin: 18px 0 8px;
+    }
+
+    .connections {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+    }
+    .conn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 4px;
+        border-bottom: 0.5px solid var(--hairline);
+        cursor: pointer;
+        transition: background 0.14s ease;
+        border-radius: 4px;
+    }
+    .conn:hover { background: var(--surface); }
+    .conn .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .conn .dot.kpi      { background: var(--accent); }
+    .conn .dot.person   { background: var(--navy); }
+    .conn .dot.asset    { background: var(--sky); }
+    .conn .dot.doc      { background: var(--white); border: 0.5px solid var(--gray); }
+    .conn .dot.project  { background: var(--coral); }
+    .conn .dot.decision { background: var(--gray); transform: rotate(45deg); border-radius: 1px; }
+    .conn .conn-name { font-size: 12.5px; color: var(--navy); font-weight: 400; flex: 1; }
+    .conn .conn-cat  { font-size: 9.5px; color: var(--gray); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; }
+
+    .asset-thumb {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: linear-gradient(135deg, var(--sky), var(--accent));
+        border-radius: 10px;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .asset-thumb::after {
+        content: "";
+        position: absolute;
+        left: calc(50% - 12px);
+        top: calc(50% - 14px);
+        width: 0;
+        height: 0;
+        border-left: 22px solid rgba(255,255,255,0.92);
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+    }
+    .asset-thumb.no-play::after { display: none; }
+
+    .doc-preview {
+        background: var(--white);
+        border: 0.5px solid var(--hairline);
+        border-radius: 8px;
+        padding: 16px 18px;
+        font-family: "Fraunces", serif;
+        font-size: 13px;
+        line-height: 1.55;
+        color: var(--gray);
+        font-style: italic;
+        margin-bottom: 14px;
+    }
+
+    .status-pill {
+        display: inline-block;
+        padding: 3px 9px;
+        border-radius: 999px;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+    }
+    .status-pill.planned    { background: var(--surface); color: var(--gray); }
+    .status-pill.progress   { background: rgba(47,111,237,0.10); color: var(--accent); }
+    .status-pill.shipped    { background: rgba(26,136,89,0.10); color: #1a8859; }
+
+    /* ======= FOOTER ======= */
+    footer {
+        position: fixed;
+        bottom: 10px;
+        left: 20px;
+        z-index: 10;
+        font-size: 10px;
+        color: var(--gray);
+        letter-spacing: 0.06em;
+        opacity: 0.7;
+        pointer-events: auto;
+    }
+    footer a {
+        color: var(--gray);
+        text-decoration: none;
+    }
+    footer a:hover { color: var(--navy); }
+
+    /* ======= CONTROLS (bottom-right) ======= */
+    .controls {
+        position: fixed;
+        bottom: 14px;
+        right: 16px;
+        z-index: 15;
+        display: flex;
+        gap: 6px;
+    }
+    .btn-ctl {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        background: var(--surface);
+        border: 0.5px solid var(--hairline);
+        color: var(--navy);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        font-weight: 500;
+        transition: background 0.14s ease;
+        user-select: none;
+    }
+    .btn-ctl:hover { background: var(--white); }
+
+    /* ======= ENTRANCE ======= */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .fade-in { animation: fadeIn 0.7s ease 0.2s both; }
+
+    /* iOS safe areas */
+    @supports (padding: env(safe-area-inset-bottom)) {
+        footer { bottom: calc(10px + env(safe-area-inset-bottom)); }
+        .controls { bottom: calc(14px + env(safe-area-inset-bottom)); }
+        .panel { padding-bottom: env(safe-area-inset-bottom); }
+    }
+</style>
+</head>
+<body>
+
+<div class="orb"></div>
+
+<header class="fade-in">
+    <div class="brand">Northline · <em>second brain</em></div>
+    <div class="subline">Demo · a fictional business,<br>visualized as it's thought</div>
+</header>
+
+<div class="legend fade-in" id="legend"></div>
+
+<svg id="graph"></svg>
+
+<div class="controls fade-in">
+    <button class="btn-ctl" id="btn-fit" title="Fit to screen">◇</button>
+    <button class="btn-ctl" id="btn-reset" title="Reset">↺</button>
+</div>
+
+<footer class="fade-in">
+    built by <a href="/">pablo contreras</a> · pablo-contreras-portfolio.netlify.app
+</footer>
+
+<div class="panel-scrim" id="scrim"></div>
+<aside class="panel" id="panel" aria-hidden="true">
+    <button class="panel-close" id="btn-close" aria-label="Close">✕</button>
+    <div class="panel-inner" id="panel-inner"></div>
+</aside>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+/* =========================================================
+   NORTHLINE — fictional B2B SaaS dataset
+   ========================================================= */
+const DATA = {
+    business: {
+        name: "Northline",
+        stage: "Seed (post-launch)",
+        mrr: 45200,
+        arr: 542400,
+        customers: 212,
+        team: 6,
+    },
+    nodes: [
+        // ---------- KPIs ----------
+        { id: "k-mrr",    cat: "kpi", name: "MRR",             value: "$45.2k",  trend: "+12%", trendDir: "up",   size: 34, desc: "Monthly Recurring Revenue — normalized subscription income per month.", sparkline: [38,39,40,41,41,42,43,42,43,44,45,45.2] },
+        { id: "k-arr",    cat: "kpi", name: "ARR",             value: "$542k",   trend: "+11%", trendDir: "up",   size: 30, desc: "Annual Recurring Revenue — projection of MRR × 12.", sparkline: [456,468,480,492,492,504,516,504,516,528,540,542] },
+        { id: "k-churn",  cat: "kpi", name: "Churn",           value: "3.2%",    trend: "−0.4pt", trendDir: "up", size: 26, desc: "Percentage of customers cancelling per month.", sparkline: [4.1,4.0,3.9,3.8,3.7,3.6,3.5,3.4,3.4,3.3,3.3,3.2] },
+        { id: "k-cac",    cat: "kpi", name: "CAC",             value: "$180",    trend: "−8%",  trendDir: "up",   size: 25, desc: "Customer Acquisition Cost — spend to close one paying customer.", sparkline: [220,215,208,205,200,196,192,190,188,186,183,180] },
+        { id: "k-ltv",    cat: "kpi", name: "LTV",             value: "$2.4k",   trend: "+6%",  trendDir: "up",   size: 25, desc: "Lifetime Value — expected total revenue per customer.", sparkline: [2000,2050,2100,2150,2180,2210,2240,2270,2300,2340,2370,2400] },
+        { id: "k-nps",    cat: "kpi", name: "NPS",             value: "42",      trend: "+3",   trendDir: "up",   size: 20, desc: "Net Promoter Score — customer promotion likelihood.", sparkline: [30,31,33,34,36,37,38,39,40,41,41,42] },
+        { id: "k-runway", cat: "kpi", name: "Runway",          value: "14 mo",   trend: "flat", trendDir: "flat", size: 22, desc: "Months of operation left at current burn rate.", sparkline: [16,16,15.5,15,15,14.5,14.5,14,14,14,14,14] },
+        { id: "k-burn",   cat: "kpi", name: "Burn",            value: "$32k/mo", trend: "+2%",  trendDir: "down", size: 20, desc: "Monthly net cash consumption.", sparkline: [29,29,30,30,30,31,31,31,32,32,32,32] },
+        { id: "k-d30",    cat: "kpi", name: "D30 Retention",   value: "68%",     trend: "+4pt", trendDir: "up",   size: 22, desc: "Percentage of users still active 30 days after signup.", sparkline: [58,59,61,62,63,64,64,65,66,67,67,68] },
+        { id: "k-au",     cat: "kpi", name: "Active Users",    value: "1,247",   trend: "+15%", trendDir: "up",   size: 24, desc: "Weekly active users across paid workspaces.", sparkline: [880,910,940,970,1000,1030,1060,1090,1120,1170,1210,1247] },
+
+        // ---------- People ----------
+        { id: "p-alex",   cat: "person", name: "Alex Morgan",   role: "CEO",              initials: "AM", size: 22, owns: ["Series A prep", "Company memo Q1"] },
+        { id: "p-chloe",  cat: "person", name: "Chloé Bernard", role: "CTO",              initials: "CB", size: 22, owns: ["Feature X launch", "Onboarding SOP"] },
+        { id: "p-marcus", cat: "person", name: "Marcus Reid",   role: "Head of Growth",   initials: "MR", size: 22, owns: ["Content engine", "ICP definition", "Sales playbook"] },
+        { id: "p-sara",   cat: "person", name: "Sara Patel",    role: "Sr. Engineer",     initials: "SP", size: 20, owns: ["Refactor onboarding"] },
+        { id: "p-diego",  cat: "person", name: "Diego Rossi",   role: "Engineer",         initials: "DR", size: 20, owns: ["API v2 migration"] },
+        { id: "p-yuki",   cat: "person", name: "Yuki Tanaka",   role: "Product Designer", initials: "YT", size: 20, owns: ["Brand style guide v2"] },
+
+        // ---------- Assets ----------
+        { id: "a-vid1",   cat: "asset", name: "Onboarding v3 launch", assetType: "video",    metrics: { views: "18.2k", leads: 42, conv: "3.2%" } },
+        { id: "a-post1",  cat: "asset", name: "Q1 recap",             assetType: "post",     metrics: { views: "4.1k",  shares: 22, reactions: 187 } },
+        { id: "a-camp1",  cat: "asset", name: "Q2 outbound push",     assetType: "campaign", metrics: { replies: 128, meetings: 34, closed: 8 } },
+        { id: "a-land1",  cat: "asset", name: "/pricing rebrand",     assetType: "landing",  metrics: { visits: "12.4k", conv: "4.8%", signups: 596 } },
+        { id: "a-vid2",   cat: "asset", name: "Customer story: TechCo", assetType: "video",  metrics: { views: "9.4k", leads: 27, conv: "2.1%" } },
+        { id: "a-post2",  cat: "asset", name: "Series A story",       assetType: "post",     metrics: { views: "11.8k", shares: 62, reactions: 412 } },
+        { id: "a-email1", cat: "asset", name: "Winter re-activation", assetType: "email",    metrics: { opens: "38%", clicks: "9%", recovered: 41 } },
+        { id: "a-ad1",    cat: "asset", name: "LinkedIn TOFU",        assetType: "ad",       metrics: { impressions: "84k", ctr: "2.1%", leads: 176 } },
+
+        // ---------- Documents ----------
+        { id: "d-brand",    cat: "doc", name: "Brand style guide v2", owner: "YT", updated: "Jun 2026", snippet: "Northline reads calm, precise, and confident. Never loud. Type: Fraunces italic for voice, Inter for information. Blue #2F6FED is the single accent — everything else is paper and ink." },
+        { id: "d-icp",      cat: "doc", name: "ICP definition",       owner: "MR", updated: "May 2026", snippet: "Ops & data leads at Series-A to Series-B B2B SaaS companies (150-800 employees), navigating the transition from spreadsheets to systems, with an existing but siloed data warehouse." },
+        { id: "d-memoq1",   cat: "doc", name: "Company memo Q1",      owner: "AM", updated: "Feb 2026", snippet: "The bet for Q1 is to trade breadth for depth. Fewer campaigns, more repetition. Fewer features, more polish. Every hire should reduce dependency on Alex or Chloé within 90 days." },
+        { id: "d-playbook", cat: "doc", name: "Sales playbook",       owner: "MR", updated: "Apr 2026", snippet: "Outbound must lead with a diagnosis, not a demo. Discovery calls end with a written recap and one concrete decision the prospect owns before the follow-up." },
+        { id: "d-sop",      cat: "doc", name: "Onboarding SOP",       owner: "CB", updated: "Jun 2026", snippet: "First value in under 8 minutes. Signup → first useful chart within one session. Any friction beyond that is triaged and logged in the weekly onboarding review." },
+
+        // ---------- Projects ----------
+        { id: "pr-featx",   cat: "project", name: "Feature X launch",     status: "progress", owner: "CB", deadline: "Aug 2026", impact: "D30 Retention, NPS, Active Users" },
+        { id: "pr-onb",     cat: "project", name: "Refactor onboarding",  status: "shipped",  owner: "SP", deadline: "Shipped May 2026", impact: "D30 Retention, Churn" },
+        { id: "pr-seriesa", cat: "project", name: "Series A prep",        status: "progress", owner: "AM", deadline: "Q4 2026", impact: "Runway, Burn" },
+        { id: "pr-content", cat: "project", name: "Content engine",       status: "progress", owner: "MR", deadline: "Ongoing", impact: "MRR, CAC, Active Users" },
+        { id: "pr-apiv2",   cat: "project", name: "API v2 migration",     status: "planned",  owner: "DR", deadline: "Q3 2026", impact: "NPS, dev velocity" },
+
+        // ---------- Decisions ----------
+        { id: "de-pivot",   cat: "decision", name: "Pivot pricing",         date: "Sep 2025", ctx: "Moved from seat-based to hybrid usage tier. Traded slower ramp for higher expansion revenue.", impact: "MRR, CAC, LTV" },
+        { id: "de-hire",    cat: "decision", name: "Hire senior BE",        date: "Nov 2025", ctx: "Sara Patel joined to unblock the API v2 migration and de-risk the platform layer.", impact: "API v2, Burn" },
+        { id: "de-kill",    cat: "decision", name: "Kill feature Y",        date: "Jan 2026", ctx: "Low usage (8% MAU), high maintenance load. Deprecated with a 60-day window for affected accounts.", impact: "NPS, dev focus" },
+        { id: "de-weekly",  cat: "decision", name: "Weekly ship cadence",   date: "Feb 2026", ctx: "From bi-weekly to weekly deploys. Smaller PRs, tighter feedback loop, faster iteration on onboarding.", impact: "D30, NPS" },
+        { id: "de-content", cat: "decision", name: "Launch content engine", date: "Apr 2026", ctx: "Own the SEO/social pipeline instead of relying on paid. Higher upfront, lower CAC long term.", impact: "MRR, CAC" },
+        { id: "de-seriesa", cat: "decision", name: "Start Series A talks",  date: "Jun 2026", ctx: "14mo of runway, MRR compounding steadily, NPS trending up. Optimal window to raise from strength, not need.", impact: "Runway" },
+    ],
+    // ---------- Edges (semantics matter) ----------
+    edges: [
+        // Personas → Proyectos (own)
+        { source: "p-alex",   target: "pr-seriesa", kind: "own" },
+        { source: "p-chloe",  target: "pr-featx",   kind: "own" },
+        { source: "p-chloe",  target: "pr-apiv2",   kind: "own" },
+        { source: "p-marcus", target: "pr-content", kind: "own" },
+        { source: "p-sara",   target: "pr-onb",     kind: "own" },
+        { source: "p-diego",  target: "pr-apiv2",   kind: "collab" },
+        { source: "p-yuki",   target: "pr-featx",   kind: "collab" },
+
+        // Personas → Documentos (maintain)
+        { source: "p-alex",   target: "d-memoq1",   kind: "own" },
+        { source: "p-yuki",   target: "d-brand",    kind: "own" },
+        { source: "p-marcus", target: "d-icp",      kind: "own" },
+        { source: "p-marcus", target: "d-playbook", kind: "own" },
+        { source: "p-chloe",  target: "d-sop",      kind: "own" },
+
+        // Proyectos → KPIs (impact)
+        { source: "pr-featx",   target: "k-d30",  kind: "impact" },
+        { source: "pr-featx",   target: "k-nps",  kind: "impact" },
+        { source: "pr-onb",     target: "k-d30",  kind: "impact" },
+        { source: "pr-onb",     target: "k-churn",kind: "impact" },
+        { source: "pr-seriesa", target: "k-runway",kind: "impact" },
+        { source: "pr-content", target: "k-mrr",  kind: "impact" },
+        { source: "pr-content", target: "k-cac",  kind: "impact" },
+        { source: "pr-content", target: "k-au",   kind: "impact" },
+        { source: "pr-apiv2",   target: "k-nps",  kind: "impact" },
+
+        // Documentos → Assets (govern) — dashed
+        { source: "d-brand",    target: "a-vid1",   kind: "govern" },
+        { source: "d-brand",    target: "a-vid2",   kind: "govern" },
+        { source: "d-brand",    target: "a-land1",  kind: "govern" },
+        { source: "d-brand",    target: "a-ad1",    kind: "govern" },
+        { source: "d-brand",    target: "a-post1",  kind: "govern" },
+        { source: "d-brand",    target: "a-post2",  kind: "govern" },
+        { source: "d-icp",      target: "a-camp1",  kind: "govern" },
+        { source: "d-icp",      target: "a-email1", kind: "govern" },
+        { source: "d-icp",      target: "a-ad1",    kind: "govern" },
+        { source: "d-playbook", target: "a-camp1",  kind: "govern" },
+        { source: "d-sop",      target: "a-vid1",   kind: "govern" },
+
+        // Assets → KPIs (moved)
+        { source: "a-vid1",   target: "k-au",   kind: "move" },
+        { source: "a-vid1",   target: "k-d30",  kind: "move" },
+        { source: "a-camp1",  target: "k-mrr",  kind: "move" },
+        { source: "a-vid2",   target: "k-mrr",  kind: "move" },
+        { source: "a-ad1",    target: "k-cac",  kind: "move" },
+        { source: "a-land1",  target: "k-cac",  kind: "move" },
+        { source: "a-post2",  target: "k-nps",  kind: "move" },
+        { source: "a-email1", target: "k-churn",kind: "move" },
+
+        // Decisiones → KPIs (change)
+        { source: "de-pivot",   target: "k-mrr",   kind: "change" },
+        { source: "de-pivot",   target: "k-cac",   kind: "change" },
+        { source: "de-pivot",   target: "k-ltv",   kind: "change" },
+        { source: "de-kill",    target: "k-nps",   kind: "change" },
+        { source: "de-hire",    target: "k-burn",  kind: "change" },
+        { source: "de-weekly",  target: "k-nps",   kind: "change" },
+        { source: "de-weekly",  target: "k-d30",   kind: "change" },
+        { source: "de-content", target: "k-mrr",   kind: "change" },
+        { source: "de-content", target: "k-cac",   kind: "change" },
+        { source: "de-seriesa", target: "k-runway",kind: "change" },
+
+        // Decisiones → Proyectos (trigger)
+        { source: "de-content", target: "pr-content", kind: "trigger" },
+        { source: "de-hire",    target: "pr-apiv2",   kind: "trigger" },
+        { source: "de-seriesa", target: "pr-seriesa", kind: "trigger" },
+
+        // KPI → KPI (dependency)
+        { source: "k-mrr",   target: "k-arr",    kind: "derive" },
+        { source: "k-churn", target: "k-ltv",    kind: "derive" },
+        { source: "k-burn",  target: "k-runway", kind: "derive" },
+        { source: "k-d30",   target: "k-churn",  kind: "derive" },
+    ],
+};
+
+/* =========================================================
+   RENDER
+   ========================================================= */
+const CATS = {
+    kpi:      { label: "KPIs",       color: "#2F6FED" },
+    person:   { label: "People",     color: "#0A1F44" },
+    asset:    { label: "Content",    color: "#A9CBFF" },
+    doc:      { label: "Documents",  color: "#FFFFFF" },
+    project:  { label: "Projects",   color: "#E9B0A2" },
+    decision: { label: "Decisions",  color: "#8A93A3" },
+};
+
+const nodeById = new Map(DATA.nodes.map(n => [n.id, n]));
+
+// Build adjacency
+const adj = new Map(DATA.nodes.map(n => [n.id, new Set()]));
+DATA.edges.forEach(e => {
+    adj.get(typeof e.source === "string" ? e.source : e.source.id).add(typeof e.target === "string" ? e.target : e.target.id);
+    adj.get(typeof e.target === "string" ? e.target : e.target.id).add(typeof e.source === "string" ? e.source : e.source.id);
+});
+
+const svg = d3.select("#graph");
+const gRoot = svg.append("g").attr("class", "root");
+const gEdges = gRoot.append("g").attr("class", "edges");
+const gNodes = gRoot.append("g").attr("class", "nodes");
+
+let W = window.innerWidth, H = window.innerHeight;
+svg.attr("viewBox", `0 0 ${W} ${H}`);
+
+// Zoom & pan
+const zoomBehavior = d3.zoom()
+    .scaleExtent([0.4, 2.6])
+    .filter(event => !event.target.closest("g.node-group"))
+    .on("zoom", ev => gRoot.attr("transform", ev.transform));
+svg.call(zoomBehavior);
+
+// Simulation
+const sim = d3.forceSimulation(DATA.nodes)
+    .force("link", d3.forceLink(DATA.edges).id(d => d.id).distance(e => {
+        if (e.kind === "derive") return 55;
+        if (e.kind === "impact" || e.kind === "change") return 85;
+        return 70;
+    }).strength(0.65))
+    .force("charge", d3.forceManyBody().strength(-260))
+    .force("center", d3.forceCenter(W / 2, H / 2))
+    .force("collision", d3.forceCollide().radius(d => (d.size || 20) + 6))
+    .alphaDecay(0.028);
+
+// EDGES
+const edgeSel = gEdges.selectAll("path")
+    .data(DATA.edges)
+    .join("path")
+    .attr("class", d => "edge" + (d.kind === "govern" ? " edge-dashed" : ""));
+
+// NODES
+const nodeSel = gNodes.selectAll("g.node-group")
+    .data(DATA.nodes)
+    .join("g")
+    .attr("class", d => `node-group cat-${d.cat}`)
+    .on("mouseenter", (ev, d) => highlight(d.id))
+    .on("mouseleave", () => clearHighlight())
+    .on("click", (ev, d) => openPanel(d.id))
+    .call(d3.drag()
+        .on("start", (ev, d) => { if (!ev.active) sim.alphaTarget(0.25).restart(); d.fx = d.x; d.fy = d.y; })
+        .on("drag",  (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
+        .on("end",   (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; })
+    );
+
+// Draw shapes per category
+nodeSel.each(function(d) {
+    const g = d3.select(this);
+    if (d.cat === "kpi") {
+        g.append("circle")
+            .attr("class", "node-shape")
+            .attr("r", d.size)
+            .attr("fill", "#2F6FED")
+            .attr("stroke", "#0A1F44")
+            .attr("stroke-width", 0.7);
+        g.append("text")
+            .attr("class", "node-label value")
+            .attr("dy", -1)
+            .text(d.value);
+        g.append("text")
+            .attr("class", "node-label caption")
+            .attr("dy", d.size + 12)
+            .attr("fill", "#0A1F44")
+            .attr("font-weight", 500)
+            .text(d.name);
+    } else if (d.cat === "person") {
+        g.append("circle")
+            .attr("class", "node-shape")
+            .attr("r", d.size)
+            .attr("fill", "#0A1F44")
+            .attr("stroke", "#0A1F44")
+            .attr("stroke-width", 0.7);
+        g.append("text")
+            .attr("class", "node-label person-init")
+            .attr("dy", 3.2)
+            .text(d.initials);
+        g.append("text")
+            .attr("class", "node-label caption")
+            .attr("dy", d.size + 12)
+            .text(d.role);
+    } else if (d.cat === "asset") {
+        const w = 62, h = 34;
+        g.append("rect")
+            .attr("class", "node-shape")
+            .attr("x", -w/2).attr("y", -h/2)
+            .attr("width", w).attr("height", h)
+            .attr("rx", 8)
+            .attr("fill", "#A9CBFF")
+            .attr("stroke", "#2F6FED")
+            .attr("stroke-width", 0.5)
+            .attr("opacity", 0.85);
+        g.append("text")
+            .attr("class", "node-label small")
+            .attr("dy", 3.2)
+            .attr("fill", "#0A1F44")
+            .text(truncate(d.name, 12));
+    } else if (d.cat === "doc") {
+        const w = 60, h = 34;
+        // rectangle with folded corner
+        const corner = 8;
+        const path = `
+            M ${-w/2} ${-h/2}
+            L ${w/2 - corner} ${-h/2}
+            L ${w/2} ${-h/2 + corner}
+            L ${w/2} ${h/2}
+            L ${-w/2} ${h/2} Z
+            M ${w/2 - corner} ${-h/2}
+            L ${w/2 - corner} ${-h/2 + corner}
+            L ${w/2} ${-h/2 + corner}
+        `;
+        g.append("path")
+            .attr("class", "node-shape")
+            .attr("d", path)
+            .attr("fill", "#FFFFFF")
+            .attr("stroke", "#8A93A3")
+            .attr("stroke-width", 0.6);
+        g.append("text")
+            .attr("class", "node-label small")
+            .attr("dy", 3.2)
+            .attr("fill", "#0A1F44")
+            .text(truncate(d.name, 11));
+    } else if (d.cat === "project") {
+        const r = 26;
+        // hexagon
+        const pts = d3.range(6).map(i => {
+            const a = Math.PI / 3 * i - Math.PI / 2;
+            return `${Math.cos(a) * r},${Math.sin(a) * r}`;
+        }).join(" ");
+        g.append("polygon")
+            .attr("class", "node-shape")
+            .attr("points", pts)
+            .attr("fill", "#E9B0A2")
+            .attr("fill-opacity", 0.55)
+            .attr("stroke", "#C97964")
+            .attr("stroke-width", 0.6);
+        g.append("text")
+            .attr("class", "node-label small")
+            .attr("dy", 3.2)
+            .attr("fill", "#0A1F44")
+            .text(truncate(d.name, 10));
+    } else if (d.cat === "decision") {
+        const r = 15;
+        // diamond
+        g.append("polygon")
+            .attr("class", "node-shape")
+            .attr("points", `0,${-r} ${r},0 0,${r} ${-r},0`)
+            .attr("fill", "#8A93A3")
+            .attr("fill-opacity", 0.35)
+            .attr("stroke", "#8A93A3")
+            .attr("stroke-width", 0.7);
+        g.append("text")
+            .attr("class", "node-label caption")
+            .attr("dy", r + 12)
+            .attr("fill", "#0A1F44")
+            .text(truncate(d.name, 14));
+    }
+});
+
+// Tick handler
+sim.on("tick", () => {
+    edgeSel.attr("d", d => {
+        const s = d.source, t = d.target;
+        const dx = t.x - s.x, dy = t.y - s.y;
+        const dr = Math.sqrt(dx * dx + dy * dy) * 3.4;
+        return `M${s.x},${s.y} A${dr},${dr} 0 0,1 ${t.x},${t.y}`;
+    });
+    nodeSel.attr("transform", d => `translate(${d.x},${d.y})`);
+});
+
+// Initial zoom to fit after some ticks
+setTimeout(fitToScreen, 1300);
+
+/* =========================================================
+   HIGHLIGHTING
+   ========================================================= */
+function highlight(id) {
+    const neighbors = adj.get(id);
+    nodeSel.classed("dim", d => d.id !== id && !neighbors.has(d.id));
+    nodeSel.classed("active", d => d.id === id);
+    edgeSel.classed("dim", e => (e.source.id !== id && e.target.id !== id));
+    edgeSel.classed("hi",  e => (e.source.id === id || e.target.id === id));
+}
+function clearHighlight() {
+    nodeSel.classed("dim", false).classed("active", false);
+    edgeSel.classed("dim", false).classed("hi", false);
+}
+
+/* =========================================================
+   LEGEND / FILTERS
+   ========================================================= */
+const legend = document.getElementById("legend");
+const hiddenCats = new Set();
+Object.entries(CATS).forEach(([k, v]) => {
+    const chip = document.createElement("div");
+    chip.className = `chip ${k}`;
+    chip.innerHTML = `<span class="dot"></span>${v.label}`;
+    chip.addEventListener("click", () => {
+        if (hiddenCats.has(k)) { hiddenCats.delete(k); chip.classList.remove("off"); }
+        else { hiddenCats.add(k); chip.classList.add("off"); }
+        nodeSel.style("display", d => hiddenCats.has(d.cat) ? "none" : null);
+        edgeSel.style("display", e =>
+            hiddenCats.has(e.source.cat) || hiddenCats.has(e.target.cat) ? "none" : null);
+    });
+    legend.appendChild(chip);
+});
+
+/* =========================================================
+   PANEL
+   ========================================================= */
+const panel = document.getElementById("panel");
+const scrim = document.getElementById("scrim");
+const panelInner = document.getElementById("panel-inner");
+const btnClose = document.getElementById("btn-close");
+
+btnClose.addEventListener("click", closePanel);
+scrim.addEventListener("click", closePanel);
+
+function openPanel(id) {
+    const d = nodeById.get(id);
+    panelInner.innerHTML = renderPanel(d);
+    // Wire up connection clicks
+    panelInner.querySelectorAll("[data-conn]").forEach(el => {
+        el.addEventListener("click", () => openPanel(el.getAttribute("data-conn")));
+    });
+    panel.classList.add("open");
+    panel.setAttribute("aria-hidden", "false");
+    scrim.classList.add("open");
+    highlight(id);
+}
+function closePanel() {
+    panel.classList.remove("open");
+    panel.setAttribute("aria-hidden", "true");
+    scrim.classList.remove("open");
+    clearHighlight();
+}
+
+function renderPanel(d) {
+    const cat = CATS[d.cat];
+    const dotStyle = d.cat === "doc"
+        ? `background:#fff; border: 0.5px solid var(--gray);`
+        : d.cat === "decision"
+            ? `background:${cat.color}; transform:rotate(45deg); border-radius: 1px;`
+            : `background:${cat.color};`;
+
+    const catRow = `
+        <div class="panel-cat">
+            <span class="dot" style="${dotStyle}"></span>
+            <span>${cat.label} · ${d.id}</span>
+        </div>
+        <h1 class="panel-name">${d.name}</h1>
+    `;
+
+    let body = "";
+    if (d.cat === "kpi") {
+        body += `<div class="big-value">${d.value}</div>
+                 <div class="trend ${d.trendDir}">${d.trend} vs. last month</div>
+                 <svg class="sparkline" viewBox="0 0 200 44" preserveAspectRatio="none">
+                    ${sparklinePath(d.sparkline, 200, 44)}
+                 </svg>
+                 <div class="caption">${d.desc}</div>`;
+    } else if (d.cat === "person") {
+        body += `<div class="kv"><span class="k">Role</span><span class="v">${d.role}</span></div>
+                 <div class="kv"><span class="k">Owns</span><span class="v">${d.owns.length} items</span></div>`;
+    } else if (d.cat === "asset") {
+        body += `<div class="asset-thumb ${d.assetType !== "video" ? "no-play" : ""}"></div>
+                 <div class="kv"><span class="k">Type</span><span class="v">${d.assetType}</span></div>` +
+                Object.entries(d.metrics).map(([k, v]) =>
+                    `<div class="kv"><span class="k">${k}</span><span class="v">${v}</span></div>`
+                ).join("");
+    } else if (d.cat === "doc") {
+        body += `<div class="doc-preview">${d.snippet}</div>
+                 <div class="kv"><span class="k">Owner</span><span class="v">${d.owner}</span></div>
+                 <div class="kv"><span class="k">Updated</span><span class="v">${d.updated}</span></div>`;
+    } else if (d.cat === "project") {
+        const statusClass = d.status === "in progress" ? "progress" : d.status;
+        body += `<span class="status-pill ${statusClass.replace(" ", "-")}">${d.status}</span>
+                 <div class="kv"><span class="k">Owner</span><span class="v">${d.owner}</span></div>
+                 <div class="kv"><span class="k">Deadline</span><span class="v">${d.deadline}</span></div>
+                 <div class="kv"><span class="k">Impact</span><span class="v" style="font-family:Inter,sans-serif; font-weight:400; text-align:right;">${d.impact}</span></div>`;
+    } else if (d.cat === "decision") {
+        body += `<div class="kv"><span class="k">Date</span><span class="v">${d.date}</span></div>
+                 <div class="kv"><span class="k">Impact</span><span class="v" style="font-family:Inter,sans-serif; font-weight:400; text-align:right;">${d.impact}</span></div>
+                 <div class="caption" style="margin-top: 14px;">${d.ctx}</div>`;
+    }
+
+    const conns = Array.from(adj.get(d.id)).map(nid => nodeById.get(nid));
+    if (conns.length) {
+        body += `<div class="section-title">Connected to · ${conns.length}</div>
+                 <div class="connections">
+                    ${conns.map(c => {
+                        const cc = CATS[c.cat];
+                        const cDot = c.cat === "doc"
+                            ? `background:#fff; border:0.5px solid var(--gray);`
+                            : c.cat === "decision"
+                                ? `background:${cc.color}; transform:rotate(45deg); border-radius:1px;`
+                                : `background:${cc.color};`;
+                        return `<div class="conn" data-conn="${c.id}">
+                                    <span class="dot" style="${cDot}"></span>
+                                    <span class="conn-name">${c.name}</span>
+                                    <span class="conn-cat">${cc.label}</span>
+                                </div>`;
+                    }).join("")}
+                 </div>`;
+    }
+
+    return catRow + body;
+}
+
+function sparklinePath(values, w, h) {
+    const min = Math.min(...values), max = Math.max(...values);
+    const rng = max - min || 1;
+    const step = w / (values.length - 1);
+    const points = values.map((v, i) => [i * step, h - ((v - min) / rng) * h * 0.85 - h * 0.075]);
+    const line = points.map((p, i) => (i === 0 ? "M" : "L") + p[0].toFixed(1) + "," + p[1].toFixed(1)).join(" ");
+    const area = line + ` L ${w},${h} L 0,${h} Z`;
+    return `
+        <path d="${area}" fill="#2F6FED" fill-opacity="0.09"/>
+        <path d="${line}" fill="none" stroke="#2F6FED" stroke-width="1.4" stroke-linejoin="round"/>
+        <circle cx="${points[points.length-1][0].toFixed(1)}" cy="${points[points.length-1][1].toFixed(1)}" r="2.6" fill="#2F6FED"/>
+    `;
+}
+
+/* =========================================================
+   UTIL
+   ========================================================= */
+function truncate(s, n) { return s.length > n ? s.slice(0, n - 1) + "…" : s; }
+
+function fitToScreen() {
+    const bbox = gRoot.node().getBBox();
+    if (bbox.width === 0) return;
+    const pad = 60;
+    const scale = Math.min(
+        (W - pad * 2) / bbox.width,
+        (H - pad * 2) / bbox.height,
+        1.1
+    );
+    const tx = (W - bbox.width * scale) / 2 - bbox.x * scale;
+    const ty = (H - bbox.height * scale) / 2 - bbox.y * scale;
+    svg.transition().duration(700).call(
+        zoomBehavior.transform,
+        d3.zoomIdentity.translate(tx, ty).scale(scale)
+    );
+}
+
+document.getElementById("btn-fit").addEventListener("click", fitToScreen);
+document.getElementById("btn-reset").addEventListener("click", () => {
+    svg.transition().duration(500).call(zoomBehavior.transform, d3.zoomIdentity);
+});
+
+// Handle resize
+window.addEventListener("resize", () => {
+    W = window.innerWidth; H = window.innerHeight;
+    svg.attr("viewBox", `0 0 ${W} ${H}`);
+    sim.force("center", d3.forceCenter(W / 2, H / 2));
+    sim.alpha(0.3).restart();
+});
+
+// ESC to close panel
+window.addEventListener("keydown", e => {
+    if (e.key === "Escape") closePanel();
+});
+</script>
+
+</body>
+</html>
