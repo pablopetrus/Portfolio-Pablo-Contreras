@@ -7,7 +7,7 @@
 <meta name="description" content="A fictional B2B business, visualized as it's thought.">
 <title>Business graph — pablo contreras</title>
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><circle cx=%2216%22 cy=%2216%22 r=%2213%22 fill=%22none%22 stroke=%22%230A1F44%22 stroke-width=%221.4%22/><circle cx=%2216%22 cy=%2216%22 r=%224%22 fill=%22%232F6FED%22/></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><circle cx=%2216%22 cy=%2216%22 r=%2214%22 fill=%22%232997ff%22 /><path d=%22M12 10h4a4 4 0 0 1 0 8h-4v4%22 stroke=%22white%22 stroke-width=%222.5%22 fill=%22none%22 stroke-linecap=%22round%22 /></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -601,8 +601,8 @@ const DATA = {
         { id: "p-alex",   cat: "person", name: "Alex Morgan",   role: "CEO",                  initials: "AM", size: 22, owns: ["Preparación Series A", "Memo Q1"] },
         { id: "p-chloe",  cat: "person", name: "Chloé Bernard", role: "CTO",                  initials: "CB", size: 22, owns: ["Lanzamiento Feature X", "Manual de onboarding"] },
         { id: "p-marcus", cat: "person", name: "Marcus Reid",   role: "Head of Growth",       initials: "MR", size: 22, owns: ["Motor de contenido", "Definición ICP", "Playbook de ventas"] },
-        { id: "p-sara",   cat: "person", name: "Sara Patel",    role: "Ingeniera Senior",     initials: "SP", size: 20, owns: ["Refactor onboarding"] },
-        { id: "p-diego",  cat: "person", name: "Diego Rossi",   role: "Ingeniero",            initials: "DR", size: 20, owns: ["Migración API v2"] },
+        { id: "p-sara",   cat: "person", name: "Rodrigo Muñoz", role: "Ingeniero Senior",     initials: "RM", size: 20, owns: ["Refactor onboarding"] },
+        { id: "p-diego",  cat: "person", name: "Diego Torres",  role: "Ingeniero",            initials: "DT", size: 20, owns: ["Migración API v2"] },
         { id: "p-yuki",   cat: "person", name: "Yuki Tanaka",   role: "Diseñadora de producto", initials: "YT", size: 20, owns: ["Guía de marca v2"] },
 
         // ---------- Assets ----------
@@ -624,14 +624,14 @@ const DATA = {
 
         // ---------- Proyectos ----------
         { id: "pr-featx",   cat: "project", name: "Lanzamiento Feature X", status: "progress", owner: "CB", deadline: "Ago 2026",       impact: "Retención D30, NPS, Usuarios activos" },
-        { id: "pr-onb",     cat: "project", name: "Refactor onboarding",   status: "shipped",  owner: "SP", deadline: "Entregado May 2026", impact: "Retención D30, Bajas" },
+        { id: "pr-onb",     cat: "project", name: "Refactor onboarding",   status: "shipped",  owner: "RM", deadline: "Entregado May 2026", impact: "Retención D30, Bajas" },
         { id: "pr-seriesa", cat: "project", name: "Preparación Series A",  status: "progress", owner: "AM", deadline: "Q4 2026",        impact: "Runway, Gasto mensual" },
         { id: "pr-content", cat: "project", name: "Motor de contenido",    status: "progress", owner: "MR", deadline: "En curso",       impact: "MRR, Coste de captación, Usuarios activos" },
-        { id: "pr-apiv2",   cat: "project", name: "Migración API v2",      status: "planned",  owner: "DR", deadline: "Q3 2026",        impact: "NPS, velocidad de dev" },
+        { id: "pr-apiv2",   cat: "project", name: "Migración API v2",      status: "planned",  owner: "DT", deadline: "Q3 2026",        impact: "NPS, velocidad de dev" },
 
         // ---------- Decisiones ----------
         { id: "de-pivot",   cat: "decision", name: "Pivot de pricing",           date: "Sep 2025", ctx: "Pasamos de precio por asiento a un modelo híbrido por uso. Cambiamos ramp más lento por mayor expansión de cuenta.", impact: "MRR, Coste de captación, Valor por cliente" },
-        { id: "de-hire",    cat: "decision", name: "Contratar ingeniera senior",  date: "Nov 2025", ctx: "Sara Patel se une al equipo para desbloquear la migración de API v2 y estabilizar la capa de plataforma.", impact: "API v2, Gasto mensual" },
+        { id: "de-hire",    cat: "decision", name: "Contratar ingeniero senior",  date: "Nov 2025", ctx: "Rodrigo Muñoz se une al equipo para desbloquear la migración de API v2 y estabilizar la capa de plataforma.", impact: "API v2, Gasto mensual" },
         { id: "de-kill",    cat: "decision", name: "Deprecar feature Y",         date: "Ene 2026", ctx: "Uso bajo (8% MAU) y coste de mantenimiento alto. Se retira con ventana de 60 días para las cuentas afectadas.", impact: "NPS, foco del equipo" },
         { id: "de-weekly",  cat: "decision", name: "Cadencia de deploys semanal", date: "Feb 2026", ctx: "De deploys quincenales a semanales. PRs más pequeñas, ciclo de feedback más corto, iteración más rápida en onboarding.", impact: "Retención D30, NPS" },
         { id: "de-content", cat: "decision", name: "Lanzar motor de contenido",  date: "Abr 2026", ctx: "Construir el pipeline propio de SEO y social en lugar de depender de paid. Más inversión inicial, menor CAC a largo plazo.", impact: "MRR, Coste de captación" },
