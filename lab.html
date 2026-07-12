@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#FBFCFE">
 <meta name="description" content="A fictional B2B business, visualized as it's thought.">
-<title>Northline · Second brain</title>
+<title>Business graph — pablo contreras</title>
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><circle cx=%2216%22 cy=%2216%22 r=%2213%22 fill=%22none%22 stroke=%22%230A1F44%22 stroke-width=%221.4%22/><circle cx=%2216%22 cy=%2216%22 r=%224%22 fill=%22%232F6FED%22/></svg>">
 
@@ -67,11 +67,24 @@
         z-index: 20;
         padding: 14px 20px 10px;
         display: flex;
-        justify-content: space-between;
         align-items: baseline;
         gap: 16px;
         pointer-events: none;
     }
+
+    .home-link {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 10px;
+        color: var(--gray);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        text-decoration: none;
+        transition: color 0.15s ease;
+        pointer-events: auto;
+        white-space: nowrap;
+    }
+    .home-link:hover { color: var(--navy); }
 
     .brand {
         font-family: "Fraunces", serif;
@@ -92,19 +105,6 @@
         background: var(--accent);
         margin-left: 6px;
         transform: translateY(-2px);
-    }
-
-    .subline {
-        font-family: "Inter", sans-serif;
-        font-weight: 500;
-        font-size: 9.5px;
-        color: var(--gray);
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        text-align: right;
-        line-height: 1.4;
-        max-width: 210px;
-        pointer-events: auto;
     }
 
     /* ======= LEGEND ======= */
@@ -547,8 +547,8 @@
 <div class="orb"></div>
 
 <header class="fade-in">
-    <div class="brand">Northline · <em>second brain</em></div>
-    <div class="subline">Demo · a fictional business,<br>visualized as it's thought</div>
+    <a href="/" class="home-link">← home</a>
+    <div class="brand"><em>Business graph</em></div>
 </header>
 
 <div class="legend fade-in" id="legend"></div>
@@ -586,56 +586,56 @@ const DATA = {
     },
     nodes: [
         // ---------- KPIs ----------
-        { id: "k-mrr",    cat: "kpi", name: "MRR",             value: "$45.2k",  trend: "+12%", trendDir: "up",   size: 34, desc: "Monthly Recurring Revenue — normalized subscription income per month.", sparkline: [38,39,40,41,41,42,43,42,43,44,45,45.2] },
-        { id: "k-arr",    cat: "kpi", name: "ARR",             value: "$542k",   trend: "+11%", trendDir: "up",   size: 30, desc: "Annual Recurring Revenue — projection of MRR × 12.", sparkline: [456,468,480,492,492,504,516,504,516,528,540,542] },
-        { id: "k-churn",  cat: "kpi", name: "Churn",           value: "3.2%",    trend: "−0.4pt", trendDir: "up", size: 26, desc: "Percentage of customers cancelling per month.", sparkline: [4.1,4.0,3.9,3.8,3.7,3.6,3.5,3.4,3.4,3.3,3.3,3.2] },
-        { id: "k-cac",    cat: "kpi", name: "CAC",             value: "$180",    trend: "−8%",  trendDir: "up",   size: 25, desc: "Customer Acquisition Cost — spend to close one paying customer.", sparkline: [220,215,208,205,200,196,192,190,188,186,183,180] },
-        { id: "k-ltv",    cat: "kpi", name: "LTV",             value: "$2.4k",   trend: "+6%",  trendDir: "up",   size: 25, desc: "Lifetime Value — expected total revenue per customer.", sparkline: [2000,2050,2100,2150,2180,2210,2240,2270,2300,2340,2370,2400] },
-        { id: "k-nps",    cat: "kpi", name: "NPS",             value: "42",      trend: "+3",   trendDir: "up",   size: 20, desc: "Net Promoter Score — customer promotion likelihood.", sparkline: [30,31,33,34,36,37,38,39,40,41,41,42] },
-        { id: "k-runway", cat: "kpi", name: "Runway",          value: "14 mo",   trend: "flat", trendDir: "flat", size: 22, desc: "Months of operation left at current burn rate.", sparkline: [16,16,15.5,15,15,14.5,14.5,14,14,14,14,14] },
-        { id: "k-burn",   cat: "kpi", name: "Burn",            value: "$32k/mo", trend: "+2%",  trendDir: "down", size: 20, desc: "Monthly net cash consumption.", sparkline: [29,29,30,30,30,31,31,31,32,32,32,32] },
-        { id: "k-d30",    cat: "kpi", name: "D30 Retention",   value: "68%",     trend: "+4pt", trendDir: "up",   size: 22, desc: "Percentage of users still active 30 days after signup.", sparkline: [58,59,61,62,63,64,64,65,66,67,67,68] },
-        { id: "k-au",     cat: "kpi", name: "Active Users",    value: "1,247",   trend: "+15%", trendDir: "up",   size: 24, desc: "Weekly active users across paid workspaces.", sparkline: [880,910,940,970,1000,1030,1060,1090,1120,1170,1210,1247] },
+        { id: "k-mrr",    cat: "kpi", name: "MRR",             value: "$45.2k",  trend: "+12%", trendDir: "up",   size: 34, desc: "Ingresos recurrentes mensuales por suscripciones activas.", sparkline: [38,39,40,41,41,42,43,42,43,44,45,45.2] },
+        { id: "k-arr",    cat: "kpi", name: "ARR",             value: "$542k",   trend: "+11%", trendDir: "up",   size: 30, desc: "Ingresos recurrentes anuales — proyección de MRR × 12.", sparkline: [456,468,480,492,492,504,516,504,516,528,540,542] },
+        { id: "k-churn",  cat: "kpi", name: "Bajas",           value: "3.2%",    trend: "−0.4pt", trendDir: "up", size: 26, desc: "Porcentaje de clientes que cancelan al mes.", sparkline: [4.1,4.0,3.9,3.8,3.7,3.6,3.5,3.4,3.4,3.3,3.3,3.2] },
+        { id: "k-cac",    cat: "kpi", name: "Coste de captación", value: "$180", trend: "−8%",  trendDir: "up",   size: 25, desc: "Coste medio para conseguir un cliente que paga.", sparkline: [220,215,208,205,200,196,192,190,188,186,183,180] },
+        { id: "k-ltv",    cat: "kpi", name: "Valor por cliente", value: "$2.4k", trend: "+6%",  trendDir: "up",   size: 25, desc: "Ingreso total esperado a lo largo de la vida de un cliente.", sparkline: [2000,2050,2100,2150,2180,2210,2240,2270,2300,2340,2370,2400] },
+        { id: "k-nps",    cat: "kpi", name: "NPS",             value: "42",      trend: "+3",   trendDir: "up",   size: 20, desc: "Net Promoter Score — cómo de probable es que los clientes te recomienden.", sparkline: [30,31,33,34,36,37,38,39,40,41,41,42] },
+        { id: "k-runway", cat: "kpi", name: "Runway",          value: "14 mo",   trend: "flat", trendDir: "flat", size: 22, desc: "Meses de operación que quedan con el ritmo actual de gasto.", sparkline: [16,16,15.5,15,15,14.5,14.5,14,14,14,14,14] },
+        { id: "k-burn",   cat: "kpi", name: "Gasto mensual",   value: "$32k/mo", trend: "+2%",  trendDir: "down", size: 20, desc: "Caja neta consumida cada mes.", sparkline: [29,29,30,30,30,31,31,31,32,32,32,32] },
+        { id: "k-d30",    cat: "kpi", name: "Retención D30",   value: "68%",     trend: "+4pt", trendDir: "up",   size: 22, desc: "Porcentaje de usuarios que siguen activos 30 días después de registrarse.", sparkline: [58,59,61,62,63,64,64,65,66,67,67,68] },
+        { id: "k-au",     cat: "kpi", name: "Usuarios activos",value: "1,247",   trend: "+15%", trendDir: "up",   size: 24, desc: "Usuarios activos semanales en cuentas de pago.", sparkline: [880,910,940,970,1000,1030,1060,1090,1120,1170,1210,1247] },
 
-        // ---------- People ----------
-        { id: "p-alex",   cat: "person", name: "Alex Morgan",   role: "CEO",              initials: "AM", size: 22, owns: ["Series A prep", "Company memo Q1"] },
-        { id: "p-chloe",  cat: "person", name: "Chloé Bernard", role: "CTO",              initials: "CB", size: 22, owns: ["Feature X launch", "Onboarding SOP"] },
-        { id: "p-marcus", cat: "person", name: "Marcus Reid",   role: "Head of Growth",   initials: "MR", size: 22, owns: ["Content engine", "ICP definition", "Sales playbook"] },
-        { id: "p-sara",   cat: "person", name: "Sara Patel",    role: "Sr. Engineer",     initials: "SP", size: 20, owns: ["Refactor onboarding"] },
-        { id: "p-diego",  cat: "person", name: "Diego Rossi",   role: "Engineer",         initials: "DR", size: 20, owns: ["API v2 migration"] },
-        { id: "p-yuki",   cat: "person", name: "Yuki Tanaka",   role: "Product Designer", initials: "YT", size: 20, owns: ["Brand style guide v2"] },
+        // ---------- Personas ----------
+        { id: "p-alex",   cat: "person", name: "Alex Morgan",   role: "CEO",                  initials: "AM", size: 22, owns: ["Preparación Series A", "Memo Q1"] },
+        { id: "p-chloe",  cat: "person", name: "Chloé Bernard", role: "CTO",                  initials: "CB", size: 22, owns: ["Lanzamiento Feature X", "Manual de onboarding"] },
+        { id: "p-marcus", cat: "person", name: "Marcus Reid",   role: "Head of Growth",       initials: "MR", size: 22, owns: ["Motor de contenido", "Definición ICP", "Playbook de ventas"] },
+        { id: "p-sara",   cat: "person", name: "Sara Patel",    role: "Ingeniera Senior",     initials: "SP", size: 20, owns: ["Refactor onboarding"] },
+        { id: "p-diego",  cat: "person", name: "Diego Rossi",   role: "Ingeniero",            initials: "DR", size: 20, owns: ["Migración API v2"] },
+        { id: "p-yuki",   cat: "person", name: "Yuki Tanaka",   role: "Diseñadora de producto", initials: "YT", size: 20, owns: ["Guía de marca v2"] },
 
         // ---------- Assets ----------
-        { id: "a-vid1",   cat: "asset", name: "Onboarding v3 launch", assetType: "video",    metrics: { views: "18.2k", leads: 42, conv: "3.2%" } },
-        { id: "a-post1",  cat: "asset", name: "Q1 recap",             assetType: "post",     metrics: { views: "4.1k",  shares: 22, reactions: 187 } },
-        { id: "a-camp1",  cat: "asset", name: "Q2 outbound push",     assetType: "campaign", metrics: { replies: 128, meetings: 34, closed: 8 } },
-        { id: "a-land1",  cat: "asset", name: "/pricing rebrand",     assetType: "landing",  metrics: { visits: "12.4k", conv: "4.8%", signups: 596 } },
-        { id: "a-vid2",   cat: "asset", name: "Customer story: TechCo", assetType: "video",  metrics: { views: "9.4k", leads: 27, conv: "2.1%" } },
-        { id: "a-post2",  cat: "asset", name: "Series A story",       assetType: "post",     metrics: { views: "11.8k", shares: 62, reactions: 412 } },
-        { id: "a-email1", cat: "asset", name: "Winter re-activation", assetType: "email",    metrics: { opens: "38%", clicks: "9%", recovered: 41 } },
-        { id: "a-ad1",    cat: "asset", name: "LinkedIn TOFU",        assetType: "ad",       metrics: { impressions: "84k", ctr: "2.1%", leads: 176 } },
+        { id: "a-vid1",   cat: "asset", name: "Lanzamiento onboarding v3", assetType: "vídeo",     metrics: { "vistas": "18.2k", "leads": 42, "conversión": "3.2%" } },
+        { id: "a-post1",  cat: "asset", name: "Resumen del Q1",            assetType: "post",      metrics: { "vistas": "4.1k",  "compartidos": 22, "reacciones": 187 } },
+        { id: "a-camp1",  cat: "asset", name: "Push outbound Q2",          assetType: "campaña",   metrics: { "respuestas": 128, "reuniones": 34, "cerrados": 8 } },
+        { id: "a-land1",  cat: "asset", name: "Rediseño /pricing",         assetType: "landing",   metrics: { "visitas": "12.4k", "conversión": "4.8%", "altas": 596 } },
+        { id: "a-vid2",   cat: "asset", name: "Caso cliente: TechCo",      assetType: "vídeo",     metrics: { "vistas": "9.4k", "leads": 27, "conversión": "2.1%" } },
+        { id: "a-post2",  cat: "asset", name: "Historia Series A",         assetType: "post",      metrics: { "vistas": "11.8k", "compartidos": 62, "reacciones": 412 } },
+        { id: "a-email1", cat: "asset", name: "Reactivación de invierno",  assetType: "email",     metrics: { "abiertos": "38%", "clicks": "9%", "recuperados": 41 } },
+        { id: "a-ad1",    cat: "asset", name: "Anuncios LinkedIn",         assetType: "anuncio",   metrics: { "impresiones": "84k", "clicks": "2.1%", "leads": 176 } },
 
-        // ---------- Documents ----------
-        { id: "d-brand",    cat: "doc", name: "Brand style guide v2", owner: "YT", updated: "Jun 2026", snippet: "Northline reads calm, precise, and confident. Never loud. Type: Fraunces italic for voice, Inter for information. Blue #2F6FED is the single accent — everything else is paper and ink." },
-        { id: "d-icp",      cat: "doc", name: "ICP definition",       owner: "MR", updated: "May 2026", snippet: "Ops & data leads at Series-A to Series-B B2B SaaS companies (150-800 employees), navigating the transition from spreadsheets to systems, with an existing but siloed data warehouse." },
-        { id: "d-memoq1",   cat: "doc", name: "Company memo Q1",      owner: "AM", updated: "Feb 2026", snippet: "The bet for Q1 is to trade breadth for depth. Fewer campaigns, more repetition. Fewer features, more polish. Every hire should reduce dependency on Alex or Chloé within 90 days." },
-        { id: "d-playbook", cat: "doc", name: "Sales playbook",       owner: "MR", updated: "Apr 2026", snippet: "Outbound must lead with a diagnosis, not a demo. Discovery calls end with a written recap and one concrete decision the prospect owns before the follow-up." },
-        { id: "d-sop",      cat: "doc", name: "Onboarding SOP",       owner: "CB", updated: "Jun 2026", snippet: "First value in under 8 minutes. Signup → first useful chart within one session. Any friction beyond that is triaged and logged in the weekly onboarding review." },
+        // ---------- Documentos ----------
+        { id: "d-brand",    cat: "doc", name: "Guía de marca v2",      owner: "YT", updated: "Jun 2026", snippet: "La marca se lee tranquila, precisa y confiada. Nunca ruidosa. Tipografía: Fraunces itálica para la voz, Inter para la información. Azul #2F6FED como único acento — todo lo demás es papel y tinta." },
+        { id: "d-icp",      cat: "doc", name: "Definición del ICP",    owner: "MR", updated: "May 2026", snippet: "Responsables de operaciones y datos en empresas SaaS B2B en Series A o B (150-800 empleados), en la transición de hojas de cálculo a sistemas, con un data warehouse ya existente pero fragmentado." },
+        { id: "d-memoq1",   cat: "doc", name: "Memo del Q1",           owner: "AM", updated: "Feb 2026", snippet: "La apuesta del Q1 es cambiar amplitud por profundidad. Menos campañas, más repetición. Menos features, más pulido. Cada contratación debería reducir la dependencia de Alex o Chloé en 90 días." },
+        { id: "d-playbook", cat: "doc", name: "Playbook de ventas",    owner: "MR", updated: "Apr 2026", snippet: "El outbound tiene que abrir con un diagnóstico, no con una demo. Las reuniones de discovery terminan con un resumen escrito y una decisión concreta que el prospecto asume antes del siguiente contacto." },
+        { id: "d-sop",      cat: "doc", name: "Manual de onboarding",  owner: "CB", updated: "Jun 2026", snippet: "Primer valor en menos de 8 minutos. Registro → primer gráfico útil en la misma sesión. Cualquier fricción más allá de eso se registra y se revisa cada semana." },
 
-        // ---------- Projects ----------
-        { id: "pr-featx",   cat: "project", name: "Feature X launch",     status: "progress", owner: "CB", deadline: "Aug 2026", impact: "D30 Retention, NPS, Active Users" },
-        { id: "pr-onb",     cat: "project", name: "Refactor onboarding",  status: "shipped",  owner: "SP", deadline: "Shipped May 2026", impact: "D30 Retention, Churn" },
-        { id: "pr-seriesa", cat: "project", name: "Series A prep",        status: "progress", owner: "AM", deadline: "Q4 2026", impact: "Runway, Burn" },
-        { id: "pr-content", cat: "project", name: "Content engine",       status: "progress", owner: "MR", deadline: "Ongoing", impact: "MRR, CAC, Active Users" },
-        { id: "pr-apiv2",   cat: "project", name: "API v2 migration",     status: "planned",  owner: "DR", deadline: "Q3 2026", impact: "NPS, dev velocity" },
+        // ---------- Proyectos ----------
+        { id: "pr-featx",   cat: "project", name: "Lanzamiento Feature X", status: "progress", owner: "CB", deadline: "Ago 2026",       impact: "Retención D30, NPS, Usuarios activos" },
+        { id: "pr-onb",     cat: "project", name: "Refactor onboarding",   status: "shipped",  owner: "SP", deadline: "Entregado May 2026", impact: "Retención D30, Bajas" },
+        { id: "pr-seriesa", cat: "project", name: "Preparación Series A",  status: "progress", owner: "AM", deadline: "Q4 2026",        impact: "Runway, Gasto mensual" },
+        { id: "pr-content", cat: "project", name: "Motor de contenido",    status: "progress", owner: "MR", deadline: "En curso",       impact: "MRR, Coste de captación, Usuarios activos" },
+        { id: "pr-apiv2",   cat: "project", name: "Migración API v2",      status: "planned",  owner: "DR", deadline: "Q3 2026",        impact: "NPS, velocidad de dev" },
 
-        // ---------- Decisions ----------
-        { id: "de-pivot",   cat: "decision", name: "Pivot pricing",         date: "Sep 2025", ctx: "Moved from seat-based to hybrid usage tier. Traded slower ramp for higher expansion revenue.", impact: "MRR, CAC, LTV" },
-        { id: "de-hire",    cat: "decision", name: "Hire senior BE",        date: "Nov 2025", ctx: "Sara Patel joined to unblock the API v2 migration and de-risk the platform layer.", impact: "API v2, Burn" },
-        { id: "de-kill",    cat: "decision", name: "Kill feature Y",        date: "Jan 2026", ctx: "Low usage (8% MAU), high maintenance load. Deprecated with a 60-day window for affected accounts.", impact: "NPS, dev focus" },
-        { id: "de-weekly",  cat: "decision", name: "Weekly ship cadence",   date: "Feb 2026", ctx: "From bi-weekly to weekly deploys. Smaller PRs, tighter feedback loop, faster iteration on onboarding.", impact: "D30, NPS" },
-        { id: "de-content", cat: "decision", name: "Launch content engine", date: "Apr 2026", ctx: "Own the SEO/social pipeline instead of relying on paid. Higher upfront, lower CAC long term.", impact: "MRR, CAC" },
-        { id: "de-seriesa", cat: "decision", name: "Start Series A talks",  date: "Jun 2026", ctx: "14mo of runway, MRR compounding steadily, NPS trending up. Optimal window to raise from strength, not need.", impact: "Runway" },
+        // ---------- Decisiones ----------
+        { id: "de-pivot",   cat: "decision", name: "Pivot de pricing",           date: "Sep 2025", ctx: "Pasamos de precio por asiento a un modelo híbrido por uso. Cambiamos ramp más lento por mayor expansión de cuenta.", impact: "MRR, Coste de captación, Valor por cliente" },
+        { id: "de-hire",    cat: "decision", name: "Contratar ingeniera senior",  date: "Nov 2025", ctx: "Sara Patel se une al equipo para desbloquear la migración de API v2 y estabilizar la capa de plataforma.", impact: "API v2, Gasto mensual" },
+        { id: "de-kill",    cat: "decision", name: "Deprecar feature Y",         date: "Ene 2026", ctx: "Uso bajo (8% MAU) y coste de mantenimiento alto. Se retira con ventana de 60 días para las cuentas afectadas.", impact: "NPS, foco del equipo" },
+        { id: "de-weekly",  cat: "decision", name: "Cadencia de deploys semanal", date: "Feb 2026", ctx: "De deploys quincenales a semanales. PRs más pequeñas, ciclo de feedback más corto, iteración más rápida en onboarding.", impact: "Retención D30, NPS" },
+        { id: "de-content", cat: "decision", name: "Lanzar motor de contenido",  date: "Abr 2026", ctx: "Construir el pipeline propio de SEO y social en lugar de depender de paid. Más inversión inicial, menor CAC a largo plazo.", impact: "MRR, Coste de captación" },
+        { id: "de-seriesa", cat: "decision", name: "Abrir conversaciones Series A", date: "Jun 2026", ctx: "14 meses de runway, MRR creciendo de forma estable, NPS al alza. Momento óptimo para levantar desde la fuerza, no desde la necesidad.", impact: "Runway" },
     ],
     // ---------- Edges (semantics matter) ----------
     edges: [
@@ -718,12 +718,12 @@ const DATA = {
    RENDER
    ========================================================= */
 const CATS = {
-    kpi:      { label: "KPIs",       color: "#2F6FED" },
-    person:   { label: "People",     color: "#0A1F44" },
-    asset:    { label: "Content",    color: "#A9CBFF" },
-    doc:      { label: "Documents",  color: "#FFFFFF" },
-    project:  { label: "Projects",   color: "#E9B0A2" },
-    decision: { label: "Decisions",  color: "#8A93A3" },
+    kpi:      { label: "KPIs",         color: "#2F6FED" },
+    person:   { label: "Equipo",       color: "#0A1F44" },
+    asset:    { label: "Contenido",    color: "#A9CBFF" },
+    doc:      { label: "Documentos",   color: "#FFFFFF" },
+    project:  { label: "Proyectos",    color: "#E9B0A2" },
+    decision: { label: "Decisiones",   color: "#8A93A3" },
 };
 
 const nodeById = new Map(DATA.nodes.map(n => [n.id, n]));
@@ -750,7 +750,8 @@ const zoomBehavior = d3.zoom()
     .on("zoom", ev => gRoot.attr("transform", ev.transform));
 svg.call(zoomBehavior);
 
-// Simulation
+// Simulation — alive at start (nodes settle in ~2.5s), then still so it's easy to click.
+// Any interaction (drag, hover, resize) still reheats it briefly.
 const sim = d3.forceSimulation(DATA.nodes)
     .force("link", d3.forceLink(DATA.edges).id(d => d.id).distance(e => {
         if (e.kind === "derive") return 55;
@@ -760,7 +761,10 @@ const sim = d3.forceSimulation(DATA.nodes)
     .force("charge", d3.forceManyBody().strength(-260))
     .force("center", d3.forceCenter(W / 2, H / 2))
     .force("collision", d3.forceCollide().radius(d => (d.size || 20) + 6))
-    .alphaDecay(0.028);
+    .alpha(1)
+    .alphaDecay(0.048)
+    .alphaMin(0.0015)
+    .velocityDecay(0.5);
 
 // EDGES
 const edgeSel = gEdges.selectAll("path")
@@ -818,7 +822,7 @@ nodeSel.each(function(d) {
             .attr("dy", d.size + 12)
             .text(d.role);
     } else if (d.cat === "asset") {
-        const w = 62, h = 34;
+        const w = 78, h = 34;
         g.append("rect")
             .attr("class", "node-shape")
             .attr("x", -w/2).attr("y", -h/2)
@@ -832,9 +836,9 @@ nodeSel.each(function(d) {
             .attr("class", "node-label small")
             .attr("dy", 3.2)
             .attr("fill", "#0A1F44")
-            .text(truncate(d.name, 12));
+            .text(truncate(d.name, 16));
     } else if (d.cat === "doc") {
-        const w = 60, h = 34;
+        const w = 76, h = 34;
         // rectangle with folded corner
         const corner = 8;
         const path = `
@@ -857,9 +861,9 @@ nodeSel.each(function(d) {
             .attr("class", "node-label small")
             .attr("dy", 3.2)
             .attr("fill", "#0A1F44")
-            .text(truncate(d.name, 11));
+            .text(truncate(d.name, 15));
     } else if (d.cat === "project") {
-        const r = 26;
+        const r = 30;
         // hexagon
         const pts = d3.range(6).map(i => {
             const a = Math.PI / 3 * i - Math.PI / 2;
@@ -876,7 +880,7 @@ nodeSel.each(function(d) {
             .attr("class", "node-label small")
             .attr("dy", 3.2)
             .attr("fill", "#0A1F44")
-            .text(truncate(d.name, 10));
+            .text(truncate(d.name, 13));
     } else if (d.cat === "decision") {
         const r = 15;
         // diamond
@@ -891,7 +895,7 @@ nodeSel.each(function(d) {
             .attr("class", "node-label caption")
             .attr("dy", r + 12)
             .attr("fill", "#0A1F44")
-            .text(truncate(d.name, 14));
+            .text(truncate(d.name, 20));
     }
 });
 
@@ -989,42 +993,45 @@ function renderPanel(d) {
         <h1 class="panel-name">${d.name}</h1>
     `;
 
+    const STATUS_LABELS = { planned: "Planeado", progress: "En curso", shipped: "Entregado" };
+
     let body = "";
     if (d.cat === "kpi") {
         body += `<div class="big-value">${d.value}</div>
-                 <div class="trend ${d.trendDir}">${d.trend} vs. last month</div>
+                 <div class="trend ${d.trendDir}">${d.trend} vs. mes anterior</div>
                  <svg class="sparkline" viewBox="0 0 200 44" preserveAspectRatio="none">
                     ${sparklinePath(d.sparkline, 200, 44)}
                  </svg>
                  <div class="caption">${d.desc}</div>`;
     } else if (d.cat === "person") {
-        body += `<div class="kv"><span class="k">Role</span><span class="v">${d.role}</span></div>
-                 <div class="kv"><span class="k">Owns</span><span class="v">${d.owns.length} items</span></div>`;
+        body += `<div class="kv"><span class="k">Rol</span><span class="v">${d.role}</span></div>
+                 <div class="kv"><span class="k">Responsable de</span><span class="v">${d.owns.length} item${d.owns.length !== 1 ? "s" : ""}</span></div>`;
     } else if (d.cat === "asset") {
-        body += `<div class="asset-thumb ${d.assetType !== "video" ? "no-play" : ""}"></div>
-                 <div class="kv"><span class="k">Type</span><span class="v">${d.assetType}</span></div>` +
+        body += `<div class="asset-thumb ${d.assetType !== "vídeo" ? "no-play" : ""}"></div>
+                 <div class="kv"><span class="k">Tipo</span><span class="v">${d.assetType}</span></div>` +
                 Object.entries(d.metrics).map(([k, v]) =>
                     `<div class="kv"><span class="k">${k}</span><span class="v">${v}</span></div>`
                 ).join("");
     } else if (d.cat === "doc") {
         body += `<div class="doc-preview">${d.snippet}</div>
-                 <div class="kv"><span class="k">Owner</span><span class="v">${d.owner}</span></div>
-                 <div class="kv"><span class="k">Updated</span><span class="v">${d.updated}</span></div>`;
+                 <div class="kv"><span class="k">Responsable</span><span class="v">${d.owner}</span></div>
+                 <div class="kv"><span class="k">Actualizado</span><span class="v">${d.updated}</span></div>`;
     } else if (d.cat === "project") {
         const statusClass = d.status === "in progress" ? "progress" : d.status;
-        body += `<span class="status-pill ${statusClass.replace(" ", "-")}">${d.status}</span>
-                 <div class="kv"><span class="k">Owner</span><span class="v">${d.owner}</span></div>
-                 <div class="kv"><span class="k">Deadline</span><span class="v">${d.deadline}</span></div>
-                 <div class="kv"><span class="k">Impact</span><span class="v" style="font-family:Inter,sans-serif; font-weight:400; text-align:right;">${d.impact}</span></div>`;
+        const statusText = STATUS_LABELS[statusClass] || d.status;
+        body += `<span class="status-pill ${statusClass}">${statusText}</span>
+                 <div class="kv"><span class="k">Responsable</span><span class="v">${d.owner}</span></div>
+                 <div class="kv"><span class="k">Fecha objetivo</span><span class="v">${d.deadline}</span></div>
+                 <div class="kv"><span class="k">Impacto</span><span class="v" style="font-family:Inter,sans-serif; font-weight:400; text-align:right;">${d.impact}</span></div>`;
     } else if (d.cat === "decision") {
-        body += `<div class="kv"><span class="k">Date</span><span class="v">${d.date}</span></div>
-                 <div class="kv"><span class="k">Impact</span><span class="v" style="font-family:Inter,sans-serif; font-weight:400; text-align:right;">${d.impact}</span></div>
+        body += `<div class="kv"><span class="k">Fecha</span><span class="v">${d.date}</span></div>
+                 <div class="kv"><span class="k">Impacto</span><span class="v" style="font-family:Inter,sans-serif; font-weight:400; text-align:right;">${d.impact}</span></div>
                  <div class="caption" style="margin-top: 14px;">${d.ctx}</div>`;
     }
 
     const conns = Array.from(adj.get(d.id)).map(nid => nodeById.get(nid));
     if (conns.length) {
-        body += `<div class="section-title">Connected to · ${conns.length}</div>
+        body += `<div class="section-title">Conectado con · ${conns.length}</div>
                  <div class="connections">
                     ${conns.map(c => {
                         const cc = CATS[c.cat];
@@ -1091,7 +1098,15 @@ window.addEventListener("resize", () => {
     W = window.innerWidth; H = window.innerHeight;
     svg.attr("viewBox", `0 0 ${W} ${H}`);
     sim.force("center", d3.forceCenter(W / 2, H / 2));
-    sim.alpha(0.3).restart();
+    sim.alpha(0.25).restart();
+});
+
+// Hover briefly reheats sim so the graph feels a little alive on touch (super subtle).
+nodeSel.on("mouseenter.reheat", () => {
+    if (sim.alpha() < 0.01) sim.alphaTarget(0.02).restart();
+});
+nodeSel.on("mouseleave.reheat", () => {
+    sim.alphaTarget(0);
 });
 
 // ESC to close panel
