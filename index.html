@@ -196,6 +196,19 @@
             color: var(--text-main);
         }
 
+        .nav-links a.nav-demo {
+            color: var(--accent-color);
+            font-weight: 600;
+            padding: 3px 10px;
+            border: 1px solid var(--accent-color);
+            border-radius: 999px;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .nav-links a.nav-demo:hover {
+            background: var(--accent-color);
+            color: #fff;
+        }
+
         /* Language Toggle */
         .lang-toggle {
             display: flex;
@@ -1050,6 +1063,7 @@
                 <li><a href="#experience" data-i18n="nav_experience">Experiencia</a></li>
                 <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
                 <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
+                <li><a href="/lab" class="nav-demo" data-i18n="nav_demo">Demo producto ↗</a></li>
             </ul>
         </nav>
         <div class="lang-toggle">
@@ -1491,10 +1505,6 @@
                     <div class="info-list-item">
                         <div class="dot"></div>
                         <p><strong>Google Developers Group Granada (GDG):</strong> Parte del equipo de organización de eventos Google en Granada.</p>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong>AWS Cloud Builder Program:</strong> Programa formativo de AWS orientado a arquitectura y despliegue en la nube.</p>
                     </div>
                     <div class="info-list-item">
                         <div class="dot"></div>

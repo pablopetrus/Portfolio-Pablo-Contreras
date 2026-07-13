@@ -195,6 +195,19 @@
             color: var(--text-main);
         }
 
+        .nav-links a.nav-demo {
+            color: var(--accent-color);
+            font-weight: 600;
+            padding: 3px 10px;
+            border: 1px solid var(--accent-color);
+            border-radius: 999px;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .nav-links a.nav-demo:hover {
+            background: var(--accent-color);
+            color: #fff;
+        }
+
         /* Language Toggle */
         .lang-toggle {
             display: flex;
@@ -1080,6 +1093,7 @@
                 <li><a href="#experience" data-i18n="nav_experience">Experiencia</a></li>
                 <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
                 <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
+                <li><a href="/lab" class="nav-demo" data-i18n="nav_demo">Demo producto ↗</a></li>
             </ul>
         </nav>
         <div class="lang-toggle">
@@ -1182,7 +1196,7 @@
 
             <!-- Hackathon Award -->
             <div class="project-item">
-                <h3 data-i18n="proj_hackathon_title">Premio del Público Hackaton GenAI Arena by SIDN</h3>
+                <h3 data-i18n="proj_hackathon_title">Ganador Hackaton GenAI Arena by SIDN</h3>
                 <p data-i18n="proj_hackathon_desc">Ganador del premio al más votado por el público, en total 130 personas aplicaron al Hackaton. Nuestro reto fue resolver los sobrecostes en marketing de paid ads, logrando detectar overflows y ahorrar mensualmente ~12.000€. Desarrollé el modelo predictivo conectado al backend y realicé un pitch de negocio traduciendo lo técnico. Responsable de la documentación técnica, logs y comunicación.</p>
                 <div class="project-tags">
                     <span class="project-tag">Marketing Optimization</span>
@@ -1470,7 +1484,15 @@
                     </div>
                     <div class="info-list-item">
                         <div class="dot"></div>
-                        <p><strong data-i18n="edu_merit">Excelencia Técnica:</strong> <span data-i18n="edu_merit_desc">Mejor nota de promoción en exámenes de Cálculo y Fundamentos de Programación. Percentil 5% en Economía Política.</span></p>
+                        <p><strong data-i18n="edu_merit">Excelencia Técnica:</strong> <span data-i18n="edu_merit_desc">Mejor nota de promoción en Cálculo y Fundamentos de Programación.</span></p>
+                    </div>
+                    <div class="info-list-item">
+                        <div class="dot"></div>
+                        <p><strong>Matrículas de Honor:</strong> Álgebra Lineal y Estructuras Matemáticas (9,8/10) · Economía Política (9,3/10).</p>
+                    </div>
+                    <div class="info-list-item">
+                        <div class="dot"></div>
+                        <p><strong>Bachillerato (previo):</strong> IES Padre Suárez, Bachillerato Tecnológico y Científico. Nota media 9,1/10.</p>
                     </div>
                     <div class="info-list-item">
                         <div class="dot"></div>
@@ -1488,14 +1510,14 @@
                 <div class="info-list">
                     <div class="info-list-item">
                         <div class="dot"></div>
-                        <p><strong data-i18n="lang_en">Inglés:</strong> <span data-i18n="lang_en_desc">5,5 TOEFL 2026 C1 alto/C2.</span></p>
+                        <p><strong data-i18n="lang_en">Inglés:</strong> <span data-i18n="lang_en_desc">TOEFL iBT 110/120 · CEFR C1 (oficial ETS, marzo 2026).</span></p>
                           <div class="project-links" style="margin-top: 10px;">
                     <a href="https://drive.google.com/file/d/1AmOYI26rfs1d7m1fLtQ9bW_YQ7FlmKJD/view?usp=sharing" target="_blank" class="btn btn-secondary sm" style="padding: 4px 12px; font-size: 0.75rem;" data-i18n="btn_see_cert">Ver Certificado</a>
                 </div>
                     </div>
                     <div class="info-list-item">
                         <div class="dot"></div>
-                        <p><strong data-i18n="lang_fr">Francés:</strong> <span data-i18n="lang_fr_desc">Básico. Seleccionado para intercambio en París (2022) con escuela de prestigio.</span></p>
+                        <p><strong data-i18n="lang_fr">Francés:</strong> <span data-i18n="lang_fr_desc">Básico. Intercambio formativo en París (2022) — Lycée Saint-Michel de Picpus, escuela selectiva.</span></p>
                     </div>
                     <div class="info-list-item">
                         <div class="dot"></div>
@@ -1509,11 +1531,11 @@
                 <div class="info-list">
                     <div class="info-list-item">
                         <div class="dot"></div>
-                        <p><strong>Arqus European University Alliance — Ambassador oficial:</strong> Seleccionado como embajador de la red europea Arqus (9 universidades). Apoyo a estudiantes internacionales y representación de la UGR en el ecosistema global.</p>
+                        <p><strong>Arqus European University Alliance — Embajador oficial:</strong> Embajador de la red europea Arqus (15 universidades). Apoyo a estudiantes internacionales y representación de la UGR en el ecosistema global.</p>
                     </div>
                     <div class="info-list-item">
                         <div class="dot"></div>
-                        <p><strong>Google Developers Group Granada (GDG):</strong> Miembro activo de la comunidad de desarrolladores Google en Granada.</p>
+                        <p><strong>Google Developers Group Granada (GDG):</strong> Parte del equipo de organización de eventos Google en Granada.</p>
                     </div>
                     <div class="info-list-item">
                         <div class="dot"></div>
@@ -1630,7 +1652,7 @@
             projects_subtitle: "Enfoque absoluto en la ejecución y la creación de sistemas que generan valor real.",
             proj_1_title: "Andaluz.ia (GranadaTur 2035)",
             proj_1_desc: "Partner técnico co-fundador enfocado en infraestructura de IA. Automatización con Antigravity, Python y librerías escalables. Presentado a incubadora El Carmen, Breaker Impulsa, XIII Concurso Universitario de Emprendimiento 2026 (€26k) y Santander X Explorer.",
-            proj_hackathon_title: "Premio del Público Hackaton GenAI Arena by SIDN",
+            proj_hackathon_title: "Ganador Hackaton GenAI Arena by SIDN",
             proj_hackathon_desc: "Ganador del premio al más votado por el público, en total 130 personas aplicaron al Hackaton. Nuestro reto fue resolver los sobrecostes en marketing de paid ads, logrando detectar overflows y ahorrar mensualmente ~12.000€. Desarrollé el modelo predictivo conectado al backend y realicé un pitch de negocio traduciendo lo técnico. Responsable de la documentación técnica, logs y comunicación.",
             tag_award: "1er Premio Público",
             proj_oposline_title: "Predictivo de datos para trends (Market Insights)",
@@ -1704,7 +1726,7 @@
 
             lang_title: "Idiomas & Estancias",
             lang_en: "Inglés:",
-            lang_en_desc: "5,5 TOEFL 2026 C1 alto/C2.",
+            lang_en_desc: "TOEFL iBT 110/120 · CEFR C1 (oficial ETS, marzo 2026).",
             lang_fr: "Francés:",
             lang_fr_desc: "Básico. Seleccionado para intercambio en París (2022) con escuela de prestigio.",
             lang_arqus: "Arqus Ambassador:",
@@ -1834,7 +1856,7 @@
 
             lang_title: "Languages & Stays",
             lang_en: "English:",
-            lang_en_desc: "5,5 TOEFL 2026 High C1/C2.",
+            lang_en_desc: "TOEFL iBT 110/120 · CEFR C1 (ETS official, March 2026).",
             lang_fr: "French:",
             lang_fr_desc: "Basic. Selected for prestigious school exchange in Paris (2022).",
             lang_arqus: "Arqus Ambassador:",
