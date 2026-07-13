@@ -23,8 +23,6 @@
         --gray: #8A93A3;
         --hairline: #DCE3EE;
         --coral: #E9B0A2;
-        --teal: #4FB09A;
-        --plum: #B79AD1;
         --white: #FFFFFF;
     }
 
@@ -151,8 +149,6 @@
     .chip.doc .dot        { background: var(--white); border: 0.5px solid var(--gray); }
     .chip.project .dot    { background: var(--coral); }
     .chip.decision .dot   { background: var(--gray); transform: rotate(45deg); border-radius: 1px; }
-    .chip.okr .dot        { background: var(--teal); clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
-    .chip.mbo .dot        { background: var(--plum); clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); }
 
     .chip.off {
         opacity: 0.35;
@@ -433,44 +429,6 @@
     .conn .dot.doc      { background: var(--white); border: 0.5px solid var(--gray); }
     .conn .dot.project  { background: var(--coral); }
     .conn .dot.decision { background: var(--gray); transform: rotate(45deg); border-radius: 1px; }
-    .conn .dot.okr      { background: var(--teal); clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
-    .conn .dot.mbo      { background: var(--plum); clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); }
-
-    .framework-note {
-        background: var(--surface);
-        border-left: 2.5pt solid var(--accent);
-        border-radius: 0 6px 6px 0;
-        padding: 12px 14px;
-        margin-bottom: 18px;
-        font-size: 11.5px;
-        line-height: 1.5;
-        color: var(--gray);
-    }
-    .framework-note .fw-title {
-        font-family: "Inter", sans-serif;
-        font-weight: 500;
-        font-size: 9px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--navy);
-        margin-bottom: 6px;
-    }
-    .framework-note .fw-row {
-        display: grid;
-        grid-template-columns: 44px 1fr;
-        gap: 8px;
-        padding: 3px 0;
-    }
-    .framework-note .fw-row b { color: var(--navy); font-weight: 500; }
-    .framework-note .fw-tag {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 9.5px;
-        font-weight: 500;
-        letter-spacing: 0.02em;
-    }
-    .fw-tag.kpi-tag { color: var(--accent); }
-    .fw-tag.okr-tag { color: var(--teal); }
-    .fw-tag.mbo-tag { color: var(--plum); }
     .conn .conn-name { font-size: 12.5px; color: var(--navy); font-weight: 400; flex: 1; }
     .conn .conn-cat  { font-size: 9.5px; color: var(--gray); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; }
 
@@ -639,17 +597,6 @@ const DATA = {
         { id: "k-d30",    cat: "kpi", name: "Retención D30",   value: "68%",     trend: "+4pt", trendDir: "up",   size: 22, desc: "Porcentaje de usuarios que siguen activos 30 días después de registrarse.", sparkline: [58,59,61,62,63,64,64,65,66,67,67,68] },
         { id: "k-au",     cat: "kpi", name: "Usuarios activos",value: "1,247",   trend: "+15%", trendDir: "up",   size: 24, desc: "Usuarios activos semanales en cuentas de pago.", sparkline: [880,910,940,970,1000,1030,1060,1090,1120,1170,1210,1247] },
 
-        // ---------- OKRs (trimestrales · ambición · hacia dónde vamos) ----------
-        { id: "o-mrr-q3",   cat: "okr", name: "Alcanzar $60k MRR",           period: "Q3 2026", progress: 68, owner: "Alex Vidal",  ctx: "Ambición trimestral principal. Combina motor de contenido, pipeline de outbound y expansión de cuentas existentes." },
-        { id: "o-churn-q3", cat: "okr", name: "Bajar Bajas a 2.5%",          period: "Q3 2026", progress: 55, owner: "Rosa Bernal", ctx: "Reducir cancelaciones apoyándonos en el nuevo onboarding y la iteración semanal de producto." },
-        { id: "o-au-q4",    cat: "okr", name: "300 clientes activos",        period: "Q4 2026", progress: 41, owner: "Marco Reid",  ctx: "Consolidar la base de pago antes de la ronda. Motor de contenido lidera la captación." },
-        { id: "o-nps-q4",   cat: "okr", name: "NPS 50+",                     period: "Q4 2026", progress: 60, owner: "Rosa Bernal", ctx: "Señal cualitativa que respalda la narrativa de Series A. Depende de estabilidad y Feature X." },
-
-        // ---------- MBOs (anuales · evaluación individual · vinculados a bonos) ----------
-        { id: "m-alex",     cat: "mbo", name: "Cerrar Series A ≥ €2M",       period: "FY 2026", progress: 45, owner: "Alex Vidal",  bonus: "Bonus 12% sobre base", ctx: "Objetivo anual del CEO. Vinculado a bono directo. Éxito = ronda cerrada con inversor de referencia y runway 24 meses." },
-        { id: "m-chloe",    cat: "mbo", name: "Feature X + API v2 en prod",  period: "FY 2026", progress: 62, owner: "Rosa Bernal", bonus: "Bonus 10% sobre base", ctx: "Objetivo anual de CTO. Ambas piezas críticas para retención y escalabilidad técnica antes de la ronda." },
-        { id: "m-marcus",   cat: "mbo", name: "Bajar Coste de captación a $150", period: "FY 2026", progress: 72, owner: "Marco Reid", bonus: "Bonus 10% sobre base", ctx: "Head of Growth objetivo anual. La eficiencia de captación es el argumento de defensa del pricing en due diligence." },
-
         // ---------- Personas ----------
         { id: "p-alex",   cat: "person", name: "Alex Vidal",    role: "CEO",                    initials: "AV", size: 22, owns: ["Preparación Series A", "Memo Q1"] },
         { id: "p-chloe",  cat: "person", name: "Rosa Bernal",   role: "CTO",                    initials: "RB", size: 22, owns: ["Lanzamiento Feature X", "Manual de onboarding"] },
@@ -764,40 +711,6 @@ const DATA = {
         { source: "k-churn", target: "k-ltv",    kind: "derive" },
         { source: "k-burn",  target: "k-runway", kind: "derive" },
         { source: "k-d30",   target: "k-churn",  kind: "derive" },
-
-        // OKR → KPI (aim / measured by)
-        { source: "o-mrr-q3",   target: "k-mrr",   kind: "aim" },
-        { source: "o-mrr-q3",   target: "k-arr",   kind: "aim" },
-        { source: "o-churn-q3", target: "k-churn", kind: "aim" },
-        { source: "o-churn-q3", target: "k-d30",   kind: "aim" },
-        { source: "o-au-q4",    target: "k-au",    kind: "aim" },
-        { source: "o-au-q4",    target: "k-mrr",   kind: "aim" },
-        { source: "o-nps-q4",   target: "k-nps",   kind: "aim" },
-
-        // OKR → Proyecto (source of movement)
-        { source: "o-mrr-q3",   target: "pr-content", kind: "aim" },
-        { source: "o-churn-q3", target: "pr-onb",     kind: "aim" },
-        { source: "o-au-q4",    target: "pr-content", kind: "aim" },
-        { source: "o-nps-q4",   target: "pr-featx",   kind: "aim" },
-        { source: "o-nps-q4",   target: "pr-apiv2",   kind: "aim" },
-
-        // MBO → Persona (individual ownership)
-        { source: "m-alex",   target: "p-alex",   kind: "own" },
-        { source: "m-chloe",  target: "p-chloe",  kind: "own" },
-        { source: "m-marcus", target: "p-marcus", kind: "own" },
-
-        // MBO → KPI (measured by)
-        { source: "m-alex",   target: "k-runway", kind: "aim" },
-        { source: "m-alex",   target: "k-burn",   kind: "aim" },
-        { source: "m-chloe",  target: "k-d30",    kind: "aim" },
-        { source: "m-chloe",  target: "k-nps",    kind: "aim" },
-        { source: "m-marcus", target: "k-cac",    kind: "aim" },
-        { source: "m-marcus", target: "k-mrr",    kind: "aim" },
-
-        // MBO → Proyecto (delivery vehicle)
-        { source: "m-alex",   target: "pr-seriesa", kind: "aim" },
-        { source: "m-chloe",  target: "pr-featx",   kind: "aim" },
-        { source: "m-chloe",  target: "pr-apiv2",   kind: "aim" },
     ],
 };
 
@@ -806,8 +719,6 @@ const DATA = {
    ========================================================= */
 const CATS = {
     kpi:      { label: "KPIs",         color: "#2F6FED" },
-    okr:      { label: "OKRs",         color: "#4FB09A" },
-    mbo:      { label: "MBOs",         color: "#B79AD1" },
     person:   { label: "Equipo",       color: "#0A1F44" },
     asset:    { label: "Contenido",    color: "#A9CBFF" },
     doc:      { label: "Documentos",   color: "#FFFFFF" },
@@ -985,61 +896,6 @@ nodeSel.each(function(d) {
             .attr("dy", r + 12)
             .attr("fill", "#0A1F44")
             .text(truncate(d.name, 20));
-    } else if (d.cat === "okr") {
-        const r = 22;
-        // 5-point star
-        const starPts = [];
-        for (let i = 0; i < 10; i++) {
-            const a = (Math.PI / 5) * i - Math.PI / 2;
-            const rad = (i % 2 === 0) ? r : r * 0.42;
-            starPts.push(`${(Math.cos(a) * rad).toFixed(2)},${(Math.sin(a) * rad).toFixed(2)}`);
-        }
-        g.append("polygon")
-            .attr("class", "node-shape")
-            .attr("points", starPts.join(" "))
-            .attr("fill", "#4FB09A")
-            .attr("fill-opacity", 0.55)
-            .attr("stroke", "#2F7F6C")
-            .attr("stroke-width", 0.6);
-        g.append("text")
-            .attr("class", "node-label caption")
-            .attr("dy", r + 12)
-            .attr("fill", "#0A1F44")
-            .text(truncate(d.name, 18));
-        // small percent inside
-        g.append("text")
-            .attr("class", "node-label")
-            .attr("dy", 3)
-            .attr("font-size", "8.5px")
-            .attr("fill", "#0A1F44")
-            .attr("font-weight", 500)
-            .text(`${d.progress}%`);
-    } else if (d.cat === "mbo") {
-        const r = 20;
-        // pentagon
-        const pts = d3.range(5).map(i => {
-            const a = (Math.PI * 2 / 5) * i - Math.PI / 2;
-            return `${(Math.cos(a) * r).toFixed(2)},${(Math.sin(a) * r).toFixed(2)}`;
-        }).join(" ");
-        g.append("polygon")
-            .attr("class", "node-shape")
-            .attr("points", pts)
-            .attr("fill", "#B79AD1")
-            .attr("fill-opacity", 0.5)
-            .attr("stroke", "#8A6BAA")
-            .attr("stroke-width", 0.6);
-        g.append("text")
-            .attr("class", "node-label person-init")
-            .attr("dy", 3)
-            .attr("fill", "#0A1F44")
-            .attr("font-size", "8.5px")
-            .attr("font-weight", 500)
-            .text(d.owner.split(" ").map(p => p[0]).join(""));
-        g.append("text")
-            .attr("class", "node-label caption")
-            .attr("dy", r + 12)
-            .attr("fill", "#0A1F44")
-            .text(truncate(d.name, 18));
     }
 });
 
@@ -1139,48 +995,14 @@ function renderPanel(d) {
 
     const STATUS_LABELS = { planned: "Planeado", progress: "En curso", shipped: "Entregado" };
 
-    const frameworkNote = `
-        <div class="framework-note">
-            <div class="fw-title">Marco de trabajo</div>
-            <div class="fw-row"><span class="fw-tag kpi-tag">KPI</span><span><b>Salud actual.</b> Métricas fijas e históricas (facturación, tráfico). Miden dónde está hoy el negocio.</span></div>
-            <div class="fw-row"><span class="fw-tag okr-tag">OKR</span><span><b>Ambición trimestral.</b> Hacia dónde vamos. Objetivos con Key Results que empujan crecimiento y cambio.</span></div>
-            <div class="fw-row"><span class="fw-tag mbo-tag">MBO</span><span><b>Compromiso anual.</b> Objetivos individuales bajados desde dirección, vinculados a bonos o subidas.</span></div>
-        </div>`;
-
     let body = "";
     if (d.cat === "kpi") {
-        body += frameworkNote;
         body += `<div class="big-value">${d.value}</div>
                  <div class="trend ${d.trendDir}">${d.trend} vs. mes anterior</div>
                  <svg class="sparkline" viewBox="0 0 200 44" preserveAspectRatio="none">
                     ${sparklinePath(d.sparkline, 200, 44)}
                  </svg>
                  <div class="caption">${d.desc}</div>`;
-    } else if (d.cat === "okr") {
-        body += frameworkNote;
-        const pct = d.progress;
-        body += `<div class="big-value">${pct}<span style="font-size:20px; color:var(--gray); margin-left:4px;">%</span></div>
-                 <div class="trend up" style="margin-bottom:14px;">Progreso · ${d.period}</div>
-                 <svg viewBox="0 0 200 8" preserveAspectRatio="none" style="width:100%; height:8px; margin-bottom:18px;">
-                    <rect x="0" y="0" width="200" height="8" rx="4" fill="#F3F6FB"/>
-                    <rect x="0" y="0" width="${2 * pct}" height="8" rx="4" fill="#4FB09A"/>
-                 </svg>
-                 <div class="kv"><span class="k">Responsable</span><span class="v">${d.owner}</span></div>
-                 <div class="kv"><span class="k">Periodo</span><span class="v">${d.period}</span></div>
-                 <div class="caption" style="margin-top:14px;">${d.ctx}</div>`;
-    } else if (d.cat === "mbo") {
-        body += frameworkNote;
-        const pct = d.progress;
-        body += `<div class="big-value">${pct}<span style="font-size:20px; color:var(--gray); margin-left:4px;">%</span></div>
-                 <div class="trend up" style="margin-bottom:14px;">Progreso anual · ${d.period}</div>
-                 <svg viewBox="0 0 200 8" preserveAspectRatio="none" style="width:100%; height:8px; margin-bottom:18px;">
-                    <rect x="0" y="0" width="200" height="8" rx="4" fill="#F3F6FB"/>
-                    <rect x="0" y="0" width="${2 * pct}" height="8" rx="4" fill="#B79AD1"/>
-                 </svg>
-                 <div class="kv"><span class="k">Titular</span><span class="v">${d.owner}</span></div>
-                 <div class="kv"><span class="k">Periodo</span><span class="v">${d.period}</span></div>
-                 <div class="kv"><span class="k">Compensación</span><span class="v" style="font-family:Inter,sans-serif; font-weight:400; text-align:right;">${d.bonus}</span></div>
-                 <div class="caption" style="margin-top:14px;">${d.ctx}</div>`;
     } else if (d.cat === "person") {
         body += `<div class="kv"><span class="k">Rol</span><span class="v">${d.role}</span></div>
                  <div class="kv"><span class="k">Responsable de</span><span class="v">${d.owns.length} item${d.owns.length !== 1 ? "s" : ""}</span></div>`;
