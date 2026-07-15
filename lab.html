@@ -502,6 +502,51 @@
     }
     footer a:hover { color: var(--navy); }
 
+    /* ======= HINT (interaction affordance) ======= */
+    .hint {
+        position: fixed;
+        bottom: 44px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 12;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 9.2px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gray);
+        opacity: 0;
+        transition: opacity 0.7s ease, transform 0.7s ease;
+        pointer-events: none;
+        text-align: center;
+        line-height: 1.5;
+        white-space: nowrap;
+    }
+    .hint.visible { opacity: 1; transform: translate(-50%, 0); }
+    .hint.gone    { opacity: 0; transform: translate(-50%, 6px); }
+
+    .hint .hint-arrow {
+        display: block;
+        color: var(--accent);
+        font-size: 12px;
+        margin: 5px auto 0;
+        animation: hint-bob 2.6s ease-in-out infinite;
+    }
+
+    @keyframes hint-bob {
+        0%, 100% { transform: translateY(0);  opacity: 0.55; }
+        50%      { transform: translateY(-4px); opacity: 1; }
+    }
+
+    @supports (padding: env(safe-area-inset-bottom)) {
+        .hint { bottom: calc(44px + env(safe-area-inset-bottom)); }
+    }
+
+    /* Subtle halo pulse around a featured node */
+    .node-halo {
+        pointer-events: none;
+    }
+
     /* ======= CONTROLS (bottom-right) ======= */
     .controls {
         position: fixed;
@@ -563,6 +608,11 @@
 <footer class="fade-in">
     built by <a href="/">pablo contreras</a> · pablo-contreras-portfolio.netlify.app
 </footer>
+
+<div class="hint" id="hint">
+    <div>toca un nodo · pellizca para hacer zoom</div>
+    <span class="hint-arrow">↑</span>
+</div>
 
 <div class="panel-scrim" id="scrim"></div>
 <aside class="panel" id="panel" aria-hidden="true">
@@ -790,6 +840,14 @@ const nodeSel = gNodes.selectAll("g.node-group")
 nodeSel.each(function(d) {
     const g = d3.select(this);
     if (d.cat === "kpi") {
+        // halo ring for the "look here" pulse — hidden by default, only triggered on the featured node
+        g.append("circle")
+            .attr("class", "node-halo")
+            .attr("r", d.size)
+            .attr("fill", "none")
+            .attr("stroke", "#2F6FED")
+            .attr("stroke-width", 1.4)
+            .attr("opacity", 0);
         g.append("circle")
             .attr("class", "node-shape")
             .attr("r", d.size)
@@ -912,6 +970,54 @@ sim.on("tick", () => {
 
 // Initial zoom to fit after some ticks
 setTimeout(fitToScreen, 1300);
+
+/* =========================================================
+   INTERACTION AFFORDANCE — pulse a featured node + bottom hint
+   Kills itself on the first tap so it doesn't nag the user.
+   ========================================================= */
+let affordanceActive = true;
+const hintEl = document.getElementById("hint");
+const featuredId = "k-mrr"; // biggest, most obvious KPI
+
+function pulseFeaturedNode() {
+    if (!affordanceActive) return;
+    const featuredNode = nodeSel.filter(d => d.id === featuredId);
+    if (featuredNode.empty()) return;
+    const halo = featuredNode.select(".node-halo");
+    const baseR = +halo.attr("r");
+    halo
+        .attr("opacity", 0.55)
+        .attr("r", baseR)
+        .transition().duration(1800).ease(d3.easeQuadOut)
+        .attr("r", baseR * 1.75)
+        .attr("opacity", 0)
+        .on("end", () => {
+            if (affordanceActive) setTimeout(pulseFeaturedNode, 350);
+        });
+}
+
+function killAffordance() {
+    if (!affordanceActive) return;
+    affordanceActive = false;
+    hintEl.classList.remove("visible");
+    hintEl.classList.add("gone");
+    nodeSel.selectAll(".node-halo")
+        .interrupt()
+        .transition().duration(400).attr("opacity", 0);
+}
+
+// Show hint + start pulse a moment after the entry animation settles
+setTimeout(() => {
+    if (!affordanceActive) return;
+    hintEl.classList.add("visible");
+    pulseFeaturedNode();
+}, 1500);
+
+// Kill on any real interaction with a node (click, touch, hover on desktop)
+nodeSel.on("pointerdown.aff", killAffordance);
+nodeSel.on("mouseenter.aff", killAffordance);
+// Also kill on pan/zoom or scrim tap
+svg.on("wheel.aff", killAffordance).on("touchmove.aff", killAffordance);
 
 /* =========================================================
    HIGHLIGHTING
