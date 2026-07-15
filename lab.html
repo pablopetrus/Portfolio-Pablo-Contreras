@@ -502,50 +502,96 @@
     }
     footer a:hover { color: var(--navy); }
 
-    /* ======= HINT (interaction affordance) ======= */
-    .hint {
+    /* ======= ONBOARDING CARD (interaction affordance) ======= */
+    .onboarding {
         position: fixed;
-        bottom: 44px;
+        bottom: 68px;
         left: 50%;
-        transform: translateX(-50%);
-        z-index: 12;
+        z-index: 14;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(10px) saturate(120%);
+        -webkit-backdrop-filter: blur(10px) saturate(120%);
+        border: 0.5px solid var(--hairline);
+        border-radius: 14px;
+        padding: 13px 18px 12px;
+        max-width: 340px;
+        min-width: 260px;
+        box-shadow: 0 8px 26px rgba(10, 31, 68, 0.08);
+        text-align: center;
+        opacity: 0;
+        transform: translate(-50%, 14px);
+        transition: opacity 0.55s ease, transform 0.55s ease;
+        pointer-events: none;
+    }
+    .onboarding.visible {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    .onboarding.gone {
+        opacity: 0;
+        transform: translate(-50%, 14px);
+    }
+
+    .onboarding-cta {
         font-family: "Inter", sans-serif;
         font-weight: 500;
-        font-size: 9.2px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
+        font-size: 13.5px;
+        color: var(--navy);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        letter-spacing: -0.005em;
+        line-height: 1.15;
+    }
+
+    .onboarding-cta .cta-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 0 rgba(47, 111, 237, 0.35);
+        animation: cta-pulse 1.6s ease-in-out infinite;
+        flex-shrink: 0;
+    }
+
+    .onboarding-desc {
+        font-family: "Fraunces", serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 11.5px;
         color: var(--gray);
-        opacity: 0;
-        transition: opacity 0.7s ease, transform 0.7s ease;
-        pointer-events: none;
-        text-align: center;
-        line-height: 1.5;
-        white-space: nowrap;
-    }
-    .hint.visible { opacity: 1; transform: translate(-50%, 0); }
-    .hint.gone    { opacity: 0; transform: translate(-50%, 6px); }
-
-    .hint .hint-arrow {
-        display: block;
-        color: var(--accent);
-        font-size: 12px;
-        margin: 5px auto 0;
-        animation: hint-bob 2.6s ease-in-out infinite;
+        line-height: 1.4;
+        margin-top: 5px;
+        letter-spacing: 0;
     }
 
-    @keyframes hint-bob {
-        0%, 100% { transform: translateY(0);  opacity: 0.55; }
-        50%      { transform: translateY(-4px); opacity: 1; }
+    .onboarding-hint {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 9px;
+        color: var(--gray);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-top: 8px;
+        opacity: 0.8;
+    }
+
+    @keyframes cta-pulse {
+        0%, 100% { transform: scale(0.85); box-shadow: 0 0 0 0    rgba(47, 111, 237, 0.35); }
+        50%      { transform: scale(1.1);  box-shadow: 0 0 0 8px rgba(47, 111, 237, 0);    }
     }
 
     @supports (padding: env(safe-area-inset-bottom)) {
-        .hint { bottom: calc(44px + env(safe-area-inset-bottom)); }
+        .onboarding { bottom: calc(68px + env(safe-area-inset-bottom)); }
     }
 
-    /* Subtle halo pulse around a featured node */
-    .node-halo {
-        pointer-events: none;
+    @media (max-width: 380px) {
+        .onboarding { max-width: calc(100vw - 32px); min-width: 0; }
+        .onboarding-cta { font-size: 12.5px; }
     }
+
+    .node-halo { pointer-events: none; }
 
     /* ======= CONTROLS (bottom-right) ======= */
     .controls {
@@ -609,9 +655,13 @@
     built by <a href="/">pablo contreras</a> · pablo-contreras-portfolio.netlify.app
 </footer>
 
-<div class="hint" id="hint">
-    <div>toca un nodo · pellizca para hacer zoom</div>
-    <span class="hint-arrow">↑</span>
+<div class="onboarding" id="onboarding">
+    <div class="onboarding-cta">
+        <span class="cta-dot"></span>
+        Toca cualquier nodo para explorar
+    </div>
+    <div class="onboarding-desc">Un negocio visualizado como una red viva de KPIs, personas, decisiones y contenido.</div>
+    <div class="onboarding-hint">Pellizca para hacer zoom</div>
 </div>
 
 <div class="panel-scrim" id="scrim"></div>
@@ -976,7 +1026,7 @@ setTimeout(fitToScreen, 1300);
    Kills itself on the first tap so it doesn't nag the user.
    ========================================================= */
 let affordanceActive = true;
-const hintEl = document.getElementById("hint");
+const onboardingEl = document.getElementById("onboarding");
 const featuredId = "k-mrr"; // biggest, most obvious KPI
 
 function pulseFeaturedNode() {
@@ -999,24 +1049,23 @@ function pulseFeaturedNode() {
 function killAffordance() {
     if (!affordanceActive) return;
     affordanceActive = false;
-    hintEl.classList.remove("visible");
-    hintEl.classList.add("gone");
+    onboardingEl.classList.remove("visible");
+    onboardingEl.classList.add("gone");
     nodeSel.selectAll(".node-halo")
         .interrupt()
         .transition().duration(400).attr("opacity", 0);
 }
 
-// Show hint + start pulse a moment after the entry animation settles
+// Show onboarding card + start pulse a moment after the entry animation settles
 setTimeout(() => {
     if (!affordanceActive) return;
-    hintEl.classList.add("visible");
+    onboardingEl.classList.add("visible");
     pulseFeaturedNode();
-}, 1500);
+}, 1200);
 
-// Kill on any real interaction with a node (click, touch, hover on desktop)
+// Kill on any real interaction
 nodeSel.on("pointerdown.aff", killAffordance);
 nodeSel.on("mouseenter.aff", killAffordance);
-// Also kill on pan/zoom or scrim tap
 svg.on("wheel.aff", killAffordance).on("touchmove.aff", killAffordance);
 
 /* =========================================================
