@@ -581,6 +581,39 @@
             flex-grow: 1;
         }
 
+        .project-photo {
+            position: relative;
+            aspect-ratio: 16 / 10;
+            margin: -32px -32px 24px;
+            overflow: hidden;
+            border-radius: 19px 19px 0 0;
+            background: #eef2f7;
+        }
+
+        .project-photo img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 42%;
+            transition: transform 500ms ease;
+        }
+
+        .project-item:hover .project-photo img {
+            transform: scale(1.025);
+        }
+
+        .project-photo figcaption {
+            position: absolute;
+            inset: auto 0 0;
+            padding: 34px 18px 12px;
+            color: white;
+            font-size: 0.78rem;
+            font-weight: 650;
+            letter-spacing: 0.01em;
+            background: linear-gradient(transparent, rgba(8, 24, 43, 0.82));
+        }
+
         .project-tags {
             display: flex;
             flex-wrap: wrap;
@@ -1195,6 +1228,10 @@
             </div>
 
             <div class="project-item">
+                <figure class="project-photo">
+                    <img src="./images/bip-portugal-2026.webp" alt="Equipo internacional del BIP Turning Ideas into Businesses en Portugal" loading="lazy" decoding="async">
+                    <figcaption data-i18n="proj_bip_photo_caption">Semana presencial del BIP · Portugal, 2026</figcaption>
+                </figure>
                 <h3 data-i18n="proj_bip_title">BIP Portugal: Transforming Ideas into Businesses</h3>
                 <p data-i18n="proj_bip_desc">Participante becado en la edición 2026 del BIP de la Universidade do Minho. Validación, propuesta de valor, modelo de negocio, escalabilidad y pitch de startups tecnológicas en un entorno internacional.</p>
                 <div class="project-tags">
@@ -1611,6 +1648,7 @@
             proj_2_desc: "Solución IA inmobiliaria desarrollada en Ideas Factory UGR. 72 horas de alta exigencia (8:00 a 21:00 presencial obligatoria). Yo personalmente conseguí 5 cartas de intención con reuniones cerradas de agencias reales de Granada interesadas.",
             proj_bip_title: "BIP Portugal: Turning Ideas into Businesses",
             proj_bip_desc: "Participante becado en la edición 2026 del BIP de la Universidade do Minho. Validación, propuesta de valor, modelo de negocio, escalabilidad y pitch de startups tecnológicas en un entorno internacional.",
+            proj_bip_photo_caption: "Semana presencial del BIP · Portugal, 2026",
             proj_uic_title: "United in Curiosity Week — Polonia 2026",
             proj_uic_desc: "Seleccionado y becado para una movilidad internacional en Varsovia y Breslavia. Semana interdisciplinar en la Universidad de Breslavia sobre IA aplicada a la ciencia, fact-checking, visualización de datos y comunicación eficaz de investigación.",
             proj_canal_title: "Sistemas de Automatización (Canal Online SL)",
@@ -1738,6 +1776,7 @@
             proj_2_desc: "Real Estate AI solution developed at Ideas Factory UGR. 72 high-demand hours (mandatory 8:00 to 21:00). Secured 5 Letters of Intent.",
             proj_bip_title: "BIP Portugal: Turning Ideas into Businesses",
             proj_bip_desc: "Scholarship participant in the 2026 University of Minho BIP. Startup validation, value proposition, business-model design, scalability, and pitching in an international environment.",
+            proj_bip_photo_caption: "BIP in-person week · Portugal, 2026",
             proj_uic_title: "United in Curiosity Week — Poland 2026",
             proj_uic_desc: "Selected with funding for international mobility across Warsaw and Wrocław. An interdisciplinary week at the University of Wrocław focused on AI in science, fact-checking, data visualisation, and effective research communication.",
             proj_canal_title: "Automation Systems (Canal Online SL)",
