@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pablo · IA, producto y estrategia. Proyectos, experiencia y sistemas de IA aplicada.">
+    <meta name="description" content="Pablo · IA, producto y estrategia. Proyectos y sistemas de IA aplicada.">
     <title>Pablo · IA / Producto / Estrategia</title>
     
     <!-- Favicon -->
@@ -373,12 +373,12 @@
                 font-size: 11pt !important;
                 color: #666 !important;
             }
-            .projects-list, .experience-list, .systems-grid, .info-grid, .skills-section-inner {
+            .projects-list, .systems-grid, .info-grid, .skills-section-inner {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
                 gap: 15pt !important;
             }
-            .project-item, .system-card, .info-card, .timeline-item {
+            .project-item, .system-card, .info-card {
                 border: 1px solid #f1eae0 !important;
                 background: #fffaf2 !important;
                 margin-bottom: 10pt !important;
@@ -401,16 +401,6 @@
                 text-align: left !important;
                 margin: 0 !important;
             }
-            .timeline {
-                max-width: 100% !important;
-            }
-            .timeline-item {
-                padding-left: 15pt !important;
-                margin-bottom: 10pt !important;
-            }
-            .timeline-dot {
-                background: var(--accent-color) !important;
-            }
             .skill-tags {
                 display: flex !important;
                 flex-wrap: wrap !important;
@@ -423,14 +413,6 @@
                 margin: 2pt !important;
                 font-size: 8pt !important;
                 padding: 2pt 6pt !important;
-            }
-            .experience-box {
-                border: 2px solid var(--accent-color) !important;
-                padding: 10pt !important;
-                background: #fff4e7 !important;
-                font-weight: 600 !important;
-                margin-top: 10pt !important;
-                border-radius: 8px !important;
             }
             /* Power Record is a regular block in the printed CV (no more position:fixed,
                which made it duplicate on every PDF page). */
@@ -671,61 +653,6 @@
             display: inline-flex;
             align-items: center;
             gap: 4px;
-        }
-
-        /* EXPERIENCE TIMELINE */
-        .timeline {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #e5e5e5;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 40px;
-            margin-bottom: 60px;
-        }
-
-        .timeline-item::after {
-            content: "";
-            position: absolute;
-            left: -4px;
-            top: 6px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--accent-color);
-            border: 2px solid white;
-            box-shadow: 0 0 0 2px var(--accent-color);
-        }
-
-        .timeline-year {
-            font-size: 0.85rem;
-            color: var(--accent-color);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 8px;
-        }
-
-        .timeline-item h3 {
-            font-size: 1.35rem;
-            margin-bottom: 8px;
-        }
-
-        .timeline-item p {
-            color: var(--text-secondary);
-            font-size: 1rem;
         }
 
         /* EDUCATION */
@@ -1109,7 +1036,6 @@
             <ul class="nav-links">
                 <li><a href="#about" data-i18n="nav_about">Sobre mí</a></li>
                 <li><a href="#projects" data-i18n="nav_projects">Proyectos</a></li>
-                <li><a href="#experience" data-i18n="nav_experience">Experiencia</a></li>
                 <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
                 <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
                 <li><a href="/lab" class="nav-demo" data-i18n="nav_demo">Demo producto ↗</a></li>
@@ -1429,43 +1355,6 @@
         </div>
     </section>
 
-    <!-- Experience Timeline -->
-    <section id="experience" class="container">
-        <div class="section-header">
-            <h2 class="section-title" data-i18n="exp_title">Trayectoria Profesional</h2>
-            <p class="section-subtitle" data-i18n="exp_total">Trayectoria: 10 meses de experiencia real Junior con proyectos de automatización e IA.</p>
-        </div>
-
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-year">2026</div>
-                <h3 data-i18n="exp_1_title">Movilidad internacional becada — Arqus / Erasmus+</h3>
-                <p data-i18n="exp_1_desc">BIP Turning Ideas into Businesses en Portugal y United in Curiosity Week en Polonia: emprendimiento tecnológico, investigación, IA y comunicación científica.</p>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-year">2025</div>
-                <h3 data-i18n="exp_seo_title">SEO & Marketing Strategy (2023-2024)</h3>
-                <p data-i18n="exp_seo_desc">Posicionamiento web orgánico y marketing enfocado a productos de ticket medio (100€ - 300€). Validación de embudos de conversión.</p>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-year">2024</div>
-                <h3 data-i18n="exp_2_title">CanalOnline SL - Emprendedor / Junior</h3>
-                <p data-i18n="exp_2_desc">Ejecución técnica en automatización de marketing y operaciones digitales.</p>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-year">2023 – 2024</div>
-                <h3 data-i18n="exp_3_title">Freelance AI Ops (Madrid & Valencia)</h3>
-                <p data-i18n="exp_3_desc">Colaboración telemática con agencias de alcance nacional. Integraciones con Make, APIs de CRMs y operativa digital.</p>
-                <div class="experience-box" style="margin-top: 15px; border: 1px solid var(--accent-color); padding: 12px; border-radius: 8px; background: rgba(232, 117, 0, 0.06);">
-                    <p style="margin: 0; color: var(--text-main); font-weight: 500;" data-i18n="exp_total">Con 10 meses de experiencia real en proyectos colaborando con agencias de Madrid, Valencia y Granada.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Education & Excellence -->
     <section id="education" class="container">
         <div class="section-header">
@@ -1641,7 +1530,6 @@
         es: {
             nav_about: "Sobre mí",
             nav_projects: "Proyectos",
-            nav_experience: "Trayectoria",
             nav_skills: "Skills",
             nav_events: "Logros",
             nav_contact: "Contacto",
@@ -1698,16 +1586,6 @@
             proj_6_title: "Dynamic Portfolio & Auto CV",
             proj_6_desc: "Sincronización automatizada del portfolio web y CV descargable mediante scripts en Python y Git/GitHub.",
 
-            exp_title: "Trayectoria Profesional",
-            exp_total: "Con 10 meses de experiencia real en proyectos colaborando con agencias de Madrid, Valencia y Granada.",
-            exp_1_title: "Movilidad internacional becada — Arqus / Erasmus+",
-            exp_1_desc: "BIP Turning Ideas into Businesses en Portugal y United in Curiosity Week en Polonia: emprendimiento tecnológico, investigación, IA y comunicación científica.",
-            exp_seo_title: "Estrategia SEO & Marketing (2023-2024)",
-            exp_seo_desc: "Posicionamiento orgánico y marketing para productos de ticket medio (100€-300€).",
-            exp_2_title: "CanalOnline SL - Emprendedor / Junior",
-            exp_2_desc: "Automatización de marketing y operaciones digitales.",
-            exp_3_title: "Freelance AI Ops (Madrid & Valencia)",
-            exp_3_desc: "Colaboración remota. Integración de APIs y operativa digital.",
             tag_pub: "Presentación al público",
             btn_info: "+ Información",
             btn_cert: "Certificado",
@@ -1766,7 +1644,6 @@
         en: {
             nav_about: "Profile",
             nav_projects: "Projects",
-            nav_experience: "Timeline",
             nav_skills: "Skills",
             nav_events: "Achievements",
             nav_contact: "Contact",
@@ -1832,16 +1709,6 @@
             proj_6_title: "Dynamic Portfolio & Auto CV",
             proj_6_desc: "Automated syncing of the portfolio web and downloadable CV via Python and Git/GitHub scripts.",
 
-            exp_title: "Professional Path",
-            exp_total: "With 10 months of real experience in projects collaborating with agencies in Madrid, Valencia, and Granada.",
-            exp_1_title: "Scholarship-funded international mobility — Arqus / Erasmus+",
-            exp_1_desc: "Turning Ideas into Businesses BIP in Portugal and United in Curiosity Week in Poland: tech entrepreneurship, research, AI, and science communication.",
-            exp_seo_title: "SEO & Marketing Strategy (2023-2024)",
-            exp_seo_desc: "Organic positioning and marketing for mid-ticket products (€100-€300).",
-            exp_2_title: "CanalOnline SL - Entrepreneur / Junior",
-            exp_2_desc: "Technical execution in marketing automation.",
-            exp_3_title: "Freelance AI Ops (Madrid & Valencia)",
-            exp_3_desc: "Remote collaboration. API integrations and digital operations.",
             tag_pub: "Public Speaking",
             btn_info: "+ Information",
             btn_cert: "Certificate",
