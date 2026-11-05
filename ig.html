@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Pablo (Petrus) Contreras - AI Entrepreneur & Systems Engineer">
-    <title>Pablo (Petrus) Contreras · AI & Systems</title>
+    <meta name="description" content="Pablo · IA, producto y estrategia. Proyectos, experiencia y sistemas de IA aplicada.">
+    <title>Pablo · IA / Producto / Estrategia</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><circle cx=%2216%22 cy=%2216%22 r=%2214%22 fill=%22%232997ff%22 /><path d=%22M12 10h4a4 4 0 0 1 0 8h-4v4%22 stroke=%22white%22 stroke-width=%222.5%22 fill=%22none%22 stroke-linecap=%22round%22 /></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><circle cx=%2216%22 cy=%2216%22 r=%2214%22 fill=%22%23e87500%22 /><path d=%22M12 10h4a4 4 0 0 1 0 8h-4v4%22 stroke=%22white%22 stroke-width=%222.5%22 fill=%22none%22 stroke-linecap=%22round%22 /></svg>">
     
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,12 +30,12 @@
             font-family: "BrandFont", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
             /* Colors */
-            --bg-color: #ffffff;
-            --bg-secondary: #f5f5f7;
-            --text-main: #1d1d1f;
-            --text-secondary: #86868b;
-            --accent-color: #2997ff; /* Soft Apple-like Blue */
-            --accent-hover: #0071e3;
+            --bg-color: #fffdf9;
+            --bg-secondary: #f6f2eb;
+            --text-main: #171717;
+            --text-secondary: #62615f;
+            --accent-color: #e87500; /* Warm orange from Pablo’s visual reference */
+            --accent-hover: #bd5e00;
             --border-radius: 24px;
             --nav-height: 60px;
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -135,7 +135,7 @@
         .btn-primary:hover {
             background-color: var(--accent-hover);
             transform: scale(1.02);
-            box-shadow: 0 4px 12px rgba(41, 151, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(232, 117, 0, 0.25);
         }
 
         .btn-secondary {
@@ -292,7 +292,7 @@
             margin-right: auto;
         }
 
-        .hero-location {
+        .hero-proof {
             margin-top: 40px;
             font-size: 0.9rem;
             color: var(--text-secondary);
@@ -325,7 +325,7 @@
 
         /* PRINT STYLES - Ensures the PDF export looks like a clean CV */
         @media print {
-            header, .lang-toggle, .btn-group, .hero-location, .floating-toolbar, canvas, footer, .cta-buttons, .project-links {
+            header, .lang-toggle, .btn-group, .hero-proof, .floating-toolbar, canvas, footer, .cta-buttons, .project-links {
                 display: none !important;
             }
             body {
@@ -378,8 +378,8 @@
                 gap: 15pt !important;
             }
             .project-item, .system-card, .info-card, .timeline-item {
-                border: 1px solid #eef2f7 !important;
-                background: #f9fbff !important;
+                border: 1px solid #f1eae0 !important;
+                background: #fffaf2 !important;
                 margin-bottom: 10pt !important;
                 padding: 12pt !important;
                 border-left: 4px solid var(--accent-color) !important;
@@ -389,7 +389,7 @@
                 margin-bottom: 8pt !important;
                 text-align: left !important;
                 color: var(--accent-color) !important;
-                border-bottom: 1px solid #d0e7ff;
+                border-bottom: 1px solid #f3c693;
                 padding-bottom: 4px;
             }
             .section-header {
@@ -415,9 +415,9 @@
                 flex-wrap: wrap !important;
             }
             .skill-tag {
-                background: #f0f7ff !important;
-                border: 1px solid #cfe5ff !important;
-                color: #0056b3 !important;
+                background: #fff4e7 !important;
+                border: 1px solid #f1c89c !important;
+                color: #9f4f00 !important;
                 display: inline-block !important;
                 margin: 2pt !important;
                 font-size: 8pt !important;
@@ -426,7 +426,7 @@
             .experience-box {
                 border: 2px solid var(--accent-color) !important;
                 padding: 10pt !important;
-                background: #f0f7ff !important;
+                background: #fff4e7 !important;
                 font-weight: 600 !important;
                 margin-top: 10pt !important;
                 border-radius: 8px !important;
@@ -588,7 +588,7 @@
             margin: -32px -32px 24px;
             overflow: hidden;
             border-radius: 19px 19px 0 0;
-            background: #eef2f7;
+            background: #f1eae0;
         }
 
         .project-photo img {
@@ -931,7 +931,7 @@
         }
 
         .press-card:hover {
-            box-shadow: 0 20px 50px rgba(41, 151, 255, 0.08);
+            box-shadow: 0 20px 50px rgba(232, 117, 0, 0.10);
             border-color: var(--accent-color);
         }
 
@@ -1086,7 +1086,7 @@
         /* IG VARIANT — Pyramid hero canvas tuning      */
         /* ============================================ */
         .hero {
-            background: linear-gradient(180deg, #f8fbff 0%, #ffffff 60%);
+            background: linear-gradient(180deg, #fffaf2 0%, #fffdf9 60%);
         }
 
         #hero-canvas {
@@ -1110,6 +1110,23 @@
             opacity: 1;
             transform: translateY(0) scale(1);
         }
+
+        /* Pablo · editorial orange identity */
+        .btn-primary, .nav-links a.nav-demo:hover { color: #171717; font-weight: 650; }
+        .btn-secondary, .nav-links a.nav-demo { color: #9f4f00; }
+        .brand-slash { color: var(--accent-color); margin-left: 0.15em; font-weight: 700; }
+        .hero { background: radial-gradient(ellipse at 100% 100%, rgba(22,22,22,0.16), transparent 42%), radial-gradient(ellipse at 0% 100%, rgba(232,117,0,0.06), transparent 42%), var(--bg-color); }
+        #hero-canvas { z-index: 1; }
+        .hero-content { position: relative; z-index: 2; }
+        .hero h1 { font-size: clamp(4.5rem, 10vw, 8.5rem); letter-spacing: -0.07em; text-transform: uppercase; background: none; -webkit-text-fill-color: var(--text-main); margin-bottom: 0.55rem; }
+        .hero h1::after { content: '/'; color: var(--accent-color); -webkit-text-fill-color: var(--accent-color); margin-left: 0.12em; }
+        .hero h2 { font-size: clamp(0.85rem, 1.6vw, 1.2rem); font-weight: 700; letter-spacing: 0.28em; color: var(--text-main); }
+        .hero-proof { display: inline-flex; align-items: center; margin-top: 28px; padding: 10px 16px; border: 1px solid rgba(232,117,0,0.28); border-radius: 999px; background: rgba(255,255,255,0.80); color: #9f4f00; font-weight: 650; opacity: 1; }
+        .floating-toolbar .toolbar-icon:first-child { background: #171717; }
+        .floating-toolbar .toolbar-icon:nth-child(2) { background: #74716d; }
+        .floating-toolbar .toolbar-icon:nth-child(3) { background: var(--accent-color); }
+        @media (max-width: 600px) { .hero h2 { letter-spacing: 0.14em; } .hero-proof { font-size: 0.78rem; line-height: 1.35; } }
+        @media print { .hero h1::after { display: none; } }
     </style>
 <link rel="stylesheet" href="/index.css">
 </head>
@@ -1118,7 +1135,7 @@
 <!-- Header -->
 <header>
     <div class="nav-container">
-        <a href="#" class="logo">Pablo (Petrus) Contreras · AI & Systems</a>
+        <a href="#" class="logo" aria-label="Pablo, inicio">PABLO<span class="brand-slash">/</span></a>
         <nav>
             <ul class="nav-links">
                 <li><a href="#about" data-i18n="nav_about">Sobre mí</a></li>
@@ -1142,14 +1159,14 @@
     <section class="hero">
         <canvas id="hero-canvas"></canvas>
         <div class="hero-content">
-            <h1 data-i18n="hero_name">Pablo (Petrus) Contreras</h1>
-            <h2 data-i18n="hero_subtitle">IA, automatización y sistemas desde Granada hacia el mundo.</h2>
-            <p data-i18n="hero_desc">Estudiante de Ingeniería Informática + ADE (UGR) y emprendedor de IA, creando soluciones reales para negocios.</p>
+            <h1 data-i18n="hero_name">Pablo</h1>
+            <h2 data-i18n="hero_subtitle">IA / PRODUCTO / ESTRATEGIA</h2>
+            <p data-i18n="hero_desc">Estudiante de Ingeniería Informática + ADE (UGR). Construyo productos de IA y sistemas que conectan tecnología, negocio y distribución.</p>
             <div class="btn-group">
                 <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_projects">Ver proyectos</a>
                 <a href="./cv/Pablo_Contreras_Onepage_CV.pdf" download="Pablo_Contreras_CV.pdf" class="btn btn-secondary" data-i18n="hero_btn_cv">Descargar CV</a>
             </div>
-            <div class="hero-location" data-i18n="hero_location">Granada, España</div>
+            <div class="hero-proof" data-i18n="hero_proof">+5 M visualizaciones generadas en el último mes</div>
         </div>
         
         <!-- Floating animated toolbar deco -->
@@ -1167,7 +1184,7 @@
         </div>
         <div class="about-card">
             <div class="about-text">
-                <p data-i18n="about_p1">Estudiante de Ingeniería Informática + ADE en la Universidad de Granada, builder enfocado en IA aplicada, automatización y marketing tech.</p>
+                <p data-i18n="about_p1">Estudiante de Ingeniería Informática + ADE en la Universidad de Granada, centrado en IA aplicada, producto y estrategia.</p>
                 <br>
                 <p data-i18n="about_p2">Sólida capacidad para construir infraestructuras de IA escalables, habiendo superado las 100k operaciones automatizadas entre 2025 y 2026.</p>
             </div>
@@ -1194,7 +1211,7 @@
                 </div>
                 <div class="press-content">
                     <p class="press-text" data-i18n="press_snippet">
-                        <strong>Pablo Contreras Pérez</strong> es un estudiante universitario de <strong>Ingeniería Informática con ADE</strong> de la UGR, afincado en Granada. Recientemente participó en <em>Gen AI ARENA</em>, el primer hackathon de inteligencia artificial generativa en Granada orientado a transformar desafíos reales de negocio en soluciones operativas, organizado por <strong>SIDN</strong>.
+                        <strong>Pablo Contreras Pérez</strong> es un estudiante universitario de <strong>Ingeniería Informática con ADE</strong> de la UGR. Recientemente participó en <em>Gen AI ARENA</em>, el primer hackathon de inteligencia artificial generativa en Granada orientado a transformar desafíos reales de negocio en soluciones operativas, organizado por <strong>SIDN</strong>.
                     </p>
                     <p class="press-text-secondary" data-i18n="press_snippet_2">
                         El evento convocó a más de 130 aspirantes de los cuales seleccionaron únicamente a 23 participantes estrella. El equipo de Pablo abordó los sobrecostes en marketing de paid ads, implementando modelos de detección que permiten ahorrar hasta ~12.000€ mensuales a las empresas participantes.
@@ -1437,8 +1454,8 @@
 
             <!-- Social Media Impact (Last) -->
             <div class="project-item">
-                <h3 data-i18n="proj_sm_title">+1.5M views across all platforms</h3>
-                <p data-i18n="proj_sm_desc">&nbsp;</p>
+                <h3 data-i18n="proj_sm_title">+5 M visualizaciones en el último mes</h3>
+                <p data-i18n="proj_sm_desc">Contenido y distribución digital en varias cuentas y plataformas.</p>
             </div>
 
         </div>
@@ -1474,7 +1491,7 @@
                 <div class="timeline-year">2023 – 2024</div>
                 <h3 data-i18n="exp_3_title">Freelance AI Ops (Madrid & Valencia)</h3>
                 <p data-i18n="exp_3_desc">Colaboración telemática con agencias de alcance nacional. Integraciones con Make, APIs de CRMs y operativa digital.</p>
-                <div class="experience-box" style="margin-top: 15px; border: 1px solid var(--accent-color); padding: 12px; border-radius: 8px; background: rgba(41, 151, 255, 0.05);">
+                <div class="experience-box" style="margin-top: 15px; border: 1px solid var(--accent-color); padding: 12px; border-radius: 8px; background: rgba(232, 117, 0, 0.06);">
                     <p style="margin: 0; color: var(--text-main); font-weight: 500;" data-i18n="exp_total">Con 10 meses de experiencia real en proyectos colaborando con agencias de Madrid, Valencia y Granada.</p>
                 </div>
             </div>
@@ -1632,7 +1649,7 @@
     <section id="contact" class="container">
         <div class="cta-section">
             <h2 class="section-title" data-i18n="contact_title">¿Hablamos?</h2>
-            <p class="section-subtitle" data-i18n="contact_subtitle">IA aplicada, automatización y sistemas digitales. Project focused.</p>
+            <p class="section-subtitle" data-i18n="contact_subtitle">IA aplicada, producto y estrategia. Proyectos con criterio de negocio.</p>
             
             <div class="cta-buttons">
                 <a href="mailto:contact.pablo.contreras@gmail.com" class="btn btn-primary">contact.pablo.contreras@gmail.com</a>
@@ -1646,7 +1663,7 @@
 
 <footer>
     <div class="container">
-        <p>Built by Pablo (Petrus) Contreras</p>
+        <p>Built by Pablo</p>
     </div>
 </footer>
 
@@ -1661,22 +1678,22 @@
             nav_events: "Logros",
             nav_contact: "Contacto",
             
-            hero_name: "Pablo (Petrus) Contreras",
-            hero_subtitle: "IA, automatización y sistemas digitales aplicados a negocio.",
-            hero_desc: "Estudiante de GIIADE (UGR). AI Builder con +100k operaciones automatizadas y partner técnico en proyectos de alto impacto.",
+            hero_name: "Pablo",
+            hero_subtitle: "IA / PRODUCTO / ESTRATEGIA",
+            hero_desc: "Estudiante de Ingeniería Informática + ADE (UGR). Construyo productos de IA y sistemas que conectan tecnología, negocio y distribución.",
             hero_btn_projects: "Ver proyectos",
             hero_btn_cv: "Descargar CV",
-            hero_location: "Granada, España",
+            hero_proof: "+5 M visualizaciones generadas en el último mes",
 
             about_title: "Sobre mí / Perfil",
-            about_p1: "Estudiante de Ingeniería Informática + ADE en la Universidad de Granada, builder enfocado en IA aplicada, automatización y marketing tech.",
+            about_p1: "Estudiante de Ingeniería Informática + ADE en la Universidad de Granada, centrado en IA aplicada, producto y estrategia.",
             about_p2: "Sólida capacidad para construir infraestructuras de IA escalables, habiendo superado las 100k operaciones automatizadas entre 2025 y 2026.",
 
             press_title: "Aparición en Prensa",
             press_subtitle: "Destacado en medios como caso de éxito universitario y empresarial en la aplicación práctica de Inteligencia Artificial.",
             press_headline: "Universitarios demuestran que pueden trabajar sobre retos reales junto a empresas tecnológicas de Granada con ayuda de la IA",
             press_caption: "Pablo Contreras durante la exposición de su proyecto final en el Hackaton Gen AI ARENA, seleccionado entre más de 130 aspirantes.",
-            press_snippet: "Pablo Contreras Pérez es un estudiante universitario de Ingeniería Informática con ADE de la UGR, afincado en Granada. Recientemente participó en Gen AI ARENA, el primer hackathon de inteligencia artificial generativa en Granada orientada a transformar desafíos reales de negocio en soluciones operativas, organizado por SIDN.",
+            press_snippet: "Pablo Contreras Pérez es un estudiante universitario de Ingeniería Informática con ADE de la UGR. Recientemente participó en Gen AI ARENA, el primer hackathon de inteligencia artificial generativa en Granada orientada a transformar desafíos reales de negocio en soluciones operativas, organizado por SIDN.",
             press_snippet_2: "El evento convocó a más de 130 aspirantes de los cuales seleccionaron únicamente a 23 participantes estrella. El equipo de Pablo abordó los sobrecostes en marketing de paid ads, implementando modelos de detección que permiten ahorrar hasta ~12.000€ mensuales a las empresas participantes.",
             press_link: "Leer artículo completo en IDEAL",
 
@@ -1737,8 +1754,8 @@
             proj_ia_congreso_desc: "Participación activa en AI Business Lab, Coloquia.lab y el III Congreso IA de Andalucía.",
             proj_talentland_title: "Ponente más joven de Talent Land España",
             proj_talentland_desc: "Asistente en 2024, becado en 2025 y speaker en 2026. Charlas sobre prototipado y apalancamiento con IA ante un evento cuya edición inaugural reunió a 19.000 asistentes.",
-            proj_sm_title: "+1.5M views across all platforms",
-            proj_sm_desc: "",
+            proj_sm_title: "+5 M visualizaciones en el último mes",
+            proj_sm_desc: "Contenido y distribución digital en varias cuentas y plataformas.",
             proj_fundacion_title: "IA Granada Foundation",
             proj_fundacion_desc: "AI Business Lab, Coloquia.lab y III Congreso IA Andalucía.",
 
@@ -1776,7 +1793,7 @@
             sk_cat_3: "Marketing Tech & Ejecución",
 
             contact_title: "¿Hablamos?",
-            contact_subtitle: "IA aplicada, automatización y sistemas digitales. Project focused."
+            contact_subtitle: "IA aplicada, producto y estrategia. Proyectos con criterio de negocio."
         },
         en: {
             nav_about: "Profile",
@@ -1786,29 +1803,29 @@
             nav_events: "Achievements",
             nav_contact: "Contact",
             
-            hero_name: "Pablo (Petrus) Contreras",
-            hero_subtitle: "AI, automation & digital systems applied to business.",
-            hero_desc: "Double Degree CS + Business student (UGR). AI Builder with +100k automated operations and technical partner for high-impact projects.",
+            hero_name: "Pablo",
+            hero_subtitle: "AI / PRODUCT / STRATEGY",
+            hero_desc: "Computer Science + Business student (UGR). I build AI products and systems connecting technology, business and distribution.",
             hero_btn_projects: "View Projects",
             hero_btn_cv: "Download CV",
-            hero_location: "Granada, Spain",
+            hero_proof: "5M+ views generated in the past month",
 
             about_title: "About Me / Profile",
-            about_p1: "Computer Science + Business Administration student at UGR, builder focused on Applied AI, automation and marketing tech.",
+            about_p1: "Computer Science + Business Administration student at UGR, focused on applied AI, product and strategy.",
             about_p2: "Strong ability to build scalable AI infrastructure, exceeding 100k automated operations between 2025 and 2026.",
 
             press_title: "Featured in Press",
             press_subtitle: "Highlighted in the press as a successful case study of student and business application of practical AI systems.",
             press_headline: "University students prove they can solve real challenges together with tech companies in Granada using AI",
             press_caption: "Pablo Contreras delivering his final pitch at the Gen AI ARENA Hackathon, selected among more than 130 elite applicants.",
-            press_snippet: "Pablo Contreras Pérez is a Computer Science + Business Administration double degree student at UGR, based in Granada. He recently participated in Gen AI ARENA, the first generative artificial intelligence hackathon in Granada targeting real business challenges to build operational solutions, organized by SIDN.",
+            press_snippet: "Pablo Contreras Pérez is a Computer Science + Business Administration double degree student at UGR. He recently participated in Gen AI ARENA, the first generative artificial intelligence hackathon in Granada targeting real business challenges to build operational solutions, organized by SIDN.",
             press_snippet_2: "The event convocated over 130 applicants with only 23 final participants selected. Pablo's team targeted the marketing overcosts of paid ads, implementing intelligent models that save up to ~€12,000 monthly for the associated companies.",
             press_link: "Read full article on IDEAL",
 
             projects_title: "Featured Projects",
             projects_subtitle: "Absolute focus on execution and building systems that generate real value.",
-            proj_sm_title: "+1.5M views across all platforms",
-            proj_sm_desc: "",
+            proj_sm_title: "5M+ views in the past month",
+            proj_sm_desc: "Content and distribution across multiple accounts and platforms.",
             proj_nestle_title: "Nestlé International Skillathon 2025",
             proj_nestle_desc: "Collaboration with international teams to solve business challenges. Focus on innovation and high-pressure work.",
             proj_recapacicla_title: "Ideaton Recapacicla (3rd Prize)",
@@ -1871,8 +1888,8 @@
             proj_ia_congreso_desc: "Active participation in the leading AI congress in Southern Spain. Networking with industry leaders and trend analysis.",
             proj_talentland_title: "Youngest speaker at Talent Land Spain",
             proj_talentland_desc: "Attendee in 2024, scholarship recipient in 2025, and speaker in 2026. Talks on AI prototyping and leverage at an event whose inaugural edition welcomed 19,000 attendees.",
-            proj_sm_title: "+1.5M views across all platforms",
-            proj_sm_desc: "Personal brand building and digital community growth. Mastery of distribution algorithms and high-impact viral content creation.",
+            proj_sm_title: "5M+ views in the past month",
+            proj_sm_desc: "Content and distribution across multiple accounts and platforms.",
             proj_fundacion_title: "IA Granada Foundation",
             proj_fundacion_desc: "AI Business Lab, Coloquia.lab, and III Andalusia AI Congress.",
 
@@ -1910,7 +1927,7 @@
             sk_cat_3: "Marketing Tech & Execution",
 
             contact_title: "Let's Talk",
-            contact_subtitle: "Applied AI, automation, and digital systems. Project focused."
+            contact_subtitle: "Applied AI, product and strategy. Building with business judgment."
         }
     };
 
@@ -1996,7 +2013,7 @@
         const topY = cy - h;
 
         // Left face — slightly darker (shadow side)
-        ctx.fillStyle = `rgba(41, 121, 200, ${alpha * 0.55 * depth})`;
+        ctx.fillStyle = `rgba(28, 27, 25, ${alpha * 0.55 * depth})`;
         ctx.beginPath();
         ctx.moveTo(cx, topY);
         ctx.lineTo(cx - halfW, cy);
@@ -2005,7 +2022,7 @@
         ctx.fill();
 
         // Right face — light side
-        ctx.fillStyle = `rgba(80, 170, 255, ${alpha * 0.95 * depth})`;
+        ctx.fillStyle = `rgba(232, 117, 0, ${alpha * 0.95 * depth})`;
         ctx.beginPath();
         ctx.moveTo(cx, topY);
         ctx.lineTo(cx + halfW, cy);
@@ -2014,7 +2031,7 @@
         ctx.fill();
 
         // Crisp outline so it reads as architectural, not blob
-        ctx.strokeStyle = `rgba(0, 90, 200, ${alpha * 0.55 * depth})`;
+        ctx.strokeStyle = `rgba(136, 67, 0, ${alpha * 0.55 * depth})`;
         ctx.lineWidth = 0.6;
         ctx.beginPath();
         ctx.moveTo(cx - halfW, cy);
@@ -2024,7 +2041,7 @@
 
         // Glow tip when cursor is near
         if (glow > 0.05) {
-            ctx.shadowColor = 'rgba(41, 151, 255, 0.95)';
+            ctx.shadowColor = 'rgba(232, 117, 0, 0.95)';
             ctx.shadowBlur = 16 * glow;
             ctx.fillStyle = `rgba(255, 255, 255, ${0.55 * glow})`;
             ctx.beginPath();
