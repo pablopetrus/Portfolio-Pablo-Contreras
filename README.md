@@ -1,20 +1,27 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Portfolio de Pablo
 
-# Run and deploy your AI Studio app
+Sitio estático con Vite. `index.html` y `ig.html` comparten el contenido del CV; `lab.html` es una demo de producto. Netlify publica `dist/` desde la rama `main` y sirve `pablopetrus.com`.
 
-This contains everything you need to run your app locally.
+## Desarrollo
 
-View your app in AI Studio: https://ai.studio/apps/51d0c1bf-4006-4d4a-9149-efcfd535e219
+Se necesita Node.js 24 o superior.
 
-## Run Locally
+```bash
+npm ci
+npm run dev
+npm run build
+```
 
-**Prerequisites:**  Node.js
+La vista previa de desarrollo escucha sólo en `127.0.0.1:3000`. El sitio no necesita claves de API ni variables de entorno para compilarse. No añadas credenciales al repositorio ni a los archivos cliente.
 
+## CV
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+`onepage-cv.html` genera el PDF principal enlazado desde ambas portadas. `index.html` genera el PDF largo. Puppeteer se instala sólo al generar PDFs para que el build de Netlify siga siendo ligero. Tras cambiar las fuentes, regenera y revisa los PDFs:
+
+```bash
+npm install --no-save --package-lock=false puppeteer@25.16.0
+npm run generate-onepage-cv
+npm run generate-pdf
+```
+
+El workflow de GitHub Actions regenera ambos PDFs cuando cambian las fuentes pertinentes. Los tres HTML públicos se definen en `vite.config.ts`; `public/_redirects` y `public/_headers` se copian a `dist/`.

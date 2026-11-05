@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Pablo Contreras Perez - CV</title>
+<title>Pablo - CV</title>
 <style>
     @font-face {
         font-family: "BrandFont";
@@ -13,14 +13,14 @@
     }
     @page { size: A4; margin: 0; }
     :root {
-        --ink: #132238;
-        --body: #334155;
-        --muted: #64748b;
-        --accent: #0b72e7;
-        --accent-dark: #0759b5;
-        --accent-soft: #eaf3ff;
-        --sidebar: #f3f7fb;
-        --line: #d7e1ec;
+        --ink: #171717;
+        --body: #343434;
+        --muted: #62615f;
+        --accent: #e87500;
+        --accent-dark: #a64f00;
+        --accent-soft: #faf7f2;
+        --sidebar: #f7f6f3;
+        --line: #dedbd5;
         --white: #ffffff;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,17 +37,19 @@
     a { color: inherit; text-decoration: none; }
     .page { width: 210mm; height: 297mm; overflow: hidden; background: var(--white); }
     .topbar {
-        height: 42mm;
-        padding: 10mm 12mm 7mm;
-        color: var(--white);
-        background: linear-gradient(112deg, #0c1f39 0%, #12375e 62%, #0b72e7 100%);
+        height: 40mm;
+        padding: 9mm 12mm 7mm;
+        color: var(--ink);
+        background: var(--white);
+        border-bottom: 1.25pt solid var(--ink);
         display: grid;
         grid-template-columns: 1.25fr 1fr;
         gap: 10mm;
         align-items: end;
     }
-    .name { font-size: 25pt; line-height: 0.96; font-weight: 800; letter-spacing: -0.035em; }
-    .roleline { margin-top: 4pt; font-size: 10pt; font-weight: 500; color: #cfe5ff; letter-spacing: 0.02em; }
+    .name { font-size: 34pt; line-height: 0.96; font-weight: 800; letter-spacing: -0.05em; }
+    .name .slash, .roleline .slash { color: var(--accent); }
+    .roleline { margin-top: 5pt; font-size: 9pt; font-weight: 700; color: var(--ink); letter-spacing: 0.12em; }
     .contact {
         display: flex;
         flex-direction: column;
@@ -55,17 +57,17 @@
         gap: 2.6pt;
         font-size: 7.45pt;
         line-height: 1.25;
-        color: #e8f2ff;
+        color: var(--body);
     }
     .contact span { white-space: nowrap; }
-    .contact .primary { color: #ffffff; font-weight: 650; }
-    .content { height: 255mm; display: grid; grid-template-columns: 61mm 1fr; }
+    .contact .primary { color: var(--ink); font-weight: 650; }
+    .content { height: 257mm; display: grid; grid-template-columns: 61mm 1fr; }
     .sidebar { background: var(--sidebar); border-right: 0.5pt solid var(--line); padding: 7mm 7mm 7mm 10mm; }
     .main { padding: 7mm 10mm 6mm 9mm; }
     .block { margin-bottom: 7mm; }
     .main .block { margin-bottom: 7mm; }
     .heading {
-        color: var(--accent-dark);
+        color: var(--ink);
         font-size: 8.1pt;
         line-height: 1;
         font-weight: 800;
@@ -74,19 +76,22 @@
         padding-bottom: 2.5pt;
         margin-bottom: 4pt;
         border-bottom: 1pt solid var(--line);
+        border-left: 2pt solid var(--accent);
+        padding-left: 4pt;
     }
     .summary {
         color: var(--ink);
-        font-size: 10pt;
-        line-height: 1.48;
+        font-size: 9.7pt;
+        line-height: 1.43;
         padding: 9pt 10pt;
         background: var(--accent-soft);
         border-left: 2.5pt solid var(--accent);
         border-radius: 0 4pt 4pt 0;
     }
-    .summary strong { color: var(--accent-dark); font-weight: 750; }
+    .summary strong { color: var(--ink); font-weight: 750; }
+    .summary .metric { color: var(--accent-dark); }
     .highlight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5pt; }
-    .highlight { min-height: 42mm; padding: 8pt; border: 0.6pt solid var(--line); border-radius: 5pt; background: #fbfdff; }
+    .highlight { min-height: 42mm; padding: 8pt; border: 0.6pt solid var(--line); border-radius: 5pt; background: #ffffff; }
     .highlight .eyebrow {
         color: var(--accent);
         font-size: 7.1pt;
@@ -102,7 +107,7 @@
     .entry:last-child { margin-bottom: 0; }
     .entry-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8pt; }
     .entry-title { color: var(--ink); font-size: 9.65pt; font-weight: 750; line-height: 1.24; }
-    .entry-title .role { color: var(--accent-dark); }
+    .entry-title .role { color: var(--ink); }
     .entry-date { flex: 0 0 auto; color: var(--muted); font-size: 7.7pt; font-weight: 650; white-space: nowrap; }
     .entry-sub { color: var(--muted); font-size: 8.1pt; font-weight: 600; margin: 1pt 0 2pt; }
     ul { list-style: none; }
@@ -134,14 +139,14 @@
 <div class="page">
     <header class="topbar">
         <div>
-            <div class="name">PABLO<br>CONTRERAS PÉREZ</div>
-            <div class="roleline">AI Builder · Sistemas y automatización</div>
+            <div class="name">PABLO<span class="slash">/</span></div>
+            <div class="roleline">IA <span class="slash">/</span> PRODUCTO <span class="slash">/</span> ESTRATEGIA</div>
         </div>
         <div class="contact">
-            <span class="primary">Granada, España · contact.pablo.contreras@gmail.com</span>
+            <span class="primary">contact.pablo.contreras@gmail.com</span>
             <span>linkedin.com/in/pablocontrerasperez</span>
             <span>github.com/pablopetrus</span>
-            <span>pablo-contreras-portfolio.netlify.app</span>
+            <span>pablopetrus.com</span>
         </div>
     </header>
 
@@ -190,7 +195,7 @@
 
         <main class="main">
             <section class="block">
-                <div class="summary">Estudiante de Ingeniería Informática + ADE que convierte problemas operativos en sistemas de IA. Más de <strong>100.000 operaciones automatizadas</strong> entre 2025 y 2026, con foco en impacto medible, velocidad de ejecución y producto.</div>
+                <div class="summary">Estudiante de Ingeniería Informática + ADE. Construyo productos de IA y sistemas que conectan tecnología, negocio y distribución. Más de <strong>100.000 operaciones automatizadas</strong> entre 2025 y 2026 y <strong class="metric">+5 M de visualizaciones generadas en el último mes</strong>.</div>
             </section>
 
             <section class="block">

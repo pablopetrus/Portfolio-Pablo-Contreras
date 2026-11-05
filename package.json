@@ -6,16 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "generate-pdf": "node scripts/generate_pdf.js",
+    "generate-pdf": "node scripts/generate_pdf.cjs",
+    "generate-onepage-cv": "node scripts/generate_onepage_cv.cjs",
+    "generate-business-cv": "node scripts/generate_business_cv.cjs",
     "preview": "vite preview"
-  },
-  "dependencies": {
-
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
-    
     "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "vite": "^6.4.5"
   }
 }
