@@ -1020,7 +1020,7 @@
         }
 
         /* ============================================ */
-        /* IG VARIANT — Pyramid hero canvas tuning      */
+        /* IG VARIANT — Particle field hero canvas tuning      */
         /* ============================================ */
         .hero {
             background: linear-gradient(180deg, #fffaf2 0%, #fffdf9 60%);
@@ -1829,112 +1829,7 @@
         });
     }
 
-    /* --- HERO CANVAS ANIMATION --- */
     const canvas = document.getElementById('hero-canvas');
-    const ctx = canvas.getContext('2d');
-    let width, height;
-    let particles = [];
-
-    // Mouse state
-    let mouse = { x: -1000, y: -1000 };
-
-    window.addEventListener('mousemove', e => {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
-    });
-
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-        initParticles();
-    }
-
-    class Particle {
-        constructor() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * 0.5;
-            this.vy = (Math.random() - 0.5) * 0.5;
-            this.size = Math.random() * 2 + 1;
-            this.baseX = this.x;
-            this.baseY = this.y;
-            this.density = (Math.random() * 30) + 1;
-            this.tone = Math.random();
-        }
-
-        update() {
-            // Mouse Interaction
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-            let maxDistance = 250;
-
-            if (distance < maxDistance && distance > 0) {
-                let forceDirectionX = dx / distance;
-                let forceDirectionY = dy / distance;
-                let force = (maxDistance - distance) / maxDistance;
-                let directionX = forceDirectionX * force * this.density * 1.5;
-                let directionY = forceDirectionY * force * this.density * 1.5;
-                this.x -= directionX;
-                this.y -= directionY;
-            } else {
-                // Return to base slightly
-                if (this.x !== this.baseX) {
-                    let dx = this.x - this.baseX;
-                    this.x -= dx / 50;
-                }
-                if (this.y !== this.baseY) {
-                    let dy = this.y - this.baseY;
-                    this.y -= dy / 50;
-                }
-            }
-            
-            // Natural slight movement
-            this.x += this.vx;
-            this.y += this.vy;
-
-            // Boundaries
-            if (this.x < 0 || this.x > width) this.vx = -this.vx;
-            if (this.y < 0 || this.y > height) this.vy = -this.vy;
-            
-            // Update base to drift slowly
-            this.baseX += this.vx;
-            this.baseY += this.vy;
-            if (this.baseX < 0) this.baseX = width;
-            if (this.baseX > width) this.baseX = 0;
-            if (this.baseY < 0) this.baseY = height;
-            if (this.baseY > height) this.baseY = 0;
-        }
-
-        draw() {
-            ctx.fillStyle = this.tone < 0.20 ? 'rgba(232, 117, 0, 0.63)' : this.tone < 0.56 ? 'rgba(23, 23, 23, 0.42)' : 'rgba(119, 115, 110, 0.30)';
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    }
-
-    function initParticles() {
-        particles = [];
-        let numberOfParticles = (width * height) / 3000;
-        for (let i = 0; i < numberOfParticles; i++) {
-            particles.push(new Particle());
-        }
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-        for (let i = 0; i < particles.length; i++) {
-            particles[i].update();
-            particles[i].draw();
-        }
-        requestAnimationFrame(animate);
-    }
-
-    window.addEventListener('resize', resize);
-    resize();
-    animate();
 
     /* --- HERO → ABOUT SCROLL TRANSITION --- */
     const heroEl = document.querySelector('.hero');
@@ -1988,5 +1883,6 @@
     });
 
 </script>
+<script type="module" src="./hero-field.js"></script>
 </body>
 </html>
