@@ -59,7 +59,7 @@
         line-height: 1.25;
         color: var(--body);
     }
-    .contact span { white-space: nowrap; }
+    .contact span, .contact a { white-space: nowrap; }
     .contact .primary { color: var(--ink); font-weight: 650; }
     .content { height: 257mm; display: grid; grid-template-columns: 61mm 1fr; }
     .sidebar { background: var(--sidebar); border-right: 0.5pt solid var(--line); padding: 7mm 7mm 7mm 10mm; }
@@ -126,6 +126,10 @@
     .side-list li:last-child { border-bottom: 0; }
     .side-list strong { display: block; color: var(--ink); font-weight: 750; }
     .side-list span { color: var(--muted); }
+    .credential-row { display: flex; flex-wrap: wrap; gap: 1pt 5pt; margin-bottom: 3pt; font-size: 8.2pt; line-height: 1.3; }
+    .credential-row strong { color: var(--ink); font-weight: 750; }
+    .credential-row span { color: var(--muted); }
+    .credential-row a { color: var(--accent-dark); font-weight: 700; text-decoration: underline; text-underline-offset: 1pt; }
     .skill-group { margin-bottom: 5pt; }
     .skill-group strong { display: block; color: var(--ink); font-size: 8.1pt; margin-bottom: 1pt; }
     .skill-group p { color: var(--muted); font-size: 7.9pt; line-height: 1.36; }
@@ -143,7 +147,7 @@
             <div class="roleline">IA <span class="slash">/</span> PRODUCTO <span class="slash">/</span> ESTRATEGIA</div>
         </div>
         <div class="contact">
-            <span class="primary">contact.pablo.contreras@gmail.com</span>
+            <a class="primary" href="mailto:pablo@pablopetrus.com">pablo@pablopetrus.com</a>
             <span>linkedin.com/in/pablocontrerasperez</span>
             <span>github.com/pablopetrus</span>
             <span>pablopetrus.com</span>
@@ -188,7 +192,6 @@
                 <h2 class="heading">Formación adicional</h2>
                 <ul class="side-list">
                     <li><strong>Wharton · University of Pennsylvania</strong><span>Improving Communication Skills · sep. 2026</span></li>
-                    <li><strong>Stanford University</strong><span>Introduction to Statistics · octubre 2026</span></li>
                 </ul>
             </section>
         </aside>
@@ -234,6 +237,12 @@
                 <ul class="bullets">
                     <li>3er Premio Ideatón Recapacicla · Talento Emprendedor UGR (150h / 6 ECTS) · IA en la Empresa, The Power x Google.</li>
                 </ul>
+            </section>
+
+            <section class="block">
+                <h2 class="heading">Credenciales · Stanford University</h2>
+                <div class="credential-row"><strong>The AI Awakening: Implications for the Economy and Society</strong><span>oct. 2026</span><a href="https://www.coursera.org/account/accomplishments/records/99YA9N25CMOS">Ver credencial ↗</a></div>
+                <div class="credential-row"><strong>Introduction to Statistics</strong><span>oct. 2026</span><a href="https://www.coursera.org/account/accomplishments/records/67OT3WRXM8FC">Ver credencial ↗</a></div>
             </section>
         </main>
     </div>

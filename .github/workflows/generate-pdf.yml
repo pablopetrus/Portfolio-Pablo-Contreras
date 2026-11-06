@@ -7,8 +7,10 @@ on:
     paths:
       - 'index.html'
       - 'onepage-cv.html'
+      - 'cv-business.html'
       - 'scripts/generate_pdf.cjs'
       - 'scripts/generate_onepage_cv.cjs'
+      - 'scripts/generate_business_cv.cjs'
       - 'package-lock.json'
 
 permissions:
@@ -36,11 +38,12 @@ jobs:
         run: |
           npm run generate-pdf
           npm run generate-onepage-cv
+          npm run generate-business-cv
 
       - name: Commit PDF
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add public/cv/Pablo_Contreras_CV.pdf public/cv/Pablo_Contreras_Onepage_CV.pdf
+          git add public/cv/Pablo_Contreras_CV.pdf public/cv/Pablo_Contreras_Onepage_CV.pdf public/cv/Pablo_Contreras_Business_CV.pdf
           git commit -m "docs: auto-update CV PDF" || echo "No changes to commit"
           git push
