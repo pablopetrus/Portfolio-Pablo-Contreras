@@ -7,7 +7,6 @@
     if (!hero || !ctx) return;
 
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
-    const finePointer = matchMedia('(pointer: fine)');
     const TAU = Math.PI * 2;
     const pointer = { x: 0, y: 0, toX: 0, toY: 0, active: false, force: 0 };
     const field = { width: 0, height: 0, dpr: 1, radius: 0, particles: [], dust: [],
@@ -46,7 +45,7 @@
     }
 
     function makeField() {
-        const desktop = finePointer.matches && field.width >= 720;
+        const desktop = field.width >= 720;
         const target = Math.min(desktop ? 460 : 130,
             Math.max(70, Math.round(field.width * field.height / (desktop ? 2400 : 5300))));
         const spokes = desktop ? 24 : 17;
@@ -155,7 +154,7 @@
         }
     }
     function move(event) {
-        if (!finePointer.matches) return;
+        if (field.width < 720) return;
         const rect = canvas.getBoundingClientRect();
         pointer.toX = event.clientX - rect.left;
         pointer.toY = event.clientY - rect.top;
