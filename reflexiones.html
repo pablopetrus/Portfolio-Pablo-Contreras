@@ -49,7 +49,7 @@
     .signature small { display: block; margin-top: 7px; color: var(--muted); font: 500 .83rem/1.5 BrandFont, Inter, Arial, sans-serif; }
     .mountain { max-width: 760px; display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 16px; align-items: start; margin: 38px 0 0; }
     .mountain img, .mountain video { display: block; width: 100%; background: #ddd8d0; }
-    .mountain img { aspect-ratio: 3 / 4; object-fit: cover; object-position: center 90%; }
+    .mountain img { height: 320px; object-fit: cover; object-position: center 70%; }
     .mountain video { aspect-ratio: 16 / 9; }
     .mountain figcaption { grid-column: 1 / -1; color: var(--muted); font: 500 .76rem/1.5 BrandFont, Inter, Arial, sans-serif; }
     .sources { max-width: 660px; margin-top: 62px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font: 400 .78rem/1.65 BrandFont, Inter, Arial, sans-serif; }
@@ -57,7 +57,7 @@
     .sources p { margin: 7px 0; }
     .sources a { color: var(--ink); }
     @media (max-width: 950px) { .layout { grid-template-columns: 1fr; } .rail { position: relative; height: auto; padding: 22px 28px; flex-direction: row; align-items: center; justify-content: space-between; border-right: 0; border-bottom: 1px solid var(--line); } .rail-nav { margin: 0; display: flex; gap: 20px; } .rail-note { display: none; } .page { padding: 0 28px 70px; } .topline { padding-top: 24px; } }
-    @media (max-width: 560px) { .rail-nav a:first-child { display: none; } .topline { font-size: .62rem; letter-spacing: .1em; } .intro { padding-top: 58px; } h1 { font-size: clamp(2.35rem, 10vw, 3.3rem); } .mountain { grid-template-columns: 1fr; } .mountain img { aspect-ratio: 4 / 3; object-position: center 34%; } .mountain figcaption { grid-column: 1; } }
+    @media (max-width: 560px) { .rail-nav a:first-child { display: none; } .topline { font-size: .62rem; letter-spacing: .1em; } .intro { padding-top: 58px; } h1 { font-size: clamp(2.35rem, 10vw, 3.3rem); } .mountain { grid-template-columns: 1fr; } .mountain img { height: 270px; object-position: center 45%; } .mountain figcaption { grid-column: 1; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     @media print { :root { --paper: #fff; } .layout { display: block; } .rail, .topline, .sources { display: none; } .page { padding: 0; } .intro { padding: 20px 0 35px; } }
   </style>
