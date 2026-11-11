@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#FBFCFE">
+<meta name="theme-color" content="#F8F5EF">
 <meta name="description" content="A fictional B2B business, visualized as it's thought.">
 <title>Business graph — Pablo</title>
 
@@ -15,14 +15,15 @@
 
 <style>
     :root {
-        --paper: #FBFCFE;
-        --surface: #F3F6FB;
-        --navy: #0A1F44;
-        --accent: #2F6FED;
-        --sky: #A9CBFF;
-        --gray: #8A93A3;
-        --hairline: #DCE3EE;
-        --coral: #E9B0A2;
+        --paper: #F8F5EF;
+        --surface: #F1ECE4;
+        --navy: #171717;
+        --accent: #E87500;
+        --accent-ink: #9F4F00;
+        --sky: #F5D9B6;
+        --gray: #68645F;
+        --hairline: #DCD6CD;
+        --coral: #E9B287;
         --white: #FFFFFF;
     }
 
@@ -52,7 +53,7 @@
         right: -10%;
         width: 60vmin;
         height: 60vmin;
-        background: radial-gradient(circle at 30% 30%, rgba(47, 111, 237, 0.10), rgba(47, 111, 237, 0) 62%);
+        background: radial-gradient(circle at 30% 30%, rgba(232, 117, 0, 0.08), rgba(232, 117, 0, 0) 62%);
         filter: blur(30px);
         pointer-events: none;
         z-index: 0;
@@ -224,13 +225,13 @@
     .panel-scrim {
         position: fixed;
         inset: 0;
-        background: rgba(10, 31, 68, 0);
+        background: rgba(23, 23, 23, 0);
         pointer-events: none;
         transition: background 0.28s ease;
         z-index: 45;
     }
     .panel-scrim.open {
-        background: rgba(10, 31, 68, 0.06);
+        background: rgba(23, 23, 23, 0.06);
         pointer-events: auto;
     }
 
@@ -256,7 +257,7 @@
             border-left: none;
             border-radius: 20px 20px 0 0;
             transform: translateY(100%);
-            box-shadow: 0 -10px 40px rgba(10, 31, 68, 0.05);
+            box-shadow: 0 -10px 40px rgba(23, 23, 23, 0.05);
         }
         .panel.open { transform: translateY(0); }
         .panel::before {
@@ -481,7 +482,7 @@
         margin-bottom: 14px;
     }
     .status-pill.planned    { background: var(--surface); color: var(--gray); }
-    .status-pill.progress   { background: rgba(47,111,237,0.10); color: var(--accent); }
+    .status-pill.progress   { background: rgba(232,117,0,0.10); color: var(--accent-ink); }
     .status-pill.shipped    { background: rgba(26,136,89,0.10); color: #1a8859; }
 
     /* ======= FOOTER ======= */
@@ -516,7 +517,7 @@
         padding: 13px 18px 12px;
         max-width: 340px;
         min-width: 260px;
-        box-shadow: 0 8px 26px rgba(10, 31, 68, 0.08);
+        box-shadow: 0 8px 26px rgba(23, 23, 23, 0.08);
         text-align: center;
         opacity: 0;
         transform: translate(-50%, 14px);
@@ -550,7 +551,7 @@
         height: 9px;
         border-radius: 50%;
         background: var(--accent);
-        box-shadow: 0 0 0 0 rgba(47, 111, 237, 0.35);
+        box-shadow: 0 0 0 0 rgba(232, 117, 0, 0.35);
         animation: cta-pulse 1.6s ease-in-out infinite;
         flex-shrink: 0;
     }
@@ -578,8 +579,8 @@
     }
 
     @keyframes cta-pulse {
-        0%, 100% { transform: scale(0.85); box-shadow: 0 0 0 0    rgba(47, 111, 237, 0.35); }
-        50%      { transform: scale(1.1);  box-shadow: 0 0 0 8px rgba(47, 111, 237, 0);    }
+        0%, 100% { transform: scale(0.85); box-shadow: 0 0 0 0    rgba(232, 117, 0, 0.35); }
+        50%      { transform: scale(1.1);  box-shadow: 0 0 0 8px rgba(232, 117, 0, 0);    }
     }
 
     @supports (padding: env(safe-area-inset-bottom)) {
@@ -716,7 +717,7 @@ const DATA = {
         { id: "a-ad1",    cat: "asset", name: "Anuncios LinkedIn",         assetType: "anuncio",   metrics: { "impresiones": "84k", "clicks": "2.1%", "leads": 176 } },
 
         // ---------- Documentos ----------
-        { id: "d-brand",    cat: "doc", name: "Guía de marca v2",      owner: "NB", updated: "Jun 2026", snippet: "La marca se lee tranquila, precisa y confiada. Nunca ruidosa. Tipografía: Fraunces itálica para la voz, Inter para la información. Azul #2F6FED como único acento — todo lo demás es papel y tinta." },
+        { id: "d-brand",    cat: "doc", name: "Guía de marca v2",      owner: "NB", updated: "Jun 2026", snippet: "La marca se lee tranquila, precisa y confiada. Nunca ruidosa. Tipografía: Fraunces itálica para la voz, Inter para la información. Naranja #E87500 como acento — todo lo demás es papel y tinta." },
         { id: "d-icp",      cat: "doc", name: "Definición del ICP",    owner: "MR", updated: "May 2026", snippet: "Responsables de operaciones y datos en empresas SaaS B2B en Series A o B (150-800 empleados), en la transición de hojas de cálculo a sistemas, con un data warehouse ya existente pero fragmentado." },
         { id: "d-memoq1",   cat: "doc", name: "Memo del Q1",           owner: "AV", updated: "Feb 2026", snippet: "La apuesta del Q1 es cambiar amplitud por profundidad. Menos campañas, más repetición. Menos features, más pulido. Cada contratación debería reducir la dependencia de Alex o Chloé en 90 días." },
         { id: "d-playbook", cat: "doc", name: "Playbook de ventas",    owner: "MR", updated: "Apr 2026", snippet: "El outbound tiene que abrir con un diagnóstico, no con una demo. Las reuniones de discovery terminan con un resumen escrito y una decisión concreta que el prospecto asume antes del siguiente contacto." },
@@ -818,12 +819,12 @@ const DATA = {
    RENDER
    ========================================================= */
 const CATS = {
-    kpi:      { label: "KPIs",         color: "#2F6FED" },
-    person:   { label: "Equipo",       color: "#0A1F44" },
-    asset:    { label: "Contenido",    color: "#A9CBFF" },
+    kpi:      { label: "KPIs",         color: "#9F4F00" },
+    person:   { label: "Equipo",       color: "#171717" },
+    asset:    { label: "Contenido",    color: "#F5D9B6" },
     doc:      { label: "Documentos",   color: "#FFFFFF" },
-    project:  { label: "Proyectos",    color: "#E9B0A2" },
-    decision: { label: "Decisiones",   color: "#8A93A3" },
+    project:  { label: "Proyectos",    color: "#E9B287" },
+    decision: { label: "Decisiones",   color: "#68645F" },
 };
 
 const nodeById = new Map(DATA.nodes.map(n => [n.id, n]));
@@ -895,14 +896,14 @@ nodeSel.each(function(d) {
             .attr("class", "node-halo")
             .attr("r", d.size)
             .attr("fill", "none")
-            .attr("stroke", "#2F6FED")
+            .attr("stroke", "#E87500")
             .attr("stroke-width", 1.4)
             .attr("opacity", 0);
         g.append("circle")
             .attr("class", "node-shape")
             .attr("r", d.size)
-            .attr("fill", "#2F6FED")
-            .attr("stroke", "#0A1F44")
+            .attr("fill", "#9F4F00")
+            .attr("stroke", "#E87500")
             .attr("stroke-width", 0.7);
         g.append("text")
             .attr("class", "node-label value")
@@ -911,15 +912,15 @@ nodeSel.each(function(d) {
         g.append("text")
             .attr("class", "node-label caption")
             .attr("dy", d.size + 12)
-            .attr("fill", "#0A1F44")
+            .attr("fill", "#171717")
             .attr("font-weight", 500)
             .text(d.name);
     } else if (d.cat === "person") {
         g.append("circle")
             .attr("class", "node-shape")
             .attr("r", d.size)
-            .attr("fill", "#0A1F44")
-            .attr("stroke", "#0A1F44")
+            .attr("fill", "#171717")
+            .attr("stroke", "#171717")
             .attr("stroke-width", 0.7);
         g.append("text")
             .attr("class", "node-label person-init")
@@ -936,14 +937,14 @@ nodeSel.each(function(d) {
             .attr("x", -w/2).attr("y", -h/2)
             .attr("width", w).attr("height", h)
             .attr("rx", 8)
-            .attr("fill", "#A9CBFF")
-            .attr("stroke", "#2F6FED")
+            .attr("fill", "#F5D9B6")
+            .attr("stroke", "#E87500")
             .attr("stroke-width", 0.5)
             .attr("opacity", 0.85);
         g.append("text")
             .attr("class", "node-label small")
             .attr("dy", 3.2)
-            .attr("fill", "#0A1F44")
+            .attr("fill", "#171717")
             .text(truncate(d.name, 16));
     } else if (d.cat === "doc") {
         const w = 76, h = 34;
@@ -963,12 +964,12 @@ nodeSel.each(function(d) {
             .attr("class", "node-shape")
             .attr("d", path)
             .attr("fill", "#FFFFFF")
-            .attr("stroke", "#8A93A3")
+            .attr("stroke", "#68645F")
             .attr("stroke-width", 0.6);
         g.append("text")
             .attr("class", "node-label small")
             .attr("dy", 3.2)
-            .attr("fill", "#0A1F44")
+            .attr("fill", "#171717")
             .text(truncate(d.name, 15));
     } else if (d.cat === "project") {
         const r = 30;
@@ -980,14 +981,14 @@ nodeSel.each(function(d) {
         g.append("polygon")
             .attr("class", "node-shape")
             .attr("points", pts)
-            .attr("fill", "#E9B0A2")
+            .attr("fill", "#E9B287")
             .attr("fill-opacity", 0.55)
-            .attr("stroke", "#C97964")
+            .attr("stroke", "#9F4F00")
             .attr("stroke-width", 0.6);
         g.append("text")
             .attr("class", "node-label small")
             .attr("dy", 3.2)
-            .attr("fill", "#0A1F44")
+            .attr("fill", "#171717")
             .text(truncate(d.name, 13));
     } else if (d.cat === "decision") {
         const r = 15;
@@ -995,14 +996,14 @@ nodeSel.each(function(d) {
         g.append("polygon")
             .attr("class", "node-shape")
             .attr("points", `0,${-r} ${r},0 0,${r} ${-r},0`)
-            .attr("fill", "#8A93A3")
+            .attr("fill", "#68645F")
             .attr("fill-opacity", 0.35)
-            .attr("stroke", "#8A93A3")
+            .attr("stroke", "#68645F")
             .attr("stroke-width", 0.7);
         g.append("text")
             .attr("class", "node-label caption")
             .attr("dy", r + 12)
-            .attr("fill", "#0A1F44")
+            .attr("fill", "#171717")
             .text(truncate(d.name, 20));
     }
 });
@@ -1215,9 +1216,9 @@ function sparklinePath(values, w, h) {
     const line = points.map((p, i) => (i === 0 ? "M" : "L") + p[0].toFixed(1) + "," + p[1].toFixed(1)).join(" ");
     const area = line + ` L ${w},${h} L 0,${h} Z`;
     return `
-        <path d="${area}" fill="#2F6FED" fill-opacity="0.09"/>
-        <path d="${line}" fill="none" stroke="#2F6FED" stroke-width="1.4" stroke-linejoin="round"/>
-        <circle cx="${points[points.length-1][0].toFixed(1)}" cy="${points[points.length-1][1].toFixed(1)}" r="2.6" fill="#2F6FED"/>
+        <path d="${area}" fill="#E87500" fill-opacity="0.09"/>
+        <path d="${line}" fill="none" stroke="#E87500" stroke-width="1.4" stroke-linejoin="round"/>
+        <circle cx="${points[points.length-1][0].toFixed(1)}" cy="${points[points.length-1][1].toFixed(1)}" r="2.6" fill="#E87500"/>
     `;
 }
 

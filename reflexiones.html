@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Una reflexión de Pablo sobre la paradoja de Jevons, el trabajo humano, la IA y la robótica. Escrita el 11 de noviembre de 2026.">
+  <meta name="description" content="Dos conversaciones que se me quedaron: la paradoja de Jevons, el aceleracionismo y cómo veo el futuro de la IA. Por Pablo, 11 de noviembre de 2026.">
   <meta name="author" content="Pablo">
   <link rel="canonical" href="https://pablopetrus.com/reflexiones">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Más IA. Más humanos. Por ahora. — Pablo">
-  <meta property="og:description" content="La paradoja de Jevons explica el presente. No me atrevo a usarla para prometer el futuro.">
+  <meta property="og:title" content="Dos conversaciones que se me quedaron — Pablo">
+  <meta property="og:description" content="Una charla sobre Jevons, otra sobre aceleracionismo y lo que me hicieron pensar sobre la IA.">
   <meta property="og:url" content="https://pablopetrus.com/reflexiones">
   <meta property="article:published_time" content="2026-11-11">
   <meta name="theme-color" content="#f8f5ef">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><circle cx=%2216%22 cy=%2216%22 r=%2214%22 fill=%22%23e87500%22 /><path d=%22M12 10h4a4 4 0 0 1 0 8h-4v4%22 stroke=%22white%22 stroke-width=%222.5%22 fill=%22none%22 stroke-linecap=%22round%22 /></svg>">
-  <title>Más IA. Más humanos. Por ahora. — Pablo</title>
+  <title>Dos conversaciones que se me quedaron — Pablo</title>
   <style>
     @font-face {
       font-family: BrandFont;
@@ -39,28 +39,22 @@
     .page { min-width: 0; padding: 0 clamp(28px, 7vw, 110px) 95px; }
     .topline { max-width: 860px; margin: 0 auto; padding: 35px 0 22px; display: flex; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); font: 600 .7rem/1.4 BrandFont, Inter, Arial, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
     .topline a { text-decoration: none; }
-    .essay { max-width: 860px; margin: 0 auto; }
-    .intro { padding: clamp(65px, 10vw, 126px) 0 64px; border-bottom: 1px solid var(--line); }
-    .eyebrow { font: 700 .73rem/1.3 BrandFont, Inter, Arial, sans-serif; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 26px; }
-    h1 { font: 700 clamp(3.65rem, 7.2vw, 7.8rem)/.96 BrandFont, Inter, Arial, sans-serif; letter-spacing: -.075em; margin: 0; max-width: 11ch; }
-    h1 em { font-style: normal; color: var(--orange); }
-    .dek { margin: 36px 0 0; max-width: 640px; font: 400 clamp(1.18rem, 2vw, 1.52rem)/1.48 Georgia, 'Times New Roman', serif; color: #49443e; }
-    .article-body { max-width: 710px; padding-top: 70px; }
-    .article-body p { font: 400 clamp(1.09rem, 1.4vw, 1.25rem)/1.78 Georgia, 'Times New Roman', serif; margin: 0 0 1.55em; }
-    .article-body p.lead::first-letter { float: left; font: 700 4.8rem/.83 BrandFont, Inter, Arial, sans-serif; color: var(--orange); padding: 11px 12px 0 0; }
-    .article-body h2 { margin: 76px 0 24px; font: 700 clamp(1.55rem, 3vw, 2.15rem)/1.16 BrandFont, Inter, Arial, sans-serif; letter-spacing: -.04em; }
-    .article-body h2::before { content: '/'; color: var(--orange); margin-right: .42em; }
-    .thesis { margin: 72px 0; padding: 38px 0 38px 35px; border-left: 4px solid var(--orange); font: 700 clamp(1.8rem, 3vw, 2.6rem)/1.17 BrandFont, Inter, Arial, sans-serif; letter-spacing: -.05em; max-width: 16ch; }
-    .signature { margin: 94px 0 0; padding-top: 26px; border-top: 1px solid var(--line); font: 700 1.2rem/1.4 BrandFont, Inter, Arial, sans-serif; }
+    .essay { max-width: 760px; margin: 0 auto; }
+    .intro { padding: clamp(56px, 8vw, 92px) 0 42px; }
+    .eyebrow { font: 700 .7rem/1.3 BrandFont, Inter, Arial, sans-serif; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 24px; }
+    h1 { font: 700 clamp(2.45rem, 4.6vw, 4.4rem)/1.06 BrandFont, Inter, Arial, sans-serif; letter-spacing: -.055em; margin: 0; max-width: 18ch; }
+    .article-body { max-width: 660px; }
+    .article-body p { font: 400 clamp(1.05rem, 1.3vw, 1.19rem)/1.72 Georgia, 'Times New Roman', serif; margin: 0 0 1.35em; }
+    .signature { margin: 62px 0 0; padding-top: 22px; border-top: 1px solid var(--line); font: 700 1.1rem/1.4 BrandFont, Inter, Arial, sans-serif; }
     .signature small { display: block; margin-top: 7px; color: var(--muted); font: 500 .83rem/1.5 BrandFont, Inter, Arial, sans-serif; }
-    .sources { max-width: 710px; margin-top: 110px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font: 400 .78rem/1.65 BrandFont, Inter, Arial, sans-serif; }
+    .sources { max-width: 660px; margin-top: 62px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font: 400 .78rem/1.65 BrandFont, Inter, Arial, sans-serif; }
     .sources h2 { color: var(--ink); font-size: .78rem; text-transform: uppercase; letter-spacing: .15em; }
     .sources p { margin: 7px 0; }
     .sources a { color: var(--ink); }
     @media (max-width: 950px) { .layout { grid-template-columns: 1fr; } .rail { position: relative; height: auto; padding: 22px 28px; flex-direction: row; align-items: center; justify-content: space-between; border-right: 0; border-bottom: 1px solid var(--line); } .rail-nav { margin: 0; display: flex; gap: 20px; } .rail-note { display: none; } .page { padding: 0 28px 70px; } .topline { padding-top: 24px; } }
-    @media (max-width: 560px) { .rail-nav a:first-child { display: none; } .topline { font-size: .62rem; letter-spacing: .1em; } .intro { padding-top: 72px; } h1 { font-size: clamp(3.25rem, 13.5vw, 5.2rem); } .article-body { padding-top: 48px; } .article-body h2 { margin-top: 58px; } .thesis { margin: 54px 0; padding-left: 21px; } }
+    @media (max-width: 560px) { .rail-nav a:first-child { display: none; } .topline { font-size: .62rem; letter-spacing: .1em; } .intro { padding-top: 58px; } h1 { font-size: clamp(2.35rem, 10vw, 3.3rem); } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-    @media print { :root { --paper: #fff; } .layout { display: block; } .rail, .topline, .sources { display: none; } .page { padding: 0; } .intro { padding: 20px 0 35px; } .article-body { padding-top: 30px; } }
+    @media print { :root { --paper: #fff; } .layout { display: block; } .rail, .topline, .sources { display: none; } .page { padding: 0; } .intro { padding: 20px 0 35px; } }
   </style>
 </head>
 <body>
@@ -78,38 +72,21 @@
       <article class="essay">
         <header class="intro">
           <p class="eyebrow">001 <span>/</span> <time datetime="2026-11-11">11 de noviembre de 2026</time></p>
-          <h1>Más IA.<br>Más humanos.<br><em>Por ahora.</em></h1>
-          <p class="dek">La paradoja de Jevons me ayuda a entender los próximos años. La aceleración de la IA y la robótica me impide usarla como promesa para siempre.</p>
+          <h1>Dos conversaciones que se me quedaron</h1>
         </header>
         <div class="article-body">
-          <p class="lead">Hace un tiempo, en un debate abierto de la Fundación IA Granada, hablé con un directivo de una empresa vinculada a la sostenibilidad. No recuerdo sus palabras exactas, así que no voy a atribuírselas. Sí recuerdo la pregunta con la que salí: cuando hacer algo se vuelve mucho más barato, ¿acabamos haciendo menos o muchísimo más?</p>
-          <p>Desde entonces vuelvo a ella cada vez que pienso en la IA. También cuando construyo con ella.</p>
-
-          <h2>La máquina de vapor</h2>
-          <p>William Stanley Jevons observó que las máquinas de vapor más eficientes no redujeron necesariamente el uso total de carbón. Al abaratar su uso, hicieron rentables más fábricas, más trayectos y más aplicaciones. Mejor rendimiento por máquina; más máquinas en el mundo.</p>
-          <p>Una bombilla LED me sirve para imaginar el mismo mecanismo: si iluminar cuesta menos, aparecen lugares y usos donde antes no compensaba poner luz. Eso no significa que toda mejora de eficiencia aumente el consumo total. Para que haya rebote, la demanda tiene que crecer lo suficiente. La paradoja no es una ley de la naturaleza.</p>
-          <p>Con la IA, creo que estamos viendo algo parecido. Si programar una función, analizar datos o producir una primera versión pasa de días a minutos, no solo hacemos lo mismo con menos horas. Probamos productos que antes eran demasiado caros, pequeños o raros para existir. Hay más cosas que construir, más decisiones que tomar y más gente que puede empezar.</p>
-
-          <div class="thesis">Más producción no garantiza más trabajo humano.</div>
-
-          <h2>Mi apuesta para los próximos cinco años</h2>
-          <p>Creo que hacia 2030 o 2031 seguirá habiendo mucho trabajo humano junto a la IA. Habrá empresas y proyectos nuevos; también funciones que se reduzcan o desaparezcan. El efecto Jevons puede ampliar el mercado sin proteger a cada persona dentro de él. Decir «se crearán otros empleos» no resuelve lo que le pasa a quien pierde el suyo.</p>
-          <p>Por eso tampoco compro la respuesta tranquilizadora de que siempre encontraremos algo que solo un humano pueda hacer. Puede que sí durante un tiempo. No veo por qué tendría que ser una garantía permanente.</p>
-
-          <h2>Lo que me dejó una charla de diez minutos</h2>
-          <p>Un profesor de filosofía me habló del aceleracionismo en una conversación lateral de apenas cinco o diez minutos. Hice un trabajo pequeño sobre ello y la idea se me quedó para siempre. No lo entiendo como «más rápido es siempre mejor». Lo que no puedo quitarme de la cabeza es otra cosa: la tecnología que hoy nos ayuda a construir la siguiente herramienta también puede acelerar la creación de la que venga después.</p>
-          <p>Si a eso se suma la robótica, la IA deja de vivir solo en una pantalla. Mi intuición es que, a más largo plazo, podrá sustituir una parte enorme del trabajo que hoy creemos reservado a personas. Puede crecer la demanda de inteligencia y, al mismo tiempo, caer la demanda de humanos para proporcionarla. Ahí la analogía con el carbón deja de tranquilizarme.</p>
-
-          <h2>Por qué me importa</h2>
-          <p>Estudio Ingeniería Informática y ADE. Me gusta construir productos de IA y pensar cómo llegan a gente real. Justo por eso no quiero esconderme detrás de un eslogan, ni apocalíptico ni optimista. Me interesa una pregunta más difícil: cuando hacer una demo ya no tenga mérito, ¿qué problema merecerá de verdad nuestro tiempo?</p>
-          <p>Por ahora intento hacer dos cosas a la vez: usar estas herramientas a fondo y no delegarles mi criterio. Si dentro de cinco años leo esto y estaba equivocado, quiero poder verlo. Esta es mi hipótesis de hoy, no una certeza sobre el futuro.</p>
+          <p>Hay conversaciones que duran cinco minutos y no parecen gran cosa. Luego pasan meses y sigues volviendo a ellas. A mí me ha pasado con dos.</p>
+          <p>La primera fue en un debate abierto de la Fundación IA Granada. Hablé con alguien de una empresa de sostenibilidad y salió la paradoja de Jevons. Piensa en las máquinas de vapor: si gastan menos carbón para hacer lo mismo, usarlas sale más a cuenta y acabas poniéndolas en más sitios. O en las luces LED: iluminar es tan barato que, en vez de dejar una bombilla en casa, puedes alumbrar también la entrada y el patio. Salí de allí y he seguido dándole vueltas desde entonces.</p>
+          <p>Con la IA me pasa algo parecido. Si antes un equipo construía un agente cada tres meses y ahora puede hacer cinco al mes, seguramente no se quede en hacer lo mismo más rápido. Probará cosas que antes ni se planteaba. Eso puede abrir trabajo nuevo y también cargarse puestos. Ahora mismo no creo que la IA nos reemplace, aunque sí va a cambiar muchísimo cómo trabajamos.</p>
+          <p>La segunda charla fue con mi profesor de filosofía. En cinco o diez minutos me habló del aceleracionismo. Luego hice un trabajo pequeño sobre ello, pero fue esa conversación la que se me quedó. Empecé a pensar en cómo cada herramienta puede acelerar la creación de la siguiente. Y la IA ya está ayudándonos a construir más IA.</p>
+          <p>Por eso mi apuesta cambia cuando miro un poco más lejos. En cuatro o cinco años creo que sí puede sustituir una parte enorme del trabajo humano, sobre todo cuando la robótica le permita salir de la pantalla y actuar en el mundo físico. Igual me equivoco, pero hoy lo veo así. Quería dejarlo escrito para volver a leerlo dentro de unos años.</p>
 
           <div class="signature">Pablo<span>/</span><small>Escrito el <time datetime="2026-11-11">11 de noviembre de 2026</time></small></div>
         </div>
         <footer class="sources">
-          <h2>Notas de esta edición</h2>
-          <p>La explicación histórica parte de <a href="https://www.econlib.org/library/YPDBooks/Jevons/jvnCQ.html" target="_blank" rel="noopener noreferrer"><cite>The Coal Question</cite>, de W. S. Jevons</a>. La aplicación a IA y la perspectiva sobre 2030–2031 son opiniones mías.</p>
-          <p>Para conservar esta versión: <a href="/reflexiones/2026-11-11-mas-ia-mas-humanos.txt">texto original</a> · <a href="/reflexiones/2026-11-11-mas-ia-mas-humanos.txt.ots">sello de tiempo</a> · <a href="https://github.com/pablopetrus/Portfolio-Pablo-Contreras/commits/main/reflexiones.html" target="_blank" rel="noopener noreferrer">historial público</a>. El sello acredita la existencia del archivo cuando se confirme en la cadena; no acredita autoría ni veracidad.</p>
+          <h2>Sobre este texto</h2>
+          <p>El ejemplo del carbón parte de <a href="https://www.econlib.org/library/YPDBooks/Jevons/jvnCQ.html" target="_blank" rel="noopener noreferrer"><cite>The Coal Question</cite>, de W. S. Jevons</a>. Lo que digo sobre la IA es mi opinión.</p>
+          <p><a href="/reflexiones/2026-11-11-dos-conversaciones.txt">Texto de esta versión</a> · <a href="/reflexiones/2026-11-11-dos-conversaciones.txt.ots">sello de tiempo</a> · <a href="https://github.com/pablopetrus/Portfolio-Pablo-Contreras/commits/main/reflexiones.html" target="_blank" rel="noopener noreferrer">historial de cambios</a>. El sello acredita la existencia del archivo cuando se confirme, no la autoría ni las predicciones.</p>
         </footer>
       </article>
     </main>
