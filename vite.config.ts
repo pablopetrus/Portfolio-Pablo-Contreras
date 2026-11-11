@@ -17,6 +17,7 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'index.html'),
         ig: path.resolve(__dirname, 'ig.html'),
+        reflexiones: path.resolve(__dirname, 'reflexiones.html'),
         lab: path.resolve(__dirname, 'lab.html'),
       },
     },
