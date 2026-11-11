@@ -1074,6 +1074,15 @@
         .floating-toolbar .toolbar-icon:nth-child(3) { background: var(--accent-color); }
         @media (max-width: 600px) { .hero h2 { letter-spacing: 0.14em; } .hero-proof { font-size: 0.78rem; line-height: 1.35; } }
         @media print { .hero h1::after { display: none; } }
+        .personal-link-wrap { padding-top: 0; padding-bottom: 16px; }
+        .personal-link { display: flex; align-items: center; gap: 18px; padding: 16px 20px; border: 1px solid rgba(23,23,23,.12); border-radius: 16px; background: #faf8f4; color: #171717; text-decoration: none; transition: border-color .2s ease, transform .2s ease; }
+        .personal-link:hover { border-color: #e87500; transform: translateY(-2px); }
+        .personal-link img { width: 72px; height: 72px; object-fit: cover; object-position: center 44%; border-radius: 10px; flex: none; }
+        .personal-link span { display: block; color: #9f4f00; font-size: .67rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+        .personal-link strong { display: block; margin-top: 4px; font-size: 1.1rem; letter-spacing: -.025em; }
+        .personal-link small { display: block; margin-top: 4px; color: #68645f; font-size: .82rem; }
+        .personal-link .arrow { margin-left: auto; color: #e87500; font-size: 1.3rem; }
+        @media print { .personal-link-wrap { display: none !important; } }
     </style>
 </head>
 <body>
@@ -1137,6 +1146,14 @@
             </div>
         </div>
     </section>
+
+    <div class="container personal-link-wrap">
+        <a class="personal-link" href="/montana">
+            <img src="/montana/foto.webp" alt="" width="72" height="72" loading="lazy">
+            <div><span data-i18n="mountain_kicker">Fuera de pantalla</span><strong data-i18n="mountain_title">Montaña</strong><small data-i18n="mountain_desc">Probablemente lo que más me llena ahora mismo</small></div>
+            <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+    </div>
 
     <!-- Press Highlight Section -->
     <section id="press" class="container">
@@ -1602,6 +1619,7 @@
             about_title: "Sobre mí / Perfil",
             about_p1: "Estudiante de Ingeniería Informática + ADE en la Universidad de Granada, centrado en IA aplicada, producto y estrategia.",
             about_p2: "Sólida capacidad para construir infraestructuras de IA escalables, habiendo superado las 100k operaciones automatizadas entre 2025 y 2026.",
+            mountain_kicker: "Fuera de pantalla", mountain_title: "Montaña", mountain_desc: "Probablemente lo que más me llena ahora mismo",
 
             press_title: "Aparición en Prensa",
             press_subtitle: "Destacado en medios como caso de éxito universitario y empresarial en la aplicación práctica de Inteligencia Artificial.",
@@ -1719,6 +1737,7 @@
             about_title: "About Me / Profile",
             about_p1: "Computer Science + Business Administration student at UGR, focused on applied AI, product and strategy.",
             about_p2: "Strong ability to build scalable AI infrastructure, exceeding 100k automated operations between 2025 and 2026.",
+            mountain_kicker: "Away from the screen", mountain_title: "Mountains", mountain_desc: "Probably what fulfils me most right now",
 
             press_title: "Featured in Press",
             press_subtitle: "Highlighted in the press as a successful case study of student and business application of practical AI systems.",

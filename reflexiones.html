@@ -47,17 +47,12 @@
     .article-body p { font: 400 clamp(1.05rem, 1.3vw, 1.19rem)/1.72 Georgia, 'Times New Roman', serif; margin: 0 0 1.35em; }
     .signature { margin: 62px 0 0; padding-top: 22px; border-top: 1px solid var(--line); font: 700 1.1rem/1.4 BrandFont, Inter, Arial, sans-serif; }
     .signature small { display: block; margin-top: 7px; color: var(--muted); font: 500 .83rem/1.5 BrandFont, Inter, Arial, sans-serif; }
-    .mountain { max-width: 760px; display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 16px; align-items: start; margin: 38px 0 0; }
-    .mountain img, .mountain video { display: block; width: 100%; background: #ddd8d0; }
-    .mountain img { height: 320px; object-fit: cover; object-position: center 70%; }
-    .mountain video { aspect-ratio: 16 / 9; }
-    .mountain figcaption { grid-column: 1 / -1; color: var(--muted); font: 500 .76rem/1.5 BrandFont, Inter, Arial, sans-serif; }
     .sources { max-width: 660px; margin-top: 62px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font: 400 .78rem/1.65 BrandFont, Inter, Arial, sans-serif; }
     .sources h2 { color: var(--ink); font-size: .78rem; text-transform: uppercase; letter-spacing: .15em; }
     .sources p { margin: 7px 0; }
     .sources a { color: var(--ink); }
     @media (max-width: 950px) { .layout { grid-template-columns: 1fr; } .rail { position: relative; height: auto; padding: 22px 28px; flex-direction: row; align-items: center; justify-content: space-between; border-right: 0; border-bottom: 1px solid var(--line); } .rail-nav { margin: 0; display: flex; gap: 20px; } .rail-note { display: none; } .page { padding: 0 28px 70px; } .topline { padding-top: 24px; } }
-    @media (max-width: 560px) { .rail-nav a:first-child { display: none; } .topline { font-size: .62rem; letter-spacing: .1em; } .intro { padding-top: 58px; } h1 { font-size: clamp(2.35rem, 10vw, 3.3rem); } .mountain { grid-template-columns: 1fr; } .mountain img { height: 270px; object-position: center 45%; } .mountain figcaption { grid-column: 1; } }
+    @media (max-width: 560px) { .rail-nav a:first-child { display: none; } .topline { font-size: .62rem; letter-spacing: .1em; } .intro { padding-top: 58px; } h1 { font-size: clamp(2.35rem, 10vw, 3.3rem); } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     @media print { :root { --paper: #fff; } .layout { display: block; } .rail, .topline, .sources { display: none; } .page { padding: 0; } .intro { padding: 20px 0 35px; } }
   </style>
@@ -81,24 +76,16 @@
         </header>
         <div class="article-body">
           <p>La típica conversación a la que en el momento no das importancia. Sigues con tu día y, meses después, todavía estás pensando en ella. Con la IA me ha pasado dos veces.</p>
-          <p>La primera fue en un debate abierto de la Fundación IA Granada. Hablé con alguien de una empresa de sostenibilidad y salió la paradoja de Jevons. Piensa en las máquinas de vapor: si gastan menos carbón para hacer lo mismo, usarlas sale más a cuenta y acabas poniéndolas en más sitios. O en las luces LED: iluminar es tan barato que, en vez de dejar una bombilla en casa, puedes alumbrar también la entrada y el patio. Salí de allí y he seguido dándole vueltas desde entonces.</p>
-          <p>Con la IA me pasa algo parecido. Si antes un equipo construía un agente cada tres meses y ahora puede hacer cinco al mes, seguramente no se quede en hacer lo mismo más rápido. Probará cosas que antes ni se planteaba. Eso puede abrir trabajo nuevo y también cargarse puestos. Ahora mismo no creo que la IA nos reemplace, aunque sí va a cambiar muchísimo cómo trabajamos.</p>
+          <p>La primera fue en un debate abierto de la Fundación IA Granada. Hablé con alguien de una empresa de sostenibilidad y salió la paradoja de Jevons. Las máquinas de vapor empezaron a hacer el mismo trabajo con menos carbón. Lo lógico parecía que se quemaría menos. Pero usarlas salía más a cuenta, llegaron a muchos más sitios y el consumo total acabó creciendo. Con las LED se ve fácil: cada luz gasta menos, pero si por ese precio iluminas también el patio, la fachada y la calle, puedes terminar gastando lo mismo o más y tener mucha más luz. Salí de allí y he seguido dándole vueltas desde entonces.</p>
+          <p>Con la IA creo que veremos algo parecido. Si construir una herramienta cuesta una fracción de lo que costaba, una empresa no tiene por qué limitarse a hacer el mismo producto más barato. Puede probar ideas que antes ni entraban en el presupuesto. Como con el vapor: la máquina eficiente no se quedó quieta ahorrando carbón; se puso a trabajar en lugares a los que antes no llegaba. Eso abrirá trabajo nuevo y también se cargará puestos. Ahora mismo no creo que la IA nos reemplace, aunque sí va a cambiar muchísimo cómo trabajamos.</p>
           <p>La segunda fue con mi profesor de filosofía. Me habló del aceleracionismo en cinco o diez minutos. Luego hice un trabajo pequeño sobre ello que me llevó otros cinco. Muy poco comparado con el trimestre que le dediqué a Nietzsche, que me encantó, o el de Descartes, que se me hizo eterno. Y, aun así, esa charla de nada se me quedó. Empecé a pensar en cómo cada herramienta puede acelerar la creación de la siguiente. La IA ya nos está ayudando a construir más IA.</p>
           <p>Por eso mi apuesta cambia cuando miro un poco más lejos. En cuatro o cinco años creo que sí puede sustituir una parte enorme del trabajo humano, sobre todo cuando la robótica le permita salir de la pantalla y actuar en el mundo físico. Igual me equivoco, pero hoy lo veo así. Quería dejarlo escrito para volver a leerlo dentro de unos años.</p>
-          <p>Mientras tanto, me gusta construir cosas con IA, pero salir a la montaña es probablemente lo que más me llena ahora mismo. Esta foto y este vídeo son de una de esas salidas.</p>
-
-          <figure class="mountain">
-            <img src="/reflexiones/montana.webp" width="776" height="1400" alt="Pablo avanzando con crampones y piolet por la nieve en la montaña" loading="lazy">
-            <video controls playsinline preload="none" poster="/reflexiones/montana-video-poster.webp" aria-label="Vídeo de Pablo en una salida a la montaña"><source src="/reflexiones/montana.mp4" type="video/mp4">Tu navegador no puede reproducir este vídeo.</video>
-            <figcaption>Un rato ahí arriba. 2026.</figcaption>
-          </figure>
 
           <div class="signature">Pablo<span>/</span><small>Escrito el <time datetime="2026-11-11">11 de noviembre de 2026</time></small></div>
         </div>
         <footer class="sources">
           <h2>Sobre este texto</h2>
           <p>El ejemplo del carbón parte de <a href="https://www.econlib.org/library/YPDBooks/Jevons/jvnCQ.html" target="_blank" rel="noopener noreferrer"><cite>The Coal Question</cite>, de W. S. Jevons</a>. Lo que digo sobre la IA es mi opinión.</p>
-          <p><a href="/reflexiones/2026-11-11-trabajo-humano-ia-manos.txt">Texto de esta versión</a> · <a href="/reflexiones/2026-11-11-trabajo-humano-ia-manos.txt.ots">sello de tiempo</a> · <a href="https://github.com/pablopetrus/Portfolio-Pablo-Contreras/commits/main/reflexiones.html" target="_blank" rel="noopener noreferrer">historial de cambios</a>. El sello acredita la existencia del archivo cuando se confirme, no la autoría ni las predicciones.</p>
         </footer>
       </article>
     </main>

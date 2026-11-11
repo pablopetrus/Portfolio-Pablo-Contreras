@@ -18,6 +18,7 @@ export default defineConfig({
         main: path.resolve(__dirname, 'index.html'),
         ig: path.resolve(__dirname, 'ig.html'),
         reflexiones: path.resolve(__dirname, 'reflexiones.html'),
+        montana: path.resolve(__dirname, 'montana.html'),
         lab: path.resolve(__dirname, 'lab.html'),
       },
     },
