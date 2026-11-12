@@ -202,6 +202,10 @@
             font-size: 0.78rem;
             font-weight: 600;
         }
+        .nav-mountain-mobile { display: none; color: #9f4f00; font-size: .78rem; font-weight: 600; }
+        .nav-combo { display: inline-flex; gap: 5px; align-items: center; }
+        .nav-combo span { color: #e87500; }
+        .nav-links a.nav-mountain { color: #9f4f00; font-weight: 650; }
 
         .nav-links a.nav-demo {
             color: var(--accent-color);
@@ -854,6 +858,10 @@
             .nav-thoughts-mobile {
                 display: inline-flex;
             }
+            .nav-mountain-mobile { display: inline-flex; }
+            .lang-toggle { margin-left: 0; }
+            .nav-container { gap: 8px; }
+            .nav-thoughts-mobile, .nav-mountain-mobile { font-size: .72rem; }
             
             .section-title {
                 font-size: 2rem;
@@ -1064,14 +1072,15 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="#about" data-i18n="nav_about">Sobre mí</a></li>
-                <li><a href="#projects" data-i18n="nav_projects">Proyectos</a></li>
-                <li><a href="/reflexiones" data-i18n="nav_thoughts">Reflexiones</a></li>
-                <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+                <li class="nav-combo"><a href="#projects" data-i18n="nav_projects">Proyectos</a><span>/</span><a href="#skills" data-i18n="nav_skills">Skills</a></li>
                 <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
+                <li><a href="/reflexiones" data-i18n="nav_thoughts">Reflexiones</a></li>
                 <li><a href="/lab" class="nav-demo" data-i18n="nav_demo">Demo producto ↗</a></li>
+                <li><a href="/montana" class="nav-mountain" data-i18n="nav_mountain">Montaña ↗</a></li>
             </ul>
         </nav>
         <a class="nav-thoughts-mobile" href="/reflexiones" data-i18n="nav_thoughts">Reflexiones</a>
+        <a class="nav-mountain-mobile" href="/montana" data-i18n="nav_mountain_mobile">Montaña</a>
         <div class="lang-toggle">
             <button class="lang-btn active" onclick="switchLanguage('es')" id="btn-es">ES</button>
             <button class="lang-btn" onclick="switchLanguage('en')" id="btn-en">EN</button>
@@ -1574,6 +1583,7 @@
             nav_about: "Sobre mí",
             nav_projects: "Proyectos",
             nav_thoughts: "Reflexiones",
+            nav_mountain: "Montaña ↗", nav_mountain_mobile: "Montaña",
             nav_skills: "Skills",
             nav_events: "Logros",
             nav_contact: "Contacto",
@@ -1692,6 +1702,7 @@
             nav_about: "Profile",
             nav_projects: "Projects",
             nav_thoughts: "Thoughts",
+            nav_mountain: "Mountains ↗", nav_mountain_mobile: "Mountains",
             nav_skills: "Skills",
             nav_events: "Achievements",
             nav_contact: "Contact",
