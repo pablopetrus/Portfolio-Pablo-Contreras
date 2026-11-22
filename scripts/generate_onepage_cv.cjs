@@ -23,6 +23,17 @@ async function generateOnepageCV() {
         }
     });
 
+    const overflow = await page.evaluate(() => {
+        const sheet = document.querySelector('.page');
+        const bottom = sheet.getBoundingClientRect().bottom;
+        return [...sheet.querySelectorAll('main > *, aside > *')]
+            .some(element => element.getBoundingClientRect().bottom > bottom + 1);
+    });
+    if (overflow) {
+        await browser.close();
+        throw new Error('One-page CV content exceeds A4. Adjust the layout before exporting.');
+    }
+
     const cvDir = path.resolve(__dirname, '../public/cv');
     if (!fs.existsSync(cvDir)) {
         fs.mkdirSync(cvDir, { recursive: true });

@@ -24,4 +24,12 @@ npm run generate-onepage-cv
 npm run generate-pdf
 ```
 
-El workflow de GitHub Actions regenera ambos PDFs cuando cambian las fuentes pertinentes. Los tres HTML públicos se definen en `vite.config.ts`; `public/_redirects` y `public/_headers` se copian a `dist/`.
+El workflow de GitHub Actions regenera los tres PDFs cuando cambian las fuentes pertinentes, o manualmente. Compara páginas renderizadas y texto para omitir cambios que solo afectan a los metadatos del PDF y evitar un segundo despliegue innecesario cuando los PDF ya se incluyen en la misma entrega. Revisa visualmente los cambios de diseño antes de fusionar.
+
+## Contenido e idiomas
+
+`index.html` e `ig.html` conservan una estructura estática en inglés, utilizable también por el generador PDF. `portfolio-content.js` centraliza sus traducciones compartidas. Al añadir contenido, actualizar ambas estructuras y las claves EN/ES; las variantes comparten el mismo diccionario. Las páginas editoriales usan `editorial-language.js`, con el mismo almacenamiento `portfolio-language`, inglés por defecto y preferencia persistente.
+
+`/recursos` es la ruta estable del QR. La demo es ficticia y local; no envía mensajes ni llama a modelos. El enlace del Starter permanece inactivo hasta verificar su repositorio público. `/reflexiones` conserva el artículo original y enlaces a su historial público. Para un nuevo artículo, crear una página con título, firma, fecha real y enlaces a su archivo/historial, sin cambiar las fechas del anterior.
+
+Vite declara las seis páginas públicas; `public/_redirects` admite las rutas principales con y sin barra final. Las variantes del CV y sus URLs existentes se conservan.

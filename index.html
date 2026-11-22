@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pablo · IA, producto y estrategia. Proyectos y sistemas de IA aplicada.">
-    <title>Pablo · IA / Producto / Estrategia</title>
-    
+    <meta name="description" content="Pablo · AI, product and strategy. Applied AI projects, public code and free resources.">
+    <title>Pablo · AI / Product / Strategy</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><circle cx=%2216%22 cy=%2216%22 r=%2214%22 fill=%22%23e87500%22 /><path d=%22M12 10h4a4 4 0 0 1 0 8h-4v4%22 stroke=%22white%22 stroke-width=%222.5%22 fill=%22none%22 stroke-linecap=%22round%22 /></svg>">
-    
+
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
 
         :root {
             font-family: "BrandFont", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            
+
             /* Colors */
             --bg-color: #fffdf9;
             --bg-secondary: #f6f2eb;
@@ -528,7 +528,7 @@
             content: " ★";
             color: #ffb400;
         }
-        
+
         .sm-text {
             font-size: 0.8rem;
             opacity: 0.8;
@@ -666,7 +666,7 @@
             line-height: 1.6;
             margin-bottom: 16px;
         }
-        
+
         .system-link {
             font-size: 0.9rem;
             color: var(--accent-color);
@@ -687,7 +687,7 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .edu-icon {
             font-size: 2rem;
         }
@@ -840,7 +840,7 @@
             .projects-wrapper {
                 flex-direction: column-reverse;
             }
-            
+
             .project-sticky-container {
                 height: auto;
                 position: relative;
@@ -862,7 +862,7 @@
             .lang-toggle { margin-left: 0; }
             .nav-container { gap: 8px; }
             .nav-thoughts-mobile, .nav-mountain-mobile { font-size: .72rem; }
-            
+
             .section-title {
                 font-size: 2rem;
             }
@@ -1061,31 +1061,79 @@
         .personal-link small { display: block; margin-top: 4px; color: #68645f; font-size: .82rem; }
         .personal-link .arrow { margin-left: auto; color: #e87500; font-size: 1.3rem; }
         @media print { .personal-link-wrap { display: none !important; } }
-    </style>
+
+/* Work hierarchy and accessible navigation. Shared content lives in portfolio-content.js. */
+.nav-container { gap:24px; } .nav-container nav { margin-left:auto; } .nav-links { gap:20px; } .lang-toggle { margin-left:0; gap:6px; flex-shrink:0; } .lang-btn { min-height:36px; min-width:36px; } .lang-toggle span { color:#9f4f00; }
+.nav-mobile-menu { display:none; position:relative; } .nav-mobile-menu summary { cursor:pointer; padding:12px 0 12px 12px; font-weight:650; } .nav-mobile-menu nav { position:absolute; right:0; top:48px; background:#fffdf9; border:1px solid #ddd5ca; border-radius:14px; padding:16px 22px; min-width:190px; box-shadow:0 12px 30px #0001; } .nav-mobile-menu ul { list-style:none; margin:0; padding:0; display:grid; gap:8px; } .nav-mobile-menu a { display:block; padding:8px 0; color:#171717; }
+.work-subheading { margin:56px 0 20px; font-size:1.3rem; } .featured-work { grid-template-columns:repeat(2,minmax(0,1fr)); } .featured-work .project-item:first-child { grid-column:1/-1; } .work-links { display:flex; flex-wrap:wrap; gap:14px 24px; margin-top:20px; } .work-links a { color:#9f4f00; font-size:.85rem; font-weight:600; text-decoration:underline; text-underline-offset:4px; } .other-work .project-item { border:0; border-top:1px solid #ded8ce; border-radius:0; background:transparent; padding:24px 0; box-shadow:none; transform:none; } .other-work .project-item h3 { font-size:1.1rem; } .other-work .project-item p { max-width:820px; } .info-card p { margin:0 0 16px; line-height:1.65; } .programme-photo { margin:0; } .programme-photo img { width:100%; height:280px; object-fit:cover; border-radius:18px; } .programme-photo figcaption { font-size:.8rem; color:#666; margin-top:10px; } .personal-record { margin-top:36px; color:#68645f; font-size:.85rem; } .hero-linkedin { display:inline-block; margin-top:18px; color:#9f4f00; font-size:.85rem; font-weight:600; } a:focus-visible,button:focus-visible,summary:focus-visible { outline:3px solid #9f4f00; outline-offset:5px; }
+@media(max-width:1050px) { .nav-container>nav { display:none; } .nav-mobile-menu { display:block; margin-left:auto; } .nav-container { gap:14px; } }
+@media(max-width:700px) { .featured-work { grid-template-columns:1fr; } .nav-container { padding:0 20px; } .logo { font-size:1.1rem; } .lang-toggle { padding:2px; } .featured-work .project-item { padding:24px; } }
+@media print { .nav-mobile-menu,.hero-linkedin,#open-source .work-links { display:none!important; } .featured-work { display:block; } .programme-photo img { height:200px; } }
+
+</style>
 </head>
 <body>
 
 <!-- Header -->
 <header>
-    <div class="nav-container">
-        <a href="#" class="logo" aria-label="Pablo, inicio">PABLO<span class="brand-slash">/</span></a>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#about" data-i18n="nav_about">Sobre mí</a></li>
-                <li class="nav-combo"><a href="#projects" data-i18n="nav_projects">Proyectos</a><span>/</span><a href="#skills" data-i18n="nav_skills">Skills</a></li>
-                <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
-                <li><a href="/reflexiones" data-i18n="nav_thoughts">Reflexiones</a></li>
-                <li><a href="/lab" class="nav-demo" data-i18n="nav_demo">Demo producto ↗</a></li>
-                <li><a href="/montana" class="nav-mountain" data-i18n="nav_mountain">Montaña ↗</a></li>
-            </ul>
-        </nav>
-        <a class="nav-thoughts-mobile" href="/reflexiones" data-i18n="nav_thoughts">Reflexiones</a>
-        <a class="nav-mountain-mobile" href="/montana" data-i18n="nav_mountain_mobile">Montaña</a>
-        <div class="lang-toggle">
-            <button class="lang-btn active" onclick="switchLanguage('es')" id="btn-es">ES</button>
-            <button class="lang-btn" onclick="switchLanguage('en')" id="btn-en">EN</button>
-        </div>
-    </div>
+<div class="nav-container">
+<a href="#" class="logo" aria-label="Pablo, home">PABLO<span class="brand-slash">/</span>
+</a>
+<div class="lang-toggle" aria-label="Language / Idioma">
+<button type="button" class="lang-btn active" onclick="switchLanguage('en')" id="btn-en" aria-label="English">EN</button>
+<span aria-hidden="true">/</span>
+<button type="button" class="lang-btn" onclick="switchLanguage('es')" id="btn-es" aria-label="Español">ES</button>
+</div>
+<nav aria-label="Main navigation">
+<ul class="nav-links">
+<li>
+<a data-i18n="nav_projects" href="#projects">Work</a>
+</li>
+<li>
+<a data-i18n="nav_oss" href="#open-source">Open source</a>
+</li>
+<li>
+<a data-i18n="nav_thoughts" href="/reflexiones">Thoughts</a>
+</li>
+<li>
+<a data-i18n="nav_resources" href="/recursos">Resources</a>
+</li>
+<li>
+<a data-i18n="nav_mountain" href="/montana">Mountains</a>
+</li>
+<li>
+<a data-i18n="nav_contact" href="#contact">Contact</a>
+</li>
+</ul>
+</nav>
+<details class="nav-mobile-menu">
+<summary>
+<span data-i18n="nav_menu" >Menu</span>
+</summary>
+<nav aria-label="Mobile navigation">
+<ul>
+<li>
+<a data-i18n="nav_projects" href="#projects">Work</a>
+</li>
+<li>
+<a data-i18n="nav_oss" href="#open-source">Open source</a>
+</li>
+<li>
+<a data-i18n="nav_thoughts" href="/reflexiones">Thoughts</a>
+</li>
+<li>
+<a data-i18n="nav_resources" href="/recursos">Resources</a>
+</li>
+<li>
+<a data-i18n="nav_mountain" href="/montana">Mountains</a>
+</li>
+<li>
+<a data-i18n="nav_contact" href="#contact">Contact</a>
+</li>
+</ul>
+</nav>
+</details>
+</div>
 </header>
 
 <main>
@@ -1095,15 +1143,15 @@
         <canvas id="hero-canvas"></canvas>
         <div class="hero-content">
             <h1 data-i18n="hero_name">Pablo</h1>
-            <h2 data-i18n="hero_subtitle">IA / PRODUCTO / ESTRATEGIA</h2>
-            <p data-i18n="hero_desc">Estudiante de Ingeniería Informática + ADE (UGR). Construyo productos de IA y sistemas que conectan tecnología, negocio y distribución.</p>
+            <h2 data-i18n="hero_subtitle">AI / PRODUCT / STRATEGY</h2>
+            <p data-i18n="hero_desc">Computer Science + Business student (UGR). I build AI products and systems connecting technology, business and distribution.</p>
             <div class="btn-group">
-                <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_projects">Ver proyectos</a>
-                <a href="./cv/Pablo_Contreras_Onepage_CV.pdf" download="Pablo_CV.pdf" class="btn btn-secondary" data-i18n="hero_btn_cv">Descargar CV</a>
+                <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_projects">View Projects</a>
+                <a href="./cv/Pablo_Contreras_Onepage_CV.pdf" download="Pablo_CV.pdf" class="btn btn-secondary" data-i18n="hero_btn_cv">Download CV</a>
             </div>
-            <div class="hero-proof" data-i18n="hero_proof">+5 M visualizaciones generadas en el último mes</div>
+            <a data-i18n="hero_linkedin" href="https://www.linkedin.com/in/pablocontrerasperez/" target="_blank" rel="noopener noreferrer" class="hero-linkedin">Find me on LinkedIn ↗</a><br><div class="hero-proof" data-i18n="hero_proof">5M+ cumulative views · August–November 2026</div>
         </div>
-        
+
         <!-- Floating animated toolbar deco -->
         <div class="floating-toolbar">
             <div class="toolbar-icon"></div>
@@ -1115,411 +1163,219 @@
     <!-- About Section -->
     <section id="about" class="container">
         <div class="section-header">
-            <h2 class="section-title" data-i18n="about_title">Sobre mí / Perfil</h2>
+            <h2 class="section-title" data-i18n="about_title">About Me / Profile</h2>
         </div>
         <div class="about-card">
             <div class="about-text">
-                <p data-i18n="about_p1">Estudiante de Ingeniería Informática + ADE en la Universidad de Granada, centrado en IA aplicada, producto y estrategia.</p>
+                <p data-i18n="about_p1">Computer Science + Business Administration student at UGR, focused on applied AI, product and strategy.</p>
                 <br>
-                <p data-i18n="about_p2">Sólida capacidad para construir infraestructuras de IA escalables, habiendo superado las 100k operaciones automatizadas entre 2025 y 2026.</p>
+                <p data-i18n="about_p2">Strong ability to build scalable AI infrastructure, exceeding 100k automated operations between 2025 and 2026.</p>
             </div>
         </div>
     </section>
 
-    <div class="container personal-link-wrap">
-        <a class="personal-link" href="/montana">
-            <img src="/montana/foto.webp" alt="" width="72" height="72" loading="lazy">
-            <div><span data-i18n="mountain_kicker">Fuera de pantalla</span><strong data-i18n="mountain_title">Montaña</strong><small data-i18n="mountain_desc">Probablemente lo que más me llena ahora mismo</small></div>
-            <span class="arrow" aria-hidden="true">↗</span>
-        </a>
-    </div>
-
     <!-- Press Highlight Section -->
     <section id="press" class="container">
-       
+
         <div class="press-card">
             <div class="press-header">
                 <div class="press-logo-container">
                     <span class="press-editorial">IDEAL En Clase</span>
-                    <span class="press-date">18 de Mayo, 2026</span>
+                    <time class="press-date" datetime="2026-05-18" data-i18n="press_date">18 May 2026</time>
                 </div>
-                <h3 class="press-headline" data-i18n="press_headline">Universitarios demuestran que pueden trabajar sobre retos reales junto a empresas tecnológicas de Granada con ayuda de la IA</h3>
+                <h3 class="press-headline" data-i18n="press_headline">University students prove they can solve real challenges together with tech companies in Granada using AI</h3>
             </div>
             <div class="press-body">
                 <div class="press-media">
                     <div class="press-image-container">
                         <img src="https://en-clase.ideal.es/wp-content/uploads/2026/05/Pablo-Contreras-IeC.jpg" alt="Pablo Contreras presentando su proyecto" referrerpolicy="no-referrer" class="press-image">
                     </div>
-                    <p class="press-caption" data-i18n="press_caption">Pablo Contreras durante la exposición de su proyecto final en el Hackaton Gen AI ARENA, seleccionado entre más de 130 aspirantes.</p>
+                    <p class="press-caption" data-i18n="press_caption">Pablo Contreras delivering his final pitch at the Gen AI ARENA Hackathon, selected among more than 130 elite applicants.</p>
                 </div>
                 <div class="press-content">
-                    <p class="press-text" data-i18n="press_snippet">
-                        <strong>Pablo Contreras Pérez</strong> es un estudiante universitario de <strong>Ingeniería Informática con ADE</strong> de la UGR. Recientemente participó en <em>Gen AI ARENA</em>, el primer hackathon de inteligencia artificial generativa en Granada orientado a transformar desafíos reales de negocio en soluciones operativas, organizado por <strong>SIDN</strong>.
-                    </p>
-                    <p class="press-text-secondary" data-i18n="press_snippet_2">
-                        El evento convocó a más de 130 aspirantes de los cuales seleccionaron únicamente a 23 participantes estrella. El equipo de Pablo abordó los sobrecostes en marketing de paid ads, implementando modelos de detección que permiten ahorrar hasta ~12.000€ mensuales a las empresas participantes.
-                    </p>
+                    <p class="press-text" data-i18n="press_snippet">Pablo Contreras Pérez is a Computer Science + Business Administration double degree student at UGR. He recently participated in Gen AI ARENA, the first generative artificial intelligence hackathon in Granada targeting real business challenges to build operational solutions, organized by SIDN.</p>
+                    <p class="press-text-secondary" data-i18n="press_snippet_2">More than 130 people applied; 23 were selected. Our team explored paid advertising inefficiencies and built a predictive prototype with an estimated potential saving of around €12,000 per month.</p>
                     <div class="press-cta-row">
-                        <a href="https://en-clase.ideal.es/universitarios-demuestran-que-pueden-trabajar-sobre-retos-reales-junto-a-empresas-tecnologicas-de-granada-con-ayuda-de-la-ia/" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="press_link">Leer artículo completo en IDEAL</a>
+                        <a href="https://en-clase.ideal.es/universitarios-demuestran-que-pueden-trabajar-sobre-retos-reales-junto-a-empresas-tecnologicas-de-granada-con-ayuda-de-la-ia/" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="press_link">Read full article on IDEAL</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section (Featured Projects & Achievements) -->
-    <section id="projects" class="container">
-        <div class="section-header">
-            <h2 class="section-title" data-i18n="projects_title">Proyectos destacados</h2>
-            <p class="section-subtitle" data-i18n="projects_subtitle">Builder mindset: construcción de sistemas de alto impacto y validación real en mercado.</p>
-        </div>
-
-        <div class="projects-list">
-
-            <!-- Andaluz.ia (First) -->
-            <div class="project-item">
-                <h3 data-i18n="proj_1_title">Andaluz.ia (GranadaTur 2035)</h3>
-                <p data-i18n="proj_1_desc">Partner técnico co-fundador enfocado en infraestructura de IA. Automatización con Antigravity, Python y librerías escalables. Presentado a incubadora El Carmen, Breaker Impulsa, Concurso Universitario 2026 (€26k) y Santander X Explorer.</p>
-                <div class="project-tags">
-                    <span class="project-tag">Machine Learning</span>
-                    <span class="project-tag" data-i18n="tag_pub">Presentación al público</span>
-                    <span class="project-tag">Data Science</span>
-                </div>
-                <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://ugremprendedora.ugr.es/andaluz-ia-participa-en-el-programa-intensivo-combinado-bip-a-nivel-europeo-de-la-alianza-arqus-en-portugal/" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;">Cobertura UGR Emprendedora</a>
-                </div>
-            </div>
-
-            <!-- Hackathon Award -->
-            <div class="project-item">
-                <h3 data-i18n="proj_hackathon_title">Ganador Hackaton GenAI Arena by SIDN</h3>
-                <p data-i18n="proj_hackathon_desc">Ganador del premio al más votado por el público, en total 130 personas aplicaron al Hackaton. Nuestro reto fue resolver los sobrecostes en marketing de paid ads, logrando detectar overflows y ahorrar mensualmente ~12.000€. Desarrollé el modelo predictivo conectado al backend y realicé un pitch de negocio traduciendo lo técnico. Responsable de la documentación técnica, logs y comunicación.</p>
-                <div class="project-tags">
-                    <span class="project-tag">Marketing Optimization</span>
-                    <span class="project-tag">Business Pitch</span>
-                    <span class="project-tag">Backend Integration</span>
-                </div>
-                <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://credsverse.com/credentials/e8047661-3405-496e-9096-0d2059028b38" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_cert">Certificado</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 data-i18n="proj_2_title">ViviAI (Hackathon 72h)</h3>
-                <p data-i18n="proj_2_desc">Solución IA para el sector inmobiliario desarrollada en Ideas Factory UGR. 72 horas de alta exigencia (8:00 a 21:00 presencial). Lideré la obtención de 5 cartas de intención con reuniones cerradas de agencias reales de Granada interesadas.</p>
-                <div class="project-tags">
-                    <span class="project-tag">Applied AI</span>
-                    <span class="project-tag" data-i18n="tag_pub">Presentación al público</span>
-                    <span class="project-tag">Pitching</span>
-                </div>
-                <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://drive.google.com/file/d/1xVa9U5hUJ0lrQElYHc0AlGoGDe-rPDzm/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_cert">Certificado</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <figure class="project-photo">
-                    <img src="./images/bip-portugal-2026.webp" alt="Equipo internacional del BIP Turning Ideas into Businesses en Portugal" loading="lazy" decoding="async">
-                    <figcaption data-i18n="proj_bip_photo_caption">Semana presencial del BIP · Portugal, 2026</figcaption>
-                </figure>
-                <h3 data-i18n="proj_bip_title">BIP Portugal: Transforming Ideas into Businesses</h3>
-                <p data-i18n="proj_bip_desc">Participante becado en la edición 2026 del BIP de la Universidade do Minho. Validación, propuesta de valor, modelo de negocio, escalabilidad y pitch de startups tecnológicas en un entorno internacional.</p>
-                <div class="project-tags">
-                    <span class="project-tag">Internationalization</span>
-                    <span class="project-tag">Scalability</span>
-                </div>
-                <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://ugremprendedora.ugr.es/participa-en-el-bip-transformando-ideas-en-negocios-en-la-ciudad-de-guimaraes-portugal/" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_info">+ Información</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 data-i18n="proj_uic_title">United in Curiosity Week — Polonia 2026</h3>
-                <p data-i18n="proj_uic_desc">Seleccionado y becado para una movilidad internacional en Varsovia y Breslavia. Semana interdisciplinar en la Universidad de Breslavia sobre IA aplicada a la ciencia, visualización de datos y comunicación eficaz de investigación.</p>
-                <div class="project-tags">
-                    <span class="project-tag">AI Research</span>
-                    <span class="project-tag">Science Communication</span>
-                    <span class="project-tag">International Teamwork</span>
-                </div>
-                <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://arqus.ugr.es/con/semana-internacional-de-talleres-united-in-curiosity-para-estudiantes-arqus-en-la-universidad-de-breslavia/" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_info">+ Información</a>
-                </div>
-            </div>
-
-            <!-- Imperial College London Tech Week -->
-            <div class="project-item">
-                <h3 data-i18n="proj_imperial_title">Imperial College London · Tech Week 2026</h3>
-                <p data-i18n="proj_imperial_desc">Inmersión presencial en deeptech, IA aplicada e innovación.</p>
-                <div class="project-tags">
-                    <span class="project-tag">Imperial College London</span>
-                    <span class="project-tag">International</span>
-                    <span class="project-tag">Deeptech</span>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 data-i18n="proj_canal_title">Sistemas de Automatización (Canal Online SL)</h3>
-                <p data-i18n="proj_canal_desc">Desarrollo de un ecosistema de posteo automático multicanal (LinkedIn, Twitter, Web). La pieza clave fue un algoritmo evolutivo de selección natural programado en Make.com que optimiza la generación de contenido.</p>
-                <div class="project-tags">
-                    <span class="project-tag">Make.com</span>
-                    <span class="project-tag">Algoritmos Evolutivos</span>
-                    <span class="project-tag">API Integration</span>
-                </div>
-                <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://eu2.make.com/public/shared-scenario/QpxJcKMYVC5/content-creation-paso-1-2-y-3-petrus" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_make">Flujo Make.com</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 data-i18n="proj_oposline_title">Predictivo de datos para trends (Market Insights)</h3>
-                <p data-i18n="proj_oposline_desc">Desarrollo de modelo predictivo con NumPy y Pandas. Fruto de detectar un hueco en el mercado, desarrollado para intentar venderlo como freelance para análisis de tendencias.</p>
-                <div class="project-tags">
-                    <span class="project-tag">Scikit-learn</span>
-                    <span class="project-tag">NumPy</span>
-                    <span class="project-tag">AI Business Lab</span>
-                </div>
-                <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://github.com/aipetrusai/forecast-with-numpy-and-pandas" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;">GitHub Repo</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 data-i18n="proj_arqus_title">Arqus International Thinkathon · Berlín y Leipzig</h3>
-                <p data-i18n="proj_arqus_desc">Seleccionado y becado para ideación internacional sobre el reto “Europe as a Global Actor”.</p>
-                <div class="project-tags">
-                    <span class="project-tag">Entrepreneurship</span>
-                    <span class="project-tag">Berlin/Leipzig</span>
-                </div>
-                <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://drive.google.com/file/d/1YQOvwR8Te6VFZTdJ1ta95LKd95wISv42/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_invite">Invitación</a>
-                    <a href="https://arqus-alliance.eu/event/thinkathon-and-workshop-europe-as-a-global-actor-which-competences-do-we-need-in-a-world-in-crisis/" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_info">+ Info Evento</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 data-i18n="proj_nestle_title">Nestlé International Skillathon 2025</h3>
-                <p data-i18n="proj_nestle_desc">Colaboración con equipos internacionales para resolver retos de negocio reales de alta complejidad. Foco en innovación y trabajo bajo presión.</p>
-                <div class="project-tags">
-                    <span class="project-tag">International</span>
-                    <span class="project-tag">Problem Solving</span>
-                </div>
-                <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://drive.google.com/file/d/1P7elVajMrdudrw50Z806nKr7UC8-AgYZ/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_cert">Certificado</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 data-i18n="proj_recapacicla_title">Ideatón Recapacicla (3er Premio)</h3>
-                <p data-i18n="proj_recapacicla_desc">Tercer premio con 'RECUP TO GO', que resolvió el reto mediante un algoritmo de selección natural aplicado a la logística de reciclaje universitario. Fase de Andalucía Oriental (Recapacicla Universidades).</p>
-                <div class="project-tags">
-                    <span class="project-tag">Sustainability</span>
-                    <span class="project-tag">Waste Management</span>
-                </div>
-                <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://drive.google.com/file/d/1YT-aZThZuTzeviibFt1IGiqPFZwwEaM_/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_cert">Certificado</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 data-i18n="proj_talento_title">Talento Emprendedor UGR (150h)</h3>
-                <p data-i18n="proj_talento_desc">Formación intensiva reconocida con 6 créditos ECTS. Validación de ideas de negocio y metodologías Lean Startup.</p>
-                <div class="project-tags">
-                    <span class="project-tag">Lean Startup</span>
-                    <span class="project-tag">6 ECTS</span>
-                </div>
-                <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://drive.google.com/file/d/1MstIBI4xwvYEU-wtQnOnOMB8JhwN7EBe/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_cert">Certificado</a>
-                    <a href="https://canal.ugr.es/convocatoria/talento-emprendedor-ugr/" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_info">Info Programa</a>
-                </div>
-            </div>
-
-
-            <div class="project-item">
-                <h3 data-i18n="proj_ia_congreso_title">IA Granada Foundation</h3>
-                <p data-i18n="proj_ia_congreso_desc">Participación activa en AI Business Lab, Coloquia.lab y el III Congreso IA de Andalucía. Foco en el ecosistema emprendedor de Granada.</p>
-                <div class="project-tags">
-                    <span class="project-tag">AI Ecosystem</span>
-                    <span class="project-tag">Fundación IA Granada</span>
-                </div>
-                <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://drive.google.com/file/d/1UXZc1rQbhswZCKivvuqG0daa6mAwen4i/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_cert">Certificado</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 data-i18n="proj_talentland_title">Ponente más joven de Talent Land España</h3>
-                <p data-i18n="proj_talentland_desc">Asistente en 2024, becado en 2025 y speaker en 2026. Charlas sobre prototipado y apalancamiento con IA ante un evento cuya edición inaugural reunió a 19.000 asistentes.</p>
-                <div class="project-tags">
-                    <span class="project-tag">Innovation</span>
-                    <span class="project-tag">Scholarship</span>
-                </div>
-                <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://drive.google.com/file/d/1lXcBcC_yKLe-V4it5StmN9K9DKpMeX5O/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_cert">Certificado 2024</a>
-                    <a href="https://drive.google.com/file/d/1f6S9t4a8yTjicOYVNiWe1S7Y2im21b9O/view?usp=drive_link" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;" data-i18n="btn_cert">Certificado 2025</a>
-                </div>
-            </div>
-
-            <div class="project-item">
-                <h3 data-i18n="proj_3_title">Proyecto SEO / Web Impresoras</h3>
-                <p data-i18n="proj_3_desc">Posicionamiento orgánico de alto rendimiento: ~8.700 visitas mensuales mantenidas. Exposición práctica a estrategias de tráfico y conversión real.</p>
-            </div>
-
-            <div class="project-item">
-                <h3 data-i18n="proj_4_title">Alhambra Insight IA</h3>
-                <p data-i18n="proj_4_desc">Combinación de IA por visión y software especializado bajo la mentoría de un profesor de facultad. Foco en análisis visual avanzado.</p>
-            </div>
-
-            <div class="project-item">
-                <h3 data-i18n="proj_6_title">Dynamic Portfolio & Auto CV</h3>
-                <p data-i18n="proj_6_desc">Sistema de publicación automatizada con Python/Git. Sincronización dinámica de la web y descarga local del CV actualizado.</p>
-            </div>
-
-            <!-- Internal Leverage Stack -->
-            <div class="project-item">
-                <h3 data-i18n="proj_leverage_stack_title">Stack interno de apalancamiento (Obsidian · React · Remotion)</h3>
-                <p data-i18n="proj_leverage_stack_desc">Pipeline propio que conecta Obsidian (segundo cerebro indexado y versionado) con React + Remotion (vídeo programático parametrizado por datos) y JavaScript de orquestación. Aplicado a producción de contenido a escala, instrumentación de KPIs y métricas de apalancamiento por vertical de negocio — el código tira los vídeos, los logs alimentan el dashboard, el dashboard cierra el loop.</p>
-                <div class="project-tags">
-                    <span class="project-tag">Remotion</span>
-                    <span class="project-tag">React</span>
-                    <span class="project-tag">Obsidian</span>
-                    <span class="project-tag">KPIs · Métricas</span>
-                </div>
-            </div>
-
-            <div class="project-item power-record-corner">
-                <h3 data-i18n="proj_power_title">Record Nacional Powerlifting (WRPF)</h3>
-                <p data-i18n="proj_power_desc">Record de Bench Press en categoría Teenagers (117,5 kg). Disciplina, constancia y superación enfocada al alto rendimiento.</p>
-                <div class="project-links" style="margin-top: 10px;">
-                    <a href="https://drive.google.com/file/d/1UXZc1rQbhswZCKivvuqG0daa6mAwen4i/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 4px 12px; font-size: 0.75rem;" data-i18n="btn_record">Ver Record</a>
-                </div>
-            </div>
-
-            <!-- Social Media Impact (Last) -->
-            <div class="project-item">
-                <h3 data-i18n="proj_sm_title">+5 M visualizaciones en el último mes</h3>
-                <p data-i18n="proj_sm_desc">Contenido y distribución digital en varias cuentas y plataformas.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Education & Excellence -->
-    <section id="education" class="container">
-        <div class="section-header">
-            <h2 class="section-title" data-i18n="edu_title">Formación & Excelencia</h2>
-        </div>
-        
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>🎓 <span data-i18n="edu_uni">Universidad de Granada (UGR)</span></h3>
-                <div class="info-list">
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong data-i18n="edu_period">2025 – Presente:</strong> <span data-i18n="edu_degree">Doble Grado en Ingeniería Informática + ADE.</span></p>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong data-i18n="edu_pau">Nota PAU:</strong> <span data-i18n="edu_pau_desc">Top 5% de la convocatoria nacional.</span></p>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong data-i18n="edu_merit">Excelencia Técnica:</strong> <span data-i18n="edu_merit_desc">Mejor nota de promoción en Cálculo y Fundamentos de Programación.</span></p>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong>Matrículas de Honor:</strong> Álgebra Lineal y Estructuras Matemáticas (9,8/10) · Economía Política (9,3/10).</p>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong>Bachillerato (previo):</strong> IES Padre Suárez, Bachillerato Tecnológico y Científico. Nota media 9,1/10.</p>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong data-i18n="edu_cpp">C++ Aplicado:</strong> <span data-i18n="edu_cpp_desc">Desarrollo de sistemas para seguridad bancaria, detección de fraude y protección de crédito.</span></p>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong data-i18n="edu_soft">Soft Skills Project:</strong> <span data-i18n="edu_soft_desc">Proyecto publicado (Fundamentos de Empresa). Comunicación efectiva, liderazgo de equipos y capacidad contrastada para delegar y confiar en el talento humano.</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-card">
-                <h3>📚 <span data-i18n="cert_title">Formación complementaria</span></h3>
-                <div class="info-list">
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong>Stanford University:</strong> <span data-i18n="cert_stanford_ai">The AI Awakening: Implications for the Economy and Society · oct. de 2026.</span><br><a href="https://www.coursera.org/account/accomplishments/records/99YA9N25CMOS" target="_blank" rel="noopener noreferrer" class="credential-link" data-i18n="cert_view">Ver credencial ↗</a></p>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong>Stanford University:</strong> <span data-i18n="cert_stanford">Introduction to Statistics · oct. de 2026.</span><br><a href="https://www.coursera.org/account/accomplishments/records/67OT3WRXM8FC" target="_blank" rel="noopener noreferrer" class="credential-link" data-i18n="cert_view">Ver credencial ↗</a></p>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong>Wharton · University of Pennsylvania:</strong> <span data-i18n="cert_wharton">Improving Communication Skills · completado en septiembre de 2026.</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-card">
-                <h3>🌐 <span data-i18n="lang_title">Idiomas & Estancias</span></h3>
-                <div class="info-list">
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong data-i18n="lang_en">Inglés:</strong> <span data-i18n="lang_en_desc">C2 · TOEFL iBT 110/120 (ETS, marzo 2026).</span></p>
-                          <div class="project-links" style="margin-top: 10px;">
-                    <a href="https://drive.google.com/file/d/1AmOYI26rfs1d7m1fLtQ9bW_YQ7FlmKJD/view?usp=sharing" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 4px 12px; font-size: 0.75rem;" data-i18n="btn_see_cert">Ver Certificado</a>
-                </div>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong data-i18n="lang_fr">Francés:</strong> <span data-i18n="lang_fr_desc">Básico. Intercambio formativo en París (2022) — Lycée Saint-Michel de Picpus, escuela selectiva.</span></p>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong data-i18n="lang_arqus">Arqus Ambassador:</strong> <span data-i18n="lang_arqus_desc">Apoyo a estudiantes internacionales y fomento del ecosistema global UGR.</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-card">
-                <h3>🛰️ <span>Comunidades & Ecosistema Tech</span></h3>
-                <div class="info-list">
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong>Arqus European University Alliance — Embajador oficial:</strong> Embajador de la red europea Arqus (15 universidades). Apoyo a estudiantes internacionales y representación de la UGR en el ecosistema global.</p>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong>Google Developer Groups Granada (GDG):</strong> Equipo organizador de eventos y comunidad tecnológica Google en Granada.</p>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong>Granada Tech Organizers:</strong> Parte del núcleo organizador del ecosistema tech local.</p>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong>UGR Emprendedora:</strong> Red activa de emprendimiento, becas y hackathons de la Universidad de Granada.</p>
-                    </div>
-                    <div class="info-list-item">
-                        <div class="dot"></div>
-                        <p><strong>Fundación IA Granada:</strong> AI Business Lab, Coloquia.lab y III Congreso IA de Andalucía.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+<section id="projects" class="container">
+<div class="section-header">
+<h2 data-i18n="projects_title" class="section-title">Featured work</h2>
+</div>
+<p data-i18n="projects_subtitle" class="section-subtitle">Applied AI, product decisions and work that reaches people.</p>
+<div class="projects-list featured-work">
+<article class="project-item">
+<h3 data-i18n="work_content_title" >AI-Powered Content Systems — 5M+ Views</h3>
+<p data-i18n="work_content_desc" >Since August 2026, I have built AI-based systems for content production, distribution and strategy. Over five million cumulative views across platforms as of November 2026, and counting.</p>
+<div class="project-tags">
+<span class="project-tag">AI · Content · Distribution</span>
+</div>
+</article>
+<article class="project-item">
+<h3 data-i18n="work_nasa_title" >NASA Space Apps — Best AI Solution Winners · 2nd Overall</h3>
+<p data-i18n="work_nasa_desc" >Marswalk Planner helps plan and evaluate exploration routes on Mars using terrain data, mission constraints and AI agents. Our team won two of the four awards among 60+ participants. I shaped the product vision, developed the agent communication protocol and delivered the main scientific and business pitch.</p>
+<div class="project-tags">
+<span class="project-tag">2026 · Best AI Solution</span>
+<span class="project-tag">2nd Overall</span>
+</div>
+<div class="work-links">
+<a data-i18n="link_67" href="https://github.com/roberto3554/NASA-Space-Apps-Challenge-2026" target="_blank" rel="noopener noreferrer">Team project ↗</a>
+</div>
+</article>
+<article class="project-item">
+<h3 data-i18n="work_genai_title" >GenAI Arena — Audience Choice Award</h3>
+<p data-i18n="work_genai_desc" >A predictive model for paid advertising, using Python, pandas, NumPy, scikit-learn and ARIMA. I worked on the model, backend integration, validation, technical documentation and pitch. The prototype identified an estimated potential saving of around €12,000/month.</p>
+<div class="work-links">
+<a data-i18n="link_70" href="https://credsverse.com/credentials/e8047661-3405-496e-9096-0d2059028b38" target="_blank" rel="noopener noreferrer">Award certificate ↗</a>
+</div>
+</article>
+<article class="project-item">
+<h3 data-i18n="work_andaluz_title" >Andaluz.ia · From product to business validation</h3>
+<p data-i18n="work_andaluz_desc" >An entrepreneurial AI product project where I contributed as a technical co-founding partner. Building the product led into business validation, value proposition and international collaboration through the BIP at Universidade do Minho, Portugal. The project was presented to university entrepreneurship programmes and calls.</p>
+<div class="work-links">
+<a data-i18n="link_73" href="https://ugremprendedora.ugr.es/andaluz-ia-participa-en-el-programa-intensivo-combinado-bip-a-nivel-europeo-de-la-alianza-arqus-en-portugal/" target="_blank" rel="noopener noreferrer">UGR coverage ↗</a>
+</div>
+</article>
+<article class="project-item">
+<h3 data-i18n="work_client_title" >First AI Automation Client at 16</h3>
+<p data-i18n="work_client_desc" >My first client work with Canal Online SL: understanding a real need, agreeing on a solution and delivering content automation. An early lesson in entrepreneurship, communication and taking responsibility for what I build.</p>
+</article>
+</div>
+<h3 data-i18n="other_title" class="work-subheading">Other work</h3>
+<div class="other-work">
+<article class="project-item">
+<h3 data-i18n="work_vivi_title" >ViviAI · Ideas Factory</h3>
+<p data-i18n="work_vivi_desc" >A team prototype for real estate. In one afternoon we opened five commercial conversations with agencies to validate demand.</p>
+<div class="work-links">
+<a data-i18n="link_78" href="https://drive.google.com/file/d/1xVa9U5hUJ0lrQElYHc0AlGoGDe-rPDzm/view" target="_blank" rel="noopener noreferrer">Participation certificate ↗</a>
+</div>
+</article>
+<article class="project-item">
+<h3 data-i18n="work_seo_title" >Printers website · Organic discovery</h3>
+<p data-i18n="work_seo_desc" >A small web project to learn technical SEO, search intent and organic acquisition through real execution.</p>
+</article>
+</div>
+</section>
+<section id="open-source" class="container">
+<div class="section-header">
+<h2 data-i18n="oss_title" class="section-title">Open source &amp; public code</h2>
+</div>
+<p data-i18n="oss_desc" class="section-subtitle">Small tools and code you can inspect. Licences are stated for each repository.</p>
+<div class="other-work">
+<article class="project-item">
+<h3 data-i18n="oss_security_title" >Agent Security Review · MIT</h3>
+<p data-i18n="oss_security_desc" >An open skill for reviewing agent permissions, secrets, integrations and sensitive operations.</p>
+<div class="work-links">
+<a data-i18n="link_86" href="https://github.com/pablopetrus/agent-security-review" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+</div>
+</article>
+<article class="project-item">
+<h3 data-i18n="oss_transcriber_title" >Transcriber · MIT</h3>
+<p data-i18n="oss_transcriber_desc" >Public transcription tool. Read the repository for setup and supported usage.</p>
+<div class="work-links">
+<a data-i18n="link_89" href="https://github.com/pablopetrus/transcriber" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+</div>
+</article>
+<article class="project-item">
+<h3 data-i18n="oss_market_title" >Market Trend Insights · Public source</h3>
+<p data-i18n="oss_market_desc" >A Python exploration of forecasting with NumPy and pandas. Public source; no open-source licence is declared.</p>
+<div class="work-links">
+<a data-i18n="link_92" href="https://github.com/pablopetrus/forecast-with-numpy-and-pandas" target="_blank" rel="noopener noreferrer">View code ↗</a>
+</div>
+</article>
+</div>
+<div class="work-links">
+<a data-i18n="link_95" href="https://github.com/pablopetrus/Portfolio-Pablo-Contreras" target="_blank" rel="noopener noreferrer">Portfolio Source ↗</a>
+<a data-i18n="oss_resources" href="/recursos">Explore free resources →</a>
+<a data-i18n="oss_demo" href="/lab">Product demo ↗</a>
+</div>
+</section>
+<section id="education" class="container">
+<div class="section-header">
+<h2 data-i18n="edu_title" class="section-title">Experience, awards &amp; learning</h2>
+</div>
+<div class="info-grid">
+<article class="info-card">
+<h3 data-i18n="edu_university" >University of Granada</h3>
+<p data-i18n="edu_university_0" >2025–present · Double Degree in Computer Science + Business Administration.</p>
+<p data-i18n="edu_university_1" >PAU: top 5% nationally. Highest cohort marks in Calculus and Programming Fundamentals.</p>
+<p data-i18n="edu_university_2" >Honours: Linear Algebra and Mathematical Structures (9.8/10); Political Economy (9.3/10).</p>
+<p data-i18n="edu_university_3" >IES Padre Suárez · Scientific and Technological Baccalaureate, 9.1/10.</p>
+</article>
+<article class="info-card">
+<h3 data-i18n="edu_experience" >Experience &amp; entrepreneurship</h3>
+<p data-i18n="edu_experience_0" >Client automation work from age 16; applied AI, product development and content systems.</p>
+<p data-i18n="edu_experience_1" >UGR Emprendedora · Entrepreneurship community and mentoring.</p>
+<p data-i18n="edu_experience_2" >Talent Land Spain 2026 · Scheduled speaker on building practical leverage with AI. Attendee in 2024, scholarship participant in 2025.</p>
+<div class="work-links">
+<a data-i18n="edu_experience_link_0" href="https://drive.google.com/file/d/1lXcBcC_yKLe-V4it5StmN9K9DKpMeX5O/view" target="_blank" rel="noopener noreferrer">Talent Land 2024 ↗</a>
+<a data-i18n="edu_experience_link_1" href="https://drive.google.com/file/d/1f6S9t4a8yTjicOYVNiWe1S7Y2im21b9O/view" target="_blank" rel="noopener noreferrer">Talent Land 2025 ↗</a>
+</div>
+</article>
+<article class="info-card">
+<h3 data-i18n="edu_awards" >Awards &amp; hackathons</h3>
+<p data-i18n="edu_awards_0" >NASA Space Apps 2026 · Best AI Solution winners; 2nd overall.</p>
+<p data-i18n="edu_awards_1" >GenAI Arena · Audience Choice Award.</p>
+<p data-i18n="edu_awards_2" >Recapacicla · 3rd prize with RECUP TO GO, university recycling logistics.</p>
+<p data-i18n="edu_awards_3" >ViviAI / Ideas Factory · Team prototyping and customer discovery.</p>
+<div class="work-links">
+<a data-i18n="edu_awards_link_0" href="https://drive.google.com/file/d/1YT-aZThZuTzeviibFt1IGiqPFZwwEaM_/view" target="_blank" rel="noopener noreferrer">Recapacicla · Certificate ↗</a>
+</div>
+</article>
+<article class="info-card">
+<h3 data-i18n="edu_international" >International programmes</h3>
+<p data-i18n="edu_international_0" >BIP · Universidade do Minho, Portugal: business validation with Andaluz.ia.</p>
+<p data-i18n="edu_international_1" >United in Curiosity · Wrocław and Warsaw, Poland: AI in science and research communication.</p>
+<p data-i18n="edu_international_2" >Arqus Thinkathon · Leipzig, Germany: Europe as a Global Actor.</p>
+<p data-i18n="edu_international_3" >London Tech Week 2026 · Attendance and visit to Imperial College London.</p>
+<div class="work-links">
+<a data-i18n="edu_international_link_0" href="https://arqus.ugr.es/con/semana-internacional-de-talleres-united-in-curiosity-para-estudiantes-arqus-en-la-universidad-de-breslavia/" target="_blank" rel="noopener noreferrer">United in Curiosity ↗</a>
+<a data-i18n="edu_international_link_1" href="https://arqus-alliance.eu/event/thinkathon-and-workshop-europe-as-a-global-actor-which-competences-do-we-need-in-a-world-in-crisis/" target="_blank" rel="noopener noreferrer">Thinkathon ↗</a>
+</div>
+</article>
+<figure class="programme-photo">
+<img src="/images/bip-portugal-2026.webp" alt="International BIP team in Portugal" loading="lazy" width="1200" height="800">
+<figcaption data-i18n="bip_caption" >The BIP team · Portugal, 2026</figcaption>
+</figure>
+<article class="info-card">
+<h3 data-i18n="edu_courses" >Courses &amp; certificates</h3>
+<p data-i18n="edu_courses_0" >UGR Entrepreneurial Talent · 150 hours, 6 ECTS.</p>
+<p data-i18n="edu_courses_1" >Nestlé International Skillathon 2025 · Participation with international teams.</p>
+<p data-i18n="edu_courses_2" >Stanford University via Coursera · The AI Awakening: Implications for the Economy and Society; Introduction to Statistics (October 2026).</p>
+<p data-i18n="edu_courses_3" >Wharton, University of Pennsylvania via Coursera · Improving Communication Skills (September 2026).</p>
+<div class="work-links">
+<a data-i18n="edu_courses_link_0" href="https://drive.google.com/file/d/1MstIBI4xwvYEU-wtQnOnOMB8JhwN7EBe/view" target="_blank" rel="noopener noreferrer">UGR · Certificate ↗</a>
+<a data-i18n="edu_courses_link_1" href="https://drive.google.com/file/d/1P7elVajMrdudrw50Z806nKr7UC8-AgYZ/view" target="_blank" rel="noopener noreferrer">Nestlé · Certificate ↗</a>
+</div>
+</article>
+<article class="info-card">
+<h3 data-i18n="edu_languages" >Languages &amp; communities</h3>
+<p data-i18n="edu_languages_0" >English · TOEFL iBT 110/120, ETS, March 2026. French · Basic; school exchange at Lycée Saint-Michel de Picpus, Paris (2022).</p>
+<p data-i18n="edu_languages_1" >Arqus ambassador · Support for international students and the UGR community.</p>
+<p data-i18n="edu_languages_2" >GDG Granada and Granada Tech Organizers · Community and event organisation.</p>
+</article>
+</div>
+<div class="work-links">
+<a data-i18n="link_127" href="https://www.coursera.org/account/accomplishments/records/99YA9N25CMOS" target="_blank" rel="noopener noreferrer">Stanford · AI Awakening ↗</a>
+<a data-i18n="link_128" href="https://www.coursera.org/account/accomplishments/records/67OT3WRXM8FC" target="_blank" rel="noopener noreferrer">Stanford · Statistics ↗</a>
+<a data-i18n="link_129" href="https://drive.google.com/file/d/1AmOYI26rfs1d7m1fLtQ9bW_YQ7FlmKJD/view" target="_blank" rel="noopener noreferrer">TOEFL ↗</a>
+</div>
+<p data-i18n="personal_record" class="personal-record">Away from tech: WRPF teenage bench press national record, 117.5 kg.</p>
+</section>
     <!-- Skills -->
     <section id="skills" class="container">
         <div class="section-header">
-            <h2 class="section-title" data-i18n="skills_title">Arsenal Técnico</h2>
+            <h2 class="section-title" data-i18n="skills_title">Skills</h2>
         </div>
-        
+
         <div class="skills-section-inner">
             <div class="skill-group">
-                <h3 data-i18n="sk_cat_1">IA & Automatización</h3>
+                <h3 data-i18n="sk_cat_1">AI &amp; Automation</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">OpenAI / GPTs / APIs & Tokens</span>
                     <span class="skill-tag">Make / n8n / Claude Code</span>
@@ -1531,7 +1387,7 @@
             </div>
 
             <div class="skill-group">
-                <h3 data-i18n="sk_cat_2">Desarrollo & Machine Learning</h3>
+                <h3 data-i18n="sk_cat_2">Development &amp; Machine Learning</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">Python / C++ / JS / HTML / CSS / PHP</span>
                     <span class="skill-tag sm-text">NumPy / Pandas / Scikit-learn</span>
@@ -1543,12 +1399,12 @@
             </div>
 
             <div class="skill-group">
-                <h3 data-i18n="sk_cat_3">Marketing Tech & Ejecución</h3>
+                <h3 data-i18n="sk_cat_3">Marketing Tech &amp; Execution</h3>
                 <div class="skill-tags">
                     <span class="skill-tag">CRM (HubSpot / Salesforce / Meta Ads)</span>
-                    <span class="skill-tag">SEO Tech & Tráfico Orgánico</span>
-                    <span class="skill-tag">Comunicación & Gestión de Equipos</span>
-                    <span class="skill-tag">Confianza & Delegación Operativa</span>
+                    <span class="skill-tag"><span data-i18n="skill_organic">Technical SEO &amp; organic traffic</span></span>
+                    <span class="skill-tag"><span data-i18n="skill_teams">Communication &amp; team coordination</span></span>
+                    <span class="skill-tag"><span data-i18n="skill_delegate">Operational delegation</span></span>
                 </div>
             </div>
         </div>
@@ -1557,9 +1413,9 @@
     <!-- CTA -->
     <section id="contact" class="container">
         <div class="cta-section">
-            <h2 class="section-title" data-i18n="contact_title">¿Hablamos?</h2>
-            <p class="section-subtitle" data-i18n="contact_subtitle">IA aplicada, producto y estrategia. Proyectos con criterio de negocio.</p>
-            
+            <h2 class="section-title" data-i18n="contact_title">Let&#x27;s Talk</h2>
+            <p class="section-subtitle" data-i18n="contact_subtitle">Applied AI, product and strategy. Building with business judgment.</p>
+
             <div class="cta-buttons">
                 <a href="mailto:pablo@pablopetrus.com" class="btn btn-primary">pablo@pablopetrus.com</a>
                 <a href="https://www.linkedin.com/in/pablocontrerasperez/" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
@@ -1576,263 +1432,21 @@
     </div>
 </footer>
 
-<script>
+<script type="module">
+import './portfolio-content.js';
     /* --- INTERNATIONALIZATION --- */
-    const content = {
-        es: {
-            nav_about: "Sobre mí",
-            nav_projects: "Proyectos",
-            nav_thoughts: "Reflexiones",
-            nav_mountain: "Montaña ↗", nav_mountain_mobile: "Montaña",
-            nav_skills: "Skills",
-            nav_events: "Logros",
-            nav_contact: "Contacto",
-            
-            hero_name: "Pablo",
-            hero_subtitle: "IA / PRODUCTO / ESTRATEGIA",
-            hero_desc: "Estudiante de Ingeniería Informática + ADE (UGR). Construyo productos de IA y sistemas que conectan tecnología, negocio y distribución.",
-            hero_btn_projects: "Ver proyectos",
-            hero_btn_cv: "Descargar CV",
-            hero_proof: "+5 M visualizaciones generadas en el último mes",
-
-            about_title: "Sobre mí / Perfil",
-            about_p1: "Estudiante de Ingeniería Informática + ADE en la Universidad de Granada, centrado en IA aplicada, producto y estrategia.",
-            about_p2: "Sólida capacidad para construir infraestructuras de IA escalables, habiendo superado las 100k operaciones automatizadas entre 2025 y 2026.",
-            mountain_kicker: "Fuera de pantalla", mountain_title: "Montaña", mountain_desc: "Probablemente lo que más me llena ahora mismo",
-
-            press_title: "Aparición en Prensa",
-            press_subtitle: "Destacado en medios como caso de éxito universitario y empresarial en la aplicación práctica de Inteligencia Artificial.",
-            press_headline: "Universitarios demuestran que pueden trabajar sobre retos reales junto a empresas tecnológicas de Granada con ayuda de la IA",
-            press_caption: "Pablo Contreras durante la exposición de su proyecto final en el Hackaton Gen AI ARENA, seleccionado entre más de 130 aspirantes.",
-            press_snippet: "Pablo Contreras Pérez es un estudiante universitario de Ingeniería Informática con ADE de la UGR. Recientemente participó en Gen AI ARENA, el primer hackathon de inteligencia artificial generativa en Granada orientada a transformar desafíos reales de negocio en soluciones operativas, organizado por SIDN.",
-            press_snippet_2: "El evento convocó a más de 130 aspirantes de los cuales seleccionaron únicamente a 23 participantes estrella. El equipo de Pablo abordó los sobrecostes en marketing de paid ads, implementando modelos de detección que permiten ahorrar hasta ~12.000€ mensuales a las empresas participantes.",
-            press_link: "Leer artículo completo en IDEAL",
-
-            projects_title: "Proyectos destacados",
-            projects_subtitle: "Enfoque absoluto en la ejecución y la creación de sistemas que generan valor real.",
-            proj_1_title: "Andaluz.ia (GranadaTur 2035)",
-            proj_1_desc: "Partner técnico co-fundador enfocado en infraestructura de IA. Automatización con Antigravity, Python y librerías escalables. Presentado a incubadora El Carmen, Breaker Impulsa, XIII Concurso Universitario de Emprendimiento 2026 (€26k) y Santander X Explorer.",
-            proj_hackathon_title: "Ganador Hackaton GenAI Arena by SIDN",
-            proj_hackathon_desc: "Ganador del premio al más votado por el público, en total 130 personas aplicaron al Hackaton. Nuestro reto fue resolver los sobrecostes en marketing de paid ads, logrando detectar overflows y ahorrar mensualmente ~12.000€. Desarrollé el modelo predictivo conectado al backend y realicé un pitch de negocio traduciendo lo técnico. Responsable de la documentación técnica, logs y comunicación.",
-            tag_award: "1er Premio Público",
-            proj_oposline_title: "Predictivo de datos para trends (Market Insights)",
-            proj_oposline_desc: "Desarrollo de modelo predictivo con NumPy y Pandas. Fruto de detectar un hueco en el mercado, desarrollado para intentar venderlo como freelance para análisis de tendencias.",
-            proj_2_title: "ViviAI (Hackathon 72h)",
-            proj_2_desc: "Solución IA inmobiliaria desarrollada en Ideas Factory UGR. 72 horas de alta exigencia (8:00 a 21:00 presencial obligatoria). Yo personalmente conseguí 5 cartas de intención con reuniones cerradas de agencias reales de Granada interesadas.",
-            proj_bip_title: "BIP Portugal: Turning Ideas into Businesses",
-            proj_bip_desc: "Participante becado en la edición 2026 del BIP de la Universidade do Minho. Validación, propuesta de valor, modelo de negocio, escalabilidad y pitch de startups tecnológicas en un entorno internacional.",
-            proj_bip_photo_caption: "Semana presencial del BIP · Portugal, 2026",
-            proj_uic_title: "United in Curiosity Week — Polonia 2026",
-            proj_uic_desc: "Seleccionado y becado para una movilidad internacional en Varsovia y Breslavia. Semana interdisciplinar en la Universidad de Breslavia sobre IA aplicada a la ciencia, visualización de datos y comunicación eficaz de investigación.",
-            proj_imperial_title: "Imperial College London · Tech Week 2026",
-            proj_imperial_desc: "Inmersión presencial en deeptech, IA aplicada e innovación.",
-            proj_canal_title: "Sistemas de Automatización (Canal Online SL)",
-            proj_canal_desc: "Desarrollo de un ecosistema de posteo automático multicanal (LinkedIn, Twitter, Web). La pieza clave fue un algoritmo evolutivo de selección natural programado en Make.com que optimiza la generación de contenido.",
-            proj_arqus_title: "Arqus International Thinkathon · Berlín y Leipzig",
-            proj_arqus_desc: "Seleccionado y becado para ideación internacional sobre el reto ‘Europe as a Global Actor’.",
-            proj_recapacicla_title: "Ideatón Recapacicla (3er Premio)",
-            proj_recapacicla_desc: "Tercer premio con 'RECUP TO GO', que resolvió el reto mediante un algoritmo de selección natural aplicado a la logística de reciclaje universitario. Fase de Andalucía Oriental (Recapacicla Universidades).",
-            proj_talento_title: "Talento Emprendedor UGR (150h)",
-            proj_talento_desc: "Formación intensiva de 150h reconocida con 6 créditos ECTS. Validación de ideas de negocio y metodologías Lean Startup.",
-            proj_3_title: "Proyecto SEO / Web Impresoras",
-            proj_3_desc: "Web optimizada que alcanzó ~8.700 visitas mensuales de tráfico orgánico. Experiencia práctica en posicionamiento y conversión real.",
-            proj_4_title: "Alhambra Insight IA",
-            proj_4_desc: "Participación en el IX concurso de ideas. Solución de IA por visión y software especializado bajo mentoría académica. Potenciando la eficiencia mediante análisis visual avanzado.",
-            proj_6_title: "Dynamic Portfolio & Auto CV",
-            proj_6_desc: "Sincronización automatizada del portfolio web y CV descargable mediante scripts en Python y Git/GitHub.",
-
-            tag_pub: "Presentación al público",
-            btn_info: "+ Información",
-            btn_cert: "Certificado",
-            btn_make: "Flujo Make.com",
-            btn_record: "Ver Record",
-            btn_see_cert: "Ver Certificado",
-            btn_invite: "Invitación",
-
-            proj_power_title: "Record Nacional Powerlifting (WRPF)",
-            proj_power_desc: "Record de Bench Press en categoría Teenagers (117,5 kg). Disciplina, constancia y superación enfocada al alto rendimiento.",
-            proj_ia_congreso_title: "IA Granada Foundation",
-            proj_ia_congreso_desc: "Participación activa en AI Business Lab, Coloquia.lab y el III Congreso IA de Andalucía.",
-            proj_talentland_title: "Ponente más joven de Talent Land España",
-            proj_talentland_desc: "Asistente en 2024, becado en 2025 y speaker en 2026. Charlas sobre prototipado y apalancamiento con IA ante un evento cuya edición inaugural reunió a 19.000 asistentes.",
-            proj_sm_title: "+5 M visualizaciones en el último mes",
-            proj_sm_desc: "Contenido y distribución digital en varias cuentas y plataformas.",
-            proj_fundacion_title: "IA Granada Foundation",
-            proj_fundacion_desc: "AI Business Lab, Coloquia.lab y III Congreso IA Andalucía.",
-
-            proj_nestle_title: "Nestlé International Skillathon 2025",
-            proj_nestle_desc: "Colaboración con equipos internacionales para resolver retos de negocio reales de alta complejidad. Foco en innovación y trabajo bajo presión.",
-
-            events_title: "Impacto & Ecosistema Profesional",
-            edu_title: "Formación & Excelencia",
-            edu_uni: "Universidad de Granada (UGR)",
-            edu_period: "2025 – Presente:",
-            edu_degree: "Doble Grado en Ingeniería Informática + ADE.",
-            edu_pau: "Nota PAU:",
-            edu_pau_desc: "Top 5% de la convocatoria nacional.",
-            edu_merit: "Excelencia Técnica:",
-            edu_merit_desc: "Mejor nota de promoción en exámenes de Cálculo y Fundamentos de Programación. Percentil 5% en Economía Política.",
-            edu_cpp: "C++ Aplicado:",
-            edu_cpp_desc: "Desarrollo de seguridad bancaria y prevención de fraude en tarjetas de crédito.",
-            edu_soft: "Soft Skills Project:",
-            edu_soft_desc: "Proyecto publicado (Fundamentos de Empresa). Comunicación efectiva, liderazgo de equipos y capacidad contrastada para delegar y confiar en el talento humano.",
-            cert_title: "Formación complementaria",
-            cert_stanford_ai: "The AI Awakening: Implications for the Economy and Society · oct. de 2026.",
-            cert_view: "Ver credencial ↗",
-            cert_wharton: "Improving Communication Skills · completado en septiembre de 2026.",
-            cert_stanford: "Introduction to Statistics · oct. de 2026.",
-
-            lang_title: "Idiomas & Estancias",
-            lang_en: "Inglés:",
-            lang_en_desc: "C2 · TOEFL iBT 110/120 (ETS, marzo 2026).",
-            lang_fr: "Francés:",
-            lang_fr_desc: "Básico. Seleccionado para intercambio en París (2022) con escuela de prestigio.",
-            lang_arqus: "Arqus Ambassador:",
-            lang_arqus_desc: "Embajador para el apoyo a estudiantes internacionales y fomento del ecosistema global de la UGR.",
-
-            skills_title: "Arsenal Técnico",
-            sk_cat_1: "IA & Automatización",
-            sk_cat_2: "Desarrollo & Machine Learning",
-            sk_cat_3: "Marketing Tech & Ejecución",
-
-            contact_title: "¿Hablamos?",
-            contact_subtitle: "IA aplicada, producto y estrategia. Proyectos con criterio de negocio."
-        },
-        en: {
-            nav_about: "Profile",
-            nav_projects: "Projects",
-            nav_thoughts: "Thoughts",
-            nav_mountain: "Mountains ↗", nav_mountain_mobile: "Mountains",
-            nav_skills: "Skills",
-            nav_events: "Achievements",
-            nav_contact: "Contact",
-            
-            hero_name: "Pablo",
-            hero_subtitle: "AI / PRODUCT / STRATEGY",
-            hero_desc: "Computer Science + Business student (UGR). I build AI products and systems connecting technology, business and distribution.",
-            hero_btn_projects: "View Projects",
-            hero_btn_cv: "Download CV",
-            hero_proof: "5M+ views generated in the past month",
-
-            about_title: "About Me / Profile",
-            about_p1: "Computer Science + Business Administration student at UGR, focused on applied AI, product and strategy.",
-            about_p2: "Strong ability to build scalable AI infrastructure, exceeding 100k automated operations between 2025 and 2026.",
-            mountain_kicker: "Away from the screen", mountain_title: "Mountains", mountain_desc: "Probably what fulfils me most right now",
-
-            press_title: "Featured in Press",
-            press_subtitle: "Highlighted in the press as a successful case study of student and business application of practical AI systems.",
-            press_headline: "University students prove they can solve real challenges together with tech companies in Granada using AI",
-            press_caption: "Pablo Contreras delivering his final pitch at the Gen AI ARENA Hackathon, selected among more than 130 elite applicants.",
-            press_snippet: "Pablo Contreras Pérez is a Computer Science + Business Administration double degree student at UGR. He recently participated in Gen AI ARENA, the first generative artificial intelligence hackathon in Granada targeting real business challenges to build operational solutions, organized by SIDN.",
-            press_snippet_2: "The event convocated over 130 applicants with only 23 final participants selected. Pablo's team targeted the marketing overcosts of paid ads, implementing intelligent models that save up to ~€12,000 monthly for the associated companies.",
-            press_link: "Read full article on IDEAL",
-
-            projects_title: "Featured Projects",
-            projects_subtitle: "Absolute focus on execution and building systems that generate real value.",
-            proj_sm_title: "5M+ views in the past month",
-            proj_sm_desc: "Content and distribution across multiple accounts and platforms.",
-            proj_nestle_title: "Nestlé International Skillathon 2025",
-            proj_nestle_desc: "Collaboration with international teams to solve business challenges. Focus on innovation and high-pressure work.",
-            proj_recapacicla_title: "Ideaton Recapacicla (3rd Prize)",
-            proj_recapacicla_desc: "3rd prize with 'RECUP TO GO' — a natural-selection algorithm applied to university recycling logistics. Eastern Andalusia university round.",
-            proj_talento_title: "UGR Entrepreneurial Talent (150h)",
-            proj_talento_desc: "Intensive training recognized with 6 ECTS credits. Business validation and Lean Startup.",
-            proj_1_title: "Andaluz.ia (GranadaTur 2035)",
-            proj_1_desc: "Co-founding technical partner focused on AI infrastructure. Automation with Antigravity, Python and XIII University Entrepreneurship Contest 2026 (€26k).",
-            proj_hackathon_title: "Winner · Hackathon GenAI Arena by SIDN",
-            proj_hackathon_desc: "Winner of the Audience Choice Award, with 130 total applicants for the Hackaton. Our challenge was to solve marketing overcosts in paid ads, detecting overflows and saving ~€12,000 monthly. Developed the predictive model connected to the backend and delivered a business pitch translating the technical details. Responsible for technical documentation, logs, and communication.",
-            tag_award: "Audience Choice Award",
-            proj_oposline_title: "Predictive Data for Trends (Market Insights)",
-            proj_oposline_desc: "Development of a predictive model using NumPy and Pandas. Created to fill a market gap and marketed as a freelance trend analysis tool.",
-            proj_2_title: "ViviAI (72h Hackathon)",
-            proj_2_desc: "Real Estate AI solution developed at Ideas Factory UGR. 72 high-demand hours (mandatory 8:00 to 21:00). Secured 5 Letters of Intent.",
-            proj_bip_title: "BIP Portugal: Turning Ideas into Businesses",
-            proj_bip_desc: "Scholarship participant in the 2026 University of Minho BIP. Startup validation, value proposition, business-model design, scalability, and pitching in an international environment.",
-            proj_bip_photo_caption: "BIP in-person week · Portugal, 2026",
-            proj_uic_title: "United in Curiosity Week — Poland 2026",
-            proj_uic_desc: "Selected with funding for international mobility across Warsaw and Wrocław. An interdisciplinary week at the University of Wrocław focused on AI in science, data visualisation, and effective research communication.",
-            proj_imperial_title: "Imperial College London · Tech Week 2026",
-            proj_imperial_desc: "In-person immersion in deeptech, applied AI, and innovation.",
-            proj_canal_title: "Automation Systems (Canal Online SL)",
-            proj_canal_desc: "Development of a multi-channel automatic posting ecosystem. Key piece: evolutionary natural selection algorithm with Make.com.",
-            proj_arqus_title: "Arqus International Thinkathon · Berlin and Leipzig",
-            proj_arqus_desc: "Selected with an Arqus scholarship for international ideation on the challenge ‘Europe as a Global Actor’.",
-            proj_ia_congreso_title: "IA Granada Foundation",
-            proj_ia_congreso_desc: "Active participation in AI Business Lab, Coloquia.lab, and III Andalusia AI Congress.",
-            proj_talentland_title: "Youngest speaker at Talent Land Spain",
-            proj_talentland_desc: "Attendee in 2024, scholarship recipient in 2025, and speaker in 2026. Talks on AI prototyping and leverage at an event whose inaugural edition welcomed 19,000 attendees.",
-
-            proj_3_title: "SEO Project / Printers Web",
-            proj_3_desc: "Optimized website reaching ~8,700 monthly organic visits. Practical experience in SEO and real traffic conversion.",
-            proj_4_title: "Alhambra Insight AI",
-            proj_4_desc: "Participation in the IX ideas contest. Vision AI and software project under academic mentorship. Enhancing efficiency through visual analysis.",
-            proj_6_title: "Dynamic Portfolio & Auto CV",
-            proj_6_desc: "Automated syncing of the portfolio web and downloadable CV via Python and Git/GitHub scripts.",
-
-            tag_pub: "Public Speaking",
-            btn_info: "+ Information",
-            btn_cert: "Certificate",
-            btn_make: "Make.com Setup",
-            btn_record: "View Record",
-            btn_see_cert: "View Certificate",
-            btn_invite: "Invitation",
-
-            proj_power_title: "National Powerlifting Record (WRPF)",
-            proj_power_desc: "Bench Press record in Teenagers category (117.5 kg). Discipline, consistency, and perseverance applied to high performance.",
-            proj_ia_congreso_title: "III Andalusia AI Congress",
-            proj_ia_congreso_desc: "Active participation in the leading AI congress in Southern Spain. Networking with industry leaders and trend analysis.",
-            proj_talentland_title: "Youngest speaker at Talent Land Spain",
-            proj_talentland_desc: "Attendee in 2024, scholarship recipient in 2025, and speaker in 2026. Talks on AI prototyping and leverage at an event whose inaugural edition welcomed 19,000 attendees.",
-            proj_sm_title: "5M+ views in the past month",
-            proj_sm_desc: "Content and distribution across multiple accounts and platforms.",
-            proj_fundacion_title: "IA Granada Foundation",
-            proj_fundacion_desc: "AI Business Lab, Coloquia.lab, and III Andalusia AI Congress.",
-
-            proj_nestle_title: "Nestlé International Skillathon 2025",
-            proj_nestle_desc: "Collaboration with international teams to solve high-complexity real business challenges. Focused on innovation and working under pressure.",
-
-            events_title: "Professional Impact & Ecosystem",
-            edu_title: "Education & Excellence",
-            edu_uni: "University of Granada (UGR)",
-            edu_period: "2025 – Present:",
-            edu_degree: "Double Degree in Computer Science + Business Administration.",
-            edu_pau: "PAU Score:",
-            edu_pau_desc: "Top 5% of the national cohort.",
-            edu_merit: "Technical Excellence:",
-            edu_merit_desc: "Top grade in Calculus and Programming exams. 5th Percentile in Political Economy.",
-            edu_cpp: "Applied C++:",
-            edu_cpp_desc: "Development of banking security and credit card fraud prevention systems.",
-            edu_soft: "Soft Skills Project:",
-            edu_soft_desc: "Published project (Business Fundamentals). Effective communication, team leadership, and a proven ability to delegate and trust in human talent.",
-            cert_title: "Additional education",
-            cert_stanford_ai: "The AI Awakening: Implications for the Economy and Society · Oct 2026.",
-            cert_view: "View credential ↗",
-            cert_wharton: "Improving Communication Skills · completed September 2026.",
-            cert_stanford: "Introduction to Statistics · October 2026.",
-
-            lang_title: "Languages & Stays",
-            lang_en: "English:",
-            lang_en_desc: "C2 · TOEFL iBT 110/120 (ETS, March 2026).",
-            lang_fr: "French:",
-            lang_fr_desc: "Basic. Selected for prestigious school exchange in Paris (2022).",
-            lang_arqus: "Arqus Ambassador:",
-            lang_arqus_desc: "Ambassador for supporting international students and fostering UGR's global ecosystem.",
-
-            skills_title: "Technical Arsenal",
-            sk_cat_1: "AI & Automation",
-            sk_cat_2: "Development & Machine Learning",
-            sk_cat_3: "Marketing Tech & Execution",
-
-            contact_title: "Let's Talk",
-            contact_subtitle: "Applied AI, product and strategy. Building with business judgment."
-        }
-    };
+    const content = window.portfolioContent;
 
     function switchLanguage(lang) {
+        lang = lang === 'es' ? 'es' : 'en';
+        try { localStorage.setItem('portfolio-language', lang); } catch {}
         document.documentElement.lang = lang;
+        document.title = lang === 'es' ? 'Pablo · IA / Producto / Estrategia' : 'Pablo · AI / Product / Strategy';
         document.getElementById('btn-es').classList.toggle('active', lang === 'es');
         document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-        
+        document.getElementById('btn-en').setAttribute('aria-pressed', String(lang === 'en'));
+        document.getElementById('btn-es').setAttribute('aria-pressed', String(lang === 'es'));
+
         const elements = document.querySelectorAll('[data-i18n]');
         elements.forEach(el => {
             const key = el.getAttribute('data-i18n');
@@ -1842,6 +1456,11 @@
         });
     }
 
+    window.switchLanguage = switchLanguage;
+    let preferred = 'en';
+    try { preferred = localStorage.getItem('portfolio-language') || 'en'; } catch {}
+    switchLanguage(preferred);
+    document.querySelectorAll('.nav-mobile-menu a').forEach(a => a.addEventListener('click', () => { document.querySelector('.nav-mobile-menu').open = false; }));
     /* --- SCROLL ANIMATIONS (FADE IN) --- */
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1865,7 +1484,8 @@
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+            const target = href === '#' ? document.querySelector('.hero') : document.querySelector(href);
             if(target) target.scrollIntoView({ behavior: 'smooth' });
         });
     });

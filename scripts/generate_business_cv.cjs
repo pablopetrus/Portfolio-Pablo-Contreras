@@ -15,6 +15,15 @@ async function generateBusinessCV() {
         if (document.fonts && document.fonts.ready) await document.fonts.ready;
     });
 
+    const fitsA4 = await page.evaluate(() => {
+        const sheet = document.querySelector('.page');
+        return sheet.getBoundingClientRect().height <= 297 * 96 / 25.4 + 1;
+    });
+    if (!fitsA4) {
+        await browser.close();
+        throw new Error('Business CV content exceeds A4. Adjust the layout before exporting.');
+    }
+
     const cvDir = path.resolve(__dirname, '../public/cv');
     if (!fs.existsSync(cvDir)) fs.mkdirSync(cvDir, { recursive: true });
 

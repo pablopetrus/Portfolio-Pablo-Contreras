@@ -1,6 +1,7 @@
 name: Generate CV PDF
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -36,9 +37,29 @@ jobs:
 
       - name: Generate PDF
         run: |
+          mkdir -p /tmp/cv-before
+          cp public/cv/*.pdf /tmp/cv-before/
           npm run generate-pdf
           npm run generate-onepage-cv
           npm run generate-business-cv
+
+      - name: Ignore PDF metadata-only changes
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y poppler-utils
+          for file in public/cv/*.pdf; do
+            previous="/tmp/cv-before/$(basename "$file")"
+            if [ -f "$previous" ]; then
+              before=$(mktemp -d)
+              after=$(mktemp -d)
+              pdftoppm -r 96 "$previous" "$before/page" >/dev/null 2>&1
+              pdftoppm -r 96 "$file" "$after/page" >/dev/null 2>&1
+              if diff -rq "$before" "$after" && diff -q <(pdftotext -layout "$previous" -) <(pdftotext -layout "$file" -); then
+                cp "$previous" "$file"
+              fi
+              rm -r "$before" "$after"
+            fi
+          done
 
       - name: Commit PDF
         run: |
