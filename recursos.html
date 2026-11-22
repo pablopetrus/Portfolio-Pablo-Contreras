@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fffdf9">
+<meta name="description" content="Free, practical AI agent resources by Pablo Contreras: SHERPA OS Starter, a fictional five-step demo, and Agent Security Review.">
+<link rel="canonical" href="https://pablopetrus.com/recursos">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Agent Resources — Pablo Contreras">
+<meta property="og:description" content="Choose meaningful work, execute with agents, verify results, and keep context. Free resources for builders.">
+<meta property="og:url" content="https://pablopetrus.com/recursos">
+<title>Resources — Pablo Contreras</title>
+<style>
+@font-face {font-family:BrandFont;src:url("/fonts/brand-font(3).woff2") format("woff2");font-display:swap}
+:root {--bg:#fffdf9;--paper:#f6f2eb;--ink:#171717;--muted:#62615f;--orange:#e87500;--orange-dark:#9f4f00;--line:#ded8d0;--radius:20px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 BrandFont,Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:4px}
+button{font:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:4px}
+.container{width:min(1100px,calc(100% - 48px));margin-inline:auto}
+.site-header{border-bottom:1px solid var(--line);background:rgba(255,253,249,.96)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-block:13px}
+.brand{font-size:1.14rem;font-weight:800;letter-spacing:-.065em;text-decoration:none;white-space:nowrap}
+.brand span{color:var(--orange)}
+.nav-links{display:flex;align-items:center;gap:17px;flex-wrap:wrap}
+.nav-links a{font-size:.76rem;font-weight:600;color:var(--muted);text-decoration:none}
+.nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--orange-dark)}
+.lang-switch{display:flex;align-items:center;gap:3px;padding:3px;border:1px solid var(--line);border-radius:99px}
+.lang-switch button{border:0;background:transparent;color:var(--muted);padding:5px 10px;font-size:.72rem;font-weight:800;cursor:pointer;border-radius:99px}
+.lang-switch button.active{background:var(--ink);color:white}
+.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-dark)}
+.hero{padding:clamp(60px,9vw,116px) 0 65px;max-width:840px}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(2.7rem,7vw,5.3rem);line-height:1.06;letter-spacing:-.075em;margin:13px 0 22px;max-width:820px}
+.hero-lead{max-width:690px;color:var(--muted);font-size:clamp(1.05rem,2vw,1.33rem);line-height:1.57}
+.hero-actions{display:flex;gap:11px;flex-wrap:wrap;margin:29px 0 20px}
+.btn{border-radius:99px;padding:12px 20px;text-decoration:none;font-size:.85rem;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--orange);color:#171717;border-color:var(--orange)}
+.btn-secondary{background:white}
+.btn-small{padding:9px 14px;font-size:.76rem}
+.status{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:7px 12px;font-size:.74rem;color:var(--muted);font-weight:650}
+.section{padding:65px 0;border-top:1px solid var(--line)}
+.section-head{max-width:760px;margin-bottom:26px}
+.section h2{font-size:clamp(1.85rem,4vw,2.85rem);letter-spacing:-.055em;line-height:1.15;margin:8px 0 14px}
+.section-intro{color:var(--muted);max-width:690px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.benefit{background:var(--paper);border-radius:var(--radius);padding:24px;min-height:170px}
+.benefit .number{font-size:.75rem;color:var(--orange-dark);font-weight:800}
+.benefit h3{font-size:1.13rem;line-height:1.25;margin:14px 0 10px;letter-spacing:-.02em}
+.benefit p{font-size:.86rem;color:var(--muted);margin:0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step{border:1px solid var(--line);padding:24px;border-radius:var(--radius)}
+.step-num{display:inline-flex;width:31px;height:31px;align-items:center;justify-content:center;border-radius:50%;background:var(--ink);color:white;font-weight:750;font-size:.8rem;margin-bottom:14px}
+.step h3{font-size:1.03rem;line-height:1.3;margin-bottom:8px}
+.step p{font-size:.84rem;color:var(--muted);margin:0}
+.start-layout{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.file-tree{background:#181818;color:#f2ede7;border-radius:var(--radius);padding:26px;font:400 .87rem/2 ui-monospace,SFMono-Regular,Consolas,monospace;overflow:auto}
+.file-tree .dim{color:#a79f93}
+.file-tree .accent{color:#f9b66a}
+.quickstart{padding:3px 0 0 0}
+.quickstart p{color:var(--muted)}
+.quickstart ol{margin:0 0 23px;padding-left:21px}
+.quickstart li{margin:0 0 10px;font-size:.94rem}
+.note{border-left:3px solid var(--orange);padding:10px 17px;background:var(--paper);font-size:.82rem;color:var(--muted);border-radius:0 9px 9px 0}
+.demo-shell{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:white}
+.demo-top{background:var(--paper);padding:17px 22px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.demo-caption{font-weight:750;font-size:.85rem}
+.demo-disclaimer{font-size:.73rem;color:var(--muted)}
+.demo-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border-bottom:1px solid var(--line)}
+.demo-tab{border:0;border-right:1px solid var(--line);background:#fff;padding:14px 8px;cursor:pointer;font-size:.73rem;font-weight:700;line-height:1.3;color:var(--muted);text-align:center}
+.demo-tab:last-child{border-right:0}
+.demo-tab.active{background:#fff1e2;color:#8e4100;box-shadow:inset 0 -3px 0 var(--orange)}
+.demo-tab:hover{background:#faf5ee}
+.demo-body{padding:clamp(22px,4vw,35px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:35px;min-height:300px}
+.demo-body h3{font-size:1.55rem;letter-spacing:-.04em;line-height:1.15}
+.demo-body p{color:var(--muted)}
+.demo-artifact{background:#191919;border-radius:14px;color:#f2f0ed;padding:21px;white-space:pre-wrap;word-break:break-word;font:400 .81rem/1.75 ui-monospace,SFMono-Regular,Consolas,monospace;margin:0;align-self:start}
+.demo-foot{padding:15px 24px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.demo-count{font-size:.75rem;color:var(--muted);font-weight:650}
+.demo-controls{display:flex;gap:8px}
+.demo-controls button{cursor:pointer;border:1px solid var(--line);background:white;border-radius:99px;padding:8px 13px;font-size:.78rem;font-weight:750}
+.demo-controls button:last-child{background:var(--orange);border-color:var(--orange)}
+.demo-controls button:disabled{opacity:.4;cursor:not-allowed}
+.security-card{display:flex;align-items:start;justify-content:space-between;gap:26px;background:var(--paper);padding:28px;border-radius:22px}
+.security-card h3{font-size:1.45rem;margin:4px 0 12px;letter-spacing:-.04em}
+.security-card p{color:var(--muted);font-size:.92rem;max-width:620px}
+.footer{padding:42px 0 50px;color:var(--muted);font-size:.77rem;display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid var(--line)}
+.footer a{font-weight:700}
+@media(max-width:760px){
+ .nav{gap:10px}.nav-links{order:3;width:100%;gap:13px;padding-bottom:3px}
+ .hero{padding:55px 0 48px}
+ .grid3,.steps,.start-layout,.demo-body{grid-template-columns:1fr}
+ .benefit{min-height:auto}.demo-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
+ .demo-tab{font-size:.63rem;padding:12px 4px}
+ .demo-body{gap:19px;min-height:auto}
+ .security-card{flex-direction:column;gap:10px}
+ .footer{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:420px){.container{width:calc(100% - 34px)}.nav-links a{font-size:.69rem}.demo-tab{font-size:.58rem}.hero-actions .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<header class="site-header">
+ <div class="container nav">
+  <a href="/" class="brand" aria-label="Pablo, home">PABLO<span>/</span></a>
+  <nav class="nav-links" aria-label="Main navigation">
+   <a href="/#projects" data-t="nav_work">Work</a>
+   <a href="/reflexiones" data-t="nav_thoughts">Thoughts</a>
+   <a href="/montana" data-t="nav_mountain">Mountains</a>
+   <a href="/recursos" aria-current="page" data-t="nav_resources">Resources</a>
+   <a href="/#contact" data-t="nav_contact">Contact</a>
+  </nav>
+  <div class="lang-switch" role="group" aria-label="Language / Idioma">
+   <button id="lang-en" type="button" lang="en" aria-pressed="true">EN</button>
+   <button id="lang-es" type="button" lang="es" aria-pressed="false">ES</button>
+  </div>
+ </div>
+</header>
+<main>
+ <section class="container hero">
+  <span class="eyebrow" data-t="kicker">FREE RESOURCES / TALENT LAND 2026</span>
+  <h1 data-t="hero_title">Make progress with AI agents, one task at a time.</h1>
+  <p class="hero-lead" data-t="hero_desc">SHERPA OS Starter is a free, small set of files to choose meaningful work, give an agent context, check its output, and pick up where you left off.</p>
+  <div class="hero-actions">
+   <a href="#start" class="btn btn-primary" data-t="cta_start">Explore the five-minute start</a>
+   <a href="#demo" class="btn btn-secondary" data-t="cta_demo">See the five-minute demo</a>
+  </div>
+  <span class="status" data-t="coming">SHERPA OS Starter · Coming soon on GitHub</span>
+ </section>
+ <section class="section" id="benefits">
+  <div class="container">
+   <div class="section-head">
+    <span class="eyebrow" data-t="why_kicker">WHY THIS EXISTS</span>
+    <h2 data-t="why_title">Less organizing. More doing.</h2>
+    <p class="section-intro" data-t="why_desc">Not a second brain, a prompt collection, or a promise of automatic income. A lightweight way to keep useful work moving.</p>
+   </div>
+   <div class="grid3">
+    <article class="benefit"><span class="number">01</span><h3 data-t="benefit1">Focus on one useful outcome.</h3><p data-t="benefit1_desc">Start with a task worth doing, not another planning system.</p></article>
+    <article class="benefit"><span class="number">02</span><h3 data-t="benefit2">Keep the context that matters.</h3><p data-t="benefit2_desc">Remember decisions and the next step without rereading every conversation.</p></article>
+    <article class="benefit"><span class="number">03</span><h3 data-t="benefit3">Reuse what has worked.</h3><p data-t="benefit3_desc">Turn a verified task into a procedure only when repetition makes sense.</p></article>
+   </div>
+  </div>
+ </section>
+ <section class="section" id="how">
+  <div class="container">
+   <div class="section-head"><span class="eyebrow" data-t="how_kicker">THE METHOD</span><h2 data-t="how_title">How it works</h2></div>
+   <div class="steps">
+    <div class="step"><span class="step-num">1</span><h3 data-t="step1">Choose one task.</h3><p data-t="step1_desc">Define a concrete outcome that would actually move something forward.</p></div>
+    <div class="step"><span class="step-num">2</span><h3 data-t="step2">Let the agent work and check the result.</h3><p data-t="step2_desc">Review the actual output, not just the agent's claim that it is done.</p></div>
+    <div class="step"><span class="step-num">3</span><h3 data-t="step3">Record the decision and next step.</h3><p data-t="step3_desc">Store only what the next session needs to keep going.</p></div>
+   </div>
+  </div>
+ </section>
+ <section class="section" id="start">
+  <div class="container">
+   <div class="section-head">
+    <span class="eyebrow" data-t="start_kicker">GET STARTED</span><h2 data-t="start_title">Your first five minutes.</h2>
+    <p class="section-intro" data-t="start_desc">This is the proposed minimum structure for the Starter. The downloadable package is not public yet; you can still try the method with a folder and your preferred coding agent.</p>
+   </div>
+   <div class="start-layout">
+    <div class="file-tree" aria-label="Proposed Markdown file structure">
+      <span class="dim">my-work/</span>
+      <div>├─ <span class="accent">README.md</span> <span class="dim" data-t="file_readme"># How to start</span></div>
+      <div>├─ <span class="accent">AGENTS.md</span> <span class="dim" data-t="file_agents"># Agent rules</span></div>
+      <div>├─ <span class="accent">ESTADO.md</span> <span class="dim" data-t="file_state"># Current task</span></div>
+      <div>└─ <span class="accent">DECISIONES.md</span> <span class="dim" data-t="file_decisions"># Durable decisions</span></div>
+    </div>
+    <div class="quickstart">
+      <ol>
+       <li data-t="start1">Pick a meaningful task and define what done looks like.</li>
+       <li data-t="start2">Ask your agent for a first useful result, with enough context to work.</li>
+       <li data-t="start3">Check the outcome yourself; correct mistakes.</li>
+       <li data-t="start4">Write the current state, decision, and next action in Markdown.</li>
+      </ol>
+      <p class="note" data-t="memory">Short Markdown files hold current context, decisions, and proven procedures. Review them when you return; update them when something changes.</p>
+    </div>
+   </div>
+  </div>
+ </section>
+ <section class="section" id="demo">
+  <div class="container">
+   <div class="section-head">
+    <span class="eyebrow" data-t="demo_kicker">INTERACTIVE EXAMPLE</span><h2 data-t="demo_title">See the five-minute demo.</h2>
+    <p class="section-intro" data-t="demo_desc">A simple view of the current task, its evidence, and what happens next. All names, events and data below are fictional. Nothing is connected to a real agent or messaging service.</p>
+   </div>
+   <div class="demo-shell">
+    <div class="demo-top"><span class="demo-caption" data-t="demo_label">Community workshop · Example project</span><span class="demo-disclaimer" data-t="demo_simulation">Fictional walkthrough · No messages sent</span></div>
+    <div class="demo-tabs" id="demo-tabs" role="group" aria-label="Demo steps"></div>
+    <div class="demo-body">
+      <div><span class="eyebrow" id="demo-eyebrow">STEP 01</span><h3 id="demo-stage-title">Choose a task</h3><p id="demo-stage-text">Pick a concrete outcome.</p></div>
+      <pre class="demo-artifact" id="demo-artifact" aria-live="polite"></pre>
+    </div>
+    <div class="demo-foot"><span class="demo-count" id="demo-count">1 / 5</span><div class="demo-controls"><button type="button" id="demo-prev" data-t="demo_prev">Previous</button><button type="button" id="demo-next" data-t="demo_next">Next step</button></div></div>
+   </div>
+  </div>
+ </section>
+ <section class="section" id="security">
+  <div class="container">
+   <div class="section-head"><span class="eyebrow" data-t="security_kicker">ALSO FREE</span><h2 data-t="security_title">Agent Security Review</h2></div>
+   <div class="security-card">
+    <div><h3 data-t="security_card_title">A practical security check for AI agents.</h3><p data-t="security_desc">An open GitHub skill to help review permissions, exposed secrets, external connections and sensitive actions. A useful checklist, not a guarantee of complete security.</p></div>
+    <a class="btn btn-secondary btn-small" href="https://github.com/pablopetrus/agent-security-review" target="_blank" rel="noopener noreferrer" data-t="security_cta">View on GitHub ↗</a>
+   </div>
+  </div>
+ </section>
+ <section class="section" id="limits">
+  <div class="container">
+   <div class="section-head"><span class="eyebrow" data-t="limit_kicker">ONE LAST THING</span><h2 data-t="limit_title">Keep the human in the loop.</h2>
+    <p class="section-intro" data-t="limit_desc">Agents can make mistakes. Check important work and approve sensitive actions yourself. The Starter aims to make your work more repeatable, not magically autonomous.</p>
+   </div>
+  </div>
+ </section>
+</main>
+<footer class="container footer"><span>© 2026 Pablo Contreras · <span data-t="footer_text">Built for people who'd rather ship than organize.</span></span><span><a href="/">Portfolio</a> · <a href="https://github.com/pablopetrus" target="_blank" rel="noopener noreferrer">GitHub</a></span></footer>
+<script>
+(function(){
+ const copy = {
+  en: {
+   nav_work:"Work",nav_thoughts:"Thoughts",nav_mountain:"Mountains",nav_resources:"Resources",nav_contact:"Contact",
+   kicker:"FREE RESOURCES / TALENT LAND 2026",hero_title:"Make progress with AI agents, one task at a time.",hero_desc:"SHERPA OS Starter is a free, small set of files to choose meaningful work, give an agent context, check its output, and pick up where you left off.",cta_start:"Explore the five-minute start",cta_demo:"See the five-minute demo",coming:"SHERPA OS Starter · Coming soon on GitHub",
+   why_kicker:"WHY THIS EXISTS",why_title:"Less organizing. More doing.",why_desc:"Not a second brain, a prompt collection, or a promise of automatic income. A lightweight way to keep useful work moving.",
+   benefit1:"Focus on one useful outcome.",benefit1_desc:"Start with a task worth doing, not another planning system.",benefit2:"Keep the context that matters.",benefit2_desc:"Remember decisions and the next step without rereading every conversation.",benefit3:"Reuse what has worked.",benefit3_desc:"Turn a verified task into a procedure only when repetition makes sense.",
+   how_kicker:"THE METHOD",how_title:"How it works",step1:"Choose one task.",step1_desc:"Define a concrete outcome that would actually move something forward.",step2:"Let the agent work and check the result.",step2_desc:"Review the actual output, not just the agent's claim that it is done.",step3:"Record the decision and next step.",step3_desc:"Store only what the next session needs to keep going.",
+   start_kicker:"GET STARTED",start_title:"Your first five minutes.",start_desc:"This is the proposed minimum structure for the Starter. The downloadable package is not public yet; you can still try the method with a folder and your preferred coding agent.",
+   file_readme:"# How to start",file_agents:"# Agent rules",file_state:"# Current task",file_decisions:"# Durable decisions",
+   start1:"Pick a meaningful task and define what done looks like.",start2:"Ask your agent for a first useful result, with enough context to work.",start3:"Check the outcome yourself; correct mistakes.",start4:"Write the current state, decision, and next action in Markdown.",
+   memory:"Short Markdown files hold current context, decisions, and proven procedures. Review them when you return; update them when something changes.",
+   demo_kicker:"INTERACTIVE EXAMPLE",demo_title:"See the five-minute demo.",demo_desc:"A simple view of the current task, its evidence, and what happens next. All names, events and data below are fictional. Nothing is connected to a real agent or messaging service.",
+   demo_label:"Community workshop · Example project",demo_simulation:"Fictional walkthrough · No messages sent",demo_prev:"Previous",demo_next:"Next step",
+   security_kicker:"ALSO FREE",security_title:"Agent Security Review",security_card_title:"A practical security check for AI agents.",security_desc:"An open GitHub skill to help review permissions, exposed secrets, external connections and sensitive actions. A useful checklist, not a guarantee of complete security.",security_cta:"View on GitHub ↗",
+   limit_kicker:"ONE LAST THING",limit_title:"Keep the human in the loop.",limit_desc:"Agents can make mistakes. Check important work and approve sensitive actions yourself. The Starter aims to make your work more repeatable, not magically autonomous.",footer_text:"Built for people who'd rather ship than organize."
+  },
+  es: {
+   nav_work:"Proyectos",nav_thoughts:"Reflexiones",nav_mountain:"Montaña",nav_resources:"Recursos",nav_contact:"Contacto",
+   kicker:"RECURSOS GRATUITOS / TALENT LAND 2026",hero_title:"Avanza con agentes de IA, una tarea cada vez.",hero_desc:"SHERPA OS Starter es un conjunto gratuito y pequeño de archivos para elegir trabajo importante, dar contexto a un agente, comprobar su resultado y retomar el hilo.",cta_start:"Empezar en cinco minutos",cta_demo:"Ver la demo de cinco minutos",coming:"SHERPA OS Starter · Próximamente en GitHub",
+   why_kicker:"POR QUÉ EXISTE",why_title:"Menos organización. Más ejecución.",why_desc:"No es un segundo cerebro, una colección de prompts ni una promesa de ingresos automáticos. Es una forma ligera de avanzar con trabajo útil.",
+   benefit1:"Céntrate en un resultado útil.",benefit1_desc:"Empieza por una tarea que merezca la pena, no por otro sistema de planificación.",benefit2:"Conserva el contexto que importa.",benefit2_desc:"Recuerda decisiones y el siguiente paso sin releer todas tus conversaciones.",benefit3:"Reutiliza lo que ha funcionado.",benefit3_desc:"Convierte una tarea verificada en procedimiento solo cuando tenga sentido repetirla.",
+   how_kicker:"EL MÉTODO",how_title:"Cómo funciona",step1:"Elige una tarea.",step1_desc:"Define un resultado concreto que haga avanzar algo importante.",step2:"Deja trabajar al agente y comprueba el resultado.",step2_desc:"Revisa el resultado real, no solo que el agente diga que ha terminado.",step3:"Anota la decisión y el siguiente paso.",step3_desc:"Guarda únicamente lo que la próxima sesión necesita para continuar.",
+   start_kicker:"EMPIEZA AQUÍ",start_title:"Tus primeros cinco minutos.",start_desc:"Esta es la estructura mínima propuesta para el Starter. El paquete descargable aún no es público, pero puedes probar el método con una carpeta y tu agente de programación preferido.",
+   file_readme:"# Cómo empezar",file_agents:"# Reglas del agente",file_state:"# Tarea actual",file_decisions:"# Decisiones duraderas",
+   start1:"Elige una tarea importante y define qué significa terminarla bien.",start2:"Pide al agente un primer resultado útil y dale el contexto necesario.",start3:"Comprueba el resultado y corrige los errores.",start4:"Guarda el estado actual, la decisión y el próximo paso en Markdown.",
+   memory:"Archivos Markdown breves guardan contexto vigente, decisiones y procedimientos probados. Consúltalos al volver y actualízalos cuando algo cambie.",
+   demo_kicker:"EJEMPLO INTERACTIVO",demo_title:"Ver la demo de cinco minutos.",demo_desc:"Una vista sencilla de la tarea actual, su evidencia y el siguiente paso. Todos los nombres, eventos y datos son ficticios. No hay conexión con un agente ni con ningún servicio de mensajería.",
+   demo_label:"Taller comunitario · Proyecto de ejemplo",demo_simulation:"Simulación ficticia · Ningún mensaje enviado",demo_prev:"Anterior",demo_next:"Siguiente paso",
+   security_kicker:"TAMBIÉN GRATIS",security_title:"Agent Security Review",security_card_title:"Una revisión de seguridad práctica para agentes de IA.",security_desc:"Una skill abierta en GitHub que ayuda a revisar permisos, secretos expuestos, conexiones externas y acciones sensibles. Una lista de comprobación útil, no una garantía de seguridad total.",security_cta:"Ver en GitHub ↗",
+   limit_kicker:"UNA ÚLTIMA COSA",limit_title:"El humano sigue al mando.",limit_desc:"Los agentes pueden equivocarse. Comprueba el trabajo importante y aprueba personalmente las acciones sensibles. El Starter busca hacer tu trabajo más repetible, no mágicamente autónomo.",footer_text:"Para quienes prefieren construir antes que organizar."
+  }
+ };
+ const stages = {
+  en:[
+   ["Choose","01 / TASK","Choose a meaningful task","Example: prepare an invitation for a free community workshop.","ESTADO.md\nTask: Draft a workshop invitation\nStatus: Not started\nSuccess: Date, venue and link checked"],
+   ["Draft","02 / AGENT","The agent prepares a draft","A proposed invitation appears. It is only a draft: nothing has been sent.","DRAFT — NOT SENT\n\nJoin our free neighborhood workshop!\nDate: [confirm date]\nPlace: [confirm venue]\nSign up: [confirm link]"],
+   ["Check","03 / VERIFY","A person checks the details","Verify the date, venue and sign-up link against an authoritative source before approving anything.","CHECKLIST — FICTIONAL\n□ Date confirmed\n□ Venue confirmed\n□ Registration link confirmed\n\nStatus: Waiting for human review"],
+   ["Save","04 / MEMORY","Keep useful context in Markdown","Record the decision, the unfinished checks and what the next session should do.","ESTADO.md\nCurrent: Workshop invitation drafted\nStatus: Awaiting organizer review\nNext: Confirm details\n\nDECISIONES.md\nUse a short, friendly invitation"],
+   ["Continue","05 / NEXT","One clear next action","Return later, read the files and continue without repeating the entire story.","NEXT ACTION\nAsk the organizer to verify details.\nThen approve and send manually.\n\nNo invitation has been sent."]
+  ],
+  es:[
+   ["Elegir","01 / TAREA","Elige una tarea importante","Ejemplo: preparar una invitación para un taller comunitario gratuito.","ESTADO.md\nTarea: Redactar invitación al taller\nEstado: Sin empezar\nÉxito: Fecha, lugar y enlace comprobados"],
+   ["Borrador","02 / AGENTE","El agente prepara un borrador","Aparece una invitación propuesta. Solo es un borrador: no se ha enviado nada.","BORRADOR — NO ENVIADO\n\n¡Ven al taller gratuito del barrio!\nFecha: [confirmar]\nLugar: [confirmar]\nInscripción: [confirmar enlace]"],
+   ["Revisar","03 / VERIFICAR","Una persona revisa los datos","Contrasta fecha, lugar y enlace de inscripción con una fuente fiable antes de aprobar nada.","COMPROBACIONES — FICTICIAS\n□ Fecha confirmada\n□ Lugar confirmado\n□ Enlace confirmado\n\nEstado: Pendiente de revisión humana"],
+   ["Guardar","04 / MEMORIA","Guarda el contexto útil en Markdown","Registra la decisión, las comprobaciones pendientes y qué debe hacer la siguiente sesión.","ESTADO.md\nActual: Invitación redactada\nEstado: Pendiente de revisión\nSiguiente: Confirmar datos\n\nDECISIONES.md\nUsar un tono breve y cercano"],
+   ["Continuar","05 / SIGUIENTE","Una próxima acción clara","Vuelve otro día, lee los archivos y continúa sin volver a explicarlo todo.","SIGUIENTE ACCIÓN\nPedir al organizador que revise datos.\nDespués aprobar y enviar manualmente.\n\nNo se ha enviado ninguna invitación."]
+  ]
+ };
+ let language="en",stage=0;
+ const setLanguage=function(lang){
+  language=lang;document.documentElement.lang=lang;
+  document.querySelectorAll("[data-t]").forEach(function(el){const key=el.getAttribute("data-t");if(copy[lang][key])el.textContent=copy[lang][key]});
+  ["en","es"].forEach(function(x){const btn=document.getElementById("lang-"+x);btn.classList.toggle("active",x===lang);btn.setAttribute("aria-pressed",String(x===lang))});
+  renderDemo();
+  try{localStorage.setItem("petrus-language",lang)}catch(_){}
+ };
+ function renderDemo(){
+  const tabs=document.getElementById("demo-tabs");tabs.replaceChildren();
+  stages[language].forEach(function(item,i){const btn=document.createElement("button");btn.type="button";btn.className="demo-tab"+(stage===i?" active":"");btn.textContent=(i+1)+". "+item[0];btn.setAttribute("aria-pressed",String(stage===i));btn.addEventListener("click",function(){stage=i;renderDemo()});tabs.appendChild(btn)});
+  const item=stages[language][stage];document.getElementById("demo-eyebrow").textContent=item[1];document.getElementById("demo-stage-title").textContent=item[2];document.getElementById("demo-stage-text").textContent=item[3];document.getElementById("demo-artifact").textContent=item[4];document.getElementById("demo-count").textContent=(stage+1)+" / 5";document.getElementById("demo-prev").disabled=stage===0;document.getElementById("demo-next").disabled=stage===4;
+ }
+ document.getElementById("lang-en").addEventListener("click",function(){setLanguage("en")});
+ document.getElementById("lang-es").addEventListener("click",function(){setLanguage("es")});
+ document.getElementById("demo-prev").addEventListener("click",function(){stage=Math.max(0,stage-1);renderDemo()});
+ document.getElementById("demo-next").addEventListener("click",function(){stage=Math.min(4,stage+1);renderDemo()});
+ try{const saved=localStorage.getItem("petrus-language");setLanguage(saved==="es"?"es":"en")}catch(_){setLanguage("en")}
+})();
+</script>
+</body>
+</html>
