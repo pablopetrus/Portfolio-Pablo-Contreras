@@ -1,20 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pablo · AI, product and strategy. Applied AI projects, public code and free resources.">
-    <title>Pablo · AI / Product / Strategy</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><circle cx=%2216%22 cy=%2216%22 r=%2214%22 fill=%22%23e87500%22 /><path d=%22M12 10h4a4 4 0 0 1 0 8h-4v4%22 stroke=%22white%22 stroke-width=%222.5%22 fill=%22none%22 stroke-linecap=%22round%22 /></svg>">
-
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Pablo · AI, product and strategy. Applied AI projects, public code and free resources." name="description"/>
+<title>Pablo · AI / Product / Strategy</title>
+<!-- Favicon -->
+<link href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22&gt;&lt;circle cx=%2216%22 cy=%2216%22 r=%2214%22 fill=%22%23e87500%22 /&gt;&lt;path d=%22M12 10h4a4 4 0 0 1 0 8h-4v4%22 stroke=%22white%22 stroke-width=%222.5%22 fill=%22none%22 stroke-linecap=%22round%22 /&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
         /* FONT REQUIREMENTS */
         @font-face {
             font-family: "BrandFont";
@@ -1104,10 +1102,12 @@
 #btn-es { font-size:.88rem; font-weight:700; padding:6px 12px; min-width:116px; color:#9f4f00; }
 .international-programmes .section-title { margin-bottom:30px; } .international-grid { display:grid;grid-template-columns:1.1fr 1fr;gap:38px;align-items:center; } .international-content p { line-height:1.7;margin-bottom:22px; } .international-programmes .programme-photo img { height:360px; } .course-links { display:grid;gap:18px;margin-top:22px; } .course-links a { color:#9f4f00;text-decoration:underline;text-underline-offset:4px;line-height:1.6; } #contact .cta-section { background:#fff7ec;border:1px solid #e8750055; } #contact .section-title { color:#c25d00; } #contact .btn-primary { background:#e87500;color:#171717; }
 @media(max-width:700px) { .international-grid { grid-template-columns:1fr;gap:20px; } .international-programmes .programme-photo img { height:280px; } #btn-es { min-width:105px;padding:6px 8px;font-size:.82rem; } }
+
+.secondary-work{padding-top:20px;padding-bottom:30px}.secondary-work summary{cursor:pointer;font-size:1.15rem;font-weight:650;padding:18px 0;border-top:1px solid #ded8ce}.secondary-work .project-item{padding:14px 0}.secondary-work .project-item p{font-size:.92rem;line-height:1.55;margin:7px 0}.secondary-work .work-links{margin-top:8px}
+@media print{.secondary-work details>.other-work{display:block!important}}
 </style>
 </head>
 <body>
-
 <!-- Header -->
 <header>
 <div class="nav-container">
@@ -1123,7 +1123,6 @@
 <li>
 <a data-i18n="nav_projects" href="#projects">Work</a>
 </li>
-
 <li>
 <a data-i18n="nav_thoughts" href="/reflexiones">Thoughts</a>
 </li>
@@ -1147,7 +1146,6 @@
 <li>
 <a data-i18n="nav_projects" href="#projects">Work</a>
 </li>
-
 <li>
 <a data-i18n="nav_thoughts" href="/reflexiones">Thoughts</a>
 </li>
@@ -1165,85 +1163,84 @@
 </details>
 </div>
 </header>
-
 <main>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <canvas id="hero-canvas"></canvas>
-        <div class="hero-content">
-            <h1 data-i18n="hero_name">Pablo</h1>
-            <h2 data-i18n="hero_subtitle">AI / PRODUCT / STRATEGY</h2>
-            <p data-i18n="hero_desc">Computer Science + Business student (UGR). I build AI products and systems connecting technology, business and distribution.</p>
-            <div class="btn-group">
-                <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_projects">View Projects</a>
-                <a href="./cv/Pablo_Contreras_Onepage_CV.pdf" download="Pablo_CV.pdf" class="btn btn-secondary" data-i18n="hero_btn_cv">Download CV</a>
-            </div>
-            <a data-i18n="hero_linkedin" href="https://www.linkedin.com/in/pablocontrerasperez/" target="_blank" rel="noopener noreferrer" class="hero-linkedin">Find me on LinkedIn ↗</a><br><div class="hero-proof" data-i18n="hero_proof">5M+ cumulative views · August–November 2026</div>
-        </div>
-
-        <!-- Floating animated toolbar deco -->
-        <div class="floating-toolbar">
-            <div class="toolbar-icon"></div>
-            <div class="toolbar-icon"></div>
-            <div class="toolbar-icon"></div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="container">
-        <div class="section-header">
-            <h2 class="section-title" data-i18n="about_title">About Me / Profile</h2>
-        </div>
-        <div class="about-card">
-            <div class="about-text">
-                <p data-i18n="about_p1">Computer Science + Business Administration student at UGR, focused on applied AI, product and strategy.</p>
-                <br>
-                <p data-i18n="about_p2">Strong ability to build scalable AI infrastructure, exceeding 100k automated operations between 2025 and 2026.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Press Highlight Section -->
-    <section id="press" class="container">
-
-        <div class="press-card">
-            <div class="press-header">
-                <div class="press-logo-container">
-                    <span class="press-editorial">IDEAL En Clase</span>
-                    <time class="press-date" datetime="2026-05-18" data-i18n="press_date">18 May 2026</time>
-                </div>
-                <h3 class="press-headline" data-i18n="press_headline">University students prove they can solve real challenges together with tech companies in Granada using AI</h3>
-            </div>
-            <div class="press-body">
-                <div class="press-media">
-                    <div class="press-image-container">
-                        <img src="https://en-clase.ideal.es/wp-content/uploads/2026/05/Pablo-Contreras-IeC.jpg" alt="Pablo Contreras presentando su proyecto" referrerpolicy="no-referrer" class="press-image">
-                    </div>
-                    <p class="press-caption" data-i18n="press_caption">Pablo Contreras delivering his final pitch at the Gen AI ARENA Hackathon, selected among more than 130 elite applicants.</p>
-                </div>
-                <div class="press-content">
-                    <p class="press-text" data-i18n="press_snippet">Pablo Contreras Pérez is a Computer Science + Business Administration double degree student at UGR. He recently participated in Gen AI ARENA, the first generative artificial intelligence hackathon in Granada targeting real business challenges to build operational solutions, organized by SIDN.</p>
-                    <p class="press-text-secondary" data-i18n="press_snippet_2">More than 130 people applied; 23 were selected. Our team explored paid advertising inefficiencies and built a predictive prototype with an estimated potential saving of around €12,000 per month.</p>
-                    <div class="press-cta-row">
-                        <a href="https://en-clase.ideal.es/universitarios-demuestran-que-pueden-trabajar-sobre-retos-reales-junto-a-empresas-tecnologicas-de-granada-con-ayuda-de-la-ia/" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="press_link">Read full article on IDEAL</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+<!-- Hero Section -->
+<section class="hero">
+<canvas id="hero-canvas"></canvas>
+<div class="hero-content">
+<h1 data-i18n="hero_name">Pablo</h1>
+<h2 data-i18n="hero_subtitle">AI / PRODUCT / STRATEGY</h2>
+<p data-i18n="hero_desc">Computer Science + Business student (UGR). I build AI products and systems connecting technology, business and distribution.</p>
+<div class="btn-group">
+<a class="btn btn-primary" data-i18n="hero_btn_projects" href="#projects">View Projects</a>
+<a class="btn btn-secondary" data-i18n="hero_btn_cv" download="Pablo_CV.pdf" href="./cv/Pablo_Contreras_Onepage_CV.pdf">Download CV</a>
+</div>
+<a class="hero-linkedin" data-i18n="hero_linkedin" href="https://www.linkedin.com/in/pablocontrerasperez/" rel="noopener noreferrer" target="_blank">Find me on LinkedIn ↗</a><br/><div class="hero-proof" data-i18n="hero_proof">5M+ cumulative views · August–November 2026</div>
+</div>
+<!-- Floating animated toolbar deco -->
+<div class="floating-toolbar">
+<div class="toolbar-icon"></div>
+<div class="toolbar-icon"></div>
+<div class="toolbar-icon"></div>
+</div>
+</section>
+<!-- About Section -->
+<section class="container" id="about">
+<div class="section-header">
+<h2 class="section-title" data-i18n="about_title">About Me / Profile</h2>
+</div>
+<div class="about-card">
+<div class="about-text">
+<p data-i18n="about_p1">Computer Science + Business Administration student at UGR, focused on applied AI, product and strategy.</p>
+<br/>
+<p data-i18n="about_p2">Strong ability to build scalable AI infrastructure, exceeding 100k automated operations between 2025 and 2026.</p>
+</div>
+</div>
+</section>
+<!-- Press Highlight Section -->
+<section class="container" id="press">
+<div class="press-card">
+<div class="press-header">
+<div class="press-logo-container">
+<span class="press-editorial">IDEAL En Clase</span>
+<time class="press-date" data-i18n="press_date" datetime="2026-05-18">18 May 2026</time>
+</div>
+<h3 class="press-headline" data-i18n="press_headline">University students prove they can solve real challenges together with tech companies in Granada using AI</h3>
+</div>
+<div class="press-body">
+<div class="press-media">
+<div class="press-image-container">
+<img alt="Pablo Contreras presentando su proyecto" class="press-image" referrerpolicy="no-referrer" src="https://en-clase.ideal.es/wp-content/uploads/2026/05/Pablo-Contreras-IeC.jpg"/>
+</div>
+<p class="press-caption" data-i18n="press_caption">Pablo Contreras delivering his final pitch at the Gen AI ARENA Hackathon, selected among more than 130 elite applicants.</p>
+</div>
+<div class="press-content">
+<p class="press-text" data-i18n="press_snippet">Pablo Contreras Pérez is a Computer Science + Business Administration double degree student at UGR. He recently participated in Gen AI ARENA, the first generative artificial intelligence hackathon in Granada targeting real business challenges to build operational solutions, organized by SIDN.</p>
+<p class="press-text-secondary" data-i18n="press_snippet_2">More than 130 people applied; 23 were selected. Our team explored paid advertising inefficiencies and built a predictive prototype with an estimated potential saving of around €12,000 per month.</p>
+<div class="press-cta-row">
+<a class="btn btn-primary" data-i18n="press_link" href="https://en-clase.ideal.es/universitarios-demuestran-que-pueden-trabajar-sobre-retos-reales-junto-a-empresas-tecnologicas-de-granada-con-ayuda-de-la-ia/" rel="noopener" target="_blank">Read full article on IDEAL</a>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section class="container" id="projects">
 <div class="section-header">
 <h2 class="section-title" data-i18n="projects_title">Featured work</h2>
 </div>
-<p class="section-subtitle" data-i18n="projects_subtitle">Applied AI, product decisions and work that reaches people.</p>
+<p class="section-subtitle" data-i18n="projects_subtitle">Applied AI and product, focused on real ROI.</p>
 <div class="projects-list featured-work">
 <article class="project-item">
 <h3 data-i18n="work_content_title">AI-Powered Content Systems — 5M+ Views</h3>
 <p data-i18n="work_content_desc">Since August 2026, I have built AI-based systems for content production, distribution and strategy. Over five million cumulative views across platforms as of November 2026, and counting.</p>
 <div class="project-tags">
 <span class="project-tag">AI · Content · Distribution</span>
+</div>
+</article><article class="project-item">
+<h3 data-i18n="work_genai_title">Winner · GenAI Arena Hackathon by SIDN</h3>
+<p data-i18n="work_genai_desc">Predictive advertising optimisation with Python, pandas, NumPy, scikit-learn and ARIMA. Model, backend integration, validation, technical documentation and pitch. Estimated potential savings of around €12,000/month. Audience Choice Award.</p>
+<div class="work-links">
+<a data-i18n="link_70" href="https://credsverse.com/credentials/e8047661-3405-496e-9096-0d2059028b38" rel="noopener noreferrer" target="_blank">Award certificate ↗</a>
 </div>
 </article>
 <article class="project-item">
@@ -1257,13 +1254,7 @@
 <a data-i18n="link_67" href="https://github.com/roberto3554/NASA-Space-Apps-Challenge-2026" rel="noopener noreferrer" target="_blank">Team project ↗</a>
 </div>
 </article>
-<article class="project-item">
-<h3 data-i18n="work_genai_title">GenAI Arena — Winners</h3>
-<p data-i18n="work_genai_desc">Audience Choice Award. A predictive model for paid advertising, using Python, pandas, NumPy, scikit-learn and ARIMA. I worked on the model, backend integration, validation, technical documentation and pitch. The prototype identified an estimated potential saving of around €12,000/month.</p>
-<div class="work-links">
-<a data-i18n="link_70" href="https://credsverse.com/credentials/e8047661-3405-496e-9096-0d2059028b38" rel="noopener noreferrer" target="_blank">Award certificate ↗</a>
-</div>
-</article>
+
 <article class="project-item">
 <h3 data-i18n="work_andaluz_title">Andaluz.ia · AI &amp; entrepreneurship</h3>
 <p data-i18n="work_andaluz_desc">An entrepreneurial AI product project where I contributed as a technical co-founding partner, building the product and presenting it to university entrepreneurship programmes. Selected with a scholarship for the BIP at Universidade do Minho, Portugal, alongside an international team.</p>
@@ -1276,20 +1267,6 @@
 <p data-i18n="work_client_desc">My first automation client at 16 was Canal Online SL, followed by work with other clients: understanding real needs, agreeing on solutions and delivering content automation. An early lesson in entrepreneurship, communication and taking responsibility for what I build.</p>
 </article>
 <article class="project-item"><h3 data-i18n="work_talent_title">Youngest speaker at Talent Land Spain</h3><p data-i18n="work_talent_desc">Talent Land Spain 2026 speaker on building practical leverage with AI. From attendee in 2024 and scholarship participant in 2025 to sharing how I build and work with AI agents.</p><div class="work-links"><a href="https://drive.google.com/file/d/1lXcBcC_yKLe-V4it5StmN9K9DKpMeX5O/view" rel="noopener noreferrer" target="_blank">Talent Land 2024 ↗</a><a href="https://drive.google.com/file/d/1f6S9t4a8yTjicOYVNiWe1S7Y2im21b9O/view" rel="noopener noreferrer" target="_blank">Talent Land 2025 ↗</a></div></article></div>
-<h3 class="work-subheading" data-i18n="other_title">Other work</h3>
-<div class="other-work">
-<article class="project-item">
-<h3 data-i18n="work_vivi_title">ViviAI · Ideas Factory</h3>
-<p data-i18n="work_vivi_desc">A team AI prototype for real estate. I closed five sales in one afternoon through door-to-door outreach, followed by weeks of follow-up and further cold outreach.</p>
-<div class="work-links">
-<a data-i18n="link_78" href="https://drive.google.com/file/d/1xVa9U5hUJ0lrQElYHc0AlGoGDe-rPDzm/view" rel="noopener noreferrer" target="_blank">Participation certificate ↗</a>
-</div>
-</article>
-<article class="project-item">
-<h3 data-i18n="work_seo_title">Printers website · Organic discovery</h3>
-<p data-i18n="work_seo_desc">A small website that reached around 8,700 monthly visits. Hands-on experience in technical SEO, search intent and organic acquisition.</p>
-</article>
-<article class="project-item"><h3 data-i18n="work_mentor_title">Former mentor · Entrepreneurs &amp; startups</h3><p data-i18n="work_mentor_desc">Former mentor to entrepreneurs and startups at UGR Emprendedora.</p></article><article class="project-item"><h3 data-i18n="work_recap_title">Recapacicla · 3rd prize</h3><p data-i18n="work_recap_desc">RECUP TO GO: a university recycling logistics project.</p><a href="https://drive.google.com/file/d/1YT-aZThZuTzeviibFt1IGiqPFZwwEaM_/view" rel="noopener noreferrer" target="_blank">Recapacicla ↗</a></article></div>
 </section><section class="container" id="open-source">
 <div class="section-header">
 <h2 class="section-title" data-i18n="oss_title">Open Source</h2>
@@ -1320,11 +1297,8 @@
 </div>
 <div class="work-links">
 <a data-i18n="link_95" href="https://github.com/pablopetrus/Portfolio-Pablo-Contreras" rel="noopener noreferrer" target="_blank">Portfolio Source ↗</a>
-
-
 </div>
 </section><section class="container international-programmes" id="international"><h2 class="section-title" data-i18n="edu_international">International programmes</h2><div class="international-grid"><article class="international-content">
-
 <p data-i18n="edu_international_0">BIP · Selected with a scholarship for Universidade do Minho, Portugal, linked to Andaluz.ia.</p>
 <p data-i18n="edu_international_1">United in Curiosity · Wrocław and Warsaw, Poland: AI in science and research communication.</p>
 <p data-i18n="edu_international_2">Arqus Thinkathon · Leipzig, Germany: Europe as a Global Actor.</p>
@@ -1334,9 +1308,9 @@
 <a data-i18n="edu_international_link_1" href="https://arqus-alliance.eu/event/thinkathon-and-workshop-europe-as-a-global-actor-which-competences-do-we-need-in-a-world-in-crisis/" rel="noopener noreferrer" target="_blank">Thinkathon ↗</a>
 </div>
 </article><figure class="programme-photo">
-<img alt="International BIP team in Portugal" height="800" loading="lazy" src="/images/bip-portugal-2026.webp" width="1200"/>
+<img alt="International BIP team in Portugal" height="800" loading="lazy" src="/images/bip-portugal-2026.webp" width="1200">
 <figcaption data-i18n="bip_caption">The BIP team · Portugal, 2026</figcaption>
-</figure></div></section><section class="container" id="education">
+</img></figure></div></section><section class="container" id="education">
 <div class="section-header">
 <h2 class="section-title" data-i18n="edu_title">Education &amp; communities</h2>
 </div>
@@ -1348,21 +1322,15 @@
 <p data-i18n="edu_university_2">Honours: Linear Algebra and Mathematical Structures (9.8/10); Political Economy (9.3/10).</p>
 <p data-i18n="edu_university_3">IES Padre Suárez · Scientific and Technological Baccalaureate, 9.1/10.</p>
 </article>
-
-
-
-
 <article class="info-card">
 <h3 data-i18n="edu_courses">Courses &amp; certificates</h3>
 <p data-i18n="edu_courses_0">UGR Entrepreneurial Talent · 150 hours, 6 ECTS.</p>
 <p data-i18n="edu_courses_1">Nestlé International Skillathon 2025 · Participation with international teams.</p>
-
-
 <div class="work-links">
 <a data-i18n="edu_courses_link_0" href="https://drive.google.com/file/d/1MstIBI4xwvYEU-wtQnOnOMB8JhwN7EBe/view" rel="noopener noreferrer" target="_blank">UGR · Certificate ↗</a>
 <a data-i18n="edu_courses_link_1" href="https://drive.google.com/file/d/1P7elVajMrdudrw50Z806nKr7UC8-AgYZ/view" rel="noopener noreferrer" target="_blank">Nestlé · Certificate ↗</a>
 </div>
-<div class="course-links"><a data-i18n="course_ai" href="https://www.coursera.org/account/accomplishments/verify/99YA9N25CMOS" rel="noopener noreferrer" target="_blank">Stanford via Coursera · The AI Awakening ↗</a><a data-i18n="course_stats" href="https://www.coursera.org/account/accomplishments/verify/67OT3WRXM8FC" rel="noopener noreferrer" target="_blank">Stanford via Coursera · Introduction to Statistics ↗</a><a data-i18n="course_communication" href="https://www.coursera.org/account/accomplishments/verify/0W4054KP9A60" rel="noopener noreferrer" target="_blank">Wharton via Coursera · Improving Communication Skills ↗</a></div></article>
+<div class="course-links"><a data-i18n="course_ai" href="https://www.coursera.org/account/accomplishments/verify/99YA9N25CMOS" rel="noopener noreferrer" target="_blank">Stanford · The AI Awakening ↗</a><a data-i18n="course_stats" href="https://www.coursera.org/account/accomplishments/verify/67OT3WRXM8FC" rel="noopener noreferrer" target="_blank">Stanford · Introduction to Statistics ↗</a><a data-i18n="course_communication" href="https://www.coursera.org/account/accomplishments/verify/0W4054KP9A60" rel="noopener noreferrer" target="_blank">Wharton · Improving Communication Skills ↗</a></div></article>
 <article class="info-card">
 <h3 data-i18n="edu_languages">Languages &amp; communities</h3>
 <p data-i18n="edu_languages_0">English · TOEFL iBT 110/120, ETS, March 2026. French · Basic; school exchange at Lycée Saint-Michel de Picpus, Paris (2022).</p>
@@ -1371,57 +1339,66 @@
 </article>
 </div>
 <div class="work-links">
-
-
 <a data-i18n="link_129" href="https://drive.google.com/file/d/1AmOYI26rfs1d7m1fLtQ9bW_YQ7FlmKJD/view" rel="noopener noreferrer" target="_blank">TOEFL ↗</a>
 </div>
 <p class="personal-record" data-i18n="personal_record">Away from tech: WRPF teenage bench press national record, 117.5 kg.</p>
 </section>
-    <!-- Skills -->
-    <section id="skills" class="container">
-        <div class="section-header">
-            <h2 class="section-title" data-i18n="skills_title">Skills</h2>
-        </div>
-
-        <div class="skills-section-inner">
-            <div class="skill-group">
-                <h3 data-i18n="sk_cat_1">AI &amp; Automation</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">OpenAI / GPTs / APIs & Tokens</span>
-                    <span class="skill-tag">Make / n8n / Claude Code</span>
-                    <span class="skill-tag skill-tag star">Antigravity</span>
-                    <span class="skill-tag">Whisper · Open Source Stack</span>
-                    <span class="skill-tag">LLM Orchestration</span>
-                    <span class="skill-tag">Google Apps Script</span>
-                </div>
-            </div>
-
-            <div class="skill-group">
-                <h3 data-i18n="sk_cat_2">Development &amp; Machine Learning</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Python / C++ / JS / HTML / CSS / PHP</span>
-                    <span class="skill-tag sm-text">NumPy / Pandas / Scikit-learn</span>
-                    <span class="skill-tag">React · Remotion · Programmatic Video</span>
-                    <span class="skill-tag">Obsidian-driven KPI Dashboards</span>
-                    <span class="skill-tag">Git / GitHub / Unix Shell</span>
-                    <span class="skill-tag">SEO Tech</span>
-                </div>
-            </div>
-
-            <div class="skill-group">
-                <h3 data-i18n="sk_cat_3">Marketing Tech &amp; Execution</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">CRM (HubSpot / Salesforce / Meta Ads)</span>
-                    <span class="skill-tag"><span data-i18n="skill_organic">Technical SEO &amp; organic traffic</span></span>
-                    <span class="skill-tag"><span data-i18n="skill_teams">Communication &amp; team coordination</span></span>
-                    <span class="skill-tag"><span data-i18n="skill_delegate">Operational delegation</span></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="container" id="contact">
+<!-- Skills -->
+<section class="container" id="skills">
+<div class="section-header">
+<h2 class="section-title" data-i18n="skills_title">Skills</h2>
+</div>
+<div class="skills-section-inner">
+<div class="skill-group">
+<h3 data-i18n="sk_cat_1">AI &amp; Automation</h3>
+<div class="skill-tags">
+<span class="skill-tag">OpenAI / GPTs / APIs &amp; Tokens</span>
+<span class="skill-tag">Make / n8n / Claude Code</span>
+<span class="skill-tag skill-tag star">Antigravity</span>
+<span class="skill-tag">Whisper · Open Source Stack</span>
+<span class="skill-tag">LLM Orchestration</span>
+<span class="skill-tag">Google Apps Script</span>
+</div>
+</div>
+<div class="skill-group">
+<h3 data-i18n="sk_cat_2">Development &amp; Machine Learning</h3>
+<div class="skill-tags">
+<span class="skill-tag">Python / C++ / JS / HTML / CSS / PHP</span>
+<span class="skill-tag sm-text">NumPy / Pandas / Scikit-learn</span>
+<span class="skill-tag">React · Remotion · Programmatic Video</span>
+<span class="skill-tag">Obsidian-driven KPI Dashboards</span>
+<span class="skill-tag">Git / GitHub / Unix Shell</span>
+<span class="skill-tag">SEO Tech</span>
+</div>
+</div>
+<div class="skill-group">
+<h3 data-i18n="sk_cat_3">Marketing Tech &amp; Execution</h3>
+<div class="skill-tags">
+<span class="skill-tag">CRM (HubSpot / Salesforce / Meta Ads)</span>
+<span class="skill-tag"><span data-i18n="skill_organic">Technical SEO &amp; organic traffic</span></span>
+<span class="skill-tag"><span data-i18n="skill_teams">Communication &amp; team coordination</span></span>
+<span class="skill-tag"><span data-i18n="skill_delegate">Operational delegation</span></span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="container secondary-work" id="other-work"><details><summary data-i18n="other_title">Other work</summary>
+<div class="other-work">
+<article class="project-item">
+<h3 data-i18n="work_vivi_title">Ideas Factory · From participant to mentor</h3>
+<p data-i18n="work_vivi_desc">During the hackathon, I personally closed five door-to-door sales in one afternoon, then continued working with the real estate agencies and prospecting over the following weeks. The following year I returned as a mentor to projects like mine.</p>
+<div class="work-links">
+<a data-i18n="link_78" href="https://drive.google.com/file/d/1xVa9U5hUJ0lrQElYHc0AlGoGDe-rPDzm/view" rel="noopener noreferrer" target="_blank">Participation certificate ↗</a>
+</div>
+</article>
+<article class="project-item">
+<h3 data-i18n="work_seo_title">Printers website · Organic discovery</h3>
+<p data-i18n="work_seo_desc">A small website that reached around 8,700 monthly visits. Hands-on experience in technical SEO, search intent and organic acquisition.</p>
+</article>
+<article class="project-item"><h3 data-i18n="work_mentor_title">Former mentor · Entrepreneurs &amp; startups</h3><p data-i18n="work_mentor_desc">Former mentor to entrepreneurs and startups at UGR Emprendedora.</p></article><article class="project-item"><h3 data-i18n="work_recap_title">Recapacicla · 3rd prize</h3><p data-i18n="work_recap_desc">RECUP TO GO: a university recycling logistics project.</p><a href="https://drive.google.com/file/d/1YT-aZThZuTzeviibFt1IGiqPFZwwEaM_/view" rel="noopener noreferrer" target="_blank">Recapacicla ↗</a></article></div>
+</details></section>
+<section class="container" id="contact">
 <div class="cta-section">
 <h2 class="section-title" data-i18n="contact_title">Let’s build something useful.</h2>
 <p class="section-subtitle" data-i18n="contact_subtitle">Open to collaborations, projects and good conversations about AI, product and strategy. Write to me by email or find me on LinkedIn.</p>
@@ -1432,15 +1409,12 @@
 </div>
 </div>
 </section>
-
 </main>
-
 <footer>
-    <div class="container">
-        <p>Built by Pablo</p>
-    </div>
+<div class="container">
+<p>Built by Pablo</p>
+</div>
 </footer>
-
 <script type="module">
 import './portfolio-content.js';
     /* --- INTERNATIONALIZATION --- */
@@ -1525,6 +1499,6 @@ import './portfolio-content.js';
     });
 
 </script>
-<script type="module" src="./hero-field.js"></script>
+<script src="./hero-field.js" type="module"></script>
 </body>
 </html>

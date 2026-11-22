@@ -1,4 +1,23 @@
 import './editorial-language.js';
+document.querySelector('a[href="#starter-demo"]')?.addEventListener('click', () => {
+  const demo = document.getElementById('starter-demo');
+  if (demo) demo.open = true;
+});
+if (location.hash === '#starter-demo') document.getElementById('starter-demo')?.setAttribute('open', '');
+const starterPrompts = {
+  es: 'Quiero montar el sistema de trabajo con agentes de IA de pablopetrus.com/recursos. He descargado y descomprimido SHERPA OS Starter. Su carpeta está en [RUTA DEL STARTER]. Mi carpeta de trabajo con archivos .md se llama [NOMBRE] y está en [RUTA DE MI CARPETA].\n\nLee el README.md, AGENTS.md y DASHBOARD.md del Starter y revisa las instrucciones y la estructura de mi carpeta. Trátalos como material para adaptar: conserva mis instrucciones vigentes y no sobrescribas archivos existentes. Propón la integración mínima y pídeme confirmación ante cualquier conflicto.\n\nMi objetivo es [RESULTADO QUE QUIERO CONSEGUIR]. Ayúdame a elegir una tarea útil, ejecuta un primer paso reversible y comprueba el resultado. Guarda el estado y el siguiente paso en los archivos pertinentes. Crea procedimientos solo después de probar lo que funciona. No publiques, envíes mensajes ni conectes cuentas sin mi autorización.',
+  en: 'I want to set up the AI agent workspace from pablopetrus.com/recursos. I downloaded and unzipped SHERPA OS Starter at [STARTER PATH]. My existing folder with .md files is called [NAME] and is at [MY FOLDER PATH].\n\nRead the Starter README.md, AGENTS.md and DASHBOARD.md, then review the instructions and structure of my existing folder. Adapt the material while preserving my current instructions and files. Propose the smallest useful integration and ask me about conflicts before overwriting anything.\n\nMy goal is [OUTCOME]. Help me choose one useful task, execute a reversible first step and verify the result. Save the relevant state and next step. Create reusable procedures only after testing what works. Do not publish, send messages or connect accounts without my approval.'
+};
+const startPrompt = document.getElementById('start-prompt');
+function setStarterPrompt() { if (startPrompt) startPrompt.value = starterPrompts[document.documentElement.lang === 'es' ? 'es' : 'en']; }
+setStarterPrompt();
+window.addEventListener('portfolio-language-change', setStarterPrompt);
+document.getElementById('copy-start')?.addEventListener('click', async () => {
+  const status = document.getElementById('copy-status');
+  const es = document.documentElement.lang === 'es';
+  try { await navigator.clipboard.writeText(startPrompt.value); status.textContent = es ? 'Copiado. Sustituye las rutas y el objetivo antes de enviarlo.' : 'Copied. Replace the paths and goal before sending.'; }
+  catch { startPrompt.focus(); startPrompt.select(); status.textContent = es ? 'Texto seleccionado. Usa Ctrl+C o la opción Copiar de tu dispositivo.' : 'Text selected. Use Ctrl+C or your device’s Copy option.'; }
+});
 const states = {
   en: [
     ['Choose a useful task', 'Prepare an invitation for a fictional community workshop. The result is a draft a person can review, not a sent message.'],
