@@ -220,6 +220,18 @@
             color: #fff;
         }
 
+
+        /* Compact, accessible mobile navigation for secondary pages. */
+        .nav-mobile-menu { display: none; position: relative; z-index: 1010; }
+        .nav-mobile-menu summary { cursor: pointer; list-style: none; font-size: .77rem; font-weight: 650; color: #9f4f00; }
+        .nav-mobile-menu summary::-webkit-details-marker { display: none; }
+        .nav-mobile-links { position: absolute; top: 28px; right: 0; display: flex; flex-direction: column; min-width: 175px; padding: 12px; gap: 10px; background: #fffdf9; border: 1px solid #e7e0d7; border-radius: 12px; box-shadow: 0 14px 32px rgba(0,0,0,.1); }
+        .nav-mobile-links a { color: #171717; font-size: .82rem; font-weight: 550; white-space: nowrap; }
+        @media (max-width: 900px) {
+            .nav-mobile-menu { display: block; }
+            .nav-thoughts-mobile, .nav-mountain-mobile { display: none; }
+        }
+
         /* Language Toggle */
         .lang-toggle {
             display: flex;
@@ -1075,12 +1087,22 @@
                 <li class="nav-combo"><a href="#projects" data-i18n="nav_projects">Proyectos</a><span>/</span><a href="#skills" data-i18n="nav_skills">Skills</a></li>
                 <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
                 <li><a href="/reflexiones" data-i18n="nav_thoughts">Reflexiones</a></li>
+                <li><a href="/recursos" data-i18n="nav_resources">Recursos</a></li>
                 <li><a href="/lab" class="nav-demo" data-i18n="nav_demo">Demo producto ↗</a></li>
                 <li><a href="/montana" class="nav-mountain" data-i18n="nav_mountain">Montaña ↗</a></li>
             </ul>
         </nav>
-        <a class="nav-thoughts-mobile" href="/reflexiones" data-i18n="nav_thoughts">Reflexiones</a>
-        <a class="nav-mountain-mobile" href="/montana" data-i18n="nav_mountain_mobile">Montaña</a>
+        <details class="nav-mobile-menu">
+            <summary data-i18n="nav_menu">Menú ▾</summary>
+            <div class="nav-mobile-links">
+                <a href="/#about" data-i18n="nav_about">Sobre mí</a>
+                <a href="/#projects" data-i18n="nav_projects">Proyectos</a>
+                <a href="/reflexiones" data-i18n="nav_thoughts">Reflexiones</a>
+                <a href="/recursos" data-i18n="nav_resources">Recursos</a>
+                <a href="/montana" data-i18n="nav_mountain_mobile">Montaña</a>
+                <a href="/#contact" data-i18n="nav_contact">Contacto</a>
+            </div>
+        </details>
         <div class="lang-toggle">
             <button class="lang-btn active" onclick="switchLanguage('es')" id="btn-es">ES</button>
             <button class="lang-btn" onclick="switchLanguage('en')" id="btn-en">EN</button>
@@ -1187,6 +1209,17 @@
                 </div>
                 <div class="project-links" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
                     <a href="https://ugremprendedora.ugr.es/andaluz-ia-participa-en-el-programa-intensivo-combinado-bip-a-nivel-europeo-de-la-alianza-arqus-en-portugal/" target="_blank" rel="noopener" class="btn btn-secondary sm" style="padding: 6px 16px; font-size: 0.8rem;">Cobertura UGR Emprendedora</a>
+                </div>
+            </div>
+
+            <!-- NASA Space Apps Challenge 2026: category winners and overall runners-up -->
+            <div class="project-item">
+                <h3 data-i18n="proj_nasa_title">Ganadores — Best AI Solution · NASA Space Apps</h3>
+                <p data-i18n="proj_nasa_desc">Marswalk Planner: ganamos el premio Best AI Solution y quedamos segundos en la clasificación general del hackathon. Conseguimos dos de los cuatro premios entre más de 60 participantes. Contribuí al concepto de producto, desarrollé un protocolo de comunicación entre agentes y presenté el pitch científico y de negocio del equipo.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Best AI Solution · Winners</span>
+                    <span class="project-tag">2nd Overall</span>
+                    <span class="project-tag">AI Agents</span>
                 </div>
             </div>
 
@@ -1583,6 +1616,8 @@
             nav_about: "Sobre mí",
             nav_projects: "Proyectos",
             nav_thoughts: "Reflexiones",
+            nav_resources: "Recursos",
+            nav_menu: "Menú ▾",
             nav_mountain: "Montaña ↗", nav_mountain_mobile: "Montaña",
             nav_skills: "Skills",
             nav_events: "Logros",
@@ -1609,6 +1644,8 @@
             press_link: "Leer artículo completo en IDEAL",
 
             projects_title: "Proyectos destacados",
+            proj_nasa_title: "Ganadores — Best AI Solution · NASA Space Apps",
+            proj_nasa_desc: "Marswalk Planner: ganamos Best AI Solution y quedamos 2.º en la clasificación general de NASA Space Apps 2026. Conseguimos dos de los cuatro premios entre más de 60 participantes. Contribuí al concepto de producto, desarrollé un protocolo de comunicación entre agentes y presenté el pitch científico y de negocio del equipo.",
             projects_subtitle: "Enfoque absoluto en la ejecución y la creación de sistemas que generan valor real.",
             proj_1_title: "Andaluz.ia (GranadaTur 2035)",
             proj_1_desc: "Partner técnico co-fundador enfocado en infraestructura de IA. Automatización con Antigravity, Python y librerías escalables. Presentado a incubadora El Carmen, Breaker Impulsa, XIII Concurso Universitario de Emprendimiento 2026 (€26k) y Santander X Explorer.",
@@ -1702,6 +1739,8 @@
             nav_about: "Profile",
             nav_projects: "Projects",
             nav_thoughts: "Thoughts",
+            nav_resources: "Resources",
+            nav_menu: "Menu ▾",
             nav_mountain: "Mountains ↗", nav_mountain_mobile: "Mountains",
             nav_skills: "Skills",
             nav_events: "Achievements",
@@ -1728,6 +1767,8 @@
             press_link: "Read full article on IDEAL",
 
             projects_title: "Featured Projects",
+            proj_nasa_title: "Winners — Best AI Solution · NASA Space Apps",
+            proj_nasa_desc: "Marswalk Planner won Best AI Solution and placed 2nd overall at NASA Space Apps 2026: two of the four awards among 60+ participants. I contributed to the product concept, developed an AI-agent communication protocol and delivered the team\u2019s scientific and business pitch.",
             projects_subtitle: "Absolute focus on execution and building systems that generate real value.",
             proj_sm_title: "5M+ views in the past month",
             proj_sm_desc: "Content and distribution across multiple accounts and platforms.",
