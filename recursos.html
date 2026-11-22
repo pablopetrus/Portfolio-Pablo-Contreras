@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title data-en="Free AI resources — Pablo" data-es="Recursos gratuitos de IA — Pablo">
+   Free AI resources — Pablo
+  </title>
+  <meta content="A small starting point for useful work with AI agents. Explore SHERPA OS Starter and Agent Security Review." data-en-content="A small starting point for useful work with AI agents. Explore SHERPA OS Starter and Agent Security Review." data-es-content="Un punto de partida pequeño para avanzar con agentes de IA. Descubre SHERPA OS Starter y Agent Security Review." name="description"/>
+  <link href="https://pablopetrus.com/recursos" rel="canonical"/>
+  <meta content="#f8f5ef" name="theme-color"/>
+  <link href="/editorial-language.css" rel="stylesheet"/>
+  <style>
+   @font-face {
+  font-family:BrandFont;
+  src:url('/fonts/brand-font(3).woff2') format('woff2');
+  font-display:swap
+}
+
+* {
+  box-sizing:border-box
+}
+
+body {
+  margin:0;
+  background:#f8f5ef;
+  color:#171717;
+  font:16px/1.65 BrandFont,Arial,sans-serif
+}
+
+a {
+  color:inherit;
+  text-underline-offset:4px
+}
+
+a:hover {
+  color:#9f4f00
+}
+
+button,a:focus-visible {
+  outline-offset:5px
+}
+
+a:focus-visible,button:focus-visible {
+  outline:2px solid #e87500
+}
+
+.page {
+  max-width:1140px;
+  margin:auto;
+  padding:0 clamp(22px,5vw,70px) 65px
+}
+
+.top {
+  padding:25px 0;
+  border-bottom:1px solid #ded7ce;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap
+}
+
+.brand {
+  font-weight:700;
+  text-decoration:none;
+  font-size:1.1rem
+}
+
+.brand span {
+  color:#e87500
+}
+
+.top nav {
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+  font-size:.82rem
+}
+
+.hero {
+  padding:clamp(55px,8vw,100px) 0 48px;
+  max-width:830px
+}
+
+.eyebrow {
+  font-size:.7rem;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:#9f4f00;
+  font-weight:700
+}
+
+h1 {
+  font-size:clamp(2.55rem,6vw,4.8rem);
+  line-height:1.04;
+  letter-spacing:-.055em;
+  margin:20px 0 28px
+}
+
+h2 {
+  font-size:clamp(1.8rem,3.5vw,2.5rem);
+  line-height:1.15;
+  letter-spacing:-.04em;
+  margin:0 0 24px
+}
+
+h3 {
+  line-height:1.25;
+  font-size:1.12rem
+}
+
+.lead {
+  max-width:650px;
+  font-size:1.15rem;
+  color:#56514b
+}
+
+.status {
+  display:inline-block;
+  padding:10px 20px;
+  border:1px solid #b8afa3;
+  border-radius:99px;
+  font-size:.85rem;
+  color:#56514b
+}
+
+.benefits {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  padding:25px 0 48px
+}
+
+.benefits p {
+  margin:0;
+  font-size:1.1rem
+}
+
+.number {
+  display:block;
+  color:#9f4f00;
+  font-size:.75rem;
+  margin-bottom:10px
+}
+
+.section {
+  padding:48px 0;
+  border-top:1px solid #ded7ce
+}
+
+.steps {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px
+}
+
+.muted {
+  color:#686057
+}
+
+.two {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px
+}
+
+.files {
+  padding:20px 24px;
+  background:#efebe4;
+  border-radius:16px
+}
+
+.files p {
+  font-size:.88rem;
+  margin:8px 0
+}
+
+code {
+  font-family:ui-monospace,Consolas,monospace;
+  font-size:.85em
+}
+
+ol {
+  padding-left:22px
+}
+
+li {
+  padding:5px 0
+}
+
+.demo {
+  border:1px solid #d5cbbf;
+  border-radius:22px;
+  padding:clamp(20px,4vw,36px);
+  background:#fffdfa
+}
+
+.demo-state {
+  min-height:200px
+}
+
+.demo-state h3 {
+  font-size:1.45rem
+}
+
+.demo-state p {
+  max-width:650px
+}
+
+.demo-controls {
+  display:flex;
+  align-items:center;
+  gap:15px;
+  flex-wrap:wrap;
+  border-top:1px solid #ded7ce;
+  padding-top:20px
+}
+
+.demo-controls button {
+  background:#171717;
+  color:white;
+  padding:10px 18px;
+  border:0;
+  border-radius:99px;
+  cursor:pointer;
+  font:inherit;
+  font-size:.8rem
+}
+
+.demo-controls button:disabled {
+  opacity:.35;
+  cursor:default
+}
+
+.demo-count {
+  margin-right:auto;
+  font-size:.8rem;
+  color:#686057
+}
+
+.resource-link {
+  display:inline-block;
+  font-weight:650;
+  color:#9f4f00;
+  margin:12px 0
+}
+
+.note {
+  font-size:.82rem;
+  color:#686057;
+  max-width:760px
+}
+
+.code-block {
+  background:#efebe4;
+  padding:18px;
+  border-radius:12px;
+  overflow-wrap:anywhere
+}
+
+footer {
+  border-top:1px solid #ded7ce;
+  padding-top:24px;
+  font-size:.85rem;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap
+}
+
+@media(max-width:700px) {
+  .benefits,.steps,.two {
+    grid-template-columns:1fr;
+    gap:18px
+  }
+
+  .benefits {
+    padding-bottom:32px
+  }
+
+  .hero {
+    padding-top:52px
+  }
+
+  .section {
+    padding:36px 0
+  }
+
+  .demo-state {
+    min-height:230px
+  }
+
+  .top nav {
+    gap:14px
+  }
+
+  .lead {
+    font-size:1.05rem
+  }
+
+}
+   /* Native disclosures reduce the initial reading load without hiding navigation. */
+details.section {
+  padding: 0;
+}
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 0;
+  list-style: none;
+  cursor: pointer;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::after {
+  content: '+';
+  flex: 0 0 auto;
+  color: #9f4f00;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+details[open] > summary::after {
+  content: '−';
+}
+summary h2 {
+  margin: 0;
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+}
+summary:focus-visible {
+  outline: 2px solid #e87500;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+.disclosure-body {
+  padding: 0 0 30px;
+}
+.product-demo {
+  padding: 36px 0;
+  border-top: 1px solid #ded7ce;
+}
+.product-demo h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 12px;
+}
+  </style>
+  <meta content="Free AI resources — Pablo" data-en-content="Free AI resources — Pablo" data-es-content="Recursos gratuitos de IA — Pablo" property="og:title"/>
+  <meta content="A small starting point for useful work with AI agents. Explore SHERPA OS Starter and Agent Security Review." data-en-content="A small starting point for useful work with AI agents. Explore SHERPA OS Starter and Agent Security Review." data-es-content="Un punto de partida pequeño para avanzar con agentes de IA. Descubre SHERPA OS Starter y Agent Security Review." property="og:description"/>
+  <style>
+   .download-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.download-actions a,#copy-start{padding:12px 18px;border-radius:99px;border:1px solid #d3c8ba;text-decoration:none;font:600 .9rem BrandFont,Arial,sans-serif}.download-actions .download-primary,#copy-start{background:#e87500;color:#171717;border-color:#e87500}.download-note{font-size:.85rem;color:#686057;max-width:700px}.agent-start{padding:35px 0 45px;border-top:1px solid #ded7ce}.agent-start h2{max-width:720px}.agent-start ol{padding-left:22px;max-width:760px}.agent-start li{margin:12px 0}.agent-start label{display:block;font-weight:650;margin:24px 0 10px}#start-prompt{display:block;width:100%;min-height:260px;resize:vertical;padding:20px;border:1px solid #d3c8ba;border-radius:16px;background:#fffdfa;color:#24211d;font:14px/1.6 ui-monospace,monospace}#copy-start{cursor:pointer;margin-top:14px}#copy-status{min-height:1.5em;font-size:.85rem}@media(max-width:560px){.download-actions{display:grid}.download-actions a{text-align:center}#start-prompt{font-size:13px}}
+  </style>
+ </head>
+ <body>
+  <main class="page">
+   <header class="top">
+    <a class="brand" href="/">
+     PABLO
+     <span>
+      /
+     </span>
+    </a>
+    <nav aria-label="Navigation" data-en-label="Navigation" data-es-label="Navegación">
+     <a data-en="Work" data-es="Proyectos" href="/#projects">
+      Work
+     </a>
+     <a data-en="Reflections" data-es="Reflexiones" href="/reflexiones">
+      Reflections
+     </a>
+     <div aria-label="Language" class="language-picker" data-en-label="Language" data-es-label="Idioma">
+      <button aria-label="Switch to English" data-language="en" type="button">
+       EN
+      </button>
+      <button aria-label="Cambiar a español" class="spanish-language" data-language="es" type="button">
+       🇪🇸 Español
+      </button>
+     </div>
+    </nav>
+   </header>
+   <div class="hero">
+    <p class="eyebrow" data-en="SHERPA OS STARTER · FREE · MIT" data-es="SHERPA OS STARTER · GRATIS · MIT">
+     SHERPA OS STARTER · FREE · MIT
+    </p>
+    <h1 data-en="AI Agent Workspace" data-es="Sistema de trabajo con agentes de IA">
+     AI Agent Workspace
+    </h1>
+    <p class="lead" data-en="Choose meaningful work, execute with an agent, verify the outcome and keep the context so you can pick up where you left off. A free Markdown workspace and a practical guide." data-es="Elige una tarea que importe, ejecuta con un agente, comprueba el resultado y conserva el contexto para no empezar de cero mañana. Un sistema gratuito de archivos Markdown y una guía práctica.">
+     Choose meaningful work, execute with an agent, verify the outcome and keep the context so you can pick up where you left off. A free Markdown workspace and a practical guide.
+    </p>
+    <div class="download-actions">
+     <a class="download-primary" data-en="Download Starter (ZIP)" data-es="Descargar Starter (ZIP)" download="" href="/descargas/sherpa-os-starter.zip">
+      Download Starter (ZIP)
+     </a>
+     <a data-en="Read the guide (PDF · Spanish)" data-es="Ver guía paso a paso (PDF)" href="/descargas/guia-roadmap-sherpa-os.pdf" rel="noopener" target="_blank">
+      Read the guide (PDF · Spanish)
+     </a>
+     <a data-en="See an example ↓" data-es="Ver ejemplo ↓" href="#starter-demo">
+      See an example ↓
+     </a>
+    </div>
+    <p class="download-note" data-en="The kit and eight-page guide are in Spanish. Use your agent to work in your preferred language." data-es="El kit incluye la guía de ocho páginas. Abre la carpeta completa en un agente con acceso a archivos.">
+     The kit and eight-page guide are in Spanish. Use your agent to work in your preferred language.
+    </p>
+   </div>
+   <section class="agent-start" id="start">
+    <h2 data-en="Download. Open your folder. Start one task." data-es="Descarga. Abre tu carpeta. Empieza una tarea.">
+     Download. Open your folder. Start one task.
+    </h2>
+    <ol>
+     <li data-en="Unzip the Starter and open sherpa-os-starter as a project in an agent that can read and edit local files." data-es="Descomprime el Starter y abre sherpa-os-starter como proyecto en un agente que pueda leer y editar archivos locales.">
+      Unzip the Starter and open sherpa-os-starter as a project in an agent that can read and edit local files.
+     </li>
+     <li data-en="Already have a folder with .md files? Give the agent its path and ask it to review your existing structure before changing anything." data-es="¿Ya tienes una carpeta con archivos .md? Indica su ruta y pide que revise la estructura antes de cambiar nada.">
+      Already have a folder with .md files? Give the agent its path and ask it to review your existing structure before changing anything.
+     </li>
+     <li data-en="Replace the bracketed fields below and paste the message into your agent." data-es="Sustituye los campos entre corchetes y pega este mensaje en tu agente.">
+      Replace the bracketed fields below and paste the message into your agent.
+     </li>
+    </ol>
+    <label data-en="Your first message to the agent" data-es="Tu primer mensaje al agente" for="start-prompt">
+     Your first message to the agent
+    </label>
+    <textarea id="start-prompt" rows="11" spellcheck="false"></textarea>
+    <button data-en="Copy message" data-es="Copiar mensaje" id="copy-start" type="button">
+     Copy message
+    </button>
+    <p aria-live="polite" id="copy-status" role="status">
+    </p>
+    <p class="download-note" data-en="The agent needs permission to read and write your project files. Review its first result; continuity comes from files it actually updates." data-es="El agente necesita permiso para leer y escribir los archivos del proyecto. Revisa el primer resultado: la continuidad depende de los archivos que realmente actualice.">
+     The agent needs permission to read and write your project files. Review its first result; continuity comes from files it actually updates.
+    </p>
+   </section>
+   <details class="section" id="starter-demo">
+    <summary>
+     <h2 data-en="Try the loop." data-es="Prueba el ciclo.">
+      Try the loop.
+     </h2>
+    </summary>
+    <div class="disclosure-body">
+     <p class="eyebrow" data-en="Fictional example · No AI connection, no real data, no messages sent." data-es="Ejemplo ficticio · Sin conexión a IA, datos reales ni mensajes enviados.">
+      Fictional example · No AI connection, no real data, no messages sent.
+     </p>
+     <div class="demo">
+      <div aria-atomic="true" aria-live="polite" class="demo-state" id="demo-state">
+      </div>
+      <div class="demo-controls">
+       <span class="demo-count" id="demo-count">
+       </span>
+       <button id="previous" type="button">
+        <span data-en="Previous" data-es="Anterior">
+         Previous
+        </span>
+       </button>
+       <button id="next" type="button">
+        <span data-en="Next" data-es="Siguiente">
+         Next
+        </span>
+       </button>
+      </div>
+     </div>
+    </div>
+   </details>
+   <details class="section" id="agent-security-review">
+    <summary>
+     <h2 data-en="Give your agent a security check." data-es="Revisa los riesgos de tu agente.">
+      Give your agent a security check.
+     </h2>
+    </summary>
+    <div class="disclosure-body">
+     <p class="eyebrow">
+      AGENT SECURITY REVIEW / MIT
+     </p>
+     <p data-en="A small open skill to review excessive permissions, exposed secrets, external integrations, dangerous tools and sensitive operations—and identify where human review is needed." data-es="Una skill abierta y pequeña para revisar permisos excesivos, secretos expuestos, integraciones externas, herramientas peligrosas y operaciones sensibles, e identificar dónde hace falta revisión humana.">
+      A small open skill to review excessive permissions, exposed secrets, external integrations, dangerous tools and sensitive operations—and identify where human review is needed.
+     </p>
+     <a class="resource-link" data-en="Get Agent Security Review on GitHub ↗" data-es="Obtener Agent Security Review en GitHub ↗" href="https://github.com/pablopetrus/agent-security-review">
+      Get Agent Security Review on GitHub ↗
+     </a>
+     <p data-en="Start with a read-only review. Ask your agent to read the published SKILL.md, inspect its current permissions and report risks before making changes." data-es="Empieza con una revisión en modo lectura. Pide al agente que lea el SKILL.md publicado, compruebe sus permisos actuales e informe de los riesgos antes de hacer cambios.">
+      Start with a read-only review. Ask your agent to read the published SKILL.md, inspect its current permissions and report risks before making changes.
+     </p>
+     <h3 data-en="Optional local install" data-es="Instalación local opcional">
+      Optional local install
+     </h3>
+     <p class="code-block" data-en="Copy skills/agent-security-review/ from the repository into .agents/skills/agent-security-review/ in your project, then ask your agent to use that skill." data-es="Copia skills/agent-security-review/ del repositorio a .agents/skills/agent-security-review/ en tu proyecto y pide al agente que utilice esa skill.">
+      Copy skills/agent-security-review/ from the repository into .agents/skills/agent-security-review/ in your project, then ask your agent to use that skill.
+     </p>
+     <a data-en="Read the full usage instructions ↗" data-es="Leer las instrucciones completas ↗" href="https://github.com/pablopetrus/agent-security-review#readme">
+      Read the full usage instructions ↗
+     </a>
+    </div>
+   </details>
+   <details class="section">
+    <summary>
+     <h2 data-en="Check the result. Keep control." data-es="Comprueba el resultado. Mantén el control.">
+      Check the result. Keep control.
+     </h2>
+    </summary>
+    <div class="disclosure-body">
+     <p class="note" data-en="These resources help you work with more care; they do not guarantee complete security or perfect autonomy. Keep permissions narrow, check sources, and review sensitive actions before executing them." data-es="Estos recursos ayudan a trabajar con más criterio; no garantizan seguridad completa ni autonomía perfecta. Limita los permisos, contrasta las fuentes y revisa las acciones sensibles antes de ejecutarlas.">
+      These resources help you work with more care; they do not guarantee complete security or perfect autonomy. Keep permissions narrow, check sources, and review sensitive actions before executing them.
+     </p>
+    </div>
+   </details>
+   <section class="product-demo">
+    <p class="eyebrow" data-en="PRODUCT DEMO" data-es="DEMO DE PRODUCTO">
+     PRODUCT DEMO
+    </p>
+    <h2 data-en="Explore the Business graph." data-es="Explora el Business graph.">
+     Explore the Business graph.
+    </h2>
+    <p data-en="An interactive visual demo, separate from the Starter walkthrough." data-es="Una demo visual interactiva, independiente del recorrido del Starter.">
+     An interactive visual demo, separate from the Starter walkthrough.
+    </p>
+    <a class="resource-link" data-en="Open product demo ↗" data-es="Abrir demo de producto ↗" href="/lab">
+     Open product demo ↗
+    </a>
+   </section>
+   <footer>
+    <a data-en="Back to portfolio ↗" data-es="Volver al portfolio ↗" href="/">
+     Back to portfolio ↗
+    </a>
+    <a href="mailto:pablo@pablopetrus.com">
+     pablo@pablopetrus.com
+    </a>
+   </footer>
+  </main>
+  <script src="/resources-demo.js" type="module">
+  </script>
+ </body>
+</html>

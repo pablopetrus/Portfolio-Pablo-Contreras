@@ -1,64 +1,245 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Montaña, fotos y vídeo de Pablo. Mi abuela se asusta; yo quiero pisar un ochomil en Nepal.">
-  <link rel="canonical" href="https://pablopetrus.com/montana">
-  <meta property="og:title" content="Montaña — Pablo">
-  <meta property="og:description" content="Mi abuela se asusta cada vez que le hablo de montaña. Yo quiero pisar un ochomil en Nepal.">
-  <meta property="og:image" content="https://pablopetrus.com/montana/foto.webp">
-  <meta property="og:url" content="https://pablopetrus.com/montana">
-  <meta name="theme-color" content="#f8f5ef">
-  <title>Montaña — Pablo</title>
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Pablo off screen: mountain photos, a short video, and an eight-thousander ambition in Nepal." data-en-content="Pablo off screen: mountain photos, a short video, and an eight-thousander ambition in Nepal." data-es-content="Pablo fuera de pantalla: fotos de montaña, un vídeo y la aspiración de pisar un ochomil en Nepal." name="description"/>
+  <link href="https://pablopetrus.com/montana" rel="canonical"/>
+  <meta content="Mountains — Pablo" data-en-content="Mountains — Pablo" data-es-content="Montaña — Pablo" property="og:title"/>
+  <meta content="Pablo off screen: mountain photos, a short video, and an eight-thousander ambition in Nepal." data-en-content="Pablo off screen: mountain photos, a short video, and an eight-thousander ambition in Nepal." data-es-content="Pablo fuera de pantalla: fotos de montaña, un vídeo y la aspiración de pisar un ochomil en Nepal." property="og:description"/>
+  <meta content="https://pablopetrus.com/montana/foto.webp" property="og:image"/>
+  <meta content="https://pablopetrus.com/montana" property="og:url"/>
+  <meta content="#f8f5ef" name="theme-color"/>
+  <title data-en="Mountains — Pablo" data-es="Montaña — Pablo">
+   Mountains — Pablo
+  </title>
   <style>
-    @font-face { font-family: BrandFont; src: url('/fonts/brand-font(3).woff2') format('woff2'); font-display: swap; }
-    :root { color-scheme: light; --paper: #f8f5ef; --ink: #171717; --orange: #e87500; --muted: #67625c; --line: #ded7ce; }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; }
-    a { color: inherit; text-underline-offset: 4px; }
-    a:hover { color: #9f4f00; }
-    a:focus-visible, video:focus-visible { outline: 2px solid var(--orange); outline-offset: 5px; }
-    .page { max-width: 1360px; margin: auto; padding: 0 clamp(24px, 5vw, 80px) 90px; }
-    .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 28px 0; border-bottom: 1px solid var(--line); font: 600 .72rem/1.3 BrandFont, Arial, sans-serif; letter-spacing: .13em; text-transform: uppercase; }
-    .top a { text-decoration: none; }
-    .brand { font-size: 1.08rem; letter-spacing: -.035em; }
-    .brand span, .eyebrow span { color: var(--orange); }
-    .eyebrow { margin: 0 0 20px; font: 700 .7rem/1.4 BrandFont, Arial, sans-serif; letter-spacing: .16em; text-transform: uppercase; }
-    .intro { padding: clamp(65px, 9vw, 122px) 0 clamp(45px, 6vw, 82px); max-width: 880px; }
-    h1 { margin: 0 0 20px; font: 700 clamp(4.5rem, 10vw, 9rem)/.9 BrandFont, Arial, sans-serif; letter-spacing: -.075em; }
-    .intro p:last-child { max-width: 600px; margin: 0; font: 400 clamp(1.2rem, 2vw, 1.65rem)/1.4 Georgia, 'Times New Roman', serif; }
-    .gallery { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(15px, 2vw, 28px); align-items: start; }
-    figure { margin: 0; }
-    .photo, video { display: block; width: 100%; border-radius: 18px; background: #d8d4cf; }
-    .photo { object-fit: cover; }
-    .gallery-main { grid-row: span 2; }
-    .gallery-main .photo { height: clamp(470px, 55vw, 760px); object-position: center 58%; }
-    .gallery-sunrise .photo { height: clamp(220px, 25vw, 350px); object-position: center 20%; }
-    video { aspect-ratio: 16 / 9; }
-    .closing { max-width: 520px; margin: clamp(35px, 5vw, 70px) 0 0 auto; padding-top: 22px; border-top: 1px solid var(--line); }
-    .closing a { font: 650 .76rem/1.3 BrandFont, Arial, sans-serif; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; }
-    @media (max-width: 740px) { .gallery { grid-template-columns: 1fr; } .gallery-main { grid-row: auto; } .gallery-main .photo, .gallery-sunrise .photo { height: min(110vw, 520px); object-position: center 47%; } .closing { margin-left: 0; } }
+   @font-face  {
+  font-family: BrandFont;
+  src: url('/fonts/brand-font(3).woff2') format('woff2');
+  font-display: swap;
+}
+
+:root  {
+  color-scheme: light;
+  --paper: #f8f5ef;
+  --ink: #171717;
+  --orange: #e87500;
+  --muted: #67625c;
+  --line: #ded7ce;
+}
+
+*  {
+  box-sizing: border-box;
+}
+
+body  {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+a  {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
+a:hover  {
+  color: #9f4f00;
+}
+
+a:focus-visible, video:focus-visible  {
+  outline: 2px solid var(--orange);
+  outline-offset: 5px;
+}
+
+.page  {
+  max-width: 1360px;
+  margin: auto;
+  padding: 0 clamp(24px, 5vw, 80px) 90px;
+}
+
+.top  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+  font: 600 .72rem/1.3 BrandFont, Arial, sans-serif;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.top a  {
+  text-decoration: none;
+}
+
+.brand  {
+  font-size: 1.08rem;
+  letter-spacing: -.035em;
+}
+
+.brand span, .eyebrow span  {
+  color: var(--orange);
+}
+
+.eyebrow  {
+  margin: 0 0 20px;
+  font: 700 .7rem/1.4 BrandFont, Arial, sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.intro  {
+  padding: clamp(65px, 9vw, 122px) 0 clamp(45px, 6vw, 82px);
+  max-width: 880px;
+}
+
+h1  {
+  margin: 0 0 20px;
+  font: 700 clamp(4.5rem, 10vw, 9rem)/.9 BrandFont, Arial, sans-serif;
+  letter-spacing: -.075em;
+}
+
+.intro p:last-child  {
+  max-width: 600px;
+  margin: 0;
+  font: 400 clamp(1.2rem, 2vw, 1.65rem)/1.4 Georgia, 'Times New Roman', serif;
+}
+
+.gallery  {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(15px, 2vw, 28px);
+  align-items: start;
+}
+
+figure  {
+  margin: 0;
+}
+
+.photo, video  {
+  display: block;
+  width: 100%;
+  border-radius: 18px;
+  background: #d8d4cf;
+}
+
+.photo  {
+  object-fit: cover;
+}
+
+.gallery-main  {
+  grid-row: span 2;
+}
+
+.gallery-main .photo  {
+  height: clamp(470px, 55vw, 760px);
+  object-position: center 58%;
+}
+
+.gallery-sunrise .photo  {
+  height: clamp(220px, 25vw, 350px);
+  object-position: center 20%;
+}
+
+video  {
+  aspect-ratio: 16 / 9;
+}
+
+.closing  {
+  max-width: 520px;
+  margin: clamp(35px, 5vw, 70px) 0 0 auto;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.closing a  {
+  font: 650 .76rem/1.3 BrandFont, Arial, sans-serif;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@media (max-width: 740px)  {
+  .gallery  {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-main  {
+    grid-row: auto;
+  }
+
+  .gallery-main .photo, .gallery-sunrise .photo  {
+    height: min(110vw, 520px);
+    object-position: center 47%;
+  }
+
+  .closing  {
+    margin-left: 0;
+  }
+
+}
   </style>
-</head>
-<body>
+  <link href="/editorial-language.css" rel="stylesheet"/>
+ </head>
+ <body>
   <main class="page">
-    <header class="top"><a class="brand" href="/" aria-label="Pablo, volver al portfolio">PABLO<span>/</span></a><a href="/">← Portfolio</a></header>
-    <div class="intro">
-      <p class="eyebrow">Fuera de pantalla <span>/</span> 01</p>
-      <h1>Montaña.</h1>
-      <p>La montaña es probablemente lo que más me llena ahora mismo. Mi abuela se asusta cada vez que le hablo de ella; yo quiero ser el primero de mi árbol genealógico en pisar un ochomil en Nepal.</p>
+   <header class="top">
+    <a aria-label="Pablo, back to portfolio" class="brand" data-en-label="Pablo, back to portfolio" data-es-label="Pablo, volver al portfolio" href="/">
+     PABLO
+     <span>
+      /
+     </span>
+    </a>
+    <a data-en="← Portfolio" data-es="← Portfolio" href="/">
+     ← Portfolio
+    </a>
+    <div aria-label="Language" class="language-picker" data-en-label="Language" data-es-label="Idioma">
+     <button aria-label="Switch to English" data-language="en" type="button">
+      EN
+     </button>
+     <button aria-label="Cambiar a español" class="spanish-language" data-language="es" type="button">
+      🇪🇸 Español
+     </button>
     </div>
-    <div class="gallery">
-      <figure class="gallery-main">
-        <img class="photo" src="/montana/foto.webp" width="776" height="1400" alt="Pablo avanzando por la nieve con crampones y piolet">
-      </figure>
-      <figure>
-        <video controls playsinline preload="metadata" poster="/montana/video-poster.webp" aria-label="Pablo caminando por la nieve"><source src="/montana/salida.mp4" type="video/mp4">Tu navegador no puede reproducir este vídeo.</video>
-      </figure>
-      <figure class="gallery-sunrise"><img class="photo" src="/montana/amanecer.webp" width="1100" height="1538" alt="Pablo al amanecer en la montaña"></figure>
-    </div>
-    <div class="closing"><a href="/">Volver al portfolio ↗</a></div>
+   </header>
+   <div class="intro">
+    <p class="eyebrow" data-en="OFF SCREEN / 01" data-es="Fuera de pantalla / 01">
+     OFF SCREEN / 01
+    </p>
+    <h1 data-en="Mountains." data-es="Montaña.">
+     Mountains.
+    </h1>
+    <p data-en="The mountains are probably what fulfils me most right now. My grandma gets scared whenever I bring them up; I want to be the first in my family tree to set foot on an eight-thousander in Nepal." data-es="La montaña es probablemente lo que más me llena ahora mismo. Mi abuela se asusta cada vez que le hablo de ella; yo quiero ser el primero de mi árbol genealógico en pisar un ochomil en Nepal.">
+     The mountains are probably what fulfils me most right now. My grandma gets scared whenever I bring them up; I want to be the first in my family tree to set foot on an eight-thousander in Nepal.
+    </p>
+   </div>
+   <div class="gallery">
+    <figure class="gallery-main">
+     <img alt="Pablo making his way through snow with crampons and an ice axe" class="photo" data-en-alt="Pablo making his way through snow with crampons and an ice axe" data-es-alt="Pablo avanzando por la nieve con crampones y piolet" height="1400" src="/montana/foto.webp" width="776"/>
+    </figure>
+    <figure>
+     <video aria-label="Pablo walking through the snow" controls="" data-en-label="Pablo walking through the snow" data-es-label="Pablo caminando por la nieve" playsinline="" poster="/montana/video-poster.webp" preload="metadata">
+      <source src="/montana/salida.mp4" type="video/mp4"/>
+      <span data-en="Your browser cannot play this video." data-es="Tu navegador no puede reproducir este vídeo.">
+       Your browser cannot play this video.
+      </span>
+     </video>
+    </figure>
+    <figure class="gallery-sunrise">
+     <img alt="Pablo in the mountains at sunrise" class="photo" data-en-alt="Pablo in the mountains at sunrise" data-es-alt="Pablo al amanecer en la montaña" height="1538" src="/montana/amanecer.webp" width="1100"/>
+    </figure>
+   </div>
+   <div class="closing">
+    <a data-en="BACK TO PORTFOLIO ↗" data-es="Volver al portfolio ↗" href="/">
+     BACK TO PORTFOLIO ↗
+    </a>
+   </div>
   </main>
-</body>
+  <script src="/editorial-language.js" type="module">
+  </script>
+ </body>
 </html>
