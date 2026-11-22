@@ -20,6 +20,7 @@ export default defineConfig({
         reflexiones: path.resolve(__dirname, 'reflexiones.html'),
         montana: path.resolve(__dirname, 'montana.html'),
         lab: path.resolve(__dirname, 'lab.html'),
+        recursos: path.resolve(__dirname, 'recursos.html'),
       },
     },
   },
