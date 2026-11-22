@@ -103,10 +103,9 @@ window.portfolioContent = {
     "skill_product": "Criterio de producto y foco en ROI",
     "skill_sales": "Venta a puerta fría y relación con clientes",
     "skill_pitch": "Pitch y comunicación técnica",
-    "skill_learning_title": "Aprendiendo · fundamentos",
-    "skill_learning_rag": "RAG y recuperación de información",
-    "skill_learning_eval": "Evaluación de agentes y pruebas de calidad",
-    "skill_learning_security": "Seguridad aplicada a agentes"
+    "skill_rag": "RAG y recuperación de información",
+    "skill_eval": "Evaluación de agentes y pruebas de calidad",
+    "skill_security": "Seguridad aplicada a agentes"
   },
   "en": {
     "nav_projects": "Work",
@@ -211,9 +210,8 @@ window.portfolioContent = {
     "skill_product": "Product judgment & ROI focus",
     "skill_sales": "Cold outreach & client relationships",
     "skill_pitch": "Pitching & technical communication",
-    "skill_learning_title": "Learning · foundations",
-    "skill_learning_rag": "RAG & information retrieval",
-    "skill_learning_eval": "Agent evaluation & quality checks",
-    "skill_learning_security": "Applied agent security"
+    "skill_rag": "RAG & information retrieval",
+    "skill_eval": "Agent evaluation & quality checks",
+    "skill_security": "Applied agent security"
   }
 };
