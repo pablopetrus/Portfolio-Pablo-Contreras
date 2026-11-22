@@ -1100,6 +1100,10 @@
 @media(max-width:700px) { .featured-work { grid-template-columns:1fr; } .nav-container { padding:0 20px; } .logo { font-size:1.1rem; } .lang-toggle { padding:2px; } .featured-work .project-item { padding:24px; } }
 @media print { .nav-mobile-menu,.hero-linkedin,#open-source .work-links { display:none!important; } .featured-work { display:block; } .programme-photo img { height:200px; } }
 
+
+#btn-es { font-size:.88rem; font-weight:700; padding:6px 12px; min-width:116px; color:#9f4f00; }
+.international-programmes .section-title { margin-bottom:30px; } .international-grid { display:grid;grid-template-columns:1.1fr 1fr;gap:38px;align-items:center; } .international-content p { line-height:1.7;margin-bottom:22px; } .international-programmes .programme-photo img { height:360px; } .course-links { display:grid;gap:18px;margin-top:22px; } .course-links a { color:#9f4f00;text-decoration:underline;text-underline-offset:4px;line-height:1.6; } #contact .cta-section { background:#fff7ec;border:1px solid #e8750055; } #contact .section-title { color:#c25d00; } #contact .btn-primary { background:#e87500;color:#171717; }
+@media(max-width:700px) { .international-grid { grid-template-columns:1fr;gap:20px; } .international-programmes .programme-photo img { height:280px; } #btn-es { min-width:105px;padding:6px 8px;font-size:.82rem; } }
 </style>
 </head>
 <body>
@@ -1107,21 +1111,19 @@
 <!-- Header -->
 <header>
 <div class="nav-container">
-<a href="#" class="logo" aria-label="Pablo, home">PABLO<span class="brand-slash">/</span>
+<a aria-label="Pablo, home" class="logo" href="#">PABLO<span class="brand-slash">/</span>
 </a>
-<div class="lang-toggle" aria-label="Language / Idioma">
-<button type="button" class="lang-btn active" onclick="switchLanguage('en')" id="btn-en" aria-label="English">EN</button>
+<div aria-label="Language / Idioma" class="lang-toggle">
+<button aria-label="English" class="lang-btn active" id="btn-en" onclick="switchLanguage('en')" type="button">EN</button>
 <span aria-hidden="true">/</span>
-<button type="button" class="lang-btn" onclick="switchLanguage('es')" id="btn-es" aria-label="Español">ES</button>
+<button aria-label="Español" class="lang-btn" id="btn-es" onclick="switchLanguage('es')" type="button">🇪🇸 Español</button>
 </div>
 <nav aria-label="Main navigation">
 <ul class="nav-links">
 <li>
 <a data-i18n="nav_projects" href="#projects">Work</a>
 </li>
-<li>
-<a data-i18n="nav_oss" href="#open-source">Open source</a>
-</li>
+
 <li>
 <a data-i18n="nav_thoughts" href="/reflexiones">Thoughts</a>
 </li>
@@ -1138,16 +1140,14 @@
 </nav>
 <details class="nav-mobile-menu">
 <summary>
-<span data-i18n="nav_menu" >Menu</span>
+<span data-i18n="nav_menu">Menu</span>
 </summary>
 <nav aria-label="Mobile navigation">
 <ul>
 <li>
 <a data-i18n="nav_projects" href="#projects">Work</a>
 </li>
-<li>
-<a data-i18n="nav_oss" href="#open-source">Open source</a>
-</li>
+
 <li>
 <a data-i18n="nav_thoughts" href="/reflexiones">Thoughts</a>
 </li>
@@ -1233,169 +1233,149 @@
         </div>
     </section>
 
-<section id="projects" class="container">
+<section class="container" id="projects">
 <div class="section-header">
-<h2 data-i18n="projects_title" class="section-title">Featured work</h2>
+<h2 class="section-title" data-i18n="projects_title">Featured work</h2>
 </div>
-<p data-i18n="projects_subtitle" class="section-subtitle">Applied AI, product decisions and work that reaches people.</p>
+<p class="section-subtitle" data-i18n="projects_subtitle">Applied AI, product decisions and work that reaches people.</p>
 <div class="projects-list featured-work">
 <article class="project-item">
-<h3 data-i18n="work_content_title" >AI-Powered Content Systems — 5M+ Views</h3>
-<p data-i18n="work_content_desc" >Since August 2026, I have built AI-based systems for content production, distribution and strategy. Over five million cumulative views across platforms as of November 2026, and counting.</p>
+<h3 data-i18n="work_content_title">AI-Powered Content Systems — 5M+ Views</h3>
+<p data-i18n="work_content_desc">Since August 2026, I have built AI-based systems for content production, distribution and strategy. Over five million cumulative views across platforms as of November 2026, and counting.</p>
 <div class="project-tags">
 <span class="project-tag">AI · Content · Distribution</span>
 </div>
 </article>
 <article class="project-item">
-<h3 data-i18n="work_nasa_title" >NASA Space Apps — Best AI Solution Winners · 2nd Overall</h3>
-<p data-i18n="work_nasa_desc" >Marswalk Planner helps plan and evaluate exploration routes on Mars using terrain data, mission constraints and AI agents. Our team won two of the four awards among 60+ participants. I shaped the product vision, developed the agent communication protocol and delivered the main scientific and business pitch.</p>
+<h3 data-i18n="work_nasa_title">NASA Space Apps — Winners · Best AI Solution &amp; 2nd Overall</h3>
+<p data-i18n="work_nasa_desc">Marswalk Planner helps plan and evaluate exploration routes on Mars using terrain data, mission constraints and AI agents. Our team won two of the four awards among 60+ participants. I shaped the product vision, developed the agent communication protocol and delivered the main scientific and business pitch.</p>
 <div class="project-tags">
 <span class="project-tag">2026 · Best AI Solution</span>
 <span class="project-tag">2nd Overall</span>
 </div>
 <div class="work-links">
-<a data-i18n="link_67" href="https://github.com/roberto3554/NASA-Space-Apps-Challenge-2026" target="_blank" rel="noopener noreferrer">Team project ↗</a>
+<a data-i18n="link_67" href="https://github.com/roberto3554/NASA-Space-Apps-Challenge-2026" rel="noopener noreferrer" target="_blank">Team project ↗</a>
 </div>
 </article>
 <article class="project-item">
-<h3 data-i18n="work_genai_title" >GenAI Arena — Audience Choice Award</h3>
-<p data-i18n="work_genai_desc" >A predictive model for paid advertising, using Python, pandas, NumPy, scikit-learn and ARIMA. I worked on the model, backend integration, validation, technical documentation and pitch. The prototype identified an estimated potential saving of around €12,000/month.</p>
+<h3 data-i18n="work_genai_title">GenAI Arena — Winners</h3>
+<p data-i18n="work_genai_desc">Audience Choice Award. A predictive model for paid advertising, using Python, pandas, NumPy, scikit-learn and ARIMA. I worked on the model, backend integration, validation, technical documentation and pitch. The prototype identified an estimated potential saving of around €12,000/month.</p>
 <div class="work-links">
-<a data-i18n="link_70" href="https://credsverse.com/credentials/e8047661-3405-496e-9096-0d2059028b38" target="_blank" rel="noopener noreferrer">Award certificate ↗</a>
+<a data-i18n="link_70" href="https://credsverse.com/credentials/e8047661-3405-496e-9096-0d2059028b38" rel="noopener noreferrer" target="_blank">Award certificate ↗</a>
 </div>
 </article>
 <article class="project-item">
-<h3 data-i18n="work_andaluz_title" >Andaluz.ia · From product to business validation</h3>
-<p data-i18n="work_andaluz_desc" >An entrepreneurial AI product project where I contributed as a technical co-founding partner. Building the product led into business validation, value proposition and international collaboration through the BIP at Universidade do Minho, Portugal. The project was presented to university entrepreneurship programmes and calls.</p>
+<h3 data-i18n="work_andaluz_title">Andaluz.ia · AI &amp; entrepreneurship</h3>
+<p data-i18n="work_andaluz_desc">An entrepreneurial AI product project where I contributed as a technical co-founding partner, building the product and presenting it to university entrepreneurship programmes. Selected with a scholarship for the BIP at Universidade do Minho, Portugal, alongside an international team.</p>
 <div class="work-links">
-<a data-i18n="link_73" href="https://ugremprendedora.ugr.es/andaluz-ia-participa-en-el-programa-intensivo-combinado-bip-a-nivel-europeo-de-la-alianza-arqus-en-portugal/" target="_blank" rel="noopener noreferrer">UGR coverage ↗</a>
+<a data-i18n="link_73" href="https://ugremprendedora.ugr.es/andaluz-ia-participa-en-el-programa-intensivo-combinado-bip-a-nivel-europeo-de-la-alianza-arqus-en-portugal/" rel="noopener noreferrer" target="_blank">UGR coverage ↗</a>
 </div>
 </article>
 <article class="project-item">
-<h3 data-i18n="work_client_title" >First AI Automation Client at 16</h3>
-<p data-i18n="work_client_desc" >My first client work with Canal Online SL: understanding a real need, agreeing on a solution and delivering content automation. An early lesson in entrepreneurship, communication and taking responsibility for what I build.</p>
+<h3 data-i18n="work_client_title">First AI Automation Client at 16</h3>
+<p data-i18n="work_client_desc">My first automation client at 16 was Canal Online SL, followed by work with other clients: understanding real needs, agreeing on solutions and delivering content automation. An early lesson in entrepreneurship, communication and taking responsibility for what I build.</p>
 </article>
-</div>
-<h3 data-i18n="other_title" class="work-subheading">Other work</h3>
+<article class="project-item"><h3 data-i18n="work_talent_title">Youngest speaker at Talent Land Spain</h3><p data-i18n="work_talent_desc">Talent Land Spain 2026 speaker on building practical leverage with AI. From attendee in 2024 and scholarship participant in 2025 to sharing how I build and work with AI agents.</p><div class="work-links"><a href="https://drive.google.com/file/d/1lXcBcC_yKLe-V4it5StmN9K9DKpMeX5O/view" rel="noopener noreferrer" target="_blank">Talent Land 2024 ↗</a><a href="https://drive.google.com/file/d/1f6S9t4a8yTjicOYVNiWe1S7Y2im21b9O/view" rel="noopener noreferrer" target="_blank">Talent Land 2025 ↗</a></div></article></div>
+<h3 class="work-subheading" data-i18n="other_title">Other work</h3>
 <div class="other-work">
 <article class="project-item">
-<h3 data-i18n="work_vivi_title" >ViviAI · Ideas Factory</h3>
-<p data-i18n="work_vivi_desc" >A team prototype for real estate. In one afternoon we opened five commercial conversations with agencies to validate demand.</p>
+<h3 data-i18n="work_vivi_title">ViviAI · Ideas Factory</h3>
+<p data-i18n="work_vivi_desc">A team AI prototype for real estate. I closed five sales in one afternoon through door-to-door outreach, followed by weeks of follow-up and further cold outreach.</p>
 <div class="work-links">
-<a data-i18n="link_78" href="https://drive.google.com/file/d/1xVa9U5hUJ0lrQElYHc0AlGoGDe-rPDzm/view" target="_blank" rel="noopener noreferrer">Participation certificate ↗</a>
+<a data-i18n="link_78" href="https://drive.google.com/file/d/1xVa9U5hUJ0lrQElYHc0AlGoGDe-rPDzm/view" rel="noopener noreferrer" target="_blank">Participation certificate ↗</a>
 </div>
 </article>
 <article class="project-item">
-<h3 data-i18n="work_seo_title" >Printers website · Organic discovery</h3>
-<p data-i18n="work_seo_desc" >A small web project to learn technical SEO, search intent and organic acquisition through real execution.</p>
+<h3 data-i18n="work_seo_title">Printers website · Organic discovery</h3>
+<p data-i18n="work_seo_desc">A small website that reached around 8,700 monthly visits. Hands-on experience in technical SEO, search intent and organic acquisition.</p>
 </article>
-</div>
-</section>
-<section id="open-source" class="container">
+<article class="project-item"><h3 data-i18n="work_mentor_title">Former mentor · Entrepreneurs &amp; startups</h3><p data-i18n="work_mentor_desc">Former mentor to entrepreneurs and startups at UGR Emprendedora.</p></article><article class="project-item"><h3 data-i18n="work_recap_title">Recapacicla · 3rd prize</h3><p data-i18n="work_recap_desc">RECUP TO GO: a university recycling logistics project.</p><a href="https://drive.google.com/file/d/1YT-aZThZuTzeviibFt1IGiqPFZwwEaM_/view" rel="noopener noreferrer" target="_blank">Recapacicla ↗</a></article></div>
+</section><section class="container" id="open-source">
 <div class="section-header">
-<h2 data-i18n="oss_title" class="section-title">Open source &amp; public code</h2>
+<h2 class="section-title" data-i18n="oss_title">Open Source</h2>
 </div>
-<p data-i18n="oss_desc" class="section-subtitle">Small tools and code you can inspect. Licences are stated for each repository.</p>
+<p class="section-subtitle" data-i18n="oss_desc">Small tools and code you can inspect. Licences are stated for each repository.</p>
 <div class="other-work">
 <article class="project-item">
-<h3 data-i18n="oss_security_title" >Agent Security Review · MIT</h3>
-<p data-i18n="oss_security_desc" >An open skill for reviewing agent permissions, secrets, integrations and sensitive operations.</p>
+<h3 data-i18n="oss_security_title">Agent Security Review · MIT</h3>
+<p data-i18n="oss_security_desc">An open skill for reviewing agent permissions, secrets, integrations and sensitive operations.</p>
 <div class="work-links">
-<a data-i18n="link_86" href="https://github.com/pablopetrus/agent-security-review" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+<a data-i18n="link_86" href="https://github.com/pablopetrus/agent-security-review" rel="noopener noreferrer" target="_blank">Repository ↗</a>
 </div>
 </article>
 <article class="project-item">
-<h3 data-i18n="oss_transcriber_title" >Transcriber · MIT</h3>
-<p data-i18n="oss_transcriber_desc" >Public transcription tool. Read the repository for setup and supported usage.</p>
+<h3 data-i18n="oss_transcriber_title">Transcriber · MIT</h3>
+<p data-i18n="oss_transcriber_desc">Public transcription tool. Read the repository for setup and supported usage.</p>
 <div class="work-links">
-<a data-i18n="link_89" href="https://github.com/pablopetrus/transcriber" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+<a data-i18n="link_89" href="https://github.com/pablopetrus/transcriber" rel="noopener noreferrer" target="_blank">Repository ↗</a>
 </div>
 </article>
 <article class="project-item">
-<h3 data-i18n="oss_market_title" >Market Trend Insights · Public source</h3>
-<p data-i18n="oss_market_desc" >A Python exploration of forecasting with NumPy and pandas. Public source; no open-source licence is declared.</p>
+<h3 data-i18n="oss_market_title">Market Trend Insights · Public source</h3>
+<p data-i18n="oss_market_desc">A Python exploration of forecasting with NumPy and pandas. Public source; no open-source licence is declared.</p>
 <div class="work-links">
-<a data-i18n="link_92" href="https://github.com/pablopetrus/forecast-with-numpy-and-pandas" target="_blank" rel="noopener noreferrer">View code ↗</a>
+<a data-i18n="link_92" href="https://github.com/pablopetrus/forecast-with-numpy-and-pandas" rel="noopener noreferrer" target="_blank">View code ↗</a>
 </div>
 </article>
 </div>
 <div class="work-links">
-<a data-i18n="link_95" href="https://github.com/pablopetrus/Portfolio-Pablo-Contreras" target="_blank" rel="noopener noreferrer">Portfolio Source ↗</a>
-<a data-i18n="oss_resources" href="/recursos">Explore free resources →</a>
-<a data-i18n="oss_demo" href="/lab">Product demo ↗</a>
+<a data-i18n="link_95" href="https://github.com/pablopetrus/Portfolio-Pablo-Contreras" rel="noopener noreferrer" target="_blank">Portfolio Source ↗</a>
+
+
 </div>
-</section>
-<section id="education" class="container">
+</section><section class="container international-programmes" id="international"><h2 class="section-title" data-i18n="edu_international">International programmes</h2><div class="international-grid"><article class="international-content">
+
+<p data-i18n="edu_international_0">BIP · Selected with a scholarship for Universidade do Minho, Portugal, linked to Andaluz.ia.</p>
+<p data-i18n="edu_international_1">United in Curiosity · Wrocław and Warsaw, Poland: AI in science and research communication.</p>
+<p data-i18n="edu_international_2">Arqus Thinkathon · Leipzig, Germany: Europe as a Global Actor.</p>
+<p data-i18n="edu_international_3">London Tech Week 2026 · Attendance and visit to Imperial College London.</p>
+<div class="work-links">
+<a data-i18n="edu_international_link_0" href="https://arqus.ugr.es/con/semana-internacional-de-talleres-united-in-curiosity-para-estudiantes-arqus-en-la-universidad-de-breslavia/" rel="noopener noreferrer" target="_blank">United in Curiosity ↗</a>
+<a data-i18n="edu_international_link_1" href="https://arqus-alliance.eu/event/thinkathon-and-workshop-europe-as-a-global-actor-which-competences-do-we-need-in-a-world-in-crisis/" rel="noopener noreferrer" target="_blank">Thinkathon ↗</a>
+</div>
+</article><figure class="programme-photo">
+<img alt="International BIP team in Portugal" height="800" loading="lazy" src="/images/bip-portugal-2026.webp" width="1200"/>
+<figcaption data-i18n="bip_caption">The BIP team · Portugal, 2026</figcaption>
+</figure></div></section><section class="container" id="education">
 <div class="section-header">
-<h2 data-i18n="edu_title" class="section-title">Experience, awards &amp; learning</h2>
+<h2 class="section-title" data-i18n="edu_title">Education &amp; communities</h2>
 </div>
 <div class="info-grid">
 <article class="info-card">
-<h3 data-i18n="edu_university" >University of Granada</h3>
-<p data-i18n="edu_university_0" >2025–present · Double Degree in Computer Science + Business Administration.</p>
-<p data-i18n="edu_university_1" >PAU: top 5% nationally. Highest cohort marks in Calculus and Programming Fundamentals.</p>
-<p data-i18n="edu_university_2" >Honours: Linear Algebra and Mathematical Structures (9.8/10); Political Economy (9.3/10).</p>
-<p data-i18n="edu_university_3" >IES Padre Suárez · Scientific and Technological Baccalaureate, 9.1/10.</p>
+<h3 data-i18n="edu_university">University of Granada</h3>
+<p data-i18n="edu_university_0">2025–present · Double Degree in Computer Science + Business Administration.</p>
+<p data-i18n="edu_university_1">PAU: top 5% nationally. Highest cohort marks in Calculus and Programming Fundamentals.</p>
+<p data-i18n="edu_university_2">Honours: Linear Algebra and Mathematical Structures (9.8/10); Political Economy (9.3/10).</p>
+<p data-i18n="edu_university_3">IES Padre Suárez · Scientific and Technological Baccalaureate, 9.1/10.</p>
 </article>
+
+
+
+
 <article class="info-card">
-<h3 data-i18n="edu_experience" >Experience &amp; entrepreneurship</h3>
-<p data-i18n="edu_experience_0" >Client automation work from age 16; applied AI, product development and content systems.</p>
-<p data-i18n="edu_experience_1" >UGR Emprendedora · Entrepreneurship community and mentoring.</p>
-<p data-i18n="edu_experience_2" >Talent Land Spain 2026 · Scheduled speaker on building practical leverage with AI. Attendee in 2024, scholarship participant in 2025.</p>
+<h3 data-i18n="edu_courses">Courses &amp; certificates</h3>
+<p data-i18n="edu_courses_0">UGR Entrepreneurial Talent · 150 hours, 6 ECTS.</p>
+<p data-i18n="edu_courses_1">Nestlé International Skillathon 2025 · Participation with international teams.</p>
+
+
 <div class="work-links">
-<a data-i18n="edu_experience_link_0" href="https://drive.google.com/file/d/1lXcBcC_yKLe-V4it5StmN9K9DKpMeX5O/view" target="_blank" rel="noopener noreferrer">Talent Land 2024 ↗</a>
-<a data-i18n="edu_experience_link_1" href="https://drive.google.com/file/d/1f6S9t4a8yTjicOYVNiWe1S7Y2im21b9O/view" target="_blank" rel="noopener noreferrer">Talent Land 2025 ↗</a>
+<a data-i18n="edu_courses_link_0" href="https://drive.google.com/file/d/1MstIBI4xwvYEU-wtQnOnOMB8JhwN7EBe/view" rel="noopener noreferrer" target="_blank">UGR · Certificate ↗</a>
+<a data-i18n="edu_courses_link_1" href="https://drive.google.com/file/d/1P7elVajMrdudrw50Z806nKr7UC8-AgYZ/view" rel="noopener noreferrer" target="_blank">Nestlé · Certificate ↗</a>
 </div>
-</article>
+<div class="course-links"><a data-i18n="course_ai" href="https://www.coursera.org/account/accomplishments/verify/99YA9N25CMOS" rel="noopener noreferrer" target="_blank">Stanford via Coursera · The AI Awakening ↗</a><a data-i18n="course_stats" href="https://www.coursera.org/account/accomplishments/verify/67OT3WRXM8FC" rel="noopener noreferrer" target="_blank">Stanford via Coursera · Introduction to Statistics ↗</a><a data-i18n="course_communication" href="https://www.coursera.org/account/accomplishments/verify/0W4054KP9A60" rel="noopener noreferrer" target="_blank">Wharton via Coursera · Improving Communication Skills ↗</a></div></article>
 <article class="info-card">
-<h3 data-i18n="edu_awards" >Awards &amp; hackathons</h3>
-<p data-i18n="edu_awards_0" >NASA Space Apps 2026 · Best AI Solution winners; 2nd overall.</p>
-<p data-i18n="edu_awards_1" >GenAI Arena · Audience Choice Award.</p>
-<p data-i18n="edu_awards_2" >Recapacicla · 3rd prize with RECUP TO GO, university recycling logistics.</p>
-<p data-i18n="edu_awards_3" >ViviAI / Ideas Factory · Team prototyping and customer discovery.</p>
-<div class="work-links">
-<a data-i18n="edu_awards_link_0" href="https://drive.google.com/file/d/1YT-aZThZuTzeviibFt1IGiqPFZwwEaM_/view" target="_blank" rel="noopener noreferrer">Recapacicla · Certificate ↗</a>
-</div>
-</article>
-<article class="info-card">
-<h3 data-i18n="edu_international" >International programmes</h3>
-<p data-i18n="edu_international_0" >BIP · Universidade do Minho, Portugal: business validation with Andaluz.ia.</p>
-<p data-i18n="edu_international_1" >United in Curiosity · Wrocław and Warsaw, Poland: AI in science and research communication.</p>
-<p data-i18n="edu_international_2" >Arqus Thinkathon · Leipzig, Germany: Europe as a Global Actor.</p>
-<p data-i18n="edu_international_3" >London Tech Week 2026 · Attendance and visit to Imperial College London.</p>
-<div class="work-links">
-<a data-i18n="edu_international_link_0" href="https://arqus.ugr.es/con/semana-internacional-de-talleres-united-in-curiosity-para-estudiantes-arqus-en-la-universidad-de-breslavia/" target="_blank" rel="noopener noreferrer">United in Curiosity ↗</a>
-<a data-i18n="edu_international_link_1" href="https://arqus-alliance.eu/event/thinkathon-and-workshop-europe-as-a-global-actor-which-competences-do-we-need-in-a-world-in-crisis/" target="_blank" rel="noopener noreferrer">Thinkathon ↗</a>
-</div>
-</article>
-<figure class="programme-photo">
-<img src="/images/bip-portugal-2026.webp" alt="International BIP team in Portugal" loading="lazy" width="1200" height="800">
-<figcaption data-i18n="bip_caption" >The BIP team · Portugal, 2026</figcaption>
-</figure>
-<article class="info-card">
-<h3 data-i18n="edu_courses" >Courses &amp; certificates</h3>
-<p data-i18n="edu_courses_0" >UGR Entrepreneurial Talent · 150 hours, 6 ECTS.</p>
-<p data-i18n="edu_courses_1" >Nestlé International Skillathon 2025 · Participation with international teams.</p>
-<p data-i18n="edu_courses_2" >Stanford University via Coursera · The AI Awakening: Implications for the Economy and Society; Introduction to Statistics (October 2026).</p>
-<p data-i18n="edu_courses_3" >Wharton, University of Pennsylvania via Coursera · Improving Communication Skills (September 2026).</p>
-<div class="work-links">
-<a data-i18n="edu_courses_link_0" href="https://drive.google.com/file/d/1MstIBI4xwvYEU-wtQnOnOMB8JhwN7EBe/view" target="_blank" rel="noopener noreferrer">UGR · Certificate ↗</a>
-<a data-i18n="edu_courses_link_1" href="https://drive.google.com/file/d/1P7elVajMrdudrw50Z806nKr7UC8-AgYZ/view" target="_blank" rel="noopener noreferrer">Nestlé · Certificate ↗</a>
-</div>
-</article>
-<article class="info-card">
-<h3 data-i18n="edu_languages" >Languages &amp; communities</h3>
-<p data-i18n="edu_languages_0" >English · TOEFL iBT 110/120, ETS, March 2026. French · Basic; school exchange at Lycée Saint-Michel de Picpus, Paris (2022).</p>
-<p data-i18n="edu_languages_1" >Arqus ambassador · Support for international students and the UGR community.</p>
-<p data-i18n="edu_languages_2" >GDG Granada and Granada Tech Organizers · Community and event organisation.</p>
+<h3 data-i18n="edu_languages">Languages &amp; communities</h3>
+<p data-i18n="edu_languages_0">English · TOEFL iBT 110/120, ETS, March 2026. French · Basic; school exchange at Lycée Saint-Michel de Picpus, Paris (2022).</p>
+<p data-i18n="edu_languages_1">Arqus ambassador · Support for international students and the UGR community.</p>
+<p data-i18n="edu_languages_2">GDG Granada and Granada Tech Organizers · Community and event organisation.</p>
 </article>
 </div>
 <div class="work-links">
-<a data-i18n="link_127" href="https://www.coursera.org/account/accomplishments/records/99YA9N25CMOS" target="_blank" rel="noopener noreferrer">Stanford · AI Awakening ↗</a>
-<a data-i18n="link_128" href="https://www.coursera.org/account/accomplishments/records/67OT3WRXM8FC" target="_blank" rel="noopener noreferrer">Stanford · Statistics ↗</a>
-<a data-i18n="link_129" href="https://drive.google.com/file/d/1AmOYI26rfs1d7m1fLtQ9bW_YQ7FlmKJD/view" target="_blank" rel="noopener noreferrer">TOEFL ↗</a>
+
+
+<a data-i18n="link_129" href="https://drive.google.com/file/d/1AmOYI26rfs1d7m1fLtQ9bW_YQ7FlmKJD/view" rel="noopener noreferrer" target="_blank">TOEFL ↗</a>
 </div>
-<p data-i18n="personal_record" class="personal-record">Away from tech: WRPF teenage bench press national record, 117.5 kg.</p>
+<p class="personal-record" data-i18n="personal_record">Away from tech: WRPF teenage bench press national record, 117.5 kg.</p>
 </section>
     <!-- Skills -->
     <section id="skills" class="container">
@@ -1441,18 +1421,17 @@
     </section>
 
     <!-- CTA -->
-    <section id="contact" class="container">
-        <div class="cta-section">
-            <h2 class="section-title" data-i18n="contact_title">Let&#x27;s Talk</h2>
-            <p class="section-subtitle" data-i18n="contact_subtitle">Applied AI, product and strategy. Building with business judgment.</p>
-
-            <div class="cta-buttons">
-                <a href="mailto:pablo@pablopetrus.com" class="btn btn-primary">pablo@pablopetrus.com</a>
-                <a href="https://www.linkedin.com/in/pablocontrerasperez/" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn</a>
-                <a href="https://github.com/pablopetrus" target="_blank" rel="noopener" class="btn btn-secondary">GitHub</a>
-            </div>
-        </div>
-    </section>
+    <section class="container" id="contact">
+<div class="cta-section">
+<h2 class="section-title" data-i18n="contact_title">Let’s build something useful.</h2>
+<p class="section-subtitle" data-i18n="contact_subtitle">Open to collaborations, projects and good conversations about AI, product and strategy. Write to me by email or find me on LinkedIn.</p>
+<div class="cta-buttons">
+<a class="btn btn-primary" href="mailto:pablo@pablopetrus.com">pablo@pablopetrus.com</a>
+<a class="btn btn-secondary" href="https://www.linkedin.com/in/pablocontrerasperez/" rel="noopener" target="_blank">LinkedIn</a>
+<a class="btn btn-secondary" href="https://github.com/pablopetrus" rel="noopener" target="_blank">GitHub</a>
+</div>
+</div>
+</section>
 
 </main>
 

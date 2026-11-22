@@ -6,12 +6,7 @@
   <title data-en="Free AI resources — Pablo" data-es="Recursos gratuitos de IA — Pablo">
    Free AI resources — Pablo
   </title>
-  <meta
-    content="A small starting point for useful work with AI agents. Explore SHERPA OS Starter and Agent Security Review."
-    data-en-content="A small starting point for useful work with AI agents. Explore SHERPA OS Starter and Agent Security Review."
-    data-es-content="Un punto de partida pequeño para avanzar con agentes de IA. Descubre SHERPA OS Starter y Agent Security Review."
-    name="description"
-  />
+  <meta content="A small starting point for useful work with AI agents. Explore SHERPA OS Starter and Agent Security Review." data-en-content="A small starting point for useful work with AI agents. Explore SHERPA OS Starter and Agent Security Review." data-es-content="Un punto de partida pequeño para avanzar con agentes de IA. Descubre SHERPA OS Starter y Agent Security Review." name="description"/>
   <link href="https://pablopetrus.com/recursos" rel="canonical"/>
   <meta content="#f8f5ef" name="theme-color"/>
   <link href="/editorial-language.css" rel="stylesheet"/>
@@ -306,19 +301,55 @@ footer {
   }
 
 }
+   /* Native disclosures reduce the initial reading load without hiding navigation. */
+details.section {
+  padding: 0;
+}
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 0;
+  list-style: none;
+  cursor: pointer;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::after {
+  content: '+';
+  flex: 0 0 auto;
+  color: #9f4f00;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+details[open] > summary::after {
+  content: '−';
+}
+summary h2 {
+  margin: 0;
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+}
+summary:focus-visible {
+  outline: 2px solid #e87500;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+.disclosure-body {
+  padding: 0 0 30px;
+}
+.product-demo {
+  padding: 36px 0;
+  border-top: 1px solid #ded7ce;
+}
+.product-demo h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 12px;
+}
   </style>
-  <meta
-    content="Free AI resources — Pablo"
-    data-en-content="Free AI resources — Pablo"
-    data-es-content="Recursos gratuitos de IA — Pablo"
-    property="og:title"
-  />
-  <meta
-    content="A small starting point for useful work with AI agents. Explore SHERPA OS Starter and Agent Security Review."
-    data-en-content="A small starting point for useful work with AI agents. Explore SHERPA OS Starter and Agent Security Review."
-    data-es-content="Un punto de partida pequeño para avanzar con agentes de IA. Descubre SHERPA OS Starter y Agent Security Review."
-    property="og:description"
-  />
+  <meta content="Free AI resources — Pablo" data-en-content="Free AI resources — Pablo" data-es-content="Recursos gratuitos de IA — Pablo" property="og:title"/>
+  <meta content="A small starting point for useful work with AI agents. Explore SHERPA OS Starter and Agent Security Review." data-en-content="A small starting point for useful work with AI agents. Explore SHERPA OS Starter and Agent Security Review." data-es-content="Un punto de partida pequeño para avanzar con agentes de IA. Descubre SHERPA OS Starter y Agent Security Review." property="og:description"/>
  </head>
  <body>
   <main class="page">
@@ -337,34 +368,23 @@ footer {
       Reflections
      </a>
      <div aria-label="Language" class="language-picker" data-en-label="Language" data-es-label="Idioma">
-      <button data-language="en" type="button">
+      <button aria-label="Switch to English" data-language="en" type="button">
        EN
       </button>
-      <button data-language="es" type="button">
-       ES
+      <button aria-label="Cambiar a español" class="spanish-language" data-language="es" type="button">
+       🇪🇸 Español
       </button>
      </div>
     </nav>
    </header>
    <div class="hero">
-    <p
-      class="eyebrow"
-      data-en="SHERPA OS STARTER / FREE RESOURCES"
-      data-es="SHERPA OS STARTER / RECURSOS GRATUITOS"
-    >
+    <p class="eyebrow" data-en="SHERPA OS STARTER / FREE RESOURCES" data-es="SHERPA OS STARTER / RECURSOS GRATUITOS">
      SHERPA OS STARTER / FREE RESOURCES
     </p>
-    <h1
-      data-en="Make progress with AI agents, one task at a time."
-      data-es="Avanza con agentes de IA, una tarea cada vez."
-    >
+    <h1 data-en="Make progress with AI agents, one task at a time." data-es="Avanza con agentes de IA, una tarea cada vez.">
      Make progress with AI agents, one task at a time.
     </h1>
-    <p
-      class="lead"
-      data-en="SHERPA OS Starter is a free, small set of files to choose meaningful work, give an agent context, check its output, and pick up where you left off."
-      data-es="SHERPA OS Starter es un conjunto gratuito y pequeño de archivos para elegir trabajo importante, dar contexto a un agente, comprobar su resultado y retomar el hilo."
-    >
+    <p class="lead" data-en="SHERPA OS Starter is a free, small set of files to choose meaningful work, give an agent context, check its output, and pick up where you left off." data-es="SHERPA OS Starter es un conjunto gratuito y pequeño de archivos para elegir trabajo importante, dar contexto a un agente, comprobar su resultado y retomar el hilo.">
      SHERPA OS Starter is a free, small set of files to choose meaningful work, give an agent context, check its output, and pick up where you left off.
     </p>
     <span class="status" data-en="Starter download: coming soon" data-es="Descarga del Starter: próximamente">
@@ -397,214 +417,203 @@ footer {
      </p>
     </div>
    </div>
-   <section class="section">
-    <h2 data-en="A small loop that keeps work moving." data-es="Un ciclo pequeño para seguir avanzando.">
-     A small loop that keeps work moving.
-    </h2>
-    <div class="steps">
-     <div>
-      <span class="number">
-       01
-      </span>
-      <h3 data-en="Choose one task." data-es="Elige una tarea.">
-       Choose one task.
-      </h3>
+   <details class="section">
+    <summary>
+     <h2 data-en="A small loop that keeps work moving." data-es="Un ciclo pequeño para seguir avanzando.">
+      A small loop that keeps work moving.
+     </h2>
+    </summary>
+    <div class="disclosure-body">
+     <div class="steps">
+      <div>
+       <span class="number">
+        01
+       </span>
+       <h3 data-en="Choose one task." data-es="Elige una tarea.">
+        Choose one task.
+       </h3>
+      </div>
+      <div>
+       <span class="number">
+        02
+       </span>
+       <h3 data-en="Let the agent work and check the result." data-es="Deja trabajar al agente y comprueba el resultado.">
+        Let the agent work and check the result.
+       </h3>
+      </div>
+      <div>
+       <span class="number">
+        03
+       </span>
+       <h3 data-en="Record the decision and next step." data-es="Anota la decisión y el siguiente paso.">
+        Record the decision and next step.
+       </h3>
+      </div>
      </div>
-     <div>
-      <span class="number">
-       02
-      </span>
-      <h3
-        data-en="Let the agent work and check the result."
-        data-es="Deja trabajar al agente y comprueba el resultado."
-      >
-       Let the agent work and check the result.
-      </h3>
-     </div>
-     <div>
-      <span class="number">
-       03
-      </span>
-      <h3 data-en="Record the decision and next step." data-es="Anota la decisión y el siguiente paso.">
-       Record the decision and next step.
-      </h3>
+     <p class="muted" data-en="Short Markdown files hold current context, decisions, and proven procedures. Review them when you return; update them when something changes." data-es="Archivos Markdown breves guardan contexto vigente, decisiones y procedimientos probados. Consúltalos al volver y actualízalos cuando algo cambie.">
+      Short Markdown files hold current context, decisions, and proven procedures. Review them when you return; update them when something changes.
+     </p>
+    </div>
+   </details>
+   <details class="section">
+    <summary>
+     <h2 data-en="Your first five minutes." data-es="Tus primeros cinco minutos.">
+      Your first five minutes.
+     </h2>
+    </summary>
+    <div class="disclosure-body">
+     <div class="two">
+      <div>
+       <ol>
+        <li data-en="Pick a task with a useful outcome." data-es="Elige una tarea con impacto.">
+         Pick a task with a useful outcome.
+        </li>
+        <li data-en="Ask the agent for a first result." data-es="Pide al agente un primer resultado.">
+         Ask the agent for a first result.
+        </li>
+        <li data-en="Review what it produced against your sources." data-es="Revisa lo que ha producido con tus fuentes.">
+         Review what it produced against your sources.
+        </li>
+        <li data-en="Record the decision and what comes next." data-es="Registra la decisión y el siguiente paso.">
+         Record the decision and what comes next.
+        </li>
+       </ol>
+       <p class="note" data-en="Only turn a task into a reusable procedure after you have tested that it works." data-es="Convierte una tarea en un procedimiento reutilizable solo después de comprobar que funciona.">
+        Only turn a task into a reusable procedure after you have tested that it works.
+       </p>
+      </div>
+      <div class="files">
+       <h3 data-en="Suggested minimal structure" data-es="Estructura mínima propuesta">
+        Suggested minimal structure
+       </h3>
+       <p>
+        <code>
+         README.md
+        </code>
+        —
+        <span data-en="How to start." data-es="Cómo empezar.">
+         How to start.
+        </span>
+       </p>
+       <p>
+        <code>
+         AGENTS.md
+        </code>
+        —
+        <span data-en="Working instructions." data-es="Instrucciones de trabajo.">
+         Working instructions.
+        </span>
+       </p>
+       <p>
+        <code>
+         ESTADO.md
+        </code>
+        —
+        <span data-en="Current task, evidence and next step." data-es="Tarea actual, evidencia y próximo paso.">
+         Current task, evidence and next step.
+        </span>
+       </p>
+       <p>
+        <code>
+         DECISIONES.md
+        </code>
+        —
+        <span data-en="Important decisions." data-es="Decisiones importantes.">
+         Important decisions.
+        </span>
+       </p>
+       <p class="note" data-en="This is a proposed structure, not a verified package manifest. The public Starter release is still being prepared." data-es="Esta es una estructura propuesta, no el inventario verificado del paquete. La versión pública del Starter está en preparación.">
+        This is a proposed structure, not a verified package manifest. The public Starter release is still being prepared.
+       </p>
+      </div>
      </div>
     </div>
-    <p
-      class="muted"
-      data-en="Short Markdown files hold current context, decisions, and proven procedures. Review them when you return; update them when something changes."
-      data-es="Archivos Markdown breves guardan contexto vigente, decisiones y procedimientos probados. Consúltalos al volver y actualízalos cuando algo cambie."
-    >
-     Short Markdown files hold current context, decisions, and proven procedures. Review them when you return; update them when something changes.
-    </p>
-   </section>
-   <section class="section">
-    <h2 data-en="Your first five minutes." data-es="Tus primeros cinco minutos.">
-     Your first five minutes.
-    </h2>
-    <div class="two">
-     <div>
-      <ol>
-       <li data-en="Pick a task with a useful outcome." data-es="Elige una tarea con impacto.">
-        Pick a task with a useful outcome.
-       </li>
-       <li data-en="Ask the agent for a first result." data-es="Pide al agente un primer resultado.">
-        Ask the agent for a first result.
-       </li>
-       <li
-         data-en="Review what it produced against your sources."
-         data-es="Revisa lo que ha producido con tus fuentes."
-       >
-        Review what it produced against your sources.
-       </li>
-       <li data-en="Record the decision and what comes next." data-es="Registra la decisión y el siguiente paso.">
-        Record the decision and what comes next.
-       </li>
-      </ol>
-      <p
-        class="note"
-        data-en="Only turn a task into a reusable procedure after you have tested that it works."
-        data-es="Convierte una tarea en un procedimiento reutilizable solo después de comprobar que funciona."
-      >
-       Only turn a task into a reusable procedure after you have tested that it works.
-      </p>
-     </div>
-     <div class="files">
-      <h3 data-en="Suggested minimal structure" data-es="Estructura mínima propuesta">
-       Suggested minimal structure
-      </h3>
-      <p>
-       <code>
-        README.md
-       </code>
-       —
-       <span data-en="How to start." data-es="Cómo empezar.">
-        How to start.
+   </details>
+   <details class="section">
+    <summary>
+     <h2 data-en="Try the loop." data-es="Prueba el ciclo.">
+      Try the loop.
+     </h2>
+    </summary>
+    <div class="disclosure-body">
+     <p class="eyebrow" data-en="Fictional example · No AI connection, no real data, no messages sent." data-es="Ejemplo ficticio · Sin conexión a IA, datos reales ni mensajes enviados.">
+      Fictional example · No AI connection, no real data, no messages sent.
+     </p>
+     <div class="demo">
+      <div aria-atomic="true" aria-live="polite" class="demo-state" id="demo-state">
+      </div>
+      <div class="demo-controls">
+       <span class="demo-count" id="demo-count">
        </span>
-      </p>
-      <p>
-       <code>
-        AGENTS.md
-       </code>
-       —
-       <span data-en="Working instructions." data-es="Instrucciones de trabajo.">
-        Working instructions.
-       </span>
-      </p>
-      <p>
-       <code>
-        ESTADO.md
-       </code>
-       —
-       <span data-en="Current task, evidence and next step." data-es="Tarea actual, evidencia y próximo paso.">
-        Current task, evidence and next step.
-       </span>
-      </p>
-      <p>
-       <code>
-        DECISIONES.md
-       </code>
-       —
-       <span data-en="Important decisions." data-es="Decisiones importantes.">
-        Important decisions.
-       </span>
-      </p>
-      <p
-        class="note"
-        data-en="This is a proposed structure, not a verified package manifest. The public Starter release is still being prepared."
-        data-es="Esta es una estructura propuesta, no el inventario verificado del paquete. La versión pública del Starter está en preparación."
-      >
-       This is a proposed structure, not a verified package manifest. The public Starter release is still being prepared.
-      </p>
+       <button id="previous" type="button">
+        <span data-en="Previous" data-es="Anterior">
+         Previous
+        </span>
+       </button>
+       <button id="next" type="button">
+        <span data-en="Next" data-es="Siguiente">
+         Next
+        </span>
+       </button>
+      </div>
      </div>
     </div>
-   </section>
-   <section class="section">
-    <h2 data-en="Try the loop." data-es="Prueba el ciclo.">
-     Try the loop.
-    </h2>
-    <p
-      class="eyebrow"
-      data-en="Fictional example · No AI connection, no real data, no messages sent."
-      data-es="Ejemplo ficticio · Sin conexión a IA, datos reales ni mensajes enviados."
-    >
-     Fictional example · No AI connection, no real data, no messages sent.
-    </p>
-    <div class="demo">
-     <div aria-atomic="true" aria-live="polite" class="demo-state" id="demo-state">
-     </div>
-     <div class="demo-controls">
-      <span class="demo-count" id="demo-count">
-      </span>
-      <button id="previous" type="button">
-       <span data-en="Previous" data-es="Anterior">
-        Previous
-       </span>
-      </button>
-      <button id="next" type="button">
-       <span data-en="Next" data-es="Siguiente">
-        Next
-       </span>
-      </button>
-     </div>
+   </details>
+   <details class="section" id="agent-security-review">
+    <summary>
+     <h2 data-en="Give your agent a security check." data-es="Revisa los riesgos de tu agente.">
+      Give your agent a security check.
+     </h2>
+    </summary>
+    <div class="disclosure-body">
+     <p class="eyebrow">
+      AGENT SECURITY REVIEW / MIT
+     </p>
+     <p data-en="A small open skill to review excessive permissions, exposed secrets, external integrations, dangerous tools and sensitive operations—and identify where human review is needed." data-es="Una skill abierta y pequeña para revisar permisos excesivos, secretos expuestos, integraciones externas, herramientas peligrosas y operaciones sensibles, e identificar dónde hace falta revisión humana.">
+      A small open skill to review excessive permissions, exposed secrets, external integrations, dangerous tools and sensitive operations—and identify where human review is needed.
+     </p>
+     <a class="resource-link" data-en="Get Agent Security Review on GitHub ↗" data-es="Obtener Agent Security Review en GitHub ↗" href="https://github.com/pablopetrus/agent-security-review">
+      Get Agent Security Review on GitHub ↗
+     </a>
+     <p data-en="Start with a read-only review. Ask your agent to read the published SKILL.md, inspect its current permissions and report risks before making changes." data-es="Empieza con una revisión en modo lectura. Pide al agente que lea el SKILL.md publicado, compruebe sus permisos actuales e informe de los riesgos antes de hacer cambios.">
+      Start with a read-only review. Ask your agent to read the published SKILL.md, inspect its current permissions and report risks before making changes.
+     </p>
+     <h3 data-en="Optional local install" data-es="Instalación local opcional">
+      Optional local install
+     </h3>
+     <p class="code-block" data-en="Copy skills/agent-security-review/ from the repository into .agents/skills/agent-security-review/ in your project, then ask your agent to use that skill." data-es="Copia skills/agent-security-review/ del repositorio a .agents/skills/agent-security-review/ en tu proyecto y pide al agente que utilice esa skill.">
+      Copy skills/agent-security-review/ from the repository into .agents/skills/agent-security-review/ in your project, then ask your agent to use that skill.
+     </p>
+     <a data-en="Read the full usage instructions ↗" data-es="Leer las instrucciones completas ↗" href="https://github.com/pablopetrus/agent-security-review#readme">
+      Read the full usage instructions ↗
+     </a>
     </div>
-   </section>
-   <section class="section" id="agent-security-review">
-    <p class="eyebrow">
-     AGENT SECURITY REVIEW / MIT
+   </details>
+   <details class="section">
+    <summary>
+     <h2 data-en="Check the result. Keep control." data-es="Comprueba el resultado. Mantén el control.">
+      Check the result. Keep control.
+     </h2>
+    </summary>
+    <div class="disclosure-body">
+     <p class="note" data-en="These resources help you work with more care; they do not guarantee complete security or perfect autonomy. Keep permissions narrow, check sources, and review sensitive actions before executing them." data-es="Estos recursos ayudan a trabajar con más criterio; no garantizan seguridad completa ni autonomía perfecta. Limita los permisos, contrasta las fuentes y revisa las acciones sensibles antes de ejecutarlas.">
+      These resources help you work with more care; they do not guarantee complete security or perfect autonomy. Keep permissions narrow, check sources, and review sensitive actions before executing them.
+     </p>
+    </div>
+   </details>
+   <section class="product-demo">
+    <p class="eyebrow" data-en="PRODUCT DEMO" data-es="DEMO DE PRODUCTO">
+     PRODUCT DEMO
     </p>
-    <h2 data-en="Give your agent a security check." data-es="Revisa los riesgos de tu agente.">
-     Give your agent a security check.
+    <h2 data-en="Explore the Business graph." data-es="Explora el Business graph.">
+     Explore the Business graph.
     </h2>
-    <p
-      data-en="A small open skill to review excessive permissions, exposed secrets, external integrations, dangerous tools and sensitive operations—and identify where human review is needed."
-      data-es="Una skill abierta y pequeña para revisar permisos excesivos, secretos expuestos, integraciones externas, herramientas peligrosas y operaciones sensibles, e identificar dónde hace falta revisión humana."
-    >
-     A small open skill to review excessive permissions, exposed secrets, external integrations, dangerous tools and sensitive operations—and identify where human review is needed.
+    <p data-en="An interactive visual demo, separate from the Starter walkthrough." data-es="Una demo visual interactiva, independiente del recorrido del Starter.">
+     An interactive visual demo, separate from the Starter walkthrough.
     </p>
-    <a
-      class="resource-link"
-      data-en="Get Agent Security Review on GitHub ↗"
-      data-es="Obtener Agent Security Review en GitHub ↗"
-      href="https://github.com/pablopetrus/agent-security-review"
-    >
-     Get Agent Security Review on GitHub ↗
+    <a class="resource-link" data-en="Open product demo ↗" data-es="Abrir demo de producto ↗" href="/lab">
+     Open product demo ↗
     </a>
-    <p
-      data-en="Start with a read-only review. Ask your agent to read the published SKILL.md, inspect its current permissions and report risks before making changes."
-      data-es="Empieza con una revisión en modo lectura. Pide al agente que lea el SKILL.md publicado, compruebe sus permisos actuales e informe de los riesgos antes de hacer cambios."
-    >
-     Start with a read-only review. Ask your agent to read the published SKILL.md, inspect its current permissions and report risks before making changes.
-    </p>
-    <h3 data-en="Optional local install" data-es="Instalación local opcional">
-     Optional local install
-    </h3>
-    <p
-      class="code-block"
-      data-en="Copy skills/agent-security-review/ from the repository into .agents/skills/agent-security-review/ in your project, then ask your agent to use that skill."
-      data-es="Copia skills/agent-security-review/ del repositorio a .agents/skills/agent-security-review/ en tu proyecto y pide al agente que utilice esa skill."
-    >
-     Copy skills/agent-security-review/ from the repository into .agents/skills/agent-security-review/ in your project, then ask your agent to use that skill.
-    </p>
-    <a
-      data-en="Read the full usage instructions ↗"
-      data-es="Leer las instrucciones completas ↗"
-      href="https://github.com/pablopetrus/agent-security-review#readme"
-    >
-     Read the full usage instructions ↗
-    </a>
-   </section>
-   <section class="section">
-    <h2 data-en="Check the result. Keep control." data-es="Comprueba el resultado. Mantén el control.">
-     Check the result. Keep control.
-    </h2>
-    <p
-      class="note"
-      data-en="These resources help you work with more care; they do not guarantee complete security or perfect autonomy. Keep permissions narrow, check sources, and review sensitive actions before executing them."
-      data-es="Estos recursos ayudan a trabajar con más criterio; no garantizan seguridad completa ni autonomía perfecta. Limita los permisos, contrasta las fuentes y revisa las acciones sensibles antes de ejecutarlas."
-    >
-     These resources help you work with more care; they do not guarantee complete security or perfect autonomy. Keep permissions narrow, check sources, and review sensitive actions before executing them.
-    </p>
    </section>
    <footer>
     <a data-en="Back to portfolio ↗" data-es="Volver al portfolio ↗" href="/">
