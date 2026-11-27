@@ -1,0 +1,3 @@
+# Timestamped files must retain their exact bytes across platforms.
+/public/reflexiones/*.txt -text whitespace=cr-at-eol
+/public/reflexiones/*.ots -text
