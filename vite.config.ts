@@ -18,6 +18,7 @@ export default defineConfig({
         main: path.resolve(__dirname, 'index.html'),
         ig: path.resolve(__dirname, 'ig.html'),
         disposableSoftware: path.resolve(__dirname, 'software-de-usar-y-tirar.html'),
+        humanWork: path.resolve(__dirname, 'trabajo-humano-ia-manos.html'),
         reflexiones: path.resolve(__dirname, 'reflexiones.html'),
         montana: path.resolve(__dirname, 'montana.html'),
         starterKit: path.resolve(__dirname, 'starter-kit.html'),
