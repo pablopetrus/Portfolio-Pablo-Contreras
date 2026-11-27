@@ -17,6 +17,7 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'index.html'),
         ig: path.resolve(__dirname, 'ig.html'),
+        disposableSoftware: path.resolve(__dirname, 'software-de-usar-y-tirar.html'),
         reflexiones: path.resolve(__dirname, 'reflexiones.html'),
         montana: path.resolve(__dirname, 'montana.html'),
         starterKit: path.resolve(__dirname, 'starter-kit.html'),

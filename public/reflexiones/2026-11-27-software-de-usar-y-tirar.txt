@@ -1,0 +1,12 @@
+Mi predicción para 2027 y 2028: el software de usar y tirar
+Pablo
+Publicado: 27 de noviembre de 2026
+Programado originalmente: 26 de noviembre de 2026
+
+Creo que dentro de cuatro años una parte importante del software que utilicemos no tendrá ni nombre.
+
+Crearemos pequeñas aplicaciones para resolver un problema concreto y las tiraremos cuando hayan cumplido su función.
+
+Hasta ahora, como programar era caro, tenía sentido construir herramientas que pudieran reutilizar miles de personas. Pero si la IA reduce suficientemente ese coste (un coste marginal de prácticamente cero), en muchos casos será más fácil crear una herramienta nueva que aprender a utilizar una existente.
+
+Quizá acabemos tratando buena parte del software como hoy tratamos un documento: lo creamos, lo usamos y nos olvidamos de él. Mi Google Docs está lleno de fósiles, y cada día los archivos con código en mi ordenador parecen también fósiles.
