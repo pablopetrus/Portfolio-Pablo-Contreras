@@ -1,18 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#F8F5EF">
-<meta name="description" content="A fictional B2B business, visualized as it's thought.">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta content="#F8F5EF" name="theme-color"/>
+<meta content="A fictional B2B business, visualized as it's thought." name="description"/>
 <title>Business graph — Pablo</title>
+<circle cx="%2216%22" cy="%2216%22" fill="%22%23e87500%22" r="%2214%22"></circle><path 0="" 1="" 10h4a4="" 4="" 8h-4v4%22="" d="%22M12" fill="%22none%22" stroke="%22white%22" stroke-linecap="%22round%22" stroke-width="%222.5%22"></path>"&gt;
 
-<circle cx=%2216%22 cy=%2216%22 r=%2214%22 fill=%22%23e87500%22 /><path d=%22M12 10h4a4 4 0 0 1 0 8h-4v4%22 stroke=%22white%22 stroke-width=%222.5%22 fill=%22none%22 stroke-linecap=%22round%22 /></svg>">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <style>
     :root {
         --paper: #F8F5EF;
@@ -633,46 +632,37 @@
         .panel { padding-bottom: env(safe-area-inset-bottom); }
     }
 </style>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-</head>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/brand-theme.css" rel="stylesheet"/></head>
 <body>
-
 <div class="orb"></div>
-
 <header class="fade-in">
-    <a href="/" class="home-link">← home</a>
-    <div class="brand"><em>Business graph</em></div>
+<a class="home-link" href="/">← home</a>
+<div class="brand"><em>Business graph</em></div>
 </header>
-
 <div class="legend fade-in" id="legend"></div>
-
 <svg id="graph"></svg>
-
 <div class="controls fade-in">
-    <button class="btn-ctl" id="btn-fit" title="Fit to screen">◇</button>
-    <button class="btn-ctl" id="btn-reset" title="Reset">↺</button>
+<button class="btn-ctl" id="btn-fit" title="Fit to screen">◇</button>
+<button class="btn-ctl" id="btn-reset" title="Reset">↺</button>
 </div>
-
 <footer class="fade-in">
     built by <a href="/">Pablo</a> · pablopetrus.com
 </footer>
-
 <div class="onboarding" id="onboarding">
-    <div class="onboarding-cta">
-        <span class="cta-dot"></span>
+<div class="onboarding-cta">
+<span class="cta-dot"></span>
         Toca cualquier nodo para explorar
     </div>
-    <div class="onboarding-desc">Un negocio visualizado como una red viva de KPIs, personas, decisiones y contenido.</div>
-    <div class="onboarding-hint">Pellizca para hacer zoom</div>
+<div class="onboarding-desc">Un negocio visualizado como una red viva de KPIs, personas, decisiones y contenido.</div>
+<div class="onboarding-hint">Pellizca para hacer zoom</div>
 </div>
-
 <div class="panel-scrim" id="scrim"></div>
-<aside class="panel" id="panel" aria-hidden="true">
-    <button class="panel-close" id="btn-close" aria-label="Close">✕</button>
-    <div class="panel-inner" id="panel-inner"></div>
+<aside aria-hidden="true" class="panel" id="panel">
+<button aria-label="Close" class="panel-close" id="btn-close">✕</button>
+<div class="panel-inner" id="panel-inner"></div>
 </aside>
-
-<script src="https://d3js.org/d3.v7.min.js" integrity="sha384-LxfWGZyh6PaLjBRPf7NWiEYs9Mn0UQ6ZmqbLLZhxlOBBNWF2a2K0Pfc5efkrNnhQ" crossorigin="anonymous"></script>
+<script crossorigin="anonymous" integrity="sha384-LxfWGZyh6PaLjBRPf7NWiEYs9Mn0UQ6ZmqbLLZhxlOBBNWF2a2K0Pfc5efkrNnhQ" src="https://d3js.org/d3.v7.min.js"></script>
 <script>
 /* =========================================================
    NORTHLINE — fictional B2B SaaS dataset
@@ -1271,6 +1261,5 @@ window.addEventListener("keydown", e => {
     if (e.key === "Escape") closePanel();
 });
 </script>
-
 </body>
 </html>
